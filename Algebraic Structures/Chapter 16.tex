@@ -1,0 +1,116 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Group Action on a Set}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 16)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+\setlength\parindent{24pt}
+
+\begin{outline}
+
+  \dbullet{16.1}
+    Let \(X\) be a set and \(G\) a group. An "action of \(G\) on \(X\)" is a map 
+    \(*: G \times X \rightarrow X\) such that:
+    \begin{enumerate}[i.]
+      \item \(ex = x\) for all \(x \in X\),
+      \item \((g_{1}g_{2})(x) = g_{1}(g_{2}x)\) for all \(x \in X\) and all \(g_{1}, g_{2} \in G\).
+    \end{enumerate}
+    Under these conditions, \(X\) is a "\(G\)-set."
+
+  \tbullet{16.2}
+    Let \(X\) be a \(G\)-set. For each \(g \in G\), the function \(\sigma_{g}: X \rightarrow X\)
+    defined by \(\sigma_{g}(x) = gx\) for \(x \in X\) is a permutation of \(X\). Also, the map 
+    \(\phi: G \rightarrow S_{X}\) defined by \(\phi(g) = \sigma_{g}\) is a homomorphism with the 
+    property that \(\phi(g)(x) = gx\).
+    
+    \begin{proof}
+      To show \(\sigma_{g}\) is a permutation of \(X\), we show it's a one-to-one map of \(X\) onto itself. Suppose
+      \(\sigma_{g}(x_{1}) = \sigma_{g}(x_{i})\) for \(x_{1}, x_{2} \in X\). then \(gx_{1} = gx_{2} \Rightarrow 
+      g^{-1}(gx_{1}) = (g^{-1}g)x_{1} = (g^{-1}g)x_{2} \Rightarrow x_{1} = x_{2}\). We also see \(\sigma_{g}(g^{-1}x) =
+      (gg^{-1})x = x\), so \(\sigma_{g}\) maps \(X\) onto \(X\). Thus \(\sigma_{g}\) is a permuation.
+      
+      To show \(\phi: G \rightarrow S_{X}\) is a homomorphism defined by \(\phi(g) = \sigma_{g}\), we must show 
+      \(\phi(g_{1}g_{2}) = \phi(g_{1})\phi(g_2)\) for all \(g_1, g_2 \in G\). We show equality by showing they carry an
+      \(x \in X\) into the same element. Note \(\phi(g_1g_2)(x) = \sigma_{g_1g_2}(x) = (g_1g_2)x = g_1(g_2x) 
+      = g_1(\sigma_{g_2}(x)) = \sigma_{g_1}(\sigma_{g_2}(x))\). Thus \(\phi(g_1g_2)(x) = 
+      (\sigma_{g_1} \circ \sigma_{g_2})(x) = (\sigma_{g_1}\sigma_{g_2})(x) = (\phi(g_1)\phi(g_2))(x)\). 
+      
+      Thus \(\phi\) is a homomorphism.
+    \end{proof}
+
+  \dbullet{16.3}
+    Let \(X\) be a \(G\)-set. We say \(G\) "acts faithfully" on \(X\) if \(\{g \in G : gx = x \forall x
+    \in X\} = \{e\}\). We say \(G\) is "transitive" on \(X\) if \(\forall x_1, x_2 \in X, \exists g \in G\) 
+    such that \(gx_1 = x_2\).
+    
+  \dbullet{16.4}
+    Let \(X\) be a \(G\)-set of a group \(G\). The group \(G_x \coloneqq \{g \in G : gx = x\}\) is
+    the "isotropy group" of \(X\), otherwise known as the "stabilizer," where \(x \in G\). Similarly, 
+    we define \(X_g \coloneqq \{x \in X : gx = x\}\).
+      
+  \tbullet{16.5}
+    Let \(X\) be a \(G\)-set. Then \(G_x\) is a subgroup of \(G\) for each \(x \in X\).
+    
+    \begin{proof}
+      Let \(x \in X\) and \(g_1, g_2 \in G_x\). Then \(g_1x = g_2x = x \Rightarrow (g_1g_2)x = x\) so \(g_1g_2 \in G_x\).
+      Since \(ex = x, e \in G_x\) and if \(g \in G\), then \((g^{-1}g)(x) = g^{-1}(gx) = g^{-1}x = x \Rightarrow g^{-1}
+      \in G_x\).
+    \end{proof}
+  
+  \tbullet{16.6}
+    Let \(X\) be a \(G\)-set. For \(x_1, x_2 \in X\), let \(x_1\) \textasciitilde{} \(x_2\) if and
+    only if there exists \(g \in G\) such that \(gx_1 = x_2\). Then \textasciitilde{} is an equivalence 
+    relation on \(X\).
+    
+    \begin{proof}
+      For each \(x \in X\), we have \(ex = x\), so \(x\) \textasciitilde{} \(x\) and \(x\) is reflexive. Suppose
+      \(x_1\) \textasciitilde{} \(x_2\), so \(gx_1 = x_2\) for some \(g \in G\). Then \(g^{-1}x_1 = x_2\) so \(x_2\)
+      \textasciitilde{} \(x_1\) and \textasciitilde{} is symmetric. Finally, if \(x_1\) \textasciitilde{} \(x_2\) and
+      \(x_2\) \textasciitilde{} \(x_3\), then \(g_1x_1 = x_2\) and \(g_2x_2 = x_3\) for some \(g_1, g_2 \in G\)
+      implying \((g_2g_1)x_1 = g_2(g_1x_1) = g_2x_2 = x_3\). So \(x_1\) \textasciitilde{} \(x_3\) and \textasciitilde{}
+      is transitive.
+    \end{proof}
+      
+  \dbullet{16.7}
+    Let \(X\) be a \(G\)-set. Each cell in the partition of the equivalence relation described in Theorem 16.6 
+    is an "orbit in \(X\) under \(G\)." If \(x \in X\), the cell containing \(x\) is the "orbit of \(x\)." We let 
+    this cell be \(Gx\).
+      
+  \tbullet{16.8}
+    Let \(X\) be a \(G\)-set and let \(x \in X\). Then \(|Gx| = [G:G_x]\). If \(|G|\) is finite, then \(|Gx|\) 
+    is a divisor of \(|G|\).
+    
+    \begin{proof}
+      We define a one-to-one map \(\psi\) from \(Gx\) onto the collection of left cosets of \(G_x\) in \(G\). Let \(x_1
+      \in Gx\). Then \(\exists g_1 \in G\) such that \(g_1x = x_1\). We define \(\psi(x_1)\) to be the left coset \(g_1G_x\)
+      of \(G_x\). Suppose also \(g_1'x = x_1\) so \(g_1x = g_1'x \Rightarrow g_1^{-1}(g_1x) = g_1^{-1}(g_1'x) \Rightarrow
+      x = (g_1^{-1}g_1')x\). Thus \(g_1^{-1}g_1' \in G_x \Rightarrow g_1' \in g_1G_x\) and \(g_1G_x = g_1'G_x\) so \(\psi\)
+      is well defined.
+      
+      To show \(\psi\) is one-to-one, suppose \(x_1, x_2 \in Gx\), and \(\psi(x_1) = \psi(x_2)\). Then
+      \(\exists g_1, g_2 \in G\) such that \(x_1 = g_1x, x_2 = g_2x\), and \(g_2 \in g_1G_x\). Then \(g_2 = g_1g\) for
+      some \(g \in G_x\), so \(x_2 = g_2x = (g_1g)x = g_1x = x_1\). So \(\psi\) is one-to-one.
+      
+      Last we show each left coset of \(G_x\) in \(G\) is of form \(\psi(x_1)\) for some \(x_1 \in Gx\). 
+      Let \(g_1G_x\) be a left coset. Then if \(g_1x = x_1\), we have \(g_1G_x = \psi(x_1)\). Thus \(\psi\) 
+      maps \(Gx\) one-to-one onto the collection of right cosets so \(|Gx| = [G:G_x]\). If \(|G|\) is finite, 
+      then \(|G| = |G_x|[G:G_x]\) shows \(|Gx| = [G:G_x]\) is a divisor of \(|G|\).
+    \end{proof}
+
+\end{outline}
+
+\end{document}

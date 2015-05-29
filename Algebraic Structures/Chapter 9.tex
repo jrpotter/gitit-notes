@@ -1,0 +1,99 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Orbits, Cycles, and the Alternating Groups}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 9)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{9.1} 
+    Let \(\sigma\) be a permutation of a set \(A\). The equivalence classes 
+    in \(A\) determined by the equivalence relation \textasciitilde{} are the "orbits" of \(\sigma\) where
+    \textasciitilde{} is defined by: For \(a, b \in A\), let \(a\) \textasciitilde{} \(b\) if and only 
+    if \(b = \sigma^{n}(a)\) for some \(n \in \mathbb{Z}\).
+    
+  \dbullet{9.2}
+    A permutation \(\sigma \in S_{n}\) is a "cycle" if it has at most one orbit containing more than one 
+    element. The "length" of a cycle is the number of elements in its largest orbit.
+    
+  \dbullet{9.3}
+    Cycles are "disjoint" if no number appears in the notations of two different
+    cycles.
+    
+  \tbullet{9.4}
+    Every permutation \(\sigma\) of a finite set is a product of disjoint cycles.
+    
+    \begin{proof}
+      Let \(B_{1}, B_{2}, \ldots, B_{r}\) be the orbits of \(\sigma\), and let \(\mu_{i}\) 
+      by the cycle defined by \(\mu_{i}(x) = \sigma(x)\) for \(x \in B_{i}\) and \(\mu_{i}(x) = x\) otherwise.
+      Clearly \(\sigma = \mu_{1}\mu_{2}\ldots\mu_{r}\). Since the equivalence class orbits \(B_{1}, B_{2}, \ldots,
+      B_{r}\) being distinct equivalence classes, are disjoint, the cycles \(\mu_{1}, \mu_{2}, \ldots, \mu_{r}\) are
+      also disjoint.
+    \end{proof}
+    
+  \tbullet{9.5}
+    A cycle of length 2 is a "transposition."
+    
+  \cbullet{9.6}
+    Any permutation of a finite set of at least two elements is a product of transpositions.
+    
+  \tbullet{9.7}
+    No permutation in \(S_{n}\) can be expressed both as a product of an even number of transpositions 
+    and an odd number of transpositions.
+    
+    \begin{proof}
+      Let \(\sigma \in S_{n}\) and let \(\tau = (i, j)\) be a transposition in \(S_{n}\).\\
+      We claim the number of orbits of \(\sigma\) and \(\tau\sigma\) differ by 1.
+      
+      \begin{proofcases}
+      
+        \item 
+          Suppose \(i\) and \(j\) are in different orbits of \(\sigma\). Write \(\sigma\) as a product of
+          disjoint cycles, the first of which contains \(j\) and the second of which 
+          contains \(i: (b, j, x, x, x)(a, i, x, x)\). Computing the product of the first three cycles in
+          \(\tau\sigma = (i, j)\sigma\), we obtain\\ \((i, j)(b, j, x, x, x)(a, i, x, x) = (a, j, x, x, x, b, i, x, x)\).
+          
+        \item
+          Suppose \(i\) and \(j\) are in the same orbits of \(\sigma\). We can the write \(\sigma\) as a product of
+          disjoint cycles with the first cycle of the form \((a, i, x, x, x, b, j, x, x)\). Computing the product of
+          the first two cycles \(\tau\sigma = (i, j)\sigma\), we obtain \((i, j)(a, i, x, x, x, b, j, x, x) =
+          (a, j, x, x)(b, i, x, x, x)\).
+      
+      \end{proofcases}
+      
+      Thus the number of orbits of \(\tau\sigma\) differs from the number of orbits of \(\sigma\) by 1.\\
+      Now the number of orbits of a given permutation \(\sigma \in S_{n}\) differs from \(n\) (the number
+      of orbits of the identity permutation in \(S_{n}\)) by an even or an odd number but not both.
+      
+    \end{proof}
+    
+  \dbullet{9.8}
+    A permutation of a finite set is "even" or "odd" according to whether it can be 
+    expressed as a product of an even or odd number of transpositions, respectively.
+    
+  \tbullet{9.9}
+    If \(n \geq 2\), then the collection of all even permutations of \(\{ 1, 2, 3, \ldots, n\}\)
+    forms a subgroup of order \(\frac{n!}{2}\) of the symmetric group \(S_{n}\).
+    
+  \dbullet{9.10}
+    The subgroup of \(S_{n}\) consisting of the even permutations of \(n\) letters is the
+    "alternating group \(A_{n}\) on \(n\) letters."
+
+\end{outline}
+
+\end{document}

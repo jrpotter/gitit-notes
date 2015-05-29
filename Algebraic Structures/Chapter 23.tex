@@ -1,0 +1,97 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Factorization of Polynomials Over a Field}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 23)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{23.1 (Division Algorithm for \(F[x]\))}
+    Let \(f(x) = a_nx^n + a_{n-1}x^{n-1} + \ldots + a_0\)
+    and \(g(x) = b_mx^m + b_{m-1}x^{m-1} + \ldots + b_0\) be two elements of \(F[x]\), with \(a_n\) and \(b_m\)
+    both nonzero elements of \(F\) and \(m > 0\). Then there are unique polynomials \(q(x)\) and \(r(x)\) in \(F[x]\)
+    such that \(f(x) = g(x)q(x) = r(x)\), where either \(r(x) = 0\) or the degree of \(r(x)\) is less than the degree
+    \(m\) of \(g(x)\).
+    
+    \begin{proof}
+      Consider the set \(S = \{f(x) =- g(x)s(x) : s(x) \in F[x]\}\). If \(0 \in S\) then there exists an \(s(x)\)
+      such that \(f(x) - g(x)s(x) = 0\), so \(f(x) = g(x)s(x)\). Taking \(q(x) = s(x)\) and \(r(x) = 0\), we are done.
+      Otherwise, let \(r(x)\) be an element of minimal degree in \(S\). Then \(f(x) = g(x)q(x) + r(x)\) for some \(q(x)
+      \in F[x]\). 
+      
+      We must show that the degree of \(r(x)\) is less than \(m\). Suppose that \(r(x) = c_tx^t + c_{t-1}x^{t-1}
+      + \ldots + c_0\), with \(c_j = F\) and \(c_t \neq 0\). If \(t \geq m\), then:
+      
+      \begin{equation}
+      \label{eqn1}
+      f(x) - q(x)g(x) - (\frac{c_t}{b_m})x^{t-n}g(x) = r(x) - (\frac{c_t}{b_m})x^{t-m}g(x)
+      \end{equation}
+      
+      and the latter is of the form \(r(x) = (c_tx^t + \text{ terms of lower degree})\), which is a polynomial of degree
+      lower than \(t\), the degree of \(r(x)\). However the polynomial in \eqref{eqn1} can be written as 
+      \(f(x) - g(x)[q(x) + (\frac{c_t}{b_m})x^{t-m}]\), so it is in \(S\), contradicting the fact that 
+      \(r(x)\) was selected to have minimal degree in \(S\). Thus the degree of \(r(x)\) is less than the degree \(m\) of
+      \(g(x)\).
+      
+      For uniqueness, if \(f(x) = g(x)q_1(x) + r_1(x)\) and \(f(x) = g(x)q_2(x) + r_2(x)\), the subtracting we have
+      \(g(x)[q_1(x)-q_2(x)] = r_2(x) - r_1(x)\). Because either \(r_2(x) - r_1(x) = 0\) or the degree of \(r_2(x) - r_1(x)\)
+      is less than the degree of \(g(x)\), this can only hold if \(q_1(x) - q_2(x) = 0 \Rightarrow q_1(x) = q_2(x)\). Then
+      we must have \(r_2(x) - r_1(x) = 0 \Rightarrow r_2(x) = r_1(x)\).
+    \end{proof}
+
+  \cbullet{23.3 (Factor Theorem)}
+    An element \(a \in F\) is a zero of \(f(x) \in F[x]\) if and only if \(x-a\) is a factor of \(f(x)\) in \(F[x]\).
+    
+    \begin{proof}
+      Suppose that for \(a \in F\) we have \(f(a) = 0\). By the Division Algorithm, there exist \(q(x), r(x) \in F[x]\)
+      such that \(f(x) = (x-a)q(x) + r(x)\), where either \(r(x) = 0\) or the degree of \(r(x)\) is less than one. Thus
+      we must have \(r(x) = c\) for \(c \in F\), so \(f(x) = (x-a)q(x) + c\). Applying our evalution homomorphism, 
+      \(\phi_A: F[x] \rightarrow F\), we find \(0 = f(a) = 0q(a) + c\), so \(c\) must be \(0\). Then \(f(x) = (x-a)q(x)\),
+      so \(x - a\) is a factor of \(f(x)\).
+    \end{proof}
+      
+  \cbullet{23.4}
+    A nonzero polynomial \(f(x) \in F[x]\) of degree \(n\) can have at most \(n\) zeros in a field \(F\).
+    
+    \begin{proof}
+      Corollary 23.3 shows if \(a_1 \in F\) is a zero of \(f(x)\), then \(f(x) = (x - a_1)q_1(x)\), where the degree
+      of \(q_1(x)\) is \(n-1\). A zero \(a_2 \in F\) of \(q_1(x)\) then results in factorization 
+      \(f(x) = (x-a_1)(x-a_2)q_2(x)\). Continuing, we arrize at \(f(x) = (x-a_1)(x-a_2)\ldots(xa_r)q_r(x)\), where
+      \(q_r(x)\) has no further zeros in \(F\). Since the degree of \(f(x)\) is \(n\), at most \(n\) factors can appear.
+      Also if \(b \neq a_i\) for \(i = 1, \ldots, r\) and \(b \in F\), then \(f(b) = (b-a_1)\ldots(b-a_r)q_r(b) \neq 0\)
+      since \(F\) has no divisors of \(0\) and none of \(b_i - a\) or \(q_r(a)\) are \(0\). Hence the \(a_i\) for \(i =
+      1,\ldots,r \leq n\) are all the zeroes in \(F\) of \(f(x)\).
+    \end{proof}
+      
+  \cbullet{23.5}
+    If \(G\) is a finite subgroup of the multiplicative group \(\langle F^{*}, \cdot \rangle\) of a field \(F\), 
+    then \(G\) is cyclic. In particular, the multiplicative group of all nonzero elements of a finite field is cyclic.
+    
+    \begin{proof}
+      By the Fundamental Theorem of Finitely Generate Abelian Groups, \(G\) is isomorphic to \(\mathbb{Z}_{d_1} \times
+      \ldots \times \mathbb{Z}_{d_r}\) where each \(d_i\) is a power of a prime. Think of each \(\mathbb{Z}_{d_i}\) as
+      a cyclic group of order \(d_i\) in multiplicative notation. Let \(m = \text{lcm}(d_1, \ldots, d_r)\), nothing
+      \(m \leq d_1d_2\ldots d_r\). If \(a_i \in \mathbb{Z}_{d_i}\), then \(a_i^{d_i} = 1\), so \(a_i^m = 1\). Thus for
+      all \(\alpha \in G\), we have \(\alpha^m = 1\) so every element of \(G\) is a zero of \(x^m - 1\). But \(G\) has
+      \(d_1d_2\ldots d_r\) elements while \(x^m - 1\) can have at most \(m\) zeros. Hence \(m = d_1d_2 \ldots d_r\) so
+      primes \(d_i\) are distinct, and the group \(G\) is isomorphic to the cyclic group \(\mathbb{Z}_m\).
+    \end{proof}
+
+\end{outline}
+
+\end{document}

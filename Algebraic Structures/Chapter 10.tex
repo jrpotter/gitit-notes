@@ -1,0 +1,89 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+
+% Macros
+% ===========================
+
+\newcommand{\lowtilde}[1] {
+  \textasciitilde{}\(_{#1}\)
+}
+
+
+% Header
+% ===========================
+
+\title{Cosets and the Theorem of Lagrange}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 10)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{10.1}
+    Let \(H\) be a subgroup of \(G\). Let the relation\lowtilde{L}be defined on \(G\) 
+    by \(a\)\lowtilde{L}\(b\) if and only if \(a^{-1}b \in H\). Similarly, let\lowtilde{R}be defined 
+    by \(a\)\lowtilde{R}\(b\) if and only if \(ab^{-1} \in H\). Then\lowtilde{L}and\lowtilde{R}are 
+    equivalence relations.
+    
+    \begin{proof}
+      We will prove\lowtilde{R}is an equivalence relation and omit the symmetric proof for\lowtilde{R}.
+      
+      \textbf{Reflexive}: Let \(a \in G\). The \(a^{-1}a = e\) and \(e \in H\) since \(H\) is a subgroup.
+      
+      \textbf{Symmetric}: Suppose \(a\)\lowtilde{L}\(b\). Then \(a^{-1}b \in H\). Since \(H\) is a subgroup,
+      \((a^{-1}b)^{-1} \in H\) implies \(b^{-1}a \in H\) and thus \(b\)\lowtilde{L}\(a\).
+      
+      \textbf{Transitive}: Let \(a\)\lowtilde{L}\(b\) and \(b\)\lowtilde{L}\(c\). The \(a^{-1}b \in H\) 
+      and \(b^{-1}c \in H\). Since H is a subgroup, \((a^{-1}b)(b^{-1}c) = a^{-1}c \in H\), so 
+      \(a\)\lowtilde{L}\(c\).
+    \end{proof}
+    
+  \dbullet{10.2}
+    Let \(H\) be a subgroup of a group \(G\). The subset \(aH = \{ah : h \in H\}\) of \(G\)
+    is the "left coset" of \(H\) containing \(a\), while the subset \(Ha = \{ha : h \in H\}\) is the "right
+    coset" of \(H\) containing \(a\).
+    
+  \tbullet{10.3 (Theorem of Lagrange)}
+    Let \(H\) be a subgroup of a finite group \(G\). The the order of \(H\) is a divisor of the order of \(G\).
+    
+    \begin{proof}
+      Let \(n\) be the order of \(G\), and let \(H\) have order \(m\). Note every coset of \(H\) must have
+      the same order as \(H\). Let \(r\) be the number of cells in the partition of \(G\) into left cosets of
+      \(H\). Then \(n = rm\), so \(m\) is indeed a divisor of \(n\).
+    \end{proof}
+    
+  \cbullet{10.4}
+    Every group of prime order is cyclic.
+    
+    \begin{proof}
+      Let \(G\) be of prime order \(p\), and let \(a\) be an element of \(G\) different from the identity. Then
+      the cyclic subgroup \(\langle a \rangle\) of \(G\) has at least two elements, \(a\) and \(e\). We note the
+      order \(m \geq 2\) of \(\langle a \rangle\) must divide \(p\) by the Theorem of Lagrange so \(m = p\), 
+      \(\langle a \rangle = G\), and \(G\) is cyclic.
+    \end{proof}
+    
+  \tbullet{10.5}
+    The order of an element of a finite group divides the order of the group.
+    
+  \dbullet{10.6}
+    Let \(H\) be a subgroup of a group \(G\). The number of left cosets of \(H\) in \(G\)
+    is the "index \([G:H]\) of \(H\) in \(G\)."
+    
+  \tbullet{10.7}
+    Suppose \(H\) and \(K\) are subgroups of a group \(G\) such that \(K \leq H \leq G\), and suppose \([H:K]\) 
+    and \([G:H]\) are both finite. Then \([G:K]\) is finite and \([G:K] = [G:H][H:K]\).
+
+\end{outline}
+
+\end{document}

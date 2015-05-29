@@ -1,0 +1,107 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Factor Group Computations and Simple Groups}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 15)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{15.1}
+    Let \(G = H \times K\) be the direct product of groups \(H\) and \(K\). Then \(\bar{H} = \{(h, e) : h \in H\}\) 
+    is a normal subgroup of \(G\). Also \(\sfrac{G}{\bar{H}}\) is isomorphic to \(K\) in a natural way. Similarly, 
+    \(\sfrac{G}{\bar{K}} \simeq H\) in a natural way.
+    
+    \begin{proof}
+      Consider the homomorphism \(\pi_{2}: H \times K \rightarrow K\), where \(\pi_{2}(h, k) = k\). Because
+      \(Ker(\pi_{2}) = \bar{H}\), then \(\bar{H}\) is a normal subgroup of \(H \times K\). Because 
+      \(\pi_{2}\) is onto \(K\), \(\sfrac{(H \times K)}{\bar{H}} \simeq K\).
+    \end{proof}
+
+  \tbullet{15.2}
+    A factor group of a cyclic group is cyclic.
+    
+    \begin{proof}
+      Let \(G\) be cyclic with gernator \(a\), and let \(N\) be a normal subgroup of \(G\). We claim the coset \(aN\)
+      generates \(\sfrac{G}{N}\). We must compute all powers of \(aN\). But this amounts to computing all powers of 
+      \(a \in G\) which yields \(G\). Hence \(\langle aN \rangle\) gives all coset of \(N\) and \(\sfrac{G}{N}\) is cyclic.
+    \end{proof}
+    
+  \dbullet{15.3}
+    A group is "simple" if it is nontrivial and has no nontrivial proper subgroups.
+    
+  \tbullet{15.4}
+    The alternating group \(A_{n}\) is simple for \(n \geq 5\).
+    
+  \tbullet{15.5}
+    Let \(\phi: G \rightarrow G'\) be a group homomorphism. If \(N\) is a normal subgroup of \(G\), then 
+    \(\phi[N]\) is a normal subgroup of \(\phi[G]\). Also, if \(N'\) is a normal subgroup of \(\phi[G]\),
+    then \(\phi^{-1}[N']\) is a normal subgroup of \(G\).
+    
+  \dbullet{15.6}
+    A "maximal normal subgroup of a group \(G\)" is a normal subgroup \(M\) not equal to \(G\) such that 
+    there is no proper normal subgroup \(N\) of \(G\) properly containing \(M\).
+    
+  \tbullet{15.7}
+    \(M\) is a maximal normal subroup of \(G\) if and only if \(\sfrac{G}{M}\) is simple.
+    
+    \begin{proof}
+      \forward 
+        Let \(M\) be a maximal normal subgroup of \(G\). Consider the canonical homomorphism
+        \(\gamma: G \rightarrow \sfrac{G}{M}\). Now \(\gamma^{-1}\) of any nontrivial proper normal 
+        subgroup of \(\sfrac{G}{M}\) is a proper normal subgroup of \(G\) properly containing \(M\). 
+        But \(M\) is maximal, so this cannot happen, meaning \(\sfrac{G}{M}\) is simple.
+        
+      \backward
+        If \(N\) is a normal subgroup of \(G\) properly containing \(M\), then \(\gamma[N]\) is normal is 
+        \(\sfrac{G}{M}\). If also \(N \neq G\), then \(\gamma[N] \neq \sfrac{G}{M}\) and \(\gamma[N] \neq
+        \{M\}\). Since \(\sfrac{G}{M}\) is simple, no such \(\gamma[N]\) or \(N\) can exist, and \(M\) is maximal.
+    \end{proof}
+    
+  \tbullet{15.8}
+    Let \(G\) be a group. The set of all commutators \(aba^{-1}b^{-1}\) for \(a, b \in G\)
+    generates a subgroup \(C\) (the "commutator subgroup") of \(G\). This subgroup \(C\) is a normal subgroup of
+    \(G\). Furthermore, if \(N\) is a normal subgroup of \(G\), then \(\sfrac{G}{N}\) is abelian if and only if
+    \(C \leq N\).
+    
+    \begin{proof}
+      The commutators certainly generate a subgroup \(C\). Note the inverse \((aba^{-1}b^{-1})\) of a commutator is 
+      a commutator, namely \(bab^{-1}a^{-1}\). Also, \(e = eee^{-1}e^{-1}\) is a commutator. Then \(C\) consists 
+      precisely of all finite products of commutators. 
+      
+      For \(x \in C\), we must show that \(g^{-1}xg \in C\) for all \(g \in G\). By
+      inserting \(e = gg^{-1}\) between each product of commutators occurring in \(x\), we see it is sufficient to show 
+      that for each commutator \(cdc^{-1}d^{-1}\) that \(g(cdc^{-1}d^{-1})g^{-1}\) is in \(C\). But:
+      \begin{align*}
+        g^{-1}(cdc^{-1}d^{-1})g &= (g^{-1}cdc^{-1})(e)(d^{-1}g) \\
+                                &= (g^{-1}cdc^{-1})(gd^{-1}dg^{-1})(d^{-1}g)\\
+                                &= [(g^{-1}c)d(g^{-1}c)^{-1}d^{-1}][dg^{-1}d^{-1}g],
+      \end{align*}
+      which is in \(C\). So \(C\) is normal. 
+      
+      That \(\sfrac{G}{C}\) is abelian follows from \((aC)(bC) = abC = ab(b^{-1}a^{-1}ba)C\) which equals 
+      \(abb^{-1}a^{-1})baC = baC = (bC)(aC).\) 
+      
+      Furthermore, if \(N\) is a normal subgroup of \(G\) and \(\sfrac{G}{N}\) is abelian, then 
+      \((a^{-1}N)(b^{-1}N) = (b^{-1}N)(a^{-1}N)\); that is, \(aba^{-1}b^{-1}N = N\), so \(aba^{-1}b^{-1} \in N\), 
+      and \(C \leq N\). Finally, if \(C \leq N\), then \((aN)(bN) = abN = ab(b^{-1}a^{-1}ba)N\) which equals 
+      \((abb^{-1}a^{-1})baN = baN = (bN)(aN).\)
+    \end{proof}
+      
+\end{outline}
+
+\end{document}

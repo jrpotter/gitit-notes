@@ -1,0 +1,193 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Macros
+% ===========================
+
+\newcommand{\lrangle}[1] {%
+  \langle #1 \rangle%
+}
+
+
+% Header
+% ===========================
+
+\title{Sylow Theorems}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 36)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{36.1}
+    Let \(p\) be a prime integer, \(G\) be a group of order \(p^n\), and \(X\) be a finite \(G\)-set. Then 
+    \(|X| \equiv |X_G| \pmod{p}]\).
+    
+    \begin{proof}
+      Suppose there are \(r\) orbits in \(X\) under \(G\). Note every element of \(X\) in in precisely one orbit, so
+      
+      \begin{equation}
+        \label{eqn1}
+        |X| = \sum_{i=1}^{r} |Gx_i|, 
+      \end{equation}
+      
+      where \(x_i\) represents one element from the \(i^{\text{th}}\)) orbit. \(X_{g} = \{x \in X: gx = x \text{ for all }
+      g \in G\}\) is the union of one element orbits in \(X\). Suppose there are \(s\) one-element orbits, where \(0 \leq
+      s \leq r\). Then \(|X_G| = s\), and reordering the \(x_i\) if necessary, we rewrite \eqref{eqn1} as 
+      
+      \begin{equation}
+        \label{eqn2}
+        |X| = |X_G| + \sum_{i=s+1}^r |Gx_i|.
+      \end{equation}
+      
+      In the notation of \eqref{eqn2}, we know \(|Gx_i|\) divides \(G\). Consequently \(p\) divides \(|Gx_i|\) for
+      \(s + 1 \leq i \leq r\). \eqref{eqn2} then shows \(|X| - |X_G|\) is divisible by \(p\) so \(|X| \equiv |X_G|
+      \pmod{p}\).
+    \end{proof}
+
+  \dbullet{36.2}
+    Let \(p\) be a prime. A group \(G\) is a "\(p\)-group" if every element in \(G\) has order a power
+    of the prime \(p\). A subgroup of a group \(G\) is a "\(p\)-subgroup of \(G\)" if the subgroup is 
+    itself a \(p\)-group.
+
+  \tbullet{36.3 (Cauchy's Theorem)}
+    Let \(p\) be a prime. Let \(G\) be a finite group and let \(p\) divide \(|G|\). Then \(G\) has an 
+    element of order \(p\) and, consequently, a subgroup of order \(p\).
+    
+    \begin{proof}
+      We form the set \(X\) of all \(p\)-tuples \((g_1, g_2, \ldots, g_p)\) of elements of \(G\) having the property that
+      the product of the coordinates in \(G\) is \(e\). In other words, \(X - \{(g_1, g_2, \ldots, g_p)\}: g_i \in G 
+      \text{ and } g_1g_2\ldots g_p = e\}\). We claim \(p\) divides \(|X|\). In forming a \(p\)-tuple in \(X\), we may
+      let \(g_1, g_2, \ldots, g_{p-1}\) be any elements of \(G\). So \(g_p\) is uniquely determined by \((g_1g_2 \ldots 
+      g_p)^{-1}\). Thus \(|X| = |G|^{p-1}\) and since \(p\) divides \(|G|\), \(p\) must divide \(|X|\). Let \(\sigma\)
+      be the cycle \((1, 2, \ldots, p)\) in \(S_p\).
+      
+      Let \(\sigma\) act on \(X\) by \(\sigma(g_1, g_2, \ldots, g_p) =
+      (g_{\sigma(1)}, g_{\sigma(2)}, \ldots, g_{\sigma(p)}) = (g_2, g_3, \ldots, g_p, g_1)\). Note that \((g_2, g_3, \ldots,
+      g_p, g_1) \in X\), for \(g_1(g_2g_3\ldots g_p) = e\) implies that \((g_2g_3 \ldots g_p)g_1 = e\) also. Thus \(\sigma\)
+      acts on \(X\) and the subgroup \(\lrangle{\sigma}\) of \(S_p\) acts on \(X\) in the natural way. Now 
+      \(|\lrangle{\sigma}| = p\), so we may apply Theorem 36.1, and \(|X| \equiv |X_{\lrangle{\sigma}}| \pmod{p}\). Since
+      \(p\) divides \(|X|\), it must be that \(p\) divides \(|X_{\lrangle{\sigma}}|\) also.
+      
+      Examining \(X_{\lrangle{\sigma}}\), \((g_1, g_2, \ldots, g_p)\) is left fixed by \(\sigma\), and hence by
+      \(\lrangle{\sigma}\), if and only if \(g_1 = g_2 = \ldots = g_p\). Since \(p\) divides \(|X_{\lrangle{\sigma}}|\), 
+      there must be at least \(p\) elements in \(X_{\lrangle{\sigma}}\). Hence \(\exists a \in G\), \(a \neq e\), such 
+      that \((a, a, \ldots, a) \in X_{\lrangle{\sigma}}\) and hence \(a^p = e\). So \(a\) has order \(p\) and 
+      \(\lrangle{a}\) is a subgroup of \(G\) of order \(p\).
+    \end{proof}
+      
+  \cbullet{36.4}
+    Let \(G\) be a finite group. Then \(G\) is a \(p\)-group if and only if \(|G|\) is a power of \(p\).
+    
+  \dbullet{36.5}
+    Let \(G\) be a group and \(\mathcal{L}\) be the collection of all subgroups of \(G\). Make 
+    \(\mathcal{L}\) a \(G\)-set by letting \(G\) act on \(\mathcal{L}\) by conjugation. That is, if 
+    \(H \in \mathcal{L}\) so \(H \leq G\) and \(g \in G\), then \(g\) acting on \(H\) yields the conjugate 
+    subgroup \(gHg^{-1}\). The subgroup \(G_H = \{g \in G : gHg^{-1} = H\}\) is the "normalizer" of \(H\) 
+    in \(G\)" and is denoted \(N[H]\).
+      
+  \lbullet{36.6}
+    Let \(H\) be a \(p\)-subgroup of a finite group \(G\). Then \([N[H]:H] \equiv [G:H] \pmod{p}\).
+    
+    \begin{proof}
+      Let \(\mathcal{L}\) be the set of left cosets of \(H\) in \(G\), and let \(H\) act on \(\mathcal{L}\) by left
+      translation, so that \(h(xH) = (hx)H\). Then \(\mathcal{L}\) becomes an \(H\)-set and \(|\mathcal{L}| = [G:H]\).
+      Let us determine \(\mathcal{L}_H\), that is, the left cosets fixed under action by all \(h \in H\). 
+      
+      Now \(xH = h(xH)\) iff \(H = x^{-1}hxH\) or iff \(x^{-1}hx \in H\). Thus \(xH = h(xH)\) for all \(h \in H\) iff 
+      \(x^{-1}hx = x^{-1}h(x^{-1})^{-1} \in H\) for all \(h \in H\) or iff \(x^{-1} \in N[H]\) or iff \(x \in N[H]\).
+      Thus the left cosets in \(\mathcal{L}_H\) are those contained in \(N[H]\). 
+      
+      The number of such cosets is \([N[H]:H]\), so \(|\mathcal{L}_H|\) = \([N[H]:H]\). Since \(H\) is a \(p\)-group, 
+      it has order a power of \(p\) by Corollary 36.4. Theorem 36.1 then tells us that 
+      \(|\mathcal{L}| \equiv |\mathcal{L}_H| \pmod{p}\), or, equivalently, that \([G:H] \equiv [N[H]:H] \pmod{p}\).    
+    \end{proof}
+      
+  \cbullet{36.7}
+    Let \(H\) be a \(p\)-subgroup of a finite group \(G\). If \(p\) divides \([G:H]\), then \(N[H] \neq H\).
+    
+    \begin{proof}
+      By Lemma 36.6, \(p\) must also divide \([N[H]:H]\). Then \([N[H]:H] \neq 1\) and \(N[H] \neq H\).
+    \end{proof}
+
+  \tbullet{36.8 (First Sylow Theorem)}
+    Let \(G\) be a finite group and let \(|G| = p^nm\) where \(n \geq 1\) and where \(p\) does not divide \(m\). Then:
+    \begin{enumerate}[i.]
+      \item \(G\) contains a subgroup of order \(p^i\) for each \(i\) where \(1 \leq i \leq n\).
+      \item Every subgroup \(H\) of \(G\) of order \(p^i\) is a normal subgroup of a subgroup of order \(p^{i+1}\)
+      for \(1 \leq i < n\).
+    \end{enumerate}
+    
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item 
+          We know \(G\) contains a subgroup of order \(p\) by Cauchy's Theorem. We use an induction argument and show
+          the existence of a subgroup of order \(p^i\) for \(i < n\) implies the existence of a subgroup of order 
+          \(p^{i+1}\). Let \(H\) be a subgroup of order \(p^i\). Since \(i < n\), we see \(p\) divides \([G:H]\), 
+          and by Lemma 36.6, we know \(p\) divides \([N[H]:H]\). Since \(H\) is a normal subgroup of \(N[H]\), we can 
+          form \(\sfrac{N[H]}{H}\) and see that \(p\) divides \(|[N[H]:H]|\). 
+          
+          By Cauchy's Theorem, the factor group \(\sfrac{N[H]}{H}\) has a subgroup \(K\) which is of order \(p\). 
+          If \(\delta: N[H] \rightarrow \sfrac{N[H]}{H}\) is the canonical homomorphism, then \(\delta^{-1} =
+          \{x \in N[H] : \delta(x) \in K\}\) is a subgroup of \(N[H]\) and hence of \(G\). This subgroup contains 
+          \(H\) and is of order \(p^{i+1}\).
+        \item 
+          We repeat construction of (\romannumeral 1) and note \(H < \delta^{-1}[K] \leq N[H]\) where 
+          \(|\delta^{-1}[K]| = p^{i+1}\). Since \(H\) is normal in \(N[H]\), it will also be normal in the 
+          possibly smaller group \(\delta^{-1}[K]\).
+      \end{enumerate}
+    \end{proof}
+
+  \dbullet{36.9}
+    A Sylow \(p\)-subgroup \(P\) of a group \(G\) is a maximal \(p\)-subgroup of \(G\), that is, a \(p\)-subgroup 
+    contained in no larger \(p\)-subgroup.
+    
+  \tbullet{36.10 (Second Sylow Theorem)}
+    Let \(P_1\) and \(P_2\) be Sylow \(p\)-subgroups of a finite group \(G\). Then \(P_1\) and \(P_2\) are 
+    conjugate subgroups of \(G\).
+    
+    \begin{proof}
+      Let \(\mathcal{L}\) be the collection of left cosets of \(P_1\), and let \(P_2\) act on \(\mathcal{L}\) by
+      \(y(xP_1) = (yx)P_1\) for \(y \in P_2\), meaning \(\mathcal{L}\) is a \(P_2\)-set. By Theorem 36.1, 
+      \(|\mathcal{L}_{P_2}| \equiv |\mathcal{L}| \pmod{p}\), and \(\mathcal{L} = [G:P_1]\) is not divisible by \(p\),
+      so \(|\mathcal{L}_{P_2}| \neq 0\). Let \(xP_1 \in \mathcal{L}_{P_2}\) which implies \(yxP_1 = xP_1\) for all 
+      \(y \in P_2 \Rightarrow x^{-1}yxP_1 = P_1\) for all \(y \in P_2\). Thus \(x^{-1}yx \in P_1\) for all \(y \in P_2
+      \Rightarrow x^{-1}P_2x \leq P_1\). Since \(|P_1| = |P_2|\), we must have \(P_1 = x^{-1}P_2x\), so \(P_1\) and
+      \(P_2\) are conjugate subgroups.
+    \end{proof}
+
+  \tbullet{36.11 (Third Sylow Theorem)}
+    If \(G\) is a finite group and \(p\) divides \(|G|\), then the number of Sylow \(p\)-groups is congruent 
+    to \(1\) modulo \(p\) and divides \(|G|\).
+    
+    \begin{proof}
+      Let \(P\) be one Sylow \(p\)-subgroup of \(G\) and \(\mathcal{L}\) be the set of all Sylow \(p\)-subgroups such
+      that \(P\) acts on \(\mathcal{L}\) by conjugation allowing \(x \in P\) to carry \(T \in \mathcal{L}\) into 
+      \(xTx^{-1}\). By Theorem 36.1, \(|\mathcal{L}| \equiv |\mathcal{L}_P| \pmod{p}\). 
+      
+      We now find \(\mathcal{L}_P\). If \(T \in \mathcal{L}_P\), then \(xTx^{-1} = T\) for all \(x \in P\), 
+      meaning \(P \leq N[T]\) and \(T \leq N[T]\). Since \(P\) and \(T\) are both Sylow p-subgroups of \(G\), 
+      they are also Sylow \(p\)-subgroups of \(N[T]\). But, by the Second Sylow Theorem, they must be conjugate in 
+      \(N[T]\). Since \(T\) is a normal subgroup of \(N[T]\), it is its only conjugate in \(N[T]\). Thus \(T = P\) 
+      and \(\mathcal{L}_P = \{P\}\). Since \(|\mathcal{L}| \equiv |\mathcal{L}_P| = 1 \pmod{p}\), the number of 
+      Sylow \(p\)-subgroups is congruent to \(1\) modulo \(p\). 
+      
+      Now let \(G\) act on \(\mathcal{L}\) by conjugation. Since all Sylow \(p\)-subgroups are conjugate, 
+      there is only one orbit in \(\mathcal{L}\) under \(G\). If \(P \in \mathcal{L}\), then 
+      \(|\mathcal{L}| = |\text{orbit of }P| = [G:G_P]\) which is a divisor of \(G\). So the number of Sylow 
+      \(p\)-subgroups divides \(|G|\).
+    \end{proof}
+      
+\end{outline}
+
+\end{document}

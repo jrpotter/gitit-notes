@@ -1,0 +1,110 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Integral Domains}
+\author{John B. Fraleigh, A First Course In Abstract Algebra (Chapter 19)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{19.1}
+    If \(a\) and \(b\) are two nonzero elements of a ring \(R\) such that \(ab = 0\), then \(a\) and 
+    \(b\) are "diviors of \(0\)" (or "\(0\) divisors").
+
+  \dbullet{19.2}
+    In the ring \(\mathbb{Z}_n\), the divisors of \(0\) are precisely those nonzero elements that are 
+    not relatively prime to n.
+    
+    \begin{proof}
+      Let \(m \in \mathbb{Z}_n\), where \(m \neq 0\), and let the gcd of \(m\) and \(n\) be \(d \neq 1\). Then
+      \(m(\frac{n}{d}) = (\frac{m}{d})n\), and \((\frac{m}{d})n\) gives \(0\) as a multiple of \(n\). Thus 
+      \(m(\frac{n}{d}) = 0\) in \(\mathbb{Z}_n\), while neither \(m\) nor \(\frac{n}{d}\) is \(0\), so \(m\) 
+      is a \(0\) divisor. On the other hand, suppose \(m \in \mathbb{Z}_n\) is relatively prime to \(n\). If 
+      for \(x \in \mathbb{Z}_n\) we have \(ms = 0\), then \(n\) divides the product \(ms\) of \(m\) and \(s\) 
+      as elements in the ring \(\mathbb{Z}\). Since \(n\) is relatively prime to \(m\), \(n\) must divide \(s\), 
+      so \(s = 0\) in \(\mathbb{Z}_n\).
+    \end{proof}
+      
+  \cbullet{19.3}
+    If \(p\) is a prime, then \(\mathbb{Z}_p\) has no divisors of \(0\).
+      
+  \tbullet{19.4}
+    The cancellation laws hold in a ring \(R\) if and only if \(R\) has no \(0\) divisors.
+    
+    \begin{proof}
+      \forward
+        Let \(R\) be a ring in which the cancellation laws hold. suppose \(ab = 0\) for some \(a, b \in R\).
+        We must show either \(a\) or \(b\) is \(0\). If \(a \neq 0\), then \(ab = a0\) implies \(b = 0\) by cancellation laws.
+        Similarly, if \(b \neq 0\), \(ab = 0b\) implies \(a = 0\).
+        
+      \backward
+        Suppose \(R\) has no divisors of \(0\). Suppose \(ab = ac\) with \(a \neq 0\). Then  \(ab - ac = a(b-c) = 0\). 
+        Since \(a \neq 0\), and since \(R\) has no divisors of \(0\), we must have \(b - c = 0\), so \(b = c\). 
+        Similarly, \(ba = ca\) with \(a \neq 0 \Rightarrow (b - c)a = 0 \Rightarrow b - c = 0 \Rightarrow b = c\).
+    \end{proof}
+
+  \dbullet{19.5}
+    An "integral domain" \(D\) is a commutative ring with unity \(1 \neq 0\) and containing no divisors of \(0\).
+    
+  \tbullet{19.6}
+    Every field is an integral domain.
+    
+    \begin{proof}
+      Let \(a, b \in F\), and suppose \(a \neq 0\). Then if \(ab = 0\), we have \((\frac{1}{a})(ab) = (\frac{1}{a})0 = 0\).
+      But then \(0 = [(\frac{1}{a})]b = 1b = b\). Thus \(ab = 0\) with \(a \neq 0 \Rightarrow b = 0\), so \(F\) has no \(0\)
+      divisors. \(F\) is clearly a commutative ring with unity.
+    \end{proof}
+    
+  \tbullet{19.7}
+    Every finte integral domain is a field.
+    
+    \begin{proof}
+      Let \(0, 1, a_1, \ldots, a_n\) be all the elements of a finite domain \(D\). We must show for \(a \in D\), where
+      \(a \neq 0, \exists b \in D\) such that \(ab = 1\). Consider \(a1, aa_1, \ldots, aa_n\). We claim these elements
+      are distinct, since \(aa_i = aa_j \Rightarrow a_i = a_j\) by the cancellation laws. Since \(D\) has no \(0\) 
+      divisors, none of these elements are \(0\). Hence, by counting, we find \(a1, aa_1, \ldots, aa_n\) is a permutation
+      of \(1, a_1, \ldots, a_n\). Thus, either \(a1 = 1 (a = 1)\) or \(aa_i = 1\) for some \(i\). Therefore \(a\) has a
+      multiplicative inverse.
+    \end{proof}
+
+  \cbullet{19.8}
+    If \(p\) is a prime, then \(\mathbb{x}_p\) is a field.
+    
+    \begin{proof}
+      \(\mathbb{Z}_p\) is an integral domain. Apply Theorem 19.7.
+    \end{proof}
+      
+  \dbullet{19.9}
+    If for a ring \(R\) a positive integer \(n\) exists such that \(n \cdot a = 0\) for all \(a \in R\),
+    then the least such positive integer is the "characteristic of the ring \(R\)." If no such positive integer 
+    exists, then \(R\) is of "characteristic 0."
+      
+  \tbullet{19.10}
+    Let \(R\) be a ring with unity. If \(n \cdot 1 \neq 0\) for all \(n \in \mathbb{Z}^{+}\), then
+    \(R\) has characteristic \(0\). If \(n \cdot 1 = 0\) for some \(n \in \mathbb{Z}^{+}\), then the smallest 
+    such integer n is the characteristic of \(R\).
+    
+    \begin{proof}
+      If \(n \cdot 1 \neq 0\) for all \(n \in \mathbb{Z}^{+}\), then surely we cannot have \(n \cdot a = 0\) for all 
+      \(a \in R\) for some positive integer \(n\). Suppoes \(n\) is a positive integer such that \(n \cdot 1 = 0\). Then
+      for any \(a \in R\), we have \(n \cdot a = a + a + \ldots + a = a(1 + 1 + \ldots + 1) = a(n \cdot 1) = a0 = 0\).
+      The theorem follows directly.
+    \end{proof}
+
+\end{outline}
+
+\end{document}

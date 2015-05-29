@@ -1,0 +1,197 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{mathfunc}[2015/05/27 Custom Package]
+
+\RequirePackage{mathtools}
+\RequirePackage{scrextend}
+\RequirePackage{enumitem}
+\RequirePackage{enumerate}
+\RequirePackage{lmodern}
+\RequirePackage{amssymb}
+\RequirePackage{pgffor}
+\RequirePackage{xfrac}
+
+\ProcessOptions\relax
+
+\makeatletter
+
+% Shortcuts
+% ===================================
+
+% Used in bijective proofs
+
+\newcommand{\forward}{%
+    \((\Rightarrow)\;\)%
+}
+
+\newcommand{\backward}{%
+    \((\Leftarrow)\;\)%
+}
+
+
+% Used for easier (super/sub)scripting
+% Note the scripting here will always be a text
+% value
+
+\newcommand{\spscript}[2] {%
+    #1\textsuperscript{#2}%
+}
+
+\newcommand{\sbscript}[2] {%
+    #1\textsubscript{#2}%
+}
+
+
+% Lists/Arguments
+% ===================================
+
+% Takes in an (optional) delimiter as a first argument, used to separate the
+% returned list, a name of the list components as a second argument, and the
+% length of the desired list as a third argument. That is, this macro returns
+% a separated list where each component is the variable name with subscript
+% denoting its position in the list.
+
+\newcommand{\inflate}[3][,] {%
+    \foreach \index in {1,...,#3} {%
+        #2\textsubscript{\index}
+        \ifnum\index=#3\relax\else#1\fi%
+    }%
+}
+
+
+% Works similar to the above macro, but if the list is longer than
+% three elements, we replace the third to penultimate element with
+% ellipsis
+
+\newcommand{\inflatedot}[3][,] {%
+    \inflate[#1]{#2}{2} #1 \ldots #1 #2\textsubscript{#3}%
+}
+
+% Works similarly to inflate but in a more general sense, replacing
+% all instances of a given tag with the index instead.
+
+\newcommand{\sinflate}[3][,] {%
+    \foreach \index in {1,...,#3} {%
+        \foreach \entry in {#2} {%
+            \edef\nentry{\detokenize\entry}
+            \edef\nmtag{\mtag}
+            \StrSubstitute{\nentry}{\nmtag}{\index}%
+        }%
+        \ifnum\index=#3\relax\else#1\fi%
+    }%
+}
+
+
+% Proof Environments
+% ===================================
+
+% Underline, smash, and bolden shortcut
+% This is used in many headers, and keeps the underlining an equal distance from 
+% the word being underlined, regardless of the letters in the word.
+
+\newcommand{\@usb}[1] {%
+  \underline{\smash{\textbf{#1}}}%
+}
+
+
+% Shortcuts for different kind of bullets that will appear in an outline
+
+\newcommand{\cbullet}[1] {%
+    \item \@usb{Corollary #1}:%
+}
+
+\newcommand{\dbullet}[1] {%
+    \item \@usb{Def'n #1}:%
+}
+
+\newcommand{\lbullet}[1] {%
+    \item \@usb{Lemma #1}:%
+}
+
+\newcommand{\pbullet}[1] {%
+    \item \@usb{Prop'n #1}:%
+}
+
+\newcommand{\tbullet}[1] {%
+    \item \@usb{Theorem #1}:%
+}
+
+
+% The following is merely a wrapper around a list. It was defined for a more
+% semantic relationship between the bulleted points of the outline
+
+\newenvironment{outline}
+{
+    \begin{itemize}
+    \setlength{\itemsep}{7pt}
+}
+{
+    \end{itemize}
+}
+
+
+% Used to wrap around a proof of a theorem, proposition, etc. It provides
+% the necessary header and Q.E.D.
+
+\newenvironment{proof}
+{ 
+    \@usb{Proof}:\par% 
+}
+{
+    \hfill\(\blacksquare\)
+}
+
+
+% The following allows uniform construction of cases as defined in a proof.
+% As of now, it indents the given cases inward for delimiting purposes.
+
+\newlist{@prfcases}{enumerate}{1}
+\setlist[@prfcases]{label=\@usb{Case \arabic*}:}
+
+\newenvironment{proofcases}[1][3em]
+{
+    \begin{addmargin}[#1]{0em}
+    \begin{@prfcases}
+}
+{
+    \end{@prfcases}
+    \end{addmargin}
+}
+
+
+% Vector Processing
+% ==================================
+
+% Takes in two vector names and returns the dot product of the
+% two vectors (both of which are now marked as such)
+
+\newcommand{\dotp}[2] {%
+    \vec{#1}\cdot\vec{#2}%
+}
+
+
+% Matrix Processing
+% ===================================
+
+% The following takes in a comma separated list as an argument and creates a new 
+% column vector with the ith component set as the ith element of the given list.
+% http://tex.stackexchange.com/questions/146463/newcommand-for-bmatrix-of-features-using-pgffor-throws-missing-endgroup-error
+
+\newcommand*{\matrixbody}[1]{%
+    \global\let\MatrixBody\@empty
+    \foreach \entry in {#1} {%
+        \expandafter\g@addto@macro\expandafter\MatrixBody
+            \expandafter{%
+                \expandafter\text\expandafter{\entry}\\%
+            }%
+    }%
+    \begin{bmatrix}%
+    \MatrixBody
+    \end{bmatrix}%
+}
+
+
+% Footer
+% ===================================
+
+\makeatother
+\endinput

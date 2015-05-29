@@ -1,0 +1,135 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Linear Transformations}
+\author{Otto Bretscher, Linear Algebra With Applications (Chapter 2)}
+\date{May 27, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{2.1.1}
+    A function \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\) is called a "linear transformation" if there exists 
+    an \(n \times m\) matrix \(A\) such that \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \mathbb{R}^m\).
+    
+  \tbullet{2.1.2}
+    Consider a linear transformation from \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n]\). Then the matrix of \(T\) is:
+    \[
+      A = 
+        \begin{bmatrix} 
+          \vert  & \vert  &        & \vert  \\
+          T(e_1) & T(e_2) & \ldots & T(e_m) \\
+          \vert  & \vert  &        & \vert
+        \end{bmatrix}
+      ,\text{ where } e_{i} = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix}
+    \]
+    and \(1\) takes the \(i^{\text{th}}\) component of \(\vec{e_i}\).
+    
+    \begin{proof}
+      Consider linear transformation \(T\) such that \(T(\vec{x}) = A\vec{x}\) for matrix \(A\). Note that
+      \(T(\vec{e_1})\) is the first column of A, \(T(\vec{e_2})\) is the second column, etc. In general, the
+      \(i^{\text{th}}\) column of A is \(T(\vec{e_i})\). The theorem then follows.
+    \end{proof}
+    
+  \tbullet{2.1.3}
+    A transformation \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\) is linear iff:
+    \begin{enumerate}[i.]
+      \item \(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\), for all \(\vec{v}, \vec{w} \in \mathbb{R}^m\), and
+      \item \(T(k\vec{v}) = kT(\vec{v})\), for all \(\vec{v} \in \mathbb{R}^m\) and all scalars \(k\).
+    \end{enumerate}
+    
+    \begin{proof}
+      \forward
+        First, suppose \(T\) is a linear transformation. Then \(T(\vec{v} + \vec{w}) = A(\vec{v} + \vec{w})
+        = A\vec{v} + a\vec{w} = T(\vec{v}) + T(\vec{w})\). Also, \(T(k\vec{v}) = A(k\vec{v}) = kA(\vec{v}) 
+        = kT(\vec{v})\).
+        
+      \backward
+        Now, suppose \(T: \mathbb{R}^m \rightarrow \mathbb{R}^n\) is a transformation that satisfied
+        (\romannumeral 1) and (\romannumeral 2). We must show a matrix \(A\) exists such that \(T(\vec{x}) = A\vec{x}\), for
+        all \(\vec{x} \in \mathbb{R}^m\). Let \(\vec{e_1}, \vec{e_2}, \ldots, \vec{e_m}\) be the standard vectors. Then
+        \begin{align*}
+          T(\vec{x}) &= T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_m\vec{e_m})\\
+                     &= T(x_1\vec{e_1}) + T(x_2\vec{e_2}) + \ldots + T(x_m\vec{e_m}) \text{ by property (\romannumeral 1)}\\
+                     &= x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_mT(\vec{e_m}) \text{ by property (\romannumeral 2).}
+        \end{align*}
+        Thus 
+        \[ A = \begin{bmatrix}
+          \vert        & \vert        &        & \vert       \\
+          T(\vec{e_1}) & T(\vec{e_2}) & \ldots & T(\vec{e_m})\\
+          \vert        & \vert        &        & \vert       \end{bmatrix}], 
+        \] proving a matrix exists.
+    \end{proof}
+    
+  \dbullet{2.2.1}
+    For any positive constant \(k\), the matrix \(\begin{bmatrix} k&0\\ 0&k \end{bmatrix}\) defines
+    a scaling by \(k\). This is a "dilation" for \(k > 1\) and a "contraction" for \(0 < k < 1\).
+    
+  \dbullet{2.2.2}
+    The transformation \(T(\vec{x}) = \vec{x}^{\parallel}\) from \(\mathbb{R}^2\) to \(\mathbb{R}^2\)
+    is called the "orthogonal projection of \(\vec{x}\) onto \(L\), often denoted by \(\text{proj}_{L}(\vec{x})\).
+    
+  \tbullet{2.2.3}
+    \(\text{proj}_{L}(\vec{x}) = (\frac{\dotp{x}{w}}{\dotp{w}{w}})\vec{w}\) 
+    where \(\vec{w}\) is a nonzero vector parallel to \(L\), with matrix \(\frac{1}{w_1^2 + w_2^2}
+    \begin{bmatrix} w_1^2&w_1w_2\\ w_1w_2&w_2^2 \end{bmatrix}\).
+    
+    \begin{proof}
+      Let \(\vec{w}\) be a nonzero vector parallel to \(L\). Since \(\vec{x}^{\parallel}\) is parallel to \(\vec{w}\),
+      \(\vec{x}^{\parallel} = k\vec{w}\) for some scalar \(k\). Now:
+      \[
+        \vec{x}^{\perp} = \vec{x} - \vec{x}^{\parallel} = \vec{x} - k\vec{w}
+      \]
+      is perpendicular to \(L\). Thus
+      \begin{align*}
+        (\vec{x} - k\vec{w}) \cdot \vec{w} &= 0 \Rightarrow \dotp{x}{w} - k(\dotp{w}{w})\\
+                                           &= 0 \Rightarrow k\\
+                                           &= \frac{\dotp{x}{w}}{\dotp{w}{w}}
+      \end{align*}
+    \end{proof}
+
+  \dbullet{2.2.4}
+    Consider a line \(L\) in the coordinate plane, running through the origin, and let 
+    \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) be a vector in \(\mathbb{R}^2\). The linear transformation
+    \(T(\vec{x}) = \vec{x}^{\parallel} - \vec{x}^{\perp}\) is called the "reflection of \(\vec{x}\) about \(L\)," 
+    denoted \(\text{ref}_{L}(\vec{x})\).
+    
+  \tbullet{2.2.5}
+    \(\text{ref}_{L}(\vec{x}) = \text{proj}_{L}(\vec{x}) - \vec{x}\), yielding matrix of form 
+    \(\begin{bmatrix} a&b\\ b&-a \end{bmatrix}\) where \(a^2 + b^2 = 1\), if working with unit vectors.
+    
+    \begin{proof}
+      Note the following:
+      \begin{align*}
+        \text{ref}_{L}(\vec{x}) &= \vec{x}^{\parallel} - \vec{x}^{\perp}\\
+                                &= \vec{x}^{\parallel} - (\vec{x} - \vec{x}^{\parallel})\\
+                                &= 2\vec{x}^{\parallel} - \vec{x}\\
+                                &= 2\text{proj}_{L}(\vec{x})- \vec{x}\\
+                                &= (\frac{\dotp{x}{w}}{\dotp{w}{w}})\vec{w} - \vec{x}\\
+                                &= \frac{x_1w_1 + x_2w_2}{w_1^2 + w_2^2} \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}-
+                                   \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
+                                &= \frac{1}{w_1^2 + w_2^2}
+                                   \begin{bmatrix}
+                                     (w_1^2 - w_2^2) & 2w_1w_2 \\ 
+                                     2w_1w_2 & (w_2^2 - w_1^2) 
+                                   \end{bmatrix}
+                                   \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
+      \end{align*}
+    \end{proof}
+
+\end{outline}
+      
+\end{document}
