@@ -20,11 +20,11 @@
 % Used in bijective proofs
 
 \newcommand{\forward}{%
-    \((\Rightarrow)\;\)%
+  \((\Rightarrow)\;\)%
 }
 
 \newcommand{\backward}{%
-    \((\Leftarrow)\;\)%
+  \((\Leftarrow)\;\)%
 }
 
 
@@ -33,11 +33,11 @@
 % value
 
 \newcommand{\spscript}[2] {%
-    #1\textsuperscript{#2}%
+  #1\textsuperscript{#2}%
 }
 
 \newcommand{\sbscript}[2] {%
-    #1\textsubscript{#2}%
+  #1\textsubscript{#2}%
 }
 
 
@@ -51,10 +51,10 @@
 % denoting its position in the list.
 
 \newcommand{\inflate}[3][,] {%
-    \foreach \index in {1,...,#3} {%
-        #2\textsubscript{\index}
-        \ifnum\index=#3\relax\else#1\fi%
-    }%
+  \foreach \index in {1,...,#3} {%
+    #2\textsubscript{\index}
+    \ifnum\index=#3\relax\else#1\fi%
+  }%
 }
 
 
@@ -63,21 +63,7 @@
 % ellipsis
 
 \newcommand{\inflatedot}[3][,] {%
-    \inflate[#1]{#2}{2} #1 \ldots #1 #2\textsubscript{#3}%
-}
-
-% Works similarly to inflate but in a more general sense, replacing
-% all instances of a given tag with the index instead.
-
-\newcommand{\sinflate}[3][,] {%
-    \foreach \index in {1,...,#3} {%
-        \foreach \entry in {#2} {%
-            \edef\nentry{\detokenize\entry}
-            \edef\nmtag{\mtag}
-            \StrSubstitute{\nentry}{\nmtag}{\index}%
-        }%
-        \ifnum\index=#3\relax\else#1\fi%
-    }%
+  \inflate[#1]{#2}{2} #1 \ldots #1 #2\textsubscript{#3}%
 }
 
 
@@ -85,7 +71,7 @@
 % ===================================
 
 % Underline, smash, and bolden shortcut
-% This is used in many headers, and keeps the underlining an equal distance from 
+% This is used in many headers, and keeps the underlining an equal distance from
 % the word being underlined, regardless of the letters in the word.
 
 \newcommand{\@usb}[1] {%
@@ -96,23 +82,23 @@
 % Shortcuts for different kind of bullets that will appear in an outline
 
 \newcommand{\cbullet}[1] {%
-    \item \@usb{Corollary #1}:%
+  \item \@usb{Corollary #1}:%
 }
 
 \newcommand{\dbullet}[1] {%
-    \item \@usb{Def'n #1}:%
+  \item \@usb{Def'n #1}:%
 }
 
 \newcommand{\lbullet}[1] {%
-    \item \@usb{Lemma #1}:%
+  \item \@usb{Lemma #1}:%
 }
 
 \newcommand{\pbullet}[1] {%
-    \item \@usb{Prop'n #1}:%
+  \item \@usb{Prop'n #1}:%
 }
 
 \newcommand{\tbullet}[1] {%
-    \item \@usb{Theorem #1}:%
+  \item \@usb{Theorem #1}:%
 }
 
 
@@ -120,25 +106,25 @@
 % semantic relationship between the bulleted points of the outline
 
 \newenvironment{outline}
-{
-    \begin{itemize}
-    \setlength{\itemsep}{7pt}
-}
-{
-    \end{itemize}
-}
+  {%
+    \begin{itemize}%
+    \setlength{\itemsep}{7pt}%
+  }
+  {%
+    \end{itemize}%
+  }
 
 
 % Used to wrap around a proof of a theorem, proposition, etc. It provides
 % the necessary header and Q.E.D.
 
 \newenvironment{proof}
-{ 
-    \@usb{Proof}:\par% 
-}
-{
-    \hfill\(\blacksquare\)
-}
+  {%
+    \@usb{Proof}:\par%
+  }
+  {%
+    \hfill\(\blacksquare\)%
+  }
 
 
 % The following allows uniform construction of cases as defined in a proof.
@@ -148,14 +134,14 @@
 \setlist[@prfcases]{label=\@usb{Case \arabic*}:}
 
 \newenvironment{proofcases}[1][3em]
-{
-    \begin{addmargin}[#1]{0em}
-    \begin{@prfcases}
-}
-{
-    \end{@prfcases}
-    \end{addmargin}
-}
+  {%
+    \begin{addmargin}[#1]{0em}%
+    \begin{@prfcases}%
+  }
+  {%
+    \end{@prfcases}%
+    \end{addmargin}%
+  }
 
 
 % Vector Processing
@@ -172,21 +158,28 @@
 % Matrix Processing
 % ===================================
 
-% The following takes in a comma separated list as an argument and creates a new 
+% Creates a smaller matrix for compression
+
+%\newenvironment{bsmallmatrix}
+%  {\left[\begin{smallmatrix}}
+%  {\end{smallmatrix}\right]}
+
+
+% The following takes in a comma separated list as an argument and creates a new
 % column vector with the ith component set as the ith element of the given list.
 % http://tex.stackexchange.com/questions/146463/newcommand-for-bmatrix-of-features-using-pgffor-throws-missing-endgroup-error
 
 \newcommand*{\matrixbody}[1]{%
-    \global\let\MatrixBody\@empty
-    \foreach \entry in {#1} {%
-        \expandafter\g@addto@macro\expandafter\MatrixBody
-            \expandafter{%
-                \expandafter\text\expandafter{\entry}\\%
-            }%
+  \global\let\MatrixBody\@empty
+  \foreach \entry in {#1} {%
+    \expandafter\g@addto@macro\expandafter\MatrixBody
+      \expandafter{%
+        \expandafter\text\expandafter{\entry}\\%
+      }%
     }%
-    \begin{bmatrix}%
-    \MatrixBody
-    \end{bmatrix}%
+  \begin{bmatrix}%
+  \MatrixBody
+  \end{bmatrix}%
 }
 
 

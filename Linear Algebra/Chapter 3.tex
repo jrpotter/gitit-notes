@@ -1,0 +1,222 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Subspaces of \(\mathbb{R}^n\) and Their Dimensions}
+\author{Otto Bretscher, Linear Algebra With Applications (Chapter 3)}
+\date{May 29\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{3.1.1}
+    The "image" of a function consists of all the values the function takes in its target space. If \(f\) is a function
+    from \(X\) to \(Y\), then \(\text{image}(f) = \{f(x): x \in X\} = \{ b \in Y : b = f(x) \text{ for some } x \in X\}\).
+    
+  \dbullet{3.1.2}
+    Consider the vectors \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_m} \in \mathbb{R}^n\). The set of all linear 
+    combinations \(c_1\vec{v_1} + c_2\vec{v_2} + \ldots, c_m\vec{v_m}\) of the vectors \(\vec{v_1}, \ldots,
+    \vec{v_m}\) is called their "span:" \(\text{span}(\vec{v_1}, \ldots, \vec{v_m}) = \{c_1\vec{v_1} + 
+    c_2\vec{v_2} + \ldots, c_m\vec{v_m} : c_1, \ldots, c_m \in \mathbb{R}\}\).
+    
+  \tbullet{3.1.3}
+    The image of a linear transformation is the span of the column vectors of \(A\). We denote the image of \(T\)
+    by \(\text{im}(T)\) or \(\text{im}(A)\).
+    
+    \begin{proof}
+      Let \(T(\vec{x}) = A\vec{x}\) where \(A = \begin{bmatrix} \vec{v_1} & \ldots & \vec{v_m} \end{bmatrix}\). Then
+      \(A\vec{x} = x_1\vec{v_1} + \ldots + x_m\vec{v_m}\).
+    \end{proof}
+    
+  \tbullet{3.1.4}
+    The image of a linear transformation satisfy the following:
+    \begin{enumerate}[i.]
+      \item 
+        The zero vector \(\vec{0} \in \mathbb{R}^n\) is the image of \(T\).
+      \item 
+        The image of \(T\) is "closed under addition:" if \(\vec{v_1}, \vec{v_2} \in \text{im}(T)\), then
+        \(\vec{v_1} + \vec{v_2} \in \text{im}(T)\).
+      \item
+        The image of \(T\) is "closed under scalar multiplication:" if \(\vec{v} \in \text{im}(T)\) and \(k\)
+        is an arbitrary scalar, then \(k\vec{v} \in \text{im}(T)\).
+    \end{enumerate}
+    
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          \(\vec{0} = A\vec{0} = T(\vec{0})\).
+        \item
+          There exist \(\vec{w_1}, \vec{w_2} \in \mathbb{R}^m\) such that \(T(\vec{w_1}) = \vec{v_1}\) and
+          \(T(\vec{w_2}) = \vec{v_2}\). Then \(T(\vec{v_1} + \vec{v_2}) = T(\vec{w_1}) + T(\vec{w_2}) =
+          \vec{v_1} + \vec{v_2}\).
+        \item
+          There exist \(\vec{w} \in \mathbb{R}^m\) such that \(T(\vec{w}) = \vec{v}\). Then \(T(k\vec{w}) =
+          kT(\vec{w}) = k\vec{v}\) for some arbitrary scalar \(k\).
+      \end{enumerate}
+    \end{proof}
+
+  \dbullet{3.1.5}
+    The "kernel" of a linear transformation \(T(\vec{x}) = A\vec{x}\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\)
+    consists of all zeros of the transformation, that is, the solutions of the equation \(T(\vec{x}) = A\vec{x}
+    = \vec{0}\).
+    
+  \tbullet{3.1.6}
+    The kernel of a linear transformation satisfy the following:
+    \begin{enumerate}[i.]
+      \item
+        The zero vector \(\vec{0}\) in \(\mathbb{R}^m\) is in the kernel of \(T\).
+      \item
+        The kernel is closed under addition and scalar multiplication.
+    \end{enumerate}
+
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          \(T(\vec{0}) = A\vec{0} = \vec{0}\).
+        \item
+          Let \(\vec{v_1}, \vec{v_2} \in \text{ker}(A)\), and \(k\) be an arbitrary scalar. Then \(T(\vec{v_1}
+          + \vec{v_2}) = T(\vec{v_1}) + T(\vec{v_2}) = \vec{0} + \vec{0} = \vec{0}\). Similarly, \(T(k\vec{v}) 
+          = kT(\vec{v}) = k\vec{0} = \vec{0}\).
+      \end{enumerate}
+    \end{proof}
+    
+  \tbullet{3.1.7}
+    Let \(A\) be an \(n \times m\) matrix and \(B\) a square matrix. Then:
+    \begin{enumerate}[i.]
+      \item \(\text{ker}(A) = \{0\}\) if and only if \(\text{rank}(A) = m\).
+      \item If \(\text{ker}(A) = \{0\}\), then \(m < n\). If \(m > n\), nonzero vectors are in \(\text{ker}(A)\).
+      \item \(\text{ker}(B) = \{0\}\) if and only if \(B\) is invertible.
+    \end{enumerate}
+    
+  \dbullet{3.2.1}
+    A subset \(W\) of the vector space \(\mathbb{R}^n\) is called a "(linear) subspace of \(\mathbb{R}^n\)" if it
+    has the following three properties:
+    \begin{enumerate}[i.]
+      \item \(W\) contains the zero vector in \(\mathbb{R}^n\),
+      \item \(W\) is closed under addition and scalar multiplication
+    \end{enumerate}
+    
+  \tbullet{3.2.2}
+    If \(T(\vec{x}) = A\vec{x}\) is a linear transformation from \(\mathbb{R}^m\) to \(\mathbb{R}^n\), then
+    \(\text{ker}(T)\) is a subspace of \(\mathbb{R}^m\) and \(\text{image}(T)\) is a subspace of \(\mathbb{R}^n\).
+    
+  \dbullet{3.2.3}
+    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). We say vector \(\vec{v_i}\) in list
+    \(\vec{v_1}, \ldots, \vec{v_m}\) is "redundant" if \(\vec{v_i}\) is a linear combination of preceding
+    vectors \(\vec{v_1}, \ldots, \vec{v_i}\). The vectors are "linearly independent" if none of them is
+    redundant. Otherwise they are "linearly dependent." The vectors form a "basis" of subspace \(V\) of 
+    \(\mathbb{R}^n\) if they span \(V\) and are linearly independent (and that the vectors are in \(V\)).
+    
+  \tbullet{3.2.4}
+    To construct a basis of the image of a matrix \(A\), list all the column vectors of \(A\), and omit redundant
+    vectors from the list.
+    
+  \tbullet{3.2.5}
+    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). If \(\vec{v_1}\) is nonzero, and if each
+    of the vectors \(\vec{v_i}, i \geq 2\), have a nonzero entry in a component where preceding vectors have \(0\),
+    then they are linearly independent.
+    
+  \dbullet{3.2.6}
+    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). An equation of the form \(c_1\vec{v_1} +
+    \ldots + c_m\vec{v_m} = \vec{0}\) is called a "(linear) relation" among the vectors. There is always the "trivial
+    relation" \(c_1 = \ldots = c_m = 0\). "Nontrivial relations" may or may not exist.
+    
+  \tbullet{3.2.7}
+    The vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in \(\mathbb{R}^n\) are linearly dependent if and only if there
+    are nontrivial relations among them.
+    
+    \begin{proof}
+      \forward
+        Let \(\vec{v_i} = c_1\vec{v_1} + \ldots + c_{i-1}\vec{v_{i-1}}\) be a redundant vector. Then we can
+        generate a nontrivial relation \(\vec{0} = c_1\vec{v_1} + \ldots + c_{i-1}\vec{v_{i-1}} - \vec{v_i}\)
+        
+      \backward
+        Suppose a nontrivial relation \(c_1\vec{v_1} + \ldots + c_i\vec{v_i} + \ldots + c_m\vec{v_m} = \vec{0}\)
+        exists, where \(i\) is the highest index where \(c_i \neq 0\). Then \(\vec{v_i} = -\frac{c_1}{c_i}\vec{v_1}
+        - \ldots - \frac{c_{i-1}}{c_i}\vec{v_{i-1}}\).
+    \end{proof}
+    
+  \tbullet{3.2.8}
+    The vectors in the kernel of an \(n \times m\) matrix \(A\) correspond to the linear relations among the column
+    vectors of \(A\). The equation \(A\vec{x} = \vec{0} \Rightarrow x_1\vec{v_1} + \ldots + x_m\vec{v_m} = \vec{0}\).
+    In particular, the column vectors of \(A\) atre linearly independent iff \(\text{ker}(A) = \{\vec{0}\}\), which
+    implies \(m \leq n\). Thus we can find at most \(n\) linearly indepndent vectors in \(\mathbb{R}^n\).
+    
+    \begin{proof}
+      Let \(\vec{v_1}, \ldots, \vec{v_m}\) be the column vectors of an \(n \times m\) matrix \(A\). Then \(\text{ker}(A)
+      = \text{ all } \vec{x} \text{ such that } A\vec{x} = x_1\vec{v_1} + \ldots + x_m\vec{v_m} = \vec{0}\).
+      
+      \forward
+        Suppose the column vectors are linearly independent. Then, by Theorem 3.2.7, only the trivial relation
+        is a solution. Thus \(\text{ker}(A) = \{0\}\).
+        
+      \backward
+        If \(\text{ker}(A) = \{0\}\), then only \(\vec{0}\) is a solution to \(A\vec{x} = \vec{0}\). Thus only
+        the trivial relation works. Theorem 3.2.7 states the column vectors are linearly independent.
+        
+      By Theorem 3.1.7, \(\text{ker}(A) = \{0\} \Rightarrow m < n\) so surely \(m \leq n\).
+    \end{proof}
+    
+  \tbullet{3.2.9}
+    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in a subspace \(V\) of \(\mathbb{R}^n\). The vectors form
+    a basis of \(V\) if and only if every vector \(\vec{v} \in V\) can be expressed uniquely as a linear combination
+    \(\vec{v} = c_1\vec{v_1} + \ldots + c_m\vec{v_m}\).
+    
+    \begin{proof}
+      \forward
+        There exists at least one solution since \(\vec{v_1}, \ldots, \vec{v_m}\) span \(V\). Suppose \(\vec{v} =
+        c_1\vec{v_1} + \ldots + c_m\vec{v_m} = d_1\vec{v_1} + \ldots + d_m\vec{v_m}\). Then \(\vec{0} = (c_1-d_1)\vec{v_1}
+        + \ldots + (c_m-d_m)\vec{v_m}\). Since the vectors are linearly independent, this must be the trivial relation, 
+        implying \(c_1 = d_1, \ldots, c_m = d_m\).
+        
+      \backward
+        Suppose \(\vec{v} = c_1\vec{v_1} + \ldots + c_m\vec{v_m}\) is the unique representation of \(\vec{v}\). Clearly
+        the vectors span \(V\) since every \(\vec{v} \in V\) can be written as a linear combination of \(\vec{v_1}, 
+        \ldots, \vec{v_m}\). Then this implies \(\vec{0} = c_1\vec{v_1} + \ldots + c_m\vec{v_m}\) has a unique
+        representation. Therefore only the trivial relation exists, and the vectors are linearly independent, satisfying
+        the definition of a basis.
+    \end{proof}
+    
+  \tbullet{3.3.1}
+    Consider vectors \(\vec{v_1}, \ldots, \vec{v_p}\) and \(\vec{w_1}, \ldots, \vec{w_q}\) in a subspace \(V\)
+    of \(\mathbb{R}^n\). If the vectors \(\vec{v_1}, \ldots, \vec{v_p}\) are linearly independent, and vectors
+    \(\vec{w_1}, \ldots, \vec{w_q}\) span \(V\), then \(q \geq p\).
+    
+    \begin{proof}
+      Consider matrices \(A = \begin{bmatrix} \vec{w_1} & \ldots & \vec{w_q} \end{bmatrix}\) and
+      \(B = \begin{bmatrix} \vec{v_1} & \ldots & \vec{v_p} \end{bmatrix}\). Note that \(\text{im}(A) = V\) 
+      since the vectors \(\vec{w_1}, \ldots, \vec{w_q}\) span \(V\). The vectors \(\vec{v_1}, \ldots, 
+      \vec{v_p}\) are in this image and so \(\vec{v_1} = A\vec{u_1}, \ldots, \vec{v_p} = A\vec{u_p}\) for 
+      some vectors \(\vec{u_1}, \ldots, \vec{u_p}\) in \(\mathbb{R}^q\). Thus \(B \begin{bmatrix} \vec{v_1} 
+      & \ldots & \vec{v_p} \end{bmatrix} = A \begin{bmatrix} \vec{u_1} & \ldots & \vec{u_p} \end{bmatrix} = C\),
+      or \(B = AC\). 
+      
+      The kernel of \(C\) is a subset of the kernel of \(B\) since \(C\vec{x} = \vec{0} \Rightarrow AC\vec{x} =
+      A\vec{0} = \vec{0}\). But the kernel of \(B\) is \(\{0\}\) since \(\vec{v_1}, \ldots, \vec{v_p}\) are
+      linearly independent. Thus, \(\text{ker}(C) = \{0\}\) as well, which by Theorem 3.1.7, tells us \(C\) has
+      as many rows as columns of \(q \geq p\).
+    \end{proof}
+    
+  \tbullet{3.3.2}
+    All bases of a subspace \(V\) of \(\mathbb{R}^n\) consist of the same number of vectors.
+    
+    \begin{proof}
+      Consider two bases \(\vec{v_1}, \ldots, \vec{v_p}\) and \(\vec{w_1}, \ldots, \vec{w_q}\) of \(V\).
+      Then by Theorem 3.3.1, \(p \geq q\) and \(q \geq p\) so \(p = q\).
+    \end{proof}
+    
+\end{outline}
+
+\end{document}

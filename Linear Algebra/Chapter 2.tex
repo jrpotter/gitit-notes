@@ -9,7 +9,7 @@
 
 \title{Linear Transformations}
 \author{Otto Bretscher, Linear Algebra With Applications (Chapter 2)}
-\date{May 27, 2015}
+\date{May 29\textsuperscript{th}, 2015}
 
 
 % Document
@@ -59,12 +59,15 @@
         
       \backward
         Now, suppose \(T: \mathbb{R}^m \rightarrow \mathbb{R}^n\) is a transformation that satisfied
-        (\romannumeral 1) and (\romannumeral 2). We must show a matrix \(A\) exists such that \(T(\vec{x}) = A\vec{x}\), for
-        all \(\vec{x} \in \mathbb{R}^m\). Let \(\vec{e_1}, \vec{e_2}, \ldots, \vec{e_m}\) be the standard vectors. Then
+        (\romannumeral 1) and (\romannumeral 2). We must show a matrix \(A\) exists such that 
+        \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \mathbb{R}^m\). Let \(\vec{e_1}, \vec{e_2}, 
+        \ldots, \vec{e_m}\) be the standard vectors. Then
         \begin{align*}
           T(\vec{x}) &= T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_m\vec{e_m})\\
-                     &= T(x_1\vec{e_1}) + T(x_2\vec{e_2}) + \ldots + T(x_m\vec{e_m}) \text{ by property (\romannumeral 1)}\\
-                     &= x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_mT(\vec{e_m}) \text{ by property (\romannumeral 2).}
+                     &= T(x_1\vec{e_1}) + T(x_2\vec{e_2}) + \ldots + T(x_m\vec{e_m}) 
+                        \text{ by property (\romannumeral 1)}\\
+                     &= x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_mT(\vec{e_m}) 
+                        \text{ by property (\romannumeral 2).}
         \end{align*}
         Thus 
         \[ A = \begin{bmatrix}
@@ -75,7 +78,7 @@
     \end{proof}
     
   \dbullet{2.2.1}
-    For any positive constant \(k\), the matrix \(\begin{bmatrix} k&0\\ 0&k \end{bmatrix}\) defines
+    For any positive constant \(k\), the matrix \(\begin{bsmallmatrix} k&0\\ 0&k \end{bsmallmatrix}\) defines
     a scaling by \(k\). This is a "dilation" for \(k > 1\) and a "contraction" for \(0 < k < 1\).
     
   \dbullet{2.2.2}
@@ -85,10 +88,11 @@
   \tbullet{2.2.3}
     \(\text{proj}_{L}(\vec{x}) = (\frac{\dotp{x}{w}}{\dotp{w}{w}})\vec{w}\) 
     where \(\vec{w}\) is a nonzero vector parallel to \(L\), with matrix \(\frac{1}{w_1^2 + w_2^2}
-    \begin{bmatrix} w_1^2&w_1w_2\\ w_1w_2&w_2^2 \end{bmatrix}\).
+    \begin{bsmallmatrix} w_1^2&w_1w_2\\ w_1w_2&w_2^2 \end{bsmallmatrix}\).
     
     \begin{proof}
-      Let \(\vec{w}\) be a nonzero vector parallel to \(L\). Since \(\vec{x}^{\parallel}\) is parallel to \(\vec{w}\),
+      Let \(\vec{w}\) be a nonzero vector parallel to \(L\). Since \(\vec{x}^{\parallel}\) 
+      is parallel to \(\vec{w}\),
       \(\vec{x}^{\parallel} = k\vec{w}\) for some scalar \(k\). Now:
       \[
         \vec{x}^{\perp} = \vec{x} - \vec{x}^{\parallel} = \vec{x} - k\vec{w}
@@ -109,7 +113,7 @@
     
   \tbullet{2.2.5}
     \(\text{ref}_{L}(\vec{x}) = \text{proj}_{L}(\vec{x}) - \vec{x}\), yielding matrix of form 
-    \(\begin{bmatrix} a&b\\ b&-a \end{bmatrix}\) where \(a^2 + b^2 = 1\), if working with unit vectors.
+    \(\begin{bsmallmatrix} a&b\\ b&-a \end{bsmallmatrix}\) where \(a^2 + b^2 = 1\), if working with unit vectors.
     
     \begin{proof}
       Note the following:
@@ -119,8 +123,8 @@
                                 &= 2\vec{x}^{\parallel} - \vec{x}\\
                                 &= 2\text{proj}_{L}(\vec{x})- \vec{x}\\
                                 &= (\frac{\dotp{x}{w}}{\dotp{w}{w}})\vec{w} - \vec{x}\\
-                                &= \frac{x_1w_1 + x_2w_2}{w_1^2 + w_2^2} \begin{bmatrix} w_1 \\ w_2 \end{bmatrix}-
-                                   \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
+                                &= \frac{x_1w_1 + x_2w_2}{w_1^2 + w_2^2} \begin{bmatrix} w_1 \\ w_2 
+                                   \end{bmatrix}-\begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\\
                                 &= \frac{1}{w_1^2 + w_2^2}
                                    \begin{bmatrix}
                                      (w_1^2 - w_2^2) & 2w_1w_2 \\ 
@@ -129,7 +133,184 @@
                                    \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}
       \end{align*}
     \end{proof}
+    
+  \tbullet{2.2.6}
+    The matrix of a counterclockwise rotation in \(\mathbb{R}^2\) through an angle \(\theta\) is 
+    \(\begin{bsmallmatrix} \cos{\theta} & -\sin{\theta} \\ \sin{\theta} & \cos{\theta} \end{bsmallmatrix}\) 
+    where this matrix is of form \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) and \(a^2 + b^2 = 1\).
+    
+    \begin{proof}
+      Consider 
+      \[
+        \vec{x} = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \text{ and }
+        \vec{y} = \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} \text{,}
+      \]
+      obtained by rotating \(\vec{x}\) by \(\frac{\pi}{2}\). We see \(T(\vec{x})\),
+      the transformation that rotates \(\vec{x}\) by \(\theta\), is \((\cos{\theta})\vec{x} 
+      + (\sin{\theta})\vec{y}\). Thus:
+      \begin{align*}
+        T(\vec{x}) &= \cos{\theta} \begin{bmatrix}  x_1 \\ x_2 \end{bmatrix} + 
+                      \sin{\theta} \begin{bmatrix} -x_2 \\ x_1 \end{bmatrix} \\
+                   &= \begin{bmatrix} 
+                        \cos{\theta} & -\sin{\theta}           \\ 
+                        \sin{\theta} &  \cos{\theta} 
+                      \end{bmatrix}\text{,}
+      \end{align*}
+      and we note \(cos^2\theta + sin^2\theta = 1\).
+    \end{proof}
 
+  \tbullet{2.2.7}
+    A matrix of the form \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) represents a rotation combined
+    with a scaling. More precisely, if \(r\) and \(\theta\) are polar coordinates of \(\begin{bsmallmatrix}
+    a \\ b \end{bsmallmatrix}\), then \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) represents a rotation
+    \(\theta\) with a scaling by \(r\).
+    
+  \tbullet{2.2.8}
+    The matrix of a "horizontal shear" is of the form \(\begin{bsmallmatrix} 1 & k \\ 0 & 1 \end{bsmallmatrix}\), and the
+    matrix of a "vertical shear" is of the form \(\begin{bsmallmatrix} 1 & 0 \\ k & 1 \end{bsmallmatrix}\), where \(k\) is
+    and arbitrary constant.
+    
+  \tbullet{2.3.1}
+    Let \(A\) be a \(p \times n\) matrix and \(B\) be a \(m \times p\) matrix. Then the transformation
+    \(\vec{z} = B(A\vec{x})\) is linear.
+    
+    \begin{proof}
+      Let \(T(\vec{x}) = B(A\vec{x})\). Then
+      \begin{align*}
+        T(\vec{v}+\vec{w}) &= B(A(\vec{v}+\vec{w}))     \\
+                           &= B(A\vec{v}+A\vec{w})      \\
+                           &= B(A\vec{v}) + B(A\vec{w})
+      \end{align*}
+      Similarly, \(T(k\vec{v}) = B(A(k\vec{v})) = B(kA\vec{v}) = kB(A\vec{v})\).
+    \end{proof}
+    
+  \dbullet{2.3.2}
+    The matrix of the linear transformation \(\vec{z} = B(A\vec{x})\) is called the "product" of the matrices \(B\)
+    and \(A\), written as \(BA\).
+    
+  \tbullet{2.3.3}
+    Let \(B\) be an \(n \times p\) matrix and \(A\) a \(q \times m\) matrix. The product \(BA\) is defined
+    if and only if \(p = q\).
+    
+  \tbullet{2.3.4}
+    If \(B\) is an \(n \times p\) matrix and \(A\) a \(p \times m\) matrix, then the product \(BA\) is
+    an \(n \times m\) matrix.
+    
+  \tbullet{2.3.5}
+    Let \(B\) be an \(n \times p\) matrix and \(A\) a \(p \times m\) matrix columns with columns
+    \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_m}\). Then \(BA = B\begin{bmatrix} \vec{v_1} & \vec{v_2} & \ldots
+    & \vec{v_m}\end{bmatrix} = \begin{bmatrix} B\vec{v_1} & B\vec{v_2} & \ldots & B\vec{v_m}\end{bmatrix}\).
+    
+    \begin{proof}
+      The \(\spscript{i}{th} \text{ column of } BA) = (BA)\vec{e_i} = B(A\vec{e_i}) = B(\spscript{i}{th}
+      \text{ column of } A)\).
+    \end{proof}
+    
+  \tbullet{2.3.6}
+    \(AB \neq BA\), in general.
+    
+  \dbullet{2.3.7}
+    If \(AB = BA\), we say the matrices \(A\) and \(B\) "commute".
+    
+  \tbullet{2.3.8}
+    Let \(B\) be an \(n \times p\) matrix and \(A\) a \(p \times m\) matrix. The \(\spscript{ij}{th}\) entry
+    of \(BA\) is the dot product of the \(\spscript{i}{th}\) row of \(B\) with the \(\spscript{j}{th}\) column
+    of \(A\). That is, \(BA\) is the \(n \times m\) matrix whose \(\spscript{ij}{th}\) entry is \(b_{i1}a_{1j} +
+    b_{i2}a_{2j} + \ldots + b_{ip}a_{pj} = \sum_{k=1}^p b_{ik}a_{kj}\).
+    
+  \tbullet{2.3.9}
+    For an \(n \times m\) matrix \(A\), \(AI_m = I_nA = A\).
+    
+  \tbullet{2.3.10}
+    \((AB)C = A(BC)\). We simply write \(ABC\) in this case.
+    
+  \tbullet{2.3.11}
+    Let \(A, B\) be \(n \times p\) matrices, and \(C,D\) be \(p \times m\) matrices. Then \(A(C + D) = AC + AD\),
+    and \((A + B)C = AC + BC\).
+    
+  \tbullet{2.3.12}
+    If \(A\) is an \(n \times p\) matrix, \(B\) is a \(p \times m\) matrix, and \(k\) is a scalar, then \((kA)B =
+    A(kB) = k(AB)\).
+    
+  \tbullet{2.3.13}
+    Block matrices can be multiplied as though the blocks were scalars (i.e. like in Theorem 2.3.6) provided 
+    that all submatrix products are defined.
+    
+  \dbullet{2.4.1}
+    A function \(T\) from \(X\) to \(Y\) is called invertible if the equation \(T(x) = Y\) has a unique solution
+    \(x \in X\) for each \(y \in Y\).
+    
+  \dbullet{2.4.2}
+    A square matrix \(A\) is said to be "invertible" if the linear transformation \(\vec{y} = T(\vec{x}) = A\vec{x}\)
+    is invertible. In this case, the matrix of \(T^{-1}\) is denoted by \(A^{-1}\). If the linear transformation 
+    \(\vec{y} = T(\vec{x}) = A\vec{x}\) is invertible, then its inverse \(\vec{x} = T^{-1}(\vec{y}) = Ay^{-1}\).
+    
+  \tbullet{2.4.3}
+    An \(n \times n\) matrix \(A\) is invertible if and only if rref\((A) = I_n\) or, equivalently, if 
+    rank\((A) = n\).
+    
+  \tbullet{2.4.4}
+    Let \(A\) be an \(n \times n\) matrix. If \(A\) is invertible, then the system \(A\vec{x}=\vec{b}\) has
+    the unique solution \(\vec{x} = A^{-1}\vec{b}\). Else, the system \(A\vec{x} = \vec{b}\) has infinitely
+    many solutions or none.
+    
+  \tbullet{2.4.5}
+    Let \(A\) be an \(n \times n\) matrix. Let \(\vec{b} \in \mathbb{R}^n\) such that \(\vec{b} = \vec{0}\).
+    The system \(A\vec{x} - \vec{b}\) has \(\vec{x} = \vec{0}\) as a solution. If \(A\) is invertible, then
+    this is the only solution. Otherwise \(A\vec{x} = \vec{b}\) has infinitely many solutions.
+    
+  \tbullet{2.4.6}
+    For an invertible \(n \times n\) matrix \(A\), \(A^{-1}A = I_n\) and \(AA^{-1} = I_n\).
+    
+  \tbullet{2.4.7}
+    If \(A\) and \(B\) are invertible \(n \times n\) matrices, then \(BA\) is also invertible, and
+    \((BA)^{-1} = A^{-1}B^{-1}\).
+    
+    \begin{proof}
+      Let \(A,B\) be invertible matrices.
+      \begin{align*}
+        \vec{y} &= BA\vec{x}                                 \\
+                &\Rightarrow B^{-1}\vec{y} = B^{-1}BA\vec{x} \\
+                &\Rightarrow B^{-1}\vec{y} = A\vec{x}        \\
+                &\Rightarrow A^{-1}B^{-1}\vec{y} = \vec{x}
+      \end{align*}
+    \end{proof}
+
+  \tbullet{2.4.8}
+    The \(2 \times 2\) matrix \(A = \begin{bsmallmatrix} a & b \\ c & d \end{bsmallmatrix}\) is invertible if and only
+    if \(ad-bc \neq 0\). Quantity \(ad - bc\) is called the "determinant" of \(A\), written \(\text{det}(A)\). 
+    If A is invertible, then \(A^{-1} = \frac{1}{\text{det}(A)} \begin{bsmallmatrix} d & -b \\ -c & a \end{bsmallmatrix}\).
+    
+  \tbullet{2.4.9}
+    If \(A = \begin{bmatrix} \vec{v} & \vec{w} \end{bmatrix}\) is a \(2 \times 2\) matrix with nonzero columns
+    \(\vec{v}\) and \(\vec{w}\), then \(\text{det}(A) = \text{det}\begin{bmatrix} \vec{v} & \vec{w} \end{bmatrix} =
+    |\vec{v}|\sin{\theta}|\vec{w}|\), where \(\theta\) is the oriented angle from \(\vec{v}\) to \(\vec{w}\),
+    with \(-\pi < \theta \leq \pi\).
+    
+    \begin{proof}
+      Let \(A = \begin{bmatrix} \vec{v} & \vec{w} \end{bmatrix}\) be a \(2 \times 2\) matrix with 
+      \[
+        \vec{v} = \begin{bmatrix} a \\ c \end{bmatrix},
+        \vec{w} = \begin{bmatrix} b \\ d \end{bmatrix}, \text{ and }
+        \vec{x} = \begin{bmatrix} -c \\ a \end{bmatrix},
+      \]
+      where \(\vec{x}\) is the auxiliary vector obtained by a rotation of \(\vec{v}\) by \(\sfrac{\pi}{2}\) radians. 
+      Let \(\theta\) be the oriented angle from \(\vec{v}\) to \(\vec{w}\), with \(-\pi < \theta \leq \sfrac{\pi}{2}\). 
+      Then \(\text{det}(A) = ad-bc = \dotp{x}{w} = |\vec{x}|\cos{(\frac{\pi}{2} \cdot \theta)}|\vec{w}| 
+      = |\vec{v}|\sin{\theta}|\vec{w}|\).
+    \end{proof}
+
+  \cbullet{2.4.10}
+    \begin{enumerate}[i.]
+      \item 
+        \(|\text{det}(A)|=|\vec{v}||\sin{\theta}||\vec{w}|\) is the area of the parallelogram spanned by
+        \(\vec{v}\) and \(\vec{w}\).
+      \item 
+        \(\text{det}(A) = 0\) if \(\vec{v}\) and \(\vec{w}\) are parallel, meaning \(\theta = 0\) or
+        \(\theta = \pi\).
+      \item
+        \(\text{det}(A) > 0\) if \(0 < \theta < \pi\) and \(\text{det}(A) < 0\) if \(-\pi < \theta < 0\).
+    \end{enumerate}
 \end{outline}
       
 \end{document}
