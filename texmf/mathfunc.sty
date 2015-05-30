@@ -40,6 +40,7 @@
   #1\textsubscript{#2}%
 }
 
+
 % Used for quicker access to calligraphic text
 
 \newcommand{\bbp} {%
@@ -52,6 +53,13 @@
 
 \newcommand{\bbr} {%
   \mathbb{R}%
+}
+
+
+% Shortcut of limit notation, with optional argument allowing left or right limits
+
+\newcommand{\xlimit}[3][] {%
+  \lim\limits_{#2\rightarrow #3^{#1}}%
 }
 
 
