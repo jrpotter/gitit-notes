@@ -22,11 +22,11 @@
 \begin{outline}
 
   \dbullet{2.1.1}
-    A function \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\) is called a "linear transformation" if there exists 
-    an \(n \times m\) matrix \(A\) such that \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \mathbb{R}^m\).
+    A function \(T\) from \(\bbr^m\) to \(\bbr^n\) is called a "linear transformation" if there exists 
+    an \(n \times m\) matrix \(A\) such that \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \bbr^m\).
     
   \tbullet{2.1.2}
-    Consider a linear transformation from \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n]\). Then the matrix of \(T\) is:
+    Consider a linear transformation from \(T\) from \(\bbr^m\) to \(\bbr^n]\). Then the matrix of \(T\) is:
     \[
       A = 
         \begin{bmatrix} 
@@ -45,10 +45,10 @@
     \end{proof}
     
   \tbullet{2.1.3}
-    A transformation \(T\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\) is linear iff:
+    A transformation \(T\) from \(\bbr^m\) to \(\bbr^n\) is linear iff:
     \begin{enumerate}[i.]
-      \item \(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\), for all \(\vec{v}, \vec{w} \in \mathbb{R}^m\), and
-      \item \(T(k\vec{v}) = kT(\vec{v})\), for all \(\vec{v} \in \mathbb{R}^m\) and all scalars \(k\).
+      \item \(T(\vec{v} + \vec{w}) = T(\vec{v}) + T(\vec{w})\), for all \(\vec{v}, \vec{w} \in \bbr^m\), and
+      \item \(T(k\vec{v}) = kT(\vec{v})\), for all \(\vec{v} \in \bbr^m\) and all scalars \(k\).
     \end{enumerate}
     
     \begin{proof}
@@ -58,9 +58,9 @@
         = kT(\vec{v})\).
         
       \backward
-        Now, suppose \(T: \mathbb{R}^m \rightarrow \mathbb{R}^n\) is a transformation that satisfied
+        Now, suppose \(T: \bbr^m \rightarrow \bbr^n\) is a transformation that satisfied
         (\romannumeral 1) and (\romannumeral 2). We must show a matrix \(A\) exists such that 
-        \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \mathbb{R}^m\). Let \(\vec{e_1}, \vec{e_2}, 
+        \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \bbr^m\). Let \(\vec{e_1}, \vec{e_2}, 
         \ldots, \vec{e_m}\) be the standard vectors. Then
         \begin{align*}
           T(\vec{x}) &= T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_m\vec{e_m})\\
@@ -82,7 +82,7 @@
     a scaling by \(k\). This is a "dilation" for \(k > 1\) and a "contraction" for \(0 < k < 1\).
     
   \dbullet{2.2.2}
-    The transformation \(T(\vec{x}) = \vec{x}^{\parallel}\) from \(\mathbb{R}^2\) to \(\mathbb{R}^2\)
+    The transformation \(T(\vec{x}) = \vec{x}^{\parallel}\) from \(\bbr^2\) to \(\bbr^2\)
     is called the "orthogonal projection of \(\vec{x}\) onto \(L\), often denoted by \(\text{proj}_{L}(\vec{x})\).
     
   \tbullet{2.2.3}
@@ -107,7 +107,7 @@
 
   \dbullet{2.2.4}
     Consider a line \(L\) in the coordinate plane, running through the origin, and let 
-    \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) be a vector in \(\mathbb{R}^2\). The linear transformation
+    \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) be a vector in \(\bbr^2\). The linear transformation
     \(T(\vec{x}) = \vec{x}^{\parallel} - \vec{x}^{\perp}\) is called the "reflection of \(\vec{x}\) about \(L\)," 
     denoted \(\text{ref}_{L}(\vec{x})\).
     
@@ -135,7 +135,7 @@
     \end{proof}
     
   \tbullet{2.2.6}
-    The matrix of a counterclockwise rotation in \(\mathbb{R}^2\) through an angle \(\theta\) is 
+    The matrix of a counterclockwise rotation in \(\bbr^2\) through an angle \(\theta\) is 
     \(\begin{bsmallmatrix} \cos{\theta} & -\sin{\theta} \\ \sin{\theta} & \cos{\theta} \end{bsmallmatrix}\) 
     where this matrix is of form \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) and \(a^2 + b^2 = 1\).
     
@@ -255,7 +255,7 @@
     many solutions or none.
     
   \tbullet{2.4.5}
-    Let \(A\) be an \(n \times n\) matrix. Let \(\vec{b} \in \mathbb{R}^n\) such that \(\vec{b} = \vec{0}\).
+    Let \(A\) be an \(n \times n\) matrix. Let \(\vec{b} \in \bbr^n\) such that \(\vec{b} = \vec{0}\).
     The system \(A\vec{x} - \vec{b}\) has \(\vec{x} = \vec{0}\) as a solution. If \(A\) is invertible, then
     this is the only solution. Otherwise \(A\vec{x} = \vec{b}\) has infinitely many solutions.
     
@@ -311,6 +311,7 @@
       \item
         \(\text{det}(A) > 0\) if \(0 < \theta < \pi\) and \(\text{det}(A) < 0\) if \(-\pi < \theta < 0\).
     \end{enumerate}
+    
 \end{outline}
       
 \end{document}

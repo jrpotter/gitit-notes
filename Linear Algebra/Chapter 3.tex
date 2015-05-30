@@ -7,7 +7,7 @@
 % Header
 % ===========================
 
-\title{Subspaces of \(\mathbb{R}^n\) and Their Dimensions}
+\title{Subspaces of \(\bbr^n\) and Their Dimensions}
 \author{Otto Bretscher, Linear Algebra With Applications (Chapter 3)}
 \date{May 29\textsuperscript{th}, 2015}
 
@@ -26,10 +26,10 @@
     from \(X\) to \(Y\), then \(\text{image}(f) = \{f(x): x \in X\} = \{ b \in Y : b = f(x) \text{ for some } x \in X\}\).
     
   \dbullet{3.1.2}
-    Consider the vectors \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_m} \in \mathbb{R}^n\). The set of all linear 
+    Consider the vectors \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_m} \in \bbr^n\). The set of all linear 
     combinations \(c_1\vec{v_1} + c_2\vec{v_2} + \ldots, c_m\vec{v_m}\) of the vectors \(\vec{v_1}, \ldots,
     \vec{v_m}\) is called their "span:" \(\text{span}(\vec{v_1}, \ldots, \vec{v_m}) = \{c_1\vec{v_1} + 
-    c_2\vec{v_2} + \ldots, c_m\vec{v_m} : c_1, \ldots, c_m \in \mathbb{R}\}\).
+    c_2\vec{v_2} + \ldots, c_m\vec{v_m} : c_1, \ldots, c_m \in \bbr\}\).
     
   \tbullet{3.1.3}
     The image of a linear transformation is the span of the column vectors of \(A\). We denote the image of \(T\)
@@ -44,7 +44,7 @@
     The image of a linear transformation satisfy the following:
     \begin{enumerate}[i.]
       \item 
-        The zero vector \(\vec{0} \in \mathbb{R}^n\) is the image of \(T\).
+        The zero vector \(\vec{0} \in \bbr^n\) is the image of \(T\).
       \item 
         The image of \(T\) is "closed under addition:" if \(\vec{v_1}, \vec{v_2} \in \text{im}(T)\), then
         \(\vec{v_1} + \vec{v_2} \in \text{im}(T)\).
@@ -58,17 +58,17 @@
         \item
           \(\vec{0} = A\vec{0} = T(\vec{0})\).
         \item
-          There exist \(\vec{w_1}, \vec{w_2} \in \mathbb{R}^m\) such that \(T(\vec{w_1}) = \vec{v_1}\) and
+          There exist \(\vec{w_1}, \vec{w_2} \in \bbr^m\) such that \(T(\vec{w_1}) = \vec{v_1}\) and
           \(T(\vec{w_2}) = \vec{v_2}\). Then \(T(\vec{v_1} + \vec{v_2}) = T(\vec{w_1}) + T(\vec{w_2}) =
           \vec{v_1} + \vec{v_2}\).
         \item
-          There exist \(\vec{w} \in \mathbb{R}^m\) such that \(T(\vec{w}) = \vec{v}\). Then \(T(k\vec{w}) =
+          There exist \(\vec{w} \in \bbr^m\) such that \(T(\vec{w}) = \vec{v}\). Then \(T(k\vec{w}) =
           kT(\vec{w}) = k\vec{v}\) for some arbitrary scalar \(k\).
       \end{enumerate}
     \end{proof}
 
   \dbullet{3.1.5}
-    The "kernel" of a linear transformation \(T(\vec{x}) = A\vec{x}\) from \(\mathbb{R}^m\) to \(\mathbb{R}^n\)
+    The "kernel" of a linear transformation \(T(\vec{x}) = A\vec{x}\) from \(\bbr^m\) to \(\bbr^n\)
     consists of all zeros of the transformation, that is, the solutions of the equation \(T(\vec{x}) = A\vec{x}
     = \vec{0}\).
     
@@ -76,7 +76,7 @@
     The kernel of a linear transformation satisfy the following:
     \begin{enumerate}[i.]
       \item
-        The zero vector \(\vec{0}\) in \(\mathbb{R}^m\) is in the kernel of \(T\).
+        The zero vector \(\vec{0}\) in \(\bbr^m\) is in the kernel of \(T\).
       \item
         The kernel is closed under addition and scalar multiplication.
     \end{enumerate}
@@ -101,40 +101,40 @@
     \end{enumerate}
     
   \dbullet{3.2.1}
-    A subset \(W\) of the vector space \(\mathbb{R}^n\) is called a "(linear) subspace of \(\mathbb{R}^n\)" if it
+    A subset \(W\) of the vector space \(\bbr^n\) is called a "(linear) subspace of \(\bbr^n\)" if it
     has the following three properties:
     \begin{enumerate}[i.]
-      \item \(W\) contains the zero vector in \(\mathbb{R}^n\),
+      \item \(W\) contains the zero vector in \(\bbr^n\),
       \item \(W\) is closed under addition and scalar multiplication
     \end{enumerate}
     
   \tbullet{3.2.2}
-    If \(T(\vec{x}) = A\vec{x}\) is a linear transformation from \(\mathbb{R}^m\) to \(\mathbb{R}^n\), then
-    \(\text{ker}(T)\) is a subspace of \(\mathbb{R}^m\) and \(\text{image}(T)\) is a subspace of \(\mathbb{R}^n\).
+    If \(T(\vec{x}) = A\vec{x}\) is a linear transformation from \(\bbr^m\) to \(\bbr^n\), then
+    \(\text{ker}(T)\) is a subspace of \(\bbr^m\) and \(\text{image}(T)\) is a subspace of \(\bbr^n\).
     
   \dbullet{3.2.3}
-    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). We say vector \(\vec{v_i}\) in list
+    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \bbr^n\). We say vector \(\vec{v_i}\) in list
     \(\vec{v_1}, \ldots, \vec{v_m}\) is "redundant" if \(\vec{v_i}\) is a linear combination of preceding
     vectors \(\vec{v_1}, \ldots, \vec{v_i}\). The vectors are "linearly independent" if none of them is
     redundant. Otherwise they are "linearly dependent." The vectors form a "basis" of subspace \(V\) of 
-    \(\mathbb{R}^n\) if they span \(V\) and are linearly independent (and that the vectors are in \(V\)).
+    \(\bbr^n\) if they span \(V\) and are linearly independent (and that the vectors are in \(V\)).
     
   \tbullet{3.2.4}
     To construct a basis of the image of a matrix \(A\), list all the column vectors of \(A\), and omit redundant
     vectors from the list.
     
   \tbullet{3.2.5}
-    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). If \(\vec{v_1}\) is nonzero, and if each
+    Consider vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \bbr^n\). If \(\vec{v_1}\) is nonzero, and if each
     of the vectors \(\vec{v_i}, i \geq 2\), have a nonzero entry in a component where preceding vectors have \(0\),
     then they are linearly independent.
     
   \dbullet{3.2.6}
-    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \mathbb{R}^n\). An equation of the form \(c_1\vec{v_1} +
+    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m} \in \bbr^n\). An equation of the form \(c_1\vec{v_1} +
     \ldots + c_m\vec{v_m} = \vec{0}\) is called a "(linear) relation" among the vectors. There is always the "trivial
     relation" \(c_1 = \ldots = c_m = 0\). "Nontrivial relations" may or may not exist.
     
   \tbullet{3.2.7}
-    The vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in \(\mathbb{R}^n\) are linearly dependent if and only if there
+    The vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in \(\bbr^n\) are linearly dependent if and only if there
     are nontrivial relations among them.
     
     \begin{proof}
@@ -152,7 +152,7 @@
     The vectors in the kernel of an \(n \times m\) matrix \(A\) correspond to the linear relations among the column
     vectors of \(A\). The equation \(A\vec{x} = \vec{0} \Rightarrow x_1\vec{v_1} + \ldots + x_m\vec{v_m} = \vec{0}\).
     In particular, the column vectors of \(A\) atre linearly independent iff \(\text{ker}(A) = \{\vec{0}\}\), which
-    implies \(m \leq n\). Thus we can find at most \(n\) linearly indepndent vectors in \(\mathbb{R}^n\).
+    implies \(m \leq n\). Thus we can find at most \(n\) linearly indepndent vectors in \(\bbr^n\).
     
     \begin{proof}
       Let \(\vec{v_1}, \ldots, \vec{v_m}\) be the column vectors of an \(n \times m\) matrix \(A\). Then \(\text{ker}(A)
@@ -170,7 +170,7 @@
     \end{proof}
     
   \tbullet{3.2.9}
-    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in a subspace \(V\) of \(\mathbb{R}^n\). The vectors form
+    Consider the vectors \(\vec{v_1}, \ldots, \vec{v_m}\) in a subspace \(V\) of \(\bbr^n\). The vectors form
     a basis of \(V\) if and only if every vector \(\vec{v} \in V\) can be expressed uniquely as a linear combination
     \(\vec{v} = c_1\vec{v_1} + \ldots + c_m\vec{v_m}\).
     
@@ -191,7 +191,7 @@
     
   \tbullet{3.3.1}
     Consider vectors \(\vec{v_1}, \ldots, \vec{v_p}\) and \(\vec{w_1}, \ldots, \vec{w_q}\) in a subspace \(V\)
-    of \(\mathbb{R}^n\). If the vectors \(\vec{v_1}, \ldots, \vec{v_p}\) are linearly independent, and vectors
+    of \(\bbr^n\). If the vectors \(\vec{v_1}, \ldots, \vec{v_p}\) are linearly independent, and vectors
     \(\vec{w_1}, \ldots, \vec{w_q}\) span \(V\), then \(q \geq p\).
     
     \begin{proof}
@@ -199,7 +199,7 @@
       \(B = \begin{bmatrix} \vec{v_1} & \ldots & \vec{v_p} \end{bmatrix}\). Note that \(\text{im}(A) = V\) 
       since the vectors \(\vec{w_1}, \ldots, \vec{w_q}\) span \(V\). The vectors \(\vec{v_1}, \ldots, 
       \vec{v_p}\) are in this image and so \(\vec{v_1} = A\vec{u_1}, \ldots, \vec{v_p} = A\vec{u_p}\) for 
-      some vectors \(\vec{u_1}, \ldots, \vec{u_p}\) in \(\mathbb{R}^q\). Thus \(B \begin{bmatrix} \vec{v_1} 
+      some vectors \(\vec{u_1}, \ldots, \vec{u_p}\) in \(\bbr^q\). Thus \(B \begin{bmatrix} \vec{v_1} 
       & \ldots & \vec{v_p} \end{bmatrix} = A \begin{bmatrix} \vec{u_1} & \ldots & \vec{u_p} \end{bmatrix} = C\),
       or \(B = AC\). 
       
@@ -210,7 +210,7 @@
     \end{proof}
     
   \tbullet{3.3.2}
-    All bases of a subspace \(V\) of \(\mathbb{R}^n\) consist of the same number of vectors.
+    All bases of a subspace \(V\) of \(\bbr^n\) consist of the same number of vectors.
     
     \begin{proof}
       Consider two bases \(\vec{v_1}, \ldots, \vec{v_p}\) and \(\vec{w_1}, \ldots, \vec{w_q}\) of \(V\).
