@@ -14,19 +14,8 @@
 
 \makeatletter
 
-% Shortcuts
+% Typography
 % ===================================
-
-% Used in bijective proofs
-
-\newcommand{\forward}{%
-  \((\Rightarrow)\;\)%
-}
-
-\newcommand{\backward}{%
-  \((\Leftarrow)\;\)%
-}
-
 
 % Used for easier (super/sub)scripting
 % Note the scripting here will always be a text
@@ -43,6 +32,10 @@
 
 % Used for quicker access to calligraphic text
 
+\newcommand{\bbn} {%
+  \mathbb{N}%
+}
+
 \newcommand{\bbp} {%
   \mathbb{P}%
 }
@@ -55,12 +48,6 @@
   \mathbb{R}%
 }
 
-
-% Shortcut of limit notation, with optional argument allowing left or right limits
-
-\newcommand{\xlimit}[3][] {%
-  \lim\limits_{#2\rightarrow #3^{#1}}%
-}
 
 
 % Lists/Arguments
@@ -92,6 +79,17 @@
 % Proof Environments
 % ===================================
 
+% Arrows used in bijective proofs
+
+\newcommand{\forward}{%
+  \((\Rightarrow)\;\)%
+}
+
+\newcommand{\backward}{%
+  \((\Leftarrow)\;\)%
+}
+
+
 % Underline, smash, and bolden shortcut
 % This is used in many headers, and keeps the underlining an equal distance from
 % the word being underlined, regardless of the letters in the word.
@@ -102,6 +100,10 @@
 
 
 % Shortcuts for different kind of bullets that will appear in an outline
+
+\newcommand{\abullet}[1] {%
+  \item \@usb{Algorithm #1}:%
+}
 
 \newcommand{\cbullet}[1] {%
   \item \@usb{Corollary #1}:%
@@ -146,6 +148,17 @@
   }
   {%
     \hfill\(\blacksquare\)%
+  }
+
+
+% Works similar to a proof, but with "Justification" and an empty square.
+
+\newenvironment{justification}
+  {%
+    \@usb{Justification}:\par%
+  }
+  {%
+    \hfill\(\square\)%
   }
 
 
@@ -203,6 +216,31 @@
   \MatrixBody
   \end{bmatrix}%
 }
+
+
+% Calculus
+% ===================================
+
+% Shortcut of limit notation, with optional argument allowing left or right limits
+
+\newcommand{\xlimit}[3][] {%
+  \lim\limits_{#2\rightarrow #3^{#1}}%
+}
+
+
+% An increase by a factor of delta, for use in limits primarily (delta increment)
+
+\newcommand{\dinc}[1] {%
+  #1 + \Delta #1%
+}
+
+
+% Differentiation operator with optional variable to differentiate
+
+\newcommand{\leibniz}[2][] {%
+  \frac{d#1}{d#2}%
+}
+
 
 
 % Footer

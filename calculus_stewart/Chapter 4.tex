@@ -8,7 +8,7 @@
 % ===========================
 
 \title{Applications of Differentiation}
-\author{James Stewart, Calculus Early Transcendentals (Chapter 2)}
+\author{James Stewart, Calculus Early Transcendentals (Chapter 4)}
 \date{May 30\textsuperscript{th}, 2015}
 
 
@@ -25,7 +25,219 @@
     A function \(f\) has an "absolute maximum" at \(c\) if \(f(c) \geq f(x)\) for all \(x \in D\), where \(D\) is the
     domain of \(f\). The number \(f(c)\) is called the "maximum value" of \(f\) on \(D\). A similar definition exists
     for absolute minimums and minimal values. The maximum and minimum values of \(f\) are the "extreme values."
+    
+  \dbullet{4.1.2}
+    A function \(f\) has a "local maximum" at \(c\) if \(f(x) \geq f(x)\) when \(x\) is near \(c\). Similarly, \(f\)
+    has a "local minimum" at \(c\) if \(f(c) \leq f(x)\) when \(x\) is near \(c\).
+    
+  \tbullet{4.1.3 (Extreme Value Theorem)}
+    If \(f\) is continous on a closed interval \([a, b]\), then \(f\) attains an absolute maximum value \(f(c)\) and
+    an absolute minimum value \(f(d)\) for \(c,d \in [a, b]\).
+    
+  \tbullet{4.1.4 (Fermat's Theorem)}
+    If \(f\) has a local maximum or minimum at \(c\), and if \(f'(c)\) exists, then \(f'(c) = 0\).
+    
+    \begin{proof}
+      Suppose \(f\) has a local maximum at \(c\). Then \(f(x) \geq f(x)\) for all \(x\) sufficiently close to \(c\).
+      Then \(f(x)\geq f(c+h)\) for some \(h\) sufficiently close to \(c\), implying \(f(c+h)-f(c)\leq 0\). Thus
+      \(\xlimit[+]{h}{0} \frac{f(c+h)-f(c)}{h} \leq \xlimit[+]{h}{0} 0 = 0\) and \(\xlimit[-]{h}{0} \frac{f(c+h)-f(c)}
+      {h} \geq \xlimit[-]{h}{0} 0 = 0\). Therefore \(f'(c)=0\); a similar proof holds for local minimums.
+    \end{proof}
+    
+  \dbullet{4.1.6}
+    A critical number" of a function \(f\) is a number \(c\) in the domain of \(f\) such that either \(f(c)=0\)
+    or \(f'(c)\) does not exist.
+    
+  \tbullet{4.2.1 (Rolle's Theorem)}
+    Let \(f\) be a function satisfying:
+    \begin{enumerate}[i.]
+      \item \(f\) is continous on the closed interval \([a, b]\).
+      \item \(f\) is differentiable on the open interval \((a, b)\).
+      \item \(f(a) = f(b)\).
+    \end{enumerate}
+    Then there is a number \(c \in (a, b)\) such that \(f'(c) = 0\).
 
+    \begin{proof}
+      \begin{proofcases}
+        \item 
+          Suppose \(f(x) = k\), a constant. 
+          
+          Then \(f'(x) = 0\), and \(c\) can be any number in \((a, b)\).
+        \item
+          Suppose \(f(x) > f(a)\) for some \(x \in (a, b)\). 
+          
+          Then by the Extreme Value Theorem, \(f\) has a
+          maximum value in \([a, b]\). Since \(f(a)=f(b)\), it must attain this maximum at a number \(c \in (a, b)\).
+          Thus, by Fermat's Theorem, \(f'(c) = 0\).
+        \item 
+          Suppose \(f(x) < f(a)\) for some \(x \in (a, b)\). 
+          
+          By a similar argument as in Case 2, \(f'(c) = 0\) for some \(c \in (a, b)\).
+      \end{proofcases}
+    \end{proof}
+    
+  \pagebreak
+  \tbullet{4.2.2 (Mean Value Theorem)}
+    Let \(f\) be a function that satisfies:
+    \begin{enumerate}[i.]
+      \item \(f\) is continous on the closed interval \([a, b]\).
+      \item \(f\) is differentiable on the open interval \((a, b)\).
+    \end{enumerate}
+    Then there is a number \(c \in (a, b)\) such that \(f'(c) = \frac{f(b)-f(a)}{b-a}\), or, equivalently,
+    \(f(b)-f(a) = f'(c)(b-a)\).
+    
+    \begin{proof}
+      Let \(A = (a, f(a))\) and \(B = (b, f(b))\) be points on \(f\). Define \(h\) to be the difference between
+      \(f\) and the secant line \(AB\), which is \(y - f(a) = \frac{f(b)-f(a)}{b-a}(x-a)\). Thus \(h(x) =
+      f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)\). We note \(h\) is continuous on \([a, b]\) and differentiable on
+      \((a, b)\). We also note 
+      \begin{align*}
+        h(a) &= f(a)-f(a)-\frac{f(b)-f(a)}{b-a}(a-a) = 0\\
+        h(b) &= f(b)-f(a)-\frac{f(b)-f(a)}{b-a}(b-a)\\
+             &= f(b)-f(a)-[f(b)-f(a)] = 0
+      \end{align*}
+      meaning \(h(a)=h(b)\). Therefore, by Rolle's Theorem, \(0 = h'(c) = f'(c) - 
+      \frac{f(b)-f(a)}{b-a}\) so \[f'(c) = \frac{f(b)-f(a)}{b-a}\].
+    \end{proof}
+    
+  \tbullet{4.2.3}
+    If \(f'(x) = 0\) for all \(x \in (a, b)\), then \(f\) is constant on \((a, b)\).
+    
+    \begin{proof}
+      Let \(x_1, x_2\) be any two numbers in \((a, b)\) with \(x_1 < x_2\). Since \(f\) is differentiable on
+      \((a, b)\), it must be differentiable on \((x_1, x_2)\), and continuous on \([x_1, x_2]\). Then by
+      the Mean Value Theorem, \(\exists c \in (x_1, x_2)\) such that \(f(x_2)-f(x_1) = f'(c)(x_2-x_1)\).
+      Since \(f'(x) = 0\) for all \(x\), \(f(x_2) - f(x_1) = 0 \Rightarrow f(x_2) = f(x_1)\). Therefore
+      \(f\) has the same value at any two numbers in \((a, b)\).
+    \end{proof}
+    
+  \cbullet{4.2.4}
+    If \(f'(x) = g'(x)\) for all \(x \in (a, b)\), then \(f-g\) is constant on \((a, b)\); that is, \(f(x)=g(x)+C\)
+    for some constant \(C\).
+    
+    \begin{proof}
+      Let \(F(x) = f(x)-g(x)\). Then \(F'(x) = f'(x)-g'(x) = 0\) for all \(x \in (a, b)\). Thus, by Theorem 4.2.3,
+      \(F\) is constant; that is, \(f-g\) is constant.
+    \end{proof} 
+    
+  \tbullet{4.3.1}
+    If \(f'(x) > 0\) on an interval, then \(f\) is increasing on that interval. If \(f'(x) < 0\) on an interval,
+    then \(f\) is decreasing on that interval.
+    
+    \begin{proof}
+      Let \(x_1, x_2\) be any two numbers in the interval with \(x_1 < x_2\). We must show that if \(f'(x) > 0,
+      f(x_2) > f(x_1)\). Suppose \(f'(x) > 0\), noting \(f'\) is defined and thus differentiable on \([x_1, x_2]\).
+      By the Mena Value Theorem, \(\exists c \in (x_1, x_2)\) such that \(f(x_2)-f(x_1)=f'(c)(x_2-x_1)\). Since 
+      \(f'(c) > 0\) and \(x_2-x_1 > 0\), \(f(x_2)-f(x_1) = f'(c)(x_2-x_1) > 0\). Therefore \(f(x_2) > f(x_1)\)
+      and \(f\) is increasing. A decreasing \(f\) is proved similarly.
+    \end{proof}
+    
+  \tbullet{4.3.2}
+    Suppose \(c\) is a critical number of continous function \(f\):
+    \begin{enumerate}[i.]
+      \item If \(f'\) changes from positive to negative at \(c\), \(f\) has a local maximum at \(c\).
+      \item If \(f'\) changes from negative to positive at \(c\), \(f\) has a local minimum at \(c\).
+      \item If \(f'\) does not change signs at \(c\), \(f\) has no local maximum or minimum at \(c\).
+    \end{enumerate}
+    
+  \dbullet{4.3.3}
+    If the graph of \(f\) lives above all of its tangents on an interval \(I\), then it is "concave upward"
+    on \(I\). If it lies below all its tangents, it is "concave downward" on \(I\).
+    
+  \tbullet{4.3.4}
+    If \(f''(x) > 0\) for all \(x \in I\), the graph is concave upward on \(I\). If \(f''(x) < 0\) for all
+    \(x \in I\), the graph is concave downward on \(I\).
+    
+  \dbullet{4.3.5}
+    A point \(P\) on a curve \(y = f(x)\) is called an "inflection point" if \(f\) is continous there
+    and the curve changes from concave upward to concave downward or from concave downward to concave upward at
+    \(P\).
+    
+  \tbullet{4.3.6}
+    Suppose \(f''\) is continuous near \(c\). If \(f'(c) = 0\) and \(f''(c) > 0\), then \(f\) has a local minimum at
+    \(c\). If \(f'(c) = 0\) and \(f''(c) < 0\), then \(f\) has a local maximum at \(c\).
+    
+  \tbullet{4.4.1 (Cauchy's Mean Value Theorem)}
+    Suppose that the functions \(f\) and \(f\) are continous on \(pa, b]\) and differentiable on \((a, b)\), and
+    \(g'(x) \neq 0\) for all \(x \in (a, b)\). Then there is a number \(c \in (a, b)\) such that \([f'(c)/g'(c)] =
+    [f(b)-f(a)]/[g(b)-g(a)]\).
+    
+    \begin{proof}
+      Let \(A = (g(a), f(a)), B = (g(b), f(b))\) and \(AB = f(a) + \frac{f(b)-f(a)}{g(b)-g(a)}[g(x)-g(a)]\).
+      This gives \(h(x) = f(x)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}[g(x)-g(a)]\) and the rest follows.
+    \end{proof}
+    
+  \tbullet{4.4.2 (L'H\^{o}pital's Rule)}
+    Suppose \(f\) and \(g\) are differentiable and \(g'(x) \neq 0\) on an open interval \(I\) that contains \(a\)
+    (except possibly at \(a\)). Suppose that \(\xlimit{x}{a}f(x) = 0\) and \(xlimit{x}{a}g(x) = 0\) or 
+    \(\xlimit{x}{a}f(x) = \pm\infty\) and \(\xlimit{x}{a}g(x) = \pm\infty\). Then:
+    \[
+      \xlimit{x}{a}\frac{f(x)}{g(x)} = \xlimit{x}{a}\frac{f'(x)}{g'(x)}
+    \]
+    if the limit of the right side of the equation exists of is \(\pm\infty\).
+    
+    \begin{proof}
+      Assume \(\xlimit{x}{a}f(x) = 0\) and \(\xlimit{x}{a}g(x) = 0\). Let \(L = \xlimit{x}{a}[f'(x)/g'(x)]\);
+      we want to show \(\xlimit{x}{a}[f(x)/g(x)] = L\). Define 
+      \[ F(x) = 
+        \begin{cases}
+          f(x) \text{ if } x \neq a\\
+          0 \text{ if } x = a
+        \end{cases}\text{ and }
+        G(x) = 
+        \begin{cases}
+          g(x) \text{ if } x \neq a\\
+          0 \text{ if } x = a
+        \end{cases}
+      \]
+      Then \(F\) is continuous on \(I\) since \(f\) is continous on \(\{x \in I : x \neq a\}\), as is \(F\).
+      Let \(x \in I\) and \(x > a\). Then \(F\) and \(G\) are continous on \([a, x]\), differentiable on \((a, x)\)
+      and \(G' \neq 0\) there. Therefore, by Cauchy's Mean Value Theorem, \(\exists y \in (a, x)\) such that
+      \([F'(y)/G'(y)] = [F(x)-F(a)]/[G(x)-G(a)] = F(x)/G(x)\).
+      
+      Since \(a < y < x\), as \(x\rightarrow a^{+}, y\rightarrow y^{+}\) so 
+      \begin{align*}
+        \xlimit[+]{x}{a}\frac{f(x)}{g(x)} 
+          &= \xlimit[+]{x}{a}\frac{F(x)}{G(x)}\\
+          &= \xlimit[+]{y}{a}\frac{F'(y)}{G'(y)}\\
+          &= \xlimit[+]{y}{a}\frac{f'(y)}{g'(y)}\text{.}
+      \end{align*}
+      A similar argument holds for the left-hand limit so \(\xlimit{x}{a}[f(x)/g(x)] = L\) when a is finite.
+      
+      If \(a\) is infinite, let \(t = \frac{1}{x} \Rightarrow t\rightarrow 0^{+}\) as \(x\rightarrow \infty\).
+      Then \(\xlimit{x}{0}[f(x)/g(x)] = \xlimit[+]{t}{0}[f(\frac{1}{t})/g(\frac{1}{t})]\).
+      Applying L'H\^{o}pital's Rule for finite \(a\),
+      \begin{align*}
+        \xlimit[+]{t}{t}\frac{f'(\frac{1}{t})(-\frac{1}{t})}{g'(\frac{1}{t})(-\frac{1}{t})}
+          &= \xlimit[+]{t}{t}\frac{f'(\frac{1}{t})}{g'(\frac{1}{t})}\\
+          &= \xlimit{x}{\infty}\frac{f'(x)}{g'(x)}\text{.}
+      \end{align*}
+    \end{proof}
+    
+  \abullet{4.8.1 (Newton's Method)}
+    Given an initial point \(x_1\), close to the root \(r\) we are trying to find, we can hope the tangent line
+    at \(f(x_1)\) intersects the \(x\)-axis closer to \(r\), yielding \(x_2\). In general, we have \(x_{n+1} -
+    x_n - \frac{f(x_n)}{f'(x_n)}\) and we note \(\xlimit{n}{\infty}x_n = r\).
+    
+    \begin{justification}
+      Consider a point \(x_1\) close to \(r\). Its tangent line is \(y - f(x_1) = f'(x_1)(x - x_1)\), which
+      intersects the \(x\)-axis when \(y = 0\). Thus \(0 - f(x) = f'(x_1)(x-x_1) \Rightarrow x = x_1 - 
+      \frac{f(x_1)}{f'(x_1)}\), which we label \(x_2\). We repeat this process indefinitely, in the hopes of reaching
+      \(r\) as \(\xlimit{n}{\infty}x_n\).
+    \end{justification}
+    
+  \dbullet{4.9.1}
+    A function \(F\) is called an antiderivative" of \(f\) on an interval \(I\) if \(F'(x) = f(x)\) for all \(x \in I\).
+    
+  \tbullet{4.9.2}
+    If \(F\) is an antiderivative of \(f\) on an interval \(I\), then the most general antiderivative of \(f\) on \(I\) 
+    is \(F(x) + C\) where \(C\) is an arbitrary constant.
+    
+    \begin{proof}
+      Let \(F\) and \(G\) be such that \(F'(x) = G'(x) = f(x)\) for all \(x \in I\). Then, by Corollary 4.2.4, \(F-G\)
+      differs by a constant. Thus \(G(x)-F(x)=C \Rightarrow G(X) = F(X) = C\) for some constant \(C\).
+    \end{proof}
+    
 \end{outline}
 
 \end{document}
