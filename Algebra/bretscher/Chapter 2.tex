@@ -36,12 +36,12 @@
         \end{bmatrix}
       ,\text{ where } e_{i} = \begin{bmatrix} 0 \\ \vdots \\ 1 \\ \vdots \\ 0 \end{bmatrix}
     \]
-    and \(1\) takes the \(i^{\text{th}}\) component of \(\vec{e_i}\).
+    and \(1\) takes the \(i^{\text{th}}\) component of \(\vec{e}_i\).
     
     \begin{proof}
       Consider linear transformation \(T\) such that \(T(\vec{x}) = A\vec{x}\) for matrix \(A\). Note that
-      \(T(\vec{e_1})\) is the first column of A, \(T(\vec{e_2})\) is the second column, etc. In general, the
-      \(i^{\text{th}}\) column of A is \(T(\vec{e_i})\). The theorem then follows.
+      \(T(\vec{e}_1)\) is the first column of A, \(T(\vec{e}_2)\) is the second column, etc. In general, the
+      \(i^{\text{th}}\) column of A is \(T(\vec{e}_i)\). The theorem then follows.
     \end{proof}
     
   \tbullet{2.1.3}
@@ -63,16 +63,16 @@
         \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \bbr^m\). Let \(\vec{e_1}, \vec{e_2}, 
         \ldots, \vec{e_m}\) be the standard vectors. Then
         \begin{align*}
-          T(\vec{x}) &= T(x_1\vec{e_1} + x_2\vec{e_2} + \ldots + x_m\vec{e_m})\\
-                     &= T(x_1\vec{e_1}) + T(x_2\vec{e_2}) + \ldots + T(x_m\vec{e_m}) 
+          T(\vec{x}) &= T(x_1\vec{e}_1 + x_2\vec{e}_2 + \ldots + x_m\vec{e}_m)\\
+                     &= T(x_1\vec{e}_1) + T(x_2\vec{e}_2) + \ldots + T(x_m\vec{e}_m) 
                         \text{ by property (\romannumeral 1)}\\
-                     &= x_1T(\vec{e_1}) + x_2T(\vec{e_2}) + \ldots + x_mT(\vec{e_m}) 
+                     &= x_1T(\vec{e}_1) + x_2T(\vec{e}_2) + \ldots + x_mT(\vec{e}_m) 
                         \text{ by property (\romannumeral 2).}
         \end{align*}
         Thus 
         \[ A = \begin{bmatrix}
           \vert        & \vert        &        & \vert       \\
-          T(\vec{e_1}) & T(\vec{e_2}) & \ldots & T(\vec{e_m})\\
+          T(\vec{e}_1) & T(\vec{e}_2) & \ldots & T(\vec{e}_m)\\
           \vert        & \vert        &        & \vert       \end{bmatrix}], 
         \] proving a matrix exists.
     \end{proof}
@@ -198,11 +198,11 @@
     
   \tbullet{2.3.5}
     Let \(B\) be an \(n \times p\) matrix and \(A\) a \(p \times m\) matrix columns with columns
-    \(\vec{v_1}, \vec{v_2}, \ldots, \vec{v_m}\). Then \(BA = B\begin{bmatrix} \vec{v_1} & \vec{v_2} & \ldots
-    & \vec{v_m}\end{bmatrix} = \begin{bmatrix} B\vec{v_1} & B\vec{v_2} & \ldots & B\vec{v_m}\end{bmatrix}\).
+    \(\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_m\). Then \(BA = B\begin{bmatrix} \vec{v}_1 & \vec{v}_2 & \ldots
+    & \vec{v}_m\end{bmatrix} = \begin{bmatrix} B\vec{v}_1 & B\vec{v}_2 & \ldots & B\vec{v}_m\end{bmatrix}\).
     
     \begin{proof}
-      The \(\spscript{i}{th} \text{ column of } BA) = (BA)\vec{e_i} = B(A\vec{e_i}) = B(\spscript{i}{th}
+      The \(\spscript{i}{th} \text{ column of } BA) = (BA)\vec{e}_i = B(A\vec{e}_i) = B(\spscript{i}{th}
       \text{ column of } A)\).
     \end{proof}
     

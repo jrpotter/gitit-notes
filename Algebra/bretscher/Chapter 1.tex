@@ -65,28 +65,28 @@
     \(\spscript{i}{th}\) row of \(A\) with \(\vec{x}\).
     
   \tbullet{1.3.8}
-    Let \(A\) be an \(n \times m\) matrix with column vectors \(\vec{v_1}, \ldots, \vec{v_m}\). Let \(\vec{x}\) be a 
-    vector in \(\bbr^m\) with components \(x_1, \ldots, x_m\). Then \(A\vec{x} = x_1\vec{v_1} + \ldots + 
-    x_m\vec{v_m}\).
+    Let \(A\) be an \(n \times m\) matrix with column vectors \(\inflatedot{\vec{v}}{m}\). Let \(\vec{x}\) be a 
+    vector in \(\bbr^m\) with components \(x_1, \ldots, x_m\). Then \(A\vec{x} = x_1\vec{v}_1 + \ldots + 
+    x_m\vec{v}_m\).
     
     \begin{proof}
-      Denote the rows of \(A\) by \(\vec{w_1}, \ldots, \vec{w_n}\) and the entries by \(a_{ij}\).
-      We need to show the \(i^{\text{th}}\) component of \(x_1\vec{v_1} + \ldots + x_m\vec{v_m}\), for \(i = 1, \ldots, n\).
-      Now:
+      Denote the rows of \(A\) by \(\inflatedot{\vec{w}}{n}\) and the entries by \(a_{ij}\).
+      We need to show the \(i^{\text{th}}\) component of \(x_1\vec{v}_1 + \ldots + x_m\vec{v}_m\), 
+      for \(i = 1, \ldots, n\). Now:
       \begin{align*}
-        (\spscript{i}{th}\text{ component of }A\vec{x}) &= \vec{w_i} \cdot \vec{x}\\
+        (\spscript{i}{th}\text{ component of }A\vec{x}) &= \vec{w}_i \cdot \vec{x}\\
                                                         &= a_{i1}x_1 + \ldots + a_{im}x_m\\
-                                                        &= x_1(\spscript{i}{th}\text{ component of }\vec{v_1}) + \ldots +
-                                                           x_m(\spscript{i}{th}\text{ component of }\vec{v_m})
+                                                        &= x_1(\spscript{i}{th}\text{ component of }\vec{v}_1) + \ldots +
+                                                           x_m(\spscript{i}{th}\text{ component of }\vec{v}_m)
       \end{align*}
-      This in turn is just the \(\spscript{i}{th}\) component of \(x_1\vec{v_1} + \ldots + x_m\vec{v_m}\) by the
+      This in turn is just the \(\spscript{i}{th}\) component of \(x_1\vec{v}_1 + \ldots + x_m\vec{v}_m\) by the
       fact that vector addition and scalar multiplication are defined component by component.
     \end{proof}
 
   \dbullet{1.3.9}
     A vector \(\vec{b}\) in \(\bbr^m\) is called a linear combination of the vectors
-    \(\vec{v_1}, \ldots, \vec{v_m}\) in \(\bbr^n\) if there exist scalars \(x_1, \ldots, x_m\) 
-    such that \(\vec{b} = x_1\vec{v_1} + \ldots + x_m\vec{v_m}\).
+    \(\inflatedot{\vec{v}}{m}\) in \(\bbr^n\) if there exist scalars \(x_1, \ldots, x_m\) 
+    such that \(\vec{b} = x_1\vec{v}_1 + \ldots + x_m\vec{v}_m\).
       
   \tbullet{1.3.10}
     If \(A\) is an \(n \times m\) matrix, \(\vec{x}\) and \(\vec{y}\) are vectors in \(\bbr^m\), and \(k\) is a 
