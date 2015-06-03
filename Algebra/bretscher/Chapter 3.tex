@@ -324,8 +324,111 @@
     any vector \(\vec{x}\) in \(V\) can be written uniquely as \[ \vec{x} = c_1\vec{v}_1 + c_2\vec{v}_2 + \ldots + 
     c_m\vec{v}_m\text{.} \] The scalars \(\inflatedot{c}{m}\) are called the "\(\beta\)-coordinates" of \(\vec{x}\),
     and the vector \[ \columnvec{\(c_1\), \(c_2\), \vdots, \(c_m\)} \] is the "\(\beta\)-coordinate vector" of 
-    \(\vec{x}\), denoted by \(\bcoor{x}\). Thus \[ \bcoor{x} = \columnvec{\(c_1\), \(c_2\), 
+    \(\vec{x}\), denoted by \(\bcoor{\vec{x}}\). Thus \[ \bcoor{\vec{x}} = \columnvec{\(c_1\), \(c_2\), 
     \vdots, \(c_m\)}\text{ means that } \vec{x} = c_1\vec{v}_1 + c_2\vec{v_2} + \ldots + c_m\vec{v}_m\text{.}\]
+    
+  \tbullet{3.4.2 (Linearity of Coordinates)}
+    If \(\beta\) is a basis of a subspace \(V\) of \(\bbr^n\), then
+    \begin{enumerate}[i.]
+      \item 
+        \(\bcoor{\vec{x}+\vec{y}} = \bcoor{\vec{x}} + \bcoor{\vec{y}}\), for all vectors \(\vec{x}\) 
+        and \(\vec{y}\) in \(V\), and
+      \item 
+        \(\bcoor{k\vec{x}} = k\bcoor{\vec{x}}\), for all \(\vec{x}\) in \(V\) and for all scalars \(k\).
+    \end{enumerate}
+    
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          Let \(\beta = (\inflatedot{\vec{v}}{m})\). If \(\vec{x} = c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_m\vec{v}_m\)
+          and \(\vec{y} = d_1\vec{v}_1 + d_2\vec{v}_2 + \cdots + d_m\vec{v}_m\), then
+          \begin{align*}
+            \vec{x} + \vec{y} &= c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_m\vec{v}_m + 
+                                 d_1\vec{v}_1 + d_2\vec{v}_2 + \cdots + d_m\vec{v}_m \\
+                              &= (c_1 + d_1)\vec{v}_1 + (c_2 + d_2)\vec{v}_2 + \cdots + (c_m + d_m)\vec{v}_m
+          \end{align*}
+          meaning
+          \[
+            \bcoor{\vec{x}+\vec{y}} = \columnvec{\(c_1+d_1\), \(c_2+d_2\), \vdots, \(c_m+d_m\)}
+                                    = \columnvec{\(c_1\), \(c_2\), \vdots, \(c_m\)} 
+                                      + \columnvec{\(d_1\), \(d_2\), \vdots, \(d_m\)}
+                                    = \bcoor{\vec{x}} + \bcoor{\vec{y}}
+          \]
+        \item
+          Let \(\beta = (\inflatedot{\vec{v}}{m})\). If \(\vec{x} = c_1\vec{v}_1 + c_2\vec{v}_2 + \cdots + c_m\vec{v}_m\), 
+          then \(k\vec{x} = kc_1\vec{v}_1 + kc_2\vec{v}_2 + \cdots + c_m\vec{v}_m\), so that
+          \[
+            \left[k\vec{x}\right]_\beta 
+            = \columnvec{\(kc_1\), \(kc_2\), \vdots, \(kc_m\)} 
+            = k\columnvec{\(c_1\), \(c_2\), \vdots, \(c_m\)} = k\bcoor{\vec{x}}
+          \]
+          as claimed.
+      \end{enumerate}
+    \end{proof}
+    
+  \dbullet{3.4.3}
+    Consider a linear transformation \(T\) from \(\bbr^n\) to \(\bbr^n\) and a basis \(\beta\) of \(\bbr^n\). 
+    The \(n \times n\) matrix \(B\) that transforms \(\bcoor{\vec{x}}\) into \(\bcoor{T(\vec{x})}\) is called the 
+    "\(\beta\)-matrix of \(T\):" \[ \bcoor{T(\vec{x})} = B\bcoor{\vec{x}}\text{,} \] for all \(\vec{x}\) in \(\bbr^n\).
+    
+  \tbullet{3.4.4}
+    We can construct a \(\beta\)-matrix \(B\) of a linear transformation \(T\) column by column as follows:
+    \[ B = \begin{bmatrix} \bcoor{T(\vec{v}_1)} & \cdots & \bcoor{T(\vec{v}_n)} \end{bmatrix}\text{,} \] where 
+    \(\beta\) = \((\inflatedot{\vec{v}}{n})\).
+    
+    \begin{proof}
+      Let \(\vec{x} = c_1\vec{v}_1 + \cdots + c_n\vec{v}_n\). By linearity of T and linearity of coordinates, we note 
+      \[T(\vec{x}) = c_1T(\vec{v}_1) + \cdots + c_nT(\vec{v}_n)\] and 
+      \begin{align*}
+        \bcoor{T(\vec{x})} &= c_1\bcoor{T(\vec{v}_1)} + \cdots + c_n\bcoor{T(\vec{v}_n)} \\
+                           &= \begin{bmatrix}
+                                \bcoor{T(\vec{v}_1)} & \cdots & \bcoor{T(\vec{v}_n)}
+                              \end{bmatrix}
+                              \bcoor{\vec{x}}\text{.}
+      \end{align*}
+      Alternatively, we can note that to get the \(\spscript{i}{th}\) column of \(B\), we can find \(Be_i\), of which
+      we then note \(\bcoor{\vec{v}_i} = e_i\). Since \(\bcoor{T(\vec{v}_i)} = B\bcoor{\vec{v}_i}\), the proof follows.
+    \end{proof}
+    
+  \tbullet{3.4.5}
+    Consider a linear transformatino \(T\) from \(\bbr^n\) to \(\bbr^n\) and a basis \(\beta = (\inflatedot{\vec{v}}{n})\) 
+    of \(\bbr^n\). Let \(B\) be the \(\beta\)-matrix of \(T\), and let \(A\) be the standard matrix of \(T\) 
+    (such that \(T(\vec{x}) = A\vec{x}\) for all \(\vec{x}\) in \(\bbr^n\)). Then 
+    \[
+      AS=SB, B=S^{-1}AS,\text{ and }A=SBS^{-1},\text{ where } 
+      S = \begin{bmatrix} \vec{v}_1 &  \cdots & \vec{v}_n \end{bmatrix}\text{.}
+    \]
+    
+    \begin{proof}
+      Note \(T\) is a linear transformation such that \(A\vec{x} = T(\vec{x})\).
+      Also note that for \(S=\begin{bmatrix} \vec{v}_1 & \cdots & \vec{v}_n \end{bmatrix}\),
+      \[
+        \vec{x} = S\bcoor{\vec{x}}\text{ and } T(\vec{x}) = S\bcoor{T(\vec{x})}\text{.}
+      \]
+      Thus \(T(\vec{x}) = AS\bcoor{\vec{x}}\) and \(T(\vec{x}) = SB\bcoor{\vec{x}}\) meaning \(AS=SB\).
+    \end{proof}
+    
+  \dbullet{3.4.6}
+    Consider two \(n\times n\) matrices \(A\) and \(B\). We say that \(A\) is "similar" to \(B\) if there exists an 
+    invertible matrix \(S\) such that \(AS = SB\). Thus two matrices are similar if they represent the same linear 
+    transformation with respect to different bases.
+    
+  \tbullet{3.4.7}
+    Similarity is an equivalence relation.
+    
+    \begin{proof}
+      Let \(A, B\), and \(C\) be similar \(n\times n\) matrices.
+      
+      \textbf{Reflexive}: Consider the identity matrix, an invertible \(n\times n\) matrix. Note \(AI_n = I_nA\) so
+      \(A\) is similar to itself.
+      
+      \textbf{Symmetric}: Suppose there exists an invertible matrix \(S\) such that \(AS = SB\). Then
+      \(B = S^{-1}AS \Rightarrow BS^{-1} = S^{-1}A\).
+      
+      \textbf{Transitive}: Suppose there exist invertible matrices \(P\) and \(Q\) such that \(AP = PB\) and \(BQ = QC\).
+      Then \(AP = PQCQ^{-1} \Rightarrow APQ = PQC \Rightarrow AS = SC\) where \(S = PQ\) is invertible.
+      
+    \end{proof}
     
 \end{outline}
 

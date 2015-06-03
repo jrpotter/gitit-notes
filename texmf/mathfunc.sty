@@ -21,33 +21,16 @@
 % Note the scripting here will always be a text
 % value
 
-\newcommand{\spscript}[2] {%
-  #1\textsuperscript{#2}%
-}
-
-\newcommand{\sbscript}[2] {%
-  #1\textsubscript{#2}%
-}
+\newcommand{\sbscript}[2] {#1\textsubscript{#2}}
+\newcommand{\spscript}[2] {#1\textsuperscript{#2}}
 
 
 % Used for quicker access to calligraphic text
 
-\newcommand{\bbn} {%
-  \mathbb{N}%
-}
-
-\newcommand{\bbp} {%
-  \mathbb{P}%
-}
-
-\newcommand{\bbq} {%
-  \mathbb{Q}%
-}
-
-\newcommand{\bbr} {%
-  \mathbb{R}%
-}
-
+\newcommand{\bbn} {\mathbb{N}}
+\newcommand{\bbp} {\mathbb{P}}
+\newcommand{\bbq} {\mathbb{Q}}
+\newcommand{\bbr} {\mathbb{R}}
 
 
 % Lists/Arguments
@@ -81,13 +64,8 @@
 
 % Arrows used in bijective proofs
 
-\newcommand{\forward}{%
-  \((\Rightarrow)\;\)%
-}
-
-\newcommand{\backward}{%
-  \((\Leftarrow)\;\)%
-}
+\newcommand{\forward}{\((\Rightarrow)\;\)}
+\newcommand{\backward}{\((\Leftarrow)\;\)}
 
 
 % Underline, smash, and bolden shortcut
@@ -101,65 +79,41 @@
 
 % Shortcuts for different kind of bullets that will appear in an outline
 
-\newcommand{\abullet}[1] {%
-  \item \@usb{Algorithm #1}:%
-}
-
-\newcommand{\cbullet}[1] {%
-  \item \@usb{Corollary #1}:%
-}
-
-\newcommand{\dbullet}[1] {%
-  \item \@usb{Def'n #1}:%
-}
-
-\newcommand{\lbullet}[1] {%
-  \item \@usb{Lemma #1}:%
-}
-
-\newcommand{\pbullet}[1] {%
-  \item \@usb{Prop'n #1}:%
-}
-
-\newcommand{\tbullet}[1] {%
-  \item \@usb{Theorem #1}:%
-}
+\newcommand{\obullet}[2] {\item \@usb{#1 #2}:}
+\newcommand{\abullet}[1] {\obullet{Algorithm}{#1}}
+\newcommand{\cbullet}[1] {\obullet{Corollary}{#1}}
+\newcommand{\dbullet}[1] {\obullet{Def'n}{#1}}
+\newcommand{\lbullet}[1] {\obullet{Lemma}{#1}}
+\newcommand{\pbullet}[1] {\obullet{Prop'n}{#1}}
+\newcommand{\tbullet}[1] {\obullet{Theorem}{#1}}
 
 
 % The following is merely a wrapper around a list. It was defined for a more
 % semantic relationship between the bulleted points of the outline
 
 \newenvironment{outline}
-  {%
-    \begin{itemize}%
-    \setlength{\itemsep}{7pt}%
-  }
-  {%
-    \end{itemize}%
-  }
+{%
+  \begin{itemize}%
+  \setlength{\itemsep}{7pt}%
+}
+{%
+  \end{itemize}%
+}
 
 
 % Used to wrap around a proof of a theorem, proposition, etc. It provides
 % the necessary header and Q.E.D.
 
 \newenvironment{proof}
-  {%
-    \@usb{Proof}:\par%
-  }
-  {%
-    \hfill\(\blacksquare\)%
-  }
+{\@usb{Proof}:\par}
+{\hfill\(\blacksquare\)}
 
 
 % Works similar to a proof, but with "Justification" and an empty square.
 
 \newenvironment{justification}
-  {%
-    \@usb{Justification}:\par%
-  }
-  {%
-    \hfill\(\square\)%
-  }
+{\@usb{Justification}:\par}
+{\hfill\(\square\)}
 
 
 % The following allows uniform construction of cases as defined in a proof.
@@ -167,44 +121,42 @@
 
 \newlist{@prfcases}{enumerate}{1}
 \setlist[@prfcases]{label=\@usb{Case \arabic*}:}
-
 \newenvironment{proofcases}[1][3em]
-  {%
-    \begin{addmargin}[#1]{0em}%
-    \begin{@prfcases}%
-  }
-  {%
-    \end{@prfcases}%
-    \end{addmargin}%
-  }
-
-
-% Vector Processing
-% ==================================
-
-% Takes in two vector names and returns the dot product of the
-% two vectors (both of which are now marked as such)
-
-\newcommand{\dotp}[2] {%
-    \vec{#1}\cdot\vec{#2}%
+{%
+  \begin{addmargin}[#1]{0em}%
+  \begin{@prfcases}%
+}
+{%
+  \end{@prfcases}%
+  \end{addmargin}%
 }
 
 
-% Matrix Processing
-% ===================================
+% Linear Algebra
+% ==================================
 
-% Creates a smaller matrix for compression
+% Takes in two vector names and returns the dot/cross product of the
+% two vectors (both of which are now marked as such)
 
-%\newenvironment{bsmallmatrix}
-%  {\left[\begin{smallmatrix}}
-%  {\end{smallmatrix}\right]}
+\newcommand{\dotp}[2] {\vec{#1}\cdot\vec{#2}}
+\newcommand{\crossp}[2] {\vec{#1}\times\vec{#2}}
+
+
+% Takes in a given value and writes it in Beta-coordinates
+
+\newcommand{\bcoor}[1] {\left[#1\right]_{\beta}}
+
+
+% Magnitude of vectors
+
+\newcommand{\norm}[1]{\lvert#1\rvert}
 
 
 % The following takes in a comma separated list as an argument and creates a new
 % column vector with the ith component set as the ith element of the given list.
 % http://tex.stackexchange.com/questions/146463/newcommand-for-bmatrix-of-features-using-pgffor-throws-missing-endgroup-error
 
-\newcommand*{\matrixbody}[1]{%
+\newcommand*{\columnvec}[1]{%
   \global\let\MatrixBody\@empty
   \foreach \entry in {#1} {%
     \expandafter\g@addto@macro\expandafter\MatrixBody
@@ -223,24 +175,17 @@
 
 % Shortcut of limit notation, with optional argument allowing left or right limits
 
-\newcommand{\xlimit}[3][] {%
-  \lim\limits_{#2\rightarrow #3^{#1}}%
-}
+\newcommand{\xlimit}[3][] {\lim\limits_{#2\rightarrow #3^{#1}}}
 
 
 % An increase by a factor of delta, for use in limits primarily (delta increment)
 
-\newcommand{\dinc}[1] {%
-  #1 + \Delta #1%
-}
+\newcommand{\dinc}[1] {#1+\Delta #1}
 
 
 % Differentiation operator with optional variable to differentiate
 
-\newcommand{\leibniz}[2][] {%
-  \frac{d#1}{d#2}%
-}
-
+\newcommand{\leibniz}[2][] {\frac{d#1}{d#2}}
 
 
 % Footer
