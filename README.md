@@ -11,26 +11,26 @@ Books and the chapters in question are also explicitly mentioned in the LaTeX fi
 Prefixes are defined as follows:
 
 * AA: Abstract Algebra
-  * 01: A First Course in Abstract Algebra by John B. Fraleigh (7th Edition)
+  * 01: A First Course in Abstract Algebra by John B. Fraleigh (7th Edition)  
         978-0201763904
 * CB: Combinatorics
-  * 01: Introductory Combinatorics by Richard A. Brualdi (5th Edition)
+  * 01: Introductory Combinatorics by Richard A. Brualdi (5th Edition)  
         978-0136020400
 * CT: Computation Theory
-  * 01: Elements of the Theory of Computation by Harry R. Lewis and Christos H. Papadimitriou (2nd Edition)
+  * 01: Elements of the Theory of Computation by H.R. Lewis & C.H. Papadimitriou (2nd Edition)  
         978-0132624787
 * FP: Functional Programming
-  * 01: Learn You a Haskell for Great Good by Miran Lipovaca
+  * 01: Learn You a Haskell for Great Good by Miran Lipovaca  
         978-1593272838
 * LA: Linear Algebra
-  * 01: Linear Algebra with Applications by Otto Bretscher (4th Edition)
+  * 01: Linear Algebra with Applications by Otto Bretscher (4th Edition)  
         978-0136009269
 * MC: Multivariable Calculus
-  * 01: Calculus Early Transcendentals by James Stewart (6th Edition)
+  * 01: Calculus Early Transcendentals by James Stewart (6th Edition)  
         978-0-495-01166-9
 * SC: Single-Variable Calculus
-  * 01: Calculus Early Transcendentals by James Stewart (6th Edition)
+  * 01: Calculus Early Transcendentals by James Stewart (6th Edition)  
         978-0-495-01166-9
 * ST: Statistics & Probability
-  * 01: A First Course in Probability by Sheldon Ross (8th Edition)
+  * 01: A First Course in Probability by Sheldon Ross (8th Edition)  
         978-0136033134
