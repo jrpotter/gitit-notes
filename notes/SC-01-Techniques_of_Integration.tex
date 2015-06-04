@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Techniques of Integration}
+\author{Calculus Early Transcendentals by James Stewart (Chapter 7)}
+\date{June 4\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{7.1.1 (Integration by Parts)}
+    For differentiable functions \(f\) and \(g\), \[ \int f(x)g'(x)dx = f(x)g(x) - \int g(x)f'(x)dx \]
+    
+    \begin{proof}
+      The Product Rule states that if \(f\) and \(g\) are differentiable functions, then
+      \[
+        \leibniz{x}\left[f(x)g(x)\right] = f(x)g'(x) + g(x)f'(x)\text{.}
+      \]
+      Therefore
+      \begin{gather*}
+        \int\left[f(x)g'(x)+g(x)f'(x)\right]dx = f(x)g(x) \\
+        \int f(x)g'(x)dx + \int g(x)f'(x)dx = f(x)g(x)
+      \end{gather*}
+      which, upon rearranging, proves the theorem.
+    \end{proof}
+    
+  \tbullet{7.1.6 (Definite Integration by Parts)}
+    Assuming \(f'\) and \(g'\) are continuous, we find
+    \[
+      \int_a^b f(x)g'(x)dx = f(x)g(x)\Big{\vert}_a^b - \int_a^b g(x)f'(x)dx 
+    \]
+    
+    \begin{proof}
+      By the Fundamental Theorem of Calculus, 
+      \[
+        \int_a^b\left[f(x)g'(x)+g(x)f'(x)\right]dx = f(a)g(a) - f(b)g(b)\text{.}
+      \]
+      Therefore, following a similar proof as Theorem 7.1.1,
+      \begin{gather*}
+        \int_a^b\left[f(x)g'(x)+g(x)f'(x)\right]dx = f(x)g(x)\Big\vert_a^b \\
+        \int_a^b f(x)g'(x)dx + \int_a^b g(x)f'(x)dx = f(x)g(x)\Big\vert_a^b
+      \end{gather*}
+      Again, upon rearranging, we see the Theorem holds.
+    \end{proof}
+
+\end{outline}
+
+\end{document}

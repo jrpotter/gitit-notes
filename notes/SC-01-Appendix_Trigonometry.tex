@@ -1,0 +1,125 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Appendix: Trigonometry}
+\author{Calculus Early Transcendentals by James Stewart (Appendix D)}
+\date{June 4\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{D.1 (Trigonometric Identities)}
+    \begin{enumerate}[i.]
+      \item \(\sin^2\theta + \cos^2\theta = 1\)
+      \item \(\sec^2\theta - \tan^2\theta = 1\)
+      \item \(\csc^2\theta - \cot^2\theta = 1\)
+      \item \(\sin{(-\theta)} = -\sin{\theta}\)
+      \item \(\cos{(-\theta)} = \cos{\theta}\)
+      \item \(\sin{(\theta + 2\pi)} = \sin{\theta}\)
+      \item \(\cos{(\theta + 2\pi)} = \cos{\theta}\)
+    \end{enumerate}
+    
+  \tbullet{D.2 (Law of Cosines)}
+    If a triangle has sides with lengths \(a, b,\) and \(c,\) and \(\theta\) is the angle between the sides
+    with lengths \(a\) and \(b\), then \(c^2 = a^2 + b^2 - 2ab\cos{\theta}\).
+    
+    \begin{proof}
+      Let sides \(A, B,\) and \(C\) be sides with lengths \(a, b,\) and \(c\) respectively. Establish a coordinate 
+      system where \(A\) and \(B\) meet at the origin, and \(\theta\) is the angle between \(A\) and \(B\). Also, 
+      suppose \(P(x, y)\) is the point where \(C\) meets \(B\). Then we have a triangle with points \((0, 0), (a, 0),\)
+      and \((x, y)\).
+      
+      \begin{proofcases}
+        \item
+          Suppose \(x = a\).\\
+          Then the angle formed between \(A\) and \(B\) is \(\frac{\pi}{2}\) and so \(-2ab\cos{\theta} = 0\),
+          leaving the Pythagorean Theorem which we note is true.
+        \item
+          Suppose \(0 < x < a\).\\
+          Then the line spanning \(P\) to the \(x\)-axis forms two right triangles, and the triangle has height
+          \(b\sin{\theta}\), and a leg of length \(b\cos{\theta}\). Thus, by the Pythagorean Theorem,
+          \begin{align*}
+            c^2 &= (a-b\cos{\theta})^2 + (b\sin{\theta}^2) \\
+                &= a^2 - 2ab\cos^2{\theta} + b^2\cos^2{\theta} + b^2\sin^2{\theta}\\
+                &= a^2 - 2ab\cos^2{\theta} + b^2(\cos^2{\theta} + \sin^2{\theta}) \\
+                &= a^2 + b^2 - 2ab\cos^2{\theta}
+          \end{align*}
+      \end{proofcases}
+    \end{proof}
+    
+  \tbullet{D.2 (Addition Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\sin{(x+y)} = \sin{x}\cos{y} + \cos{x}\sin{y}\)
+      \item \(\cos{(x+y)} = \cos{x}\cos{y} - \sin{x}\sin{y}\)
+      \item \(\tan{(x+y)} = \frac{\tan{x}+\tan{y}}{1-\tan{x}\tan{y}}\)
+    \end{enumerate}
+   
+  \pagebreak 
+  \tbullet{D.3 (Subtraction Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\sin{(x-y)} = \sin{x}\cos{y} - \cos{x}\sin{y}\)
+      \item \(\cos{(x-y)} = \cos{x}\cos{y} + \sin{x}\sin{y}\)
+      \item \(\tan{(x-y)} = \frac{\tan{x}-\tan{y}}{1+\tan{x}\tan{y}}\)
+    \end{enumerate}
+    
+    \begin{proof}
+      Replace \(y\) for \(-y\) in the Addition Formulas.
+    \end{proof}
+    
+  \tbullet{D.4 (Double-Angle Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\sin{2x} = 2\sin{x}\cos{x}\)
+      \item \(\cos{2x} = \cos^2 x - \sin^2 x\)
+    \end{enumerate}
+    
+    \begin{proof}
+      Replace \(y\) for \(x\) in the Addition Formulas.
+    \end{proof}
+    
+  \tbullet{D.5 (Alternate Double-Angle Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\cos{2x} = 2\cos^2 x - 1\)
+      \item \(\cos{2x} = 1 - s\sin^2 x\)
+    \end{enumerate}
+    
+    \begin{proof}
+      Use identity \(\sin^2 x + \cos^2 x = 1\) in the Double-Angle Formulas.
+    \end{proof}
+    
+  \tbullet{D.6 (Half-Angle Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\cos^2 x = \frac{1 + \cos{2x}}{2}\)
+      \item \(\sin^2 x = \frac{1 - \cos{2x}}{2}\)
+    \end{enumerate}
+    
+    \begin{proof}
+      Solve for \(\cos^2 x\) and \(\sin^2 x\) in the Alternate Double-Angle Formulas.
+    \end{proof}
+    
+  \tbullet{D.6 (Product Formulas)}
+    \begin{enumerate}[i.]
+      \item \(\sin{x}\cos{y} = \frac{1}{2}\left[\sin{(x+y)} + \sin{(x-y)}\right]\)
+      \item \(\cos{x}\cos{y} = \frac{1}{2}\left[\cos{(x+y)} + \cos{(x-y)}\right]\)
+      \item \(\sin{x}\sin{y} = \frac{1}{2}\left[\cos{(x-y)} - \cos{(x+y)}\right]\)
+    \end{enumerate}
+
+    \begin{proof}
+      Solve for respective products with respect to Addition and Subtraction formulas.
+    \end{proof}
+
+\end{outline}
+
+\end{document}
