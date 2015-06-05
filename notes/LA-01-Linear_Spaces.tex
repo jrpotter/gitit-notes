@@ -1,0 +1,149 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Linear Spaces}
+\author{Linear Algebra With Applications by Otto Bretscher (Chapter 4)}
+\date{June 5\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{4.1.1 (Linear Spaces or Vector Spaces)}
+    A "linear space" \(V\) is a set endowed with a rule for addition (if \(f\) and \(g\) are in \(V\), then so is 
+    \(f + g\)) and a rule for scalar multiplication (if \(f\) is in \(V\) and \(k\) in \(\bbr\), then \(kf\) is in 
+    \(V\)) such that these operations satisfy the following eight rules (for all \(f, g, h\) in \(V\) and all 
+    \(c, k\) in \(\bbr\))
+    \begin{enumerate}[i.]
+      \item \((f + g) + h = f+ (g + h)\).
+      \item \(f + g = g + f\).
+      \item There exists a "neutral element \(n\)" in \(V\) such that \(f + n = f\), for all 
+            \(f\) in \(V\). This \(n\) is unique and denoted by \(0\).
+      \item For each \(f\) in \(V\) there exists a \(g\) in \(V\) such that \(f + g = 0\). This 
+            \(g\) is unique and denoted by \((-f)\).
+      \item \(k(f + g) = kf + kg\).
+      \item \((c + k)f = cf + kf\).
+      \item \(c(kf) = (ck)f\).
+      \item \(1f = f\).
+    \end{enumerate}
+    
+  \dbullet{4.1.2 (Subspaces)}
+    A subset \(W\) of a linear space \(V\) is called a "subspace" of \(V\) if
+    \begin{enumerate}[i.]
+      \item \(W\) contains the neutral element \(0\) of \(V\).
+      \item \(W\) is closed under linear combinations.
+    \end{enumerate}
+    
+  \dbullet{4.1.3 (Span, Linear Independence, Basis, Coordinates)}
+    Consider the elements \(\inflatedot{f}{n}\) in a linear space \(V\).
+    \begin{enumerate}[i.]
+      \item
+        We say that \(\inflatedot{f}{n}\) "span" \(V\) if every \(f\) in \(V\) can be expressed as a 
+        linear combination of \(\inflatedot{f}{n}\).
+      \item
+        We say that \(f_i\) is "redundant" if it is a linear combination of \(\inflatedot{f}{i-1}\). 
+        The elements \(\inflatedot{f}{n}\) are called "linearly independent" if none of them is redundant. 
+        This is the case if the equation \[c_1f_1 + \cdots + c_nf_n = 0\] has only the trivial solution 
+        \[c_1 = \cdots = c_n = 0\text{.}\]
+      \item
+        We say that elements \(\inflatedot{f}{n}\) are a "basis" of \(V\) if they span \(V\) and are linearly 
+        independent. This means that every \(f\) in \(V\) can be written uniquely as a linear combination 
+        \(f = c_1f_1 + \cdots + c_nf_n\). The coefficients \(\inflatedot{c}{n}\) are called the "coordinates" 
+        of \(f\) with respect to the basis \(\beta = (\inflatedot{f}{n})\). The vector \[\columnvec{\(c_1\), 
+        \vdots, \(c_n\)}\] in \(\bbr^n\) is called the "\(\beta\)-coordinate vector" of \(f\), denoted by 
+        \(\bcoor{f}\). 
+        The transformation 
+          \[L(f) = \bcoor{f} = \columnvec{\(c_1\), \vdots, \(c_n\)}\text{ from \(V\) to \(\bbr^n\)}\]
+        is called the "\(\beta\)-coordinate transformation," sometimes denoted by \(L_{\beta}\).
+      \end{enumerate}
+      
+    \tbullet{4.1.4 (Linearity of \(L_{\beta}\))}
+      If \(\beta\) is a basis of a linear space \(V\), then
+      \begin{enumerate}[i.]
+        \item \(\bcoor{f+g} = \bcoor{f} + \bcoor{g}\), for all elements \(f,g\in V\)
+        \item \(\bcoor{kf} = k\bcoor{f}\)
+      \end{enumerate}
+      
+    \dbullet{4.1.5 (Dimension)}
+      If a linear space \(V\) has a basis with \(n\) elements, then all other bases of \(V\) consist of \(n\) 
+      elements as well. We say that \(n\) is the "dimension" of \(V\), dnoted \(\text{dim}(V) = n\).
+      
+      \begin{proof}
+        Consider two bases \(\alpha = (\inflatedot{f}{n})\) and \(\beta = (\inflatedot{g}{m})\) of \(V\); we must 
+        show that \(n = m\). We will first show that the \(m\) vectors \(\bcoor{g_1} \ldots \bcoor{g_m}\) in \(\bbr^n\) 
+        are linearly independent, which implies that \(m \leq n\) by Theorem 3.2.8. Consider a relation \[c_1\bcoor{g_1} 
+        + \cdots + c_m\bcoor{g_m} = \vec{0}\text{.}\] By Theorem 4.1.4, we have \[\bcoor{c_1g_1+\cdots+c_mg_m} = 
+        \vec{0},\text{ so that } c_1g_1 + \cdots + c_mg_m = 0\text{.}\] Since the elements \(\inflatedot{g}{m}\) are 
+        linearly independent, it follows that \(c_1 = \cdots = c_m = 0\), meaning that 
+        \(c_1\bcoor{g_1}+\cdots+c_m\bcoor{g_m}=\vec{0}\) is the trivial relation, as claimed. We can apply the 
+        same for \(\alpha\) and see that \(n \leq m\) and \(m \leq n\) meaning \(n = m\).
+      \end{proof}
+
+  \tbullet{4.1.7 (Linear Differential Equations)}
+    The solutions of the differential equation \[f^{(n)}(x) + a_{n-1}f^{(n-1)}(x) + \cdots + a_1f'(x) + a_0f(x) = 0\] 
+    (where \(\inflatedot{a}{n-1}\) are constants) form an \(n\)-dimensional subspace of \(\bbc^{\infty}\). A 
+    differential equation of this form is called an "\(\spscript{n}{th}\) order linear differential equation with 
+    constant coefficients."
+
+  \dbullet{4.1.8 (Finite Dimensional Linear Spaces)}
+    A linear space \(V\) is called "finite dimensional" if it has a (finite) basis \(\inflatedot{f}{n}\), 
+    so that we can define it dimension \(\text{dim}(V) = n\). Otherwise the space is called "infinite dimensional."
+    
+  \dbullet{4.2.1 (Linear Transformations, Image, Kernel, Rank, Nullity)}
+    Consider two linear  spaces \(V\) and \(W\). A function \(T\) from \(V\) to \(W\) is called a "linear transformation" if \[T(f+g) = T(f) + T(g)\text{ and }T(kf) = kT(f)\] for all elements \(f\) and \(g\) of \(V\) and for all scalars \(k\).
+    
+    For a linear transformation \(T\) from \(V\) to \(W\), we let \[ \text{im}(T) = \{T(f): f\text{ in }V\}\] and \[ \text{ker}(t) = \{f\text{ in }V: T(f) = 0\}\text{.} \] Note that \(\text{im}(T)\) is a subspace of target space \(W\) and that \(\text{ker}(T)\) is a subspace of domain \(V\).
+    
+    If the image of \(T\) is finite dimensional, then \(\text{dim}(\text{im}(T))\) is called the "rank" of \(T\) and if the kernel of \(T\) is finite dimensional, then \(\text{dim}(\text{ker}(T))\) is the "nullity" of \(T\).
+    
+  \tbullet{4.2.2 (Rank-Nullity Theorem)}
+    If \(V\) is finite dimensional, then the rank-nullity theorem holds: \[ \text{dim}(V) = \text{rank}(T) + \text{nullity}(T) = \text{dim}(\text{im}(T)) + \text{dim}(\text{ker}(T))\text{.} \]
+    
+    \begin{proof}
+    
+    \end{proof}
+
+  \dbullet{4.2.3 (Isomorphisms and Isomorphic Spaces)}
+    An invertible linear transformation \(T\) is called an "isomorphism." We say that the linear space \(V\) 
+    is isomorphic to the linear space \(W\) if there exists an isomorphism \(T\) from \(V\) to \(W\).
+    
+  \tbullet{4.2.4 (Coordinate Transformation Isomorphisms)}
+    If \(\beta = (\inflatedot{f}{n})\) is a basis of a linear space \(V\), then the "coordinate transformation" 
+    \(L_{\beta}(f) = \bcoor{f}\) from \(V\) to \(\bbr^n\) is an isomorphism. Thus \(V\) is isomorphic to 
+    \(\bbr^n\); the linear spaces \(V\) and \(\bbr^n\) have the same structure.
+    
+  \tbullet{4.2.5 (Properties of Isomorphisms)}
+    For parts (\romannumeral 2 -\romannumeral 4), assume \(V\) and \(W\) are finite dimensional.
+    \begin{enumerate}[i.]
+      \item 
+        A linear transfrormation \(T\) from \(V\) to \(W\) is an isomorphism if and only if 
+       \(\text{ker}(T) = \{0\}\) and \(\text{im}(T) = W\).
+      \item 
+        If \(V\) is isomorphic to \(W\), then \(\text{dim}(V) = \text{dim}(W)\).
+      \item 
+        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{ker}(T) = \{0\}\). If 
+        \(\text{dim}(V) = \text{dim}(W)\), then \(T\) is an isomorphism.
+      \item 
+        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{im}(T) = W\). 
+        If \(\text{dim}(V) = \text{dim}(W)\), then \(T\) is an isomorphism.
+    \end{enumerate}
+    
+    \begin{proof}
+    
+    \end{proof}
+
+\end{outline}
+
+\end{document}

@@ -1,0 +1,118 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Axioms of Probability}
+\author{A First Course in Probability by Sheldon Ross (Chapter 2)}
+\date{May 29\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{2.3.1}
+    Consider an experiment whose sample space is \(S\). For each event \(E\) of the sample space \(S\), we assume
+    that a number \(\bbp(E)\) is defined and satisfies the following three axioms:
+    \begin{enumerate}[i.]
+      \item \(0 \leq \bbp(E) \leq 1\)
+      \item \(\bbp(S) = 1\)
+      \item For any sequence of mutually exclusive events \(E_1, E_2, \ldots\) (that is, events for which \(E_iE_j = 
+      \emptyset\) when \(i \neq j\)), \(\bbp(\bigcup_{i=1}^{\infty} E_i) = \sum_{i=1}^{\infty}\bbp(E_i)\).
+    \end{enumerate}
+    
+  \pbullet{2.4.1}
+    \(\bbp(E^c) = 1 - \bbp(E)\)
+    
+  \pbullet{2.4.2}
+    If \(E \subset F\), then \(\bbp(E) \leq \bbp(F)\).
+    
+    \begin{proof}
+      Since \(E \subset F\), it follows that \(F = E \cup E^cF\). Hence, because \(E\) and \(E^cF\) are mutually
+      exclusive, \(\bbp(F) = \bbp(E) + \bbp(E^cF)\). Yet \(\bbp(E^cF) \geq 0\) so 
+      \(\bbp(F) \geq \bbp(E)\).
+    \end{proof}
+    
+  \pbullet{2.4.3 (Inclusion/Exclusion Principle)}
+    \(\bbp(E \cup F) = \bbp(E) + \bbp(F) - \bbp(EF)\).
+    
+    \begin{proof}
+      Note \(\bbp(E \cup F) = \bbp(E \cup E^cF) = \bbp(E) + \bbp(E^cF)\). Also, since
+      \(F = EF \cup E^cF\), then \(\bbp(F) = \bbp(EF) + \bbp(E^cF)\). Thus \(\bbp(E^cF)
+      = \bbp(F) - \bbp(EF) \Rightarrow \bbp(E \cup F) = \bbp(E) = \bbp(F) -
+      \bbp(EF)\).
+    \end{proof}
+    
+  \pbullet{2.4.4 (Inclusion/Exclusion Identity)}
+    Succinctly written, we have:
+    \[
+      \bbp(\bigcup_{i=1}^n E_i) = \sum_{r=1}^n (-1)^{r+1} \sum_{\inflatedot[<]{i}{r}} 
+      \bbp(E_{i_1}, E_{i_2}, \ldots, E_{i_r})\text{.}
+    \]
+    
+    \begin{proof}
+      Suppose an outcome is not a member of any sets \(E_i\); then it contributes \(0\) to either side
+      of the equality. Now suppose an outcome occurs in \(m > 0\) of the events \(E_i\). Since it is in
+      \(\bigcup_i E_i\), its probability is counted once in \(\bbp(\bigcup_i E_i)\). Also, this outcome
+      is contained in \(\binom{m}{k}\) subsets of type \(E_{i_1}E_{i_2}\ldots E_{i_k}\), so its probability is
+      counted \(\binom{m}{1} - \binom{m}{2} + \ldots \pm \binom{m}{m}\) times on the right side of the equality.
+      
+      Thus we want to show \(1 = \binom{m}{1} - \binom{m}{2} + \ldots \pm \binom{m}{m}\). Since \(1 = \binom{m}{0}\),
+      we want to show \(0 = \sum_{i=0}^m\binom{m}{i}(-1)^i\) which, by the binomial theorem, equals
+      \((-1 + 1)^m = 0\).
+    \end{proof}
+    
+  \dbullet{2.6.1}
+    A sequence of events \(\{E_n, n \geq 1\}\) is an "increasing sequence" if \(\inflatedot[\subset]{E}{n} \subset
+    E_{n+1} \subset \ldots\) whereas a "decreasing sequence" if \(\inflatedot[\supset]{E}{n} \supset E_{n+1} \ldots\)
+    
+  \dbullet{2.6.2}
+    If \(\{E_n, n \geq 1\}\) is an increasing sequence, \(\lim\limits_{n\rightarrow\infty} E_n 
+    = \bigcup_{i=1}^{\infty} E_i\). Similarly if \(\{E_n, n \geq 1\}\) is a decreasing sequence, 
+    \(\lim\limits_{n\rightarrow\infty} = \bigcap_{i=1}^{\infty} E_i\).
+    
+  \pbullet{2.6.3}
+    If \(\{E_n, n \geq 1\}\) is either an increasing or decreasing sequence of events, then 
+    \(\lim\limits_{n\rightarrow\infty} \bbp(E_n) = \bbp(\lim\limits_{n\rightarrow\infty} E_n)\).
+    
+    \begin{proof}
+      Suppose first that \(\{E_n, n \geq 1\}\) is an increasing sequence and define events \(F_n\), \(n \geq 1\) by
+      \begin{align*}
+        F_1 &= E_1\\
+        F_n &= E_n(\bigcup_{1}^{n-1}E_i)^c = E_nE_{n-1}^c, n > 1
+      \end{align*}
+      where we have used \(\bigcup_{1}^{n-1}E_i = E_{n-1}\) since vents are increasing. Therefore \(F_n\) consists
+      of outcomes in \(E_n\) not included in earlier events. We also note \(\bigcup_{i=1}^{\infty} F_i = 
+      \bigcup_{i=1}^{\infty} E_i\) and \(\bigcup_{i=1}^{n} F_i = \bigcup_{i=1}^{n} E_i\) for all \(n \geq 1\). Thus 
+      \begin{align*}
+        \bbp(\bigcup_{1}^{\infty} E_i) &= \bbp(\bigcup_{1}^{\infty} F_i)\\
+                                             &= \sum_{1}^{\infty} \bbp(F_i)\\
+                                             &= \lim_{n\rightarrow\infty} \bbp(\bigcup_{1}^n F_i)\\
+                                             &= \lim_{n\rightarrow\infty} \bbp(\bigcup_{1}^n E_i)\\
+                                             &= \lim_{n\rightarrow\infty} \bbp(E_n)\text{.}
+      \end{align*}
+      Now if \(\{E_n, n \geq 1\}\) was decreasing, \(\{E_n^c, n \geq 1\}\) is increasing meaning that
+      \(\bbp(\bigcup_{1}^{\infty} E_i^c) = \lim\limits_{n\rightarrow\infty} \bbp(E_n^c)\).
+      However, since \(\bigcup_{1}^{\infty} = (\bigcap_{1}^{\infty}E_i)^c\), then 
+      \(\bbp((\bigcap_{1}^{\infty}E_i)^c) = \lim\limits_{n\rightarrow\infty} \bbp(E_n^c)\). Thus,
+      \begin{align*}
+        1 - \bbp(\bigcap_{1}^{\infty} E_i) &= \lim_{n\rightarrow\infty} [1-\bbp(E_n)] \\
+                                                 &= 1 - \lim_{n\rightarrow\infty} \bbp(E_n) \\
+                                                 &\Rightarrow \bbp(\bigcap_{1}^{\infty} E_i) = 
+                                                  \lim_{n\rightarrow\infty}\bbp(E_n)\text{.}
+      \end{align*}
+    \end{proof}
+    
+\end{outline}
+
+\end{document}

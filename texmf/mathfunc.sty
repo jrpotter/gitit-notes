@@ -7,6 +7,7 @@
 \RequirePackage{enumerate}
 \RequirePackage{lmodern}
 \RequirePackage{amssymb}
+\RequirePackage{amsmath}
 \RequirePackage{pgffor}
 \RequirePackage{xfrac}
 
@@ -27,6 +28,7 @@
 
 % Used for quicker access to calligraphic text
 
+\newcommand{\bbc} {\mathbb{C}}
 \newcommand{\bbn} {\mathbb{N}}
 \newcommand{\bbp} {\mathbb{P}}
 \newcommand{\bbq} {\mathbb{Q}}
@@ -44,7 +46,7 @@
 
 \newcommand{\inflate}[3][,] {%
   \foreach \index in {1,...,#3} {%
-    #2\textsubscript{\index}
+      #2_{\index}
     \ifnum\index=#3\relax\else#1\fi%
   }%
 }
@@ -55,7 +57,7 @@
 % ellipsis
 
 \newcommand{\inflatedot}[3][,] {%
-  \inflate[#1]{#2}{2} #1 \ldots #1 #2\textsubscript{#3}%
+  \inflate[#1]{#2}{2} #1 \ldots #1 #2_{#3}%
 }
 
 
