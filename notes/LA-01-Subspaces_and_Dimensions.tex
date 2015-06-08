@@ -21,17 +21,20 @@
 
 \begin{outline}
 
-  \dbullet{3.1.1}
+  % Section 3.1
+  % ----------------------------------------------------------------------------
+
+  \dbullet{3.1.1 (Image)}
     The "image" of a function consists of all the values the function takes in its target space. If \(f\) is a function
     from \(X\) to \(Y\), then \(\text{image}(f) = \{f(x): x \in X\} = \{ b \in Y : b = f(x) \text{ for some } x \in X\}\).
     
-  \dbullet{3.1.2}
+  \dbullet{3.1.2 (Span)}
     Consider the vectors \(\inflatedot{\vec{v}}{m}\in\bbr^n\). The set of all linear combinations \(c_1\vec{v}_1 + 
     c_2\vec{v}_2 + \ldots, c_m\vec{v}_m\) of the vectors \(\inflatedot{\vec{v}}{m}\) is called their "span:" 
     \(\text{span}(\inflatedot{\vec{v}}{m}) = \{c_1\vec{v}_1 + c_2\vec{v}_2 + \ldots + c_m\vec{v}_m : 
     c_1, \ldots, c_m \in \bbr\}\).
     
-  \tbullet{3.1.3}
+  \tbullet{3.1.3 (Image and Span Relationship)}
     The image of a linear transformation is the span of the column vectors of \(A\). We denote the image of \(T\)
     by \(\text{im}(T)\) or \(\text{im}(A)\).
     
@@ -67,7 +70,7 @@
       \end{enumerate}
     \end{proof}
 
-  \dbullet{3.1.5}
+  \dbullet{3.1.5 (Kernel)}
     The "kernel" of a linear transformation \(T(\vec{x}) = A\vec{x}\) from \(\bbr^m\) to \(\bbr^n\)
     consists of all zeros of the transformation, that is, the solutions of the equation \(T(\vec{x}) = A\vec{x}
     = \vec{0}\).
@@ -96,11 +99,15 @@
     Let \(A\) be an \(n \times m\) matrix and \(B\) a square matrix. Then:
     \begin{enumerate}[i.]
       \item \(\text{ker}(A) = \{0\}\) if and only if \(\text{rank}(A) = m\).
-      \item If \(\text{ker}(A) = \{0\}\), then \(m < n\). If \(m > n\), nonzero vectors are in \(\text{ker}(A)\).
+      \item If \(\text{ker}(A) = \{0\}\), then \(m \leq n\). If \(m > n\), nonzero vectors are in \(\text{ker}(A)\).
       \item \(\text{ker}(B) = \{0\}\) if and only if \(B\) is invertible.
     \end{enumerate}
     
-  \dbullet{3.2.1}
+    
+  % Section 3.2
+  % ----------------------------------------------------------------------------
+  
+  \dbullet{3.2.1 (Linear Subspace)}
     A subset \(W\) of the vector space \(\bbr^n\) is called a "(linear) subspace of \(\bbr^n\)" if it
     has the following three properties:
     \begin{enumerate}[i.]
@@ -108,27 +115,27 @@
       \item \(W\) is closed under addition and scalar multiplication
     \end{enumerate}
     
-  \tbullet{3.2.2}
+  \tbullet{3.2.2 (Kernel/Image Subspaces)}
     If \(T(\vec{x}) = A\vec{x}\) is a linear transformation from \(\bbr^m\) to \(\bbr^n\), then
     \(\text{ker}(T)\) is a subspace of \(\bbr^m\) and \(\text{image}(T)\) is a subspace of \(\bbr^n\).
     
-  \dbullet{3.2.3}
+  \dbullet{3.2.3 (Linear Independence)}
     Consider vectors \(\inflatedot{\vec{v}}{m} \in \bbr^n\). We say vector \(\vec{v}_i\) in list
     \(\inflatedot{\vec{v}}{m}\) is "redundant" if \(\vec{v}_i\) is a linear combination of preceding
     vectors \(\inflatedot{\vec{v}}{i}\). The vectors are "linearly independent" if none of them is
     redundant. Otherwise they are "linearly dependent." The vectors form a "basis" of subspace \(V\) of 
     \(\bbr^n\) if they span \(V\) and are linearly independent (and that the vectors are in \(V\)).
     
-  \tbullet{3.2.4}
+  \tbullet{3.2.4 (Basis of Image)}
     To construct a basis of the image of a matrix \(A\), list all the column vectors of \(A\), and omit redundant
     vectors from the list.
     
-  \tbullet{3.2.5}
+  \tbullet{3.2.5 (Rule of Linear Independence)}
     Consider vectors \(\inflatedot{\vec{v}}{m} \in \bbr^n\). If \(\vec{v}_1\) is nonzero, and if each
     of the vectors \(\vec{v}_i, i \geq 2\), have a nonzero entry in a component where preceding vectors have \(0\),
     then they are linearly independent.
     
-  \dbullet{3.2.6}
+  \dbullet{3.2.6 (Relations)}
     Consider the vectors \(\inflatedot{\vec{v}}{m} \in \bbr^n\). An equation of the form \(c_1\vec{v}_1 +
     \ldots + c_m\vec{v}_m = \vec{0}\) is called a "(linear) relation" among the vectors. There is always the "trivial
     relation" \(c_1 = \ldots = c_m = 0\). "Nontrivial relations" may or may not exist.
@@ -148,7 +155,7 @@
         - \ldots - \frac{c_{i-1}}{c_i}\vec{v}_{i-1}\).
     \end{proof}
     
-  \tbullet{3.2.8}
+  \tbullet{3.2.8 (Max Linearly Independent Vectors)}
     The vectors in the kernel of an \(n \times m\) matrix \(A\) correspond to the linear relations among the column
     vectors of \(A\). The equation \(A\vec{x} = \vec{0} \Rightarrow x_1\vec{v}_1 + \ldots + x_m\vec{v}_m = \vec{0}\).
     In particular, the column vectors of \(A\) are linearly independent iff \(\text{ker}(A) = \{\vec{0}\}\), which
@@ -166,7 +173,7 @@
         If \(\text{ker}(A) = \{0\}\), then only \(\vec{0}\) is a solution to \(A\vec{x} = \vec{0}\). Thus only
         the trivial relation works. Theorem 3.2.7 states the column vectors are linearly independent.
         
-      By Theorem 3.1.7, \(\text{ker}(A) = \{0\} \Rightarrow m < n\) so surely \(m \leq n\).
+      By Theorem 3.1.7, \(\text{ker}(A) = \{0\} \Rightarrow m \leq n\).
     \end{proof}
     
   \tbullet{3.2.9}
@@ -189,6 +196,10 @@
         the definition of a basis.
     \end{proof}
     
+    
+  % Section 3.3
+  % ----------------------------------------------------------------------------
+    
   \tbullet{3.3.1}
     Consider vectors \(\inflatedot{\vec{v}}{p}\) and \(\inflatedot{\vec{w}}{q}\) in a subspace \(V\)
     of \(\bbr^n\). If the vectors \(\inflatedot{\vec{v}}{p}\) are linearly independent, and vectors
@@ -209,7 +220,7 @@
       as many rows as columns of \(q \geq p\).
     \end{proof}
     
-  \tbullet{3.3.2}
+  \tbullet{3.3.2 (Basis Equivalence)}
     All bases of a subspace \(V\) of \(\bbr^n\) consist of the same number of vectors.
     
     \begin{proof}
@@ -217,11 +228,11 @@
       Then by Theorem 3.3.1, \(p \geq q\) and \(q \geq p\) so \(p = q\).
     \end{proof}
     
-  \dbullet{3.3.3}
+  \dbullet{3.3.3 (Dimension)}
     Consider a subspace \(V\) of \(\bbr^n\). The number of vectors in a basis of \(V\) is called
     the "dimension" of \(V\), denoted by \(\text{dim}(V)\).
     
-  \tbullet{3.3.4}
+  \tbullet{3.3.4 (Properties of Dimension)}
     Consider a subspace \(V\) of \(\bbr^n\) with \(\text{dim}(V) = m\).
     \begin{enumerate}[i.]
       \item We can find \textit{at most} \(m\) linearly independent vectors in \(V\).
@@ -287,7 +298,7 @@
     \[\columnvec{\(-c_1\), \vdots, \(-c_{i-1}\), 1, 0, \vdots, 0}\] in the kernel of \(A\). The vectors so constructed 
     form a basis of the kernel of \(A\). The nonredundant columns form a basis of the image of \(A\).
     
-  \tbullet{3.3.9}
+  \tbullet{3.3.9 (Basis and Invertibility)}
     The vectors \(\inflatedot{\vec{v}}{n} \in \bbr^n\) form a basis of \(\bbr^n\) if and only if the matrix 
     \[
       \begin{bmatrix}
@@ -318,8 +329,12 @@
       \]
       is invertible.
     \end{proof}
+    
+    
+  % Section 3.4
+  % ----------------------------------------------------------------------------
   
-  \dbullet{3.4.1}
+  \dbullet{3.4.1 (\(\beta\)-Coordinates)}
     Consider a basis \(\beta = (\inflatedot{\vec{v}}{m})\) of a subspace \(V\) of \(\bbr^n\). By Theorem 3.2.9, 
     any vector \(\vec{x}\) in \(V\) can be written uniquely as \[ \vec{x} = c_1\vec{v}_1 + c_2\vec{v}_2 + \ldots + 
     c_m\vec{v}_m\text{.} \] The scalars \(\inflatedot{c}{m}\) are called the "\(\beta\)-coordinates" of \(\vec{x}\),
@@ -366,14 +381,14 @@
       \end{enumerate}
     \end{proof}
     
-  \dbullet{3.4.3}
+  \dbullet{3.4.3 (\(\beta\)-Matrices)}
     Consider a linear transformation \(T\) from \(\bbr^n\) to \(\bbr^n\) and a basis \(\beta\) of \(\bbr^n\). 
     The \(n \times n\) matrix \(B\) that transforms \(\bcoor{\vec{x}}\) into \(\bcoor{T(\vec{x})}\) is called the 
     "\(\beta\)-matrix of \(T\):" \[ \bcoor{T(\vec{x})} = B\bcoor{\vec{x}}\text{,} \] for all \(\vec{x}\) in \(\bbr^n\).
     
   \tbullet{3.4.4}
     We can construct a \(\beta\)-matrix \(B\) of a linear transformation \(T\) column by column as follows:
-    \[ B = \begin{bmatrix} \bcoor{T(\vec{v}_1)} & \cdots & \bcoor{T(\vec{v}_n)} \end{bmatrix}\text{,} \] where 
+    \[ B = \begin{bmatrix} & & \\ \bcoor{T(\vec{v}_1)} & \cdots & \bcoor{T(\vec{v}_n)} \\ & & \end{bmatrix}\text{,} \] where 
     \(\beta\) = \((\inflatedot{\vec{v}}{n})\).
     
     \begin{proof}
@@ -390,8 +405,8 @@
       we then note \(\bcoor{\vec{v}_i} = e_i\). Since \(\bcoor{T(\vec{v}_i)} = B\bcoor{\vec{v}_i}\), the proof follows.
     \end{proof}
     
-  \tbullet{3.4.5}
-    Consider a linear transformatino \(T\) from \(\bbr^n\) to \(\bbr^n\) and a basis \(\beta = (\inflatedot{\vec{v}}{n})\) 
+  \tbullet{3.4.5 (Change of Bases)}
+    Consider a linear transformation \(T\) from \(\bbr^n\) to \(\bbr^n\) and a basis \(\beta = (\inflatedot{\vec{v}}{n})\) 
     of \(\bbr^n\). Let \(B\) be the \(\beta\)-matrix of \(T\), and let \(A\) be the standard matrix of \(T\) 
     (such that \(T(\vec{x}) = A\vec{x}\) for all \(\vec{x}\) in \(\bbr^n\)). Then 
     \[
@@ -408,7 +423,7 @@
       Thus \(T(\vec{x}) = AS\bcoor{\vec{x}}\) and \(T(\vec{x}) = SB\bcoor{\vec{x}}\) meaning \(AS=SB\).
     \end{proof}
     
-  \dbullet{3.4.6}
+  \dbullet{3.4.6 (Similar Matrices)}
     Consider two \(n\times n\) matrices \(A\) and \(B\). We say that \(A\) is "similar" to \(B\) if there exists an 
     invertible matrix \(S\) such that \(AS = SB\). Thus two matrices are similar if they represent the same linear 
     transformation with respect to different bases.

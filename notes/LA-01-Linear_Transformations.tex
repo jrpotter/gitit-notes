@@ -21,11 +21,14 @@
 
 \begin{outline}
 
-  \dbullet{2.1.1}
+  % Section 2.1
+  % ----------------------------------------------------------------------------
+
+  \dbullet{2.1.1 (Linear Transformations)}
     A function \(T\) from \(\bbr^m\) to \(\bbr^n\) is called a "linear transformation" if there exists 
     an \(n \times m\) matrix \(A\) such that \(T(\vec{x}) = A\vec{x}\), for all \(\vec{x} \in \bbr^m\).
     
-  \tbullet{2.1.2}
+  \tbullet{2.1.2 (Properties of Linearity)}
     Consider a linear transformation from \(T\) from \(\bbr^m\) to \(\bbr^n]\). Then the matrix of \(T\) is:
     \[
       A = 
@@ -77,11 +80,15 @@
         \] proving a matrix exists.
     \end{proof}
     
-  \dbullet{2.2.1}
+  
+  % Section 2.2
+  % ----------------------------------------------------------------------------
+    
+  \dbullet{2.2.1 (Scaling)}
     For any positive constant \(k\), the matrix \(\begin{bsmallmatrix} k&0\\ 0&k \end{bsmallmatrix}\) defines
     a scaling by \(k\). This is a "dilation" for \(k > 1\) and a "contraction" for \(0 < k < 1\).
     
-  \dbullet{2.2.2}
+  \dbullet{2.2.2 (Orthogonal Projection)}
     The transformation \(T(\vec{x}) = \vec{x}^{\parallel}\) from \(\bbr^2\) to \(\bbr^2\)
     is called the "orthogonal projection of \(\vec{x}\) onto \(L\), often denoted by \(\text{proj}_{L}(\vec{x})\).
     
@@ -105,7 +112,7 @@
       \end{align*}
     \end{proof}
 
-  \dbullet{2.2.4}
+  \dbullet{2.2.4 (Reflection)}
     Consider a line \(L\) in the coordinate plane, running through the origin, and let 
     \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) be a vector in \(\bbr^2\). The linear transformation
     \(T(\vec{x}) = \vec{x}^{\parallel} - \vec{x}^{\perp}\) is called the "reflection of \(\vec{x}\) about \(L\)," 
@@ -134,7 +141,7 @@
       \end{align*}
     \end{proof}
     
-  \tbullet{2.2.6}
+  \tbullet{2.2.6 (Rotation)}
     The matrix of a counterclockwise rotation in \(\bbr^2\) through an angle \(\theta\) is 
     \(\begin{bsmallmatrix} \cos{\theta} & -\sin{\theta} \\ \sin{\theta} & \cos{\theta} \end{bsmallmatrix}\) 
     where this matrix is of form \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) and \(a^2 + b^2 = 1\).
@@ -165,12 +172,15 @@
     a \\ b \end{bsmallmatrix}\), then \(\begin{bsmallmatrix} a & -b \\ b & a \end{bsmallmatrix}\) represents a rotation
     \(\theta\) with a scaling by \(r\).
     
-  \tbullet{2.2.8}
+  \tbullet{2.2.8 (Shearing)}
     The matrix of a "horizontal shear" is of the form \(\begin{bsmallmatrix} 1 & k \\ 0 & 1 \end{bsmallmatrix}\), and the
     matrix of a "vertical shear" is of the form \(\begin{bsmallmatrix} 1 & 0 \\ k & 1 \end{bsmallmatrix}\), where \(k\) is
     and arbitrary constant.
     
-  \tbullet{2.3.1}
+  % Section 2.3
+  % ----------------------------------------------------------------------------
+    
+  \tbullet{2.3.1 (Linear Composition)}
     Let \(A\) be a \(p \times n\) matrix and \(B\) be a \(m \times p\) matrix. Then the transformation
     \(\vec{z} = B(A\vec{x})\) is linear.
     
@@ -184,7 +194,7 @@
       Similarly, \(T(k\vec{v}) = B(A(k\vec{v})) = B(kA\vec{v}) = kB(A\vec{v})\).
     \end{proof}
     
-  \dbullet{2.3.2}
+  \dbullet{2.3.2 (Matrix Product)}
     The matrix of the linear transformation \(\vec{z} = B(A\vec{x})\) is called the "product" of the matrices \(B\)
     and \(A\), written as \(BA\).
     
@@ -209,7 +219,7 @@
   \tbullet{2.3.6}
     \(AB \neq BA\), in general.
     
-  \dbullet{2.3.7}
+  \dbullet{2.3.7 (Matrix Commutativity)}
     If \(AB = BA\), we say the matrices \(A\) and \(B\) "commute".
     
   \tbullet{2.3.8}
@@ -236,11 +246,11 @@
     Block matrices can be multiplied as though the blocks were scalars (i.e. like in Theorem 2.3.6) provided 
     that all submatrix products are defined.
     
-  \dbullet{2.4.1}
-    A function \(T\) from \(X\) to \(Y\) is called invertible if the equation \(T(x) = Y\) has a unique solution
+  \dbullet{2.4.1 (Function Inverses)}
+    A function \(T\) from \(X\) to \(Y\) is called "invertible" if the equation \(T(x) = Y\) has a unique solution
     \(x \in X\) for each \(y \in Y\).
     
-  \dbullet{2.4.2}
+  \dbullet{2.4.2 (Matrix Invertibility)}
     A square matrix \(A\) is said to be "invertible" if the linear transformation \(\vec{y} = T(\vec{x}) = A\vec{x}\)
     is invertible. In this case, the matrix of \(T^{-1}\) is denoted by \(A^{-1}\). If the linear transformation 
     \(\vec{y} = T(\vec{x}) = A\vec{x}\) is invertible, then its inverse \(\vec{x} = T^{-1}(\vec{y}) = Ay^{-1}\).
@@ -262,7 +272,7 @@
   \tbullet{2.4.6}
     For an invertible \(n \times n\) matrix \(A\), \(A^{-1}A = I_n\) and \(AA^{-1} = I_n\).
     
-  \tbullet{2.4.7}
+  \tbullet{2.4.7 (Invertible Composition)}
     If \(A\) and \(B\) are invertible \(n \times n\) matrices, then \(BA\) is also invertible, and
     \((BA)^{-1} = A^{-1}B^{-1}\).
     
@@ -276,12 +286,12 @@
       \end{align*}
     \end{proof}
 
-  \tbullet{2.4.8}
+  \tbullet{2.4.8 (Determinant)}
     The \(2 \times 2\) matrix \(A = \begin{bsmallmatrix} a & b \\ c & d \end{bsmallmatrix}\) is invertible if and only
     if \(ad-bc \neq 0\). Quantity \(ad - bc\) is called the "determinant" of \(A\), written \(\text{det}(A)\). 
     If A is invertible, then \(A^{-1} = \frac{1}{\text{det}(A)} \begin{bsmallmatrix} d & -b \\ -c & a \end{bsmallmatrix}\).
     
-  \tbullet{2.4.9}
+  \tbullet{2.4.9 (Geometric Interpretation of Determinant)}
     If \(A = \begin{bmatrix} \vec{v} & \vec{w} \end{bmatrix}\) is a \(2 \times 2\) matrix with nonzero columns
     \(\vec{v}\) and \(\vec{w}\), then \(\text{det}(A) = \text{det}\begin{bmatrix} \vec{v} & \vec{w} \end{bmatrix} =
     |\vec{v}|\sin{\theta}|\vec{w}|\), where \(\theta\) is the oriented angle from \(\vec{v}\) to \(\vec{w}\),
