@@ -55,6 +55,103 @@
       \end{gather*}
       Again, upon rearranging, we see the Theorem holds.
     \end{proof}
+    
+  \tbullet{7.2.1 (Strategy for Evaluating \(\int\sin^m(x)\cos^n(x)dx\))}
+    \begin{enumerate}[i.]
+      \item
+        If the power of cosine is odd, save one cosine factor and use \(\cos^2x=1-sin^2x\) to express the remaining
+        factors in terms of sine.
+      \item
+        If the power of sine is odd, save on sine factor and use \(\sin^2=1-\cos^2x\) to express the remaining
+        factors in terms of cosine.
+      \item
+        If the powers of both sine and cosine are even, use the half-angle identities 
+        \[\sin^2x = \frac{1}{2}[1-\cos{(2x)}] \text{ and } \cos^2x = \frac{1}{2}[1+\cos{(2x)}]\text{.}\]
+    \end{enumerate}
+    
+  \tbullet{7.2.2 (Strategy for Evaluating \(\int\tan^m(x)\sec^n(x)dx\))}
+    \begin{enumerate}[i.]
+      \item
+        If the power of secant is even, save a factor of \(\sec^2x\) and use \(\sec^2x=1+\tan^2x\) to express the
+        remaining factors in terms of \(\tan{x}\).
+      \item
+        If the power of tangent is odd, save a factor of \(\sec{x}\tan{x}\) and use \(\tan^2x=\sec^2x-1\) to express
+        the remaining factors in terms of \(\sec{x}\).
+    \end{enumerate}
+
+  \tbullet{7.2.3}
+    \(\int\tan{(x)}dx = \ln{|\sec{x}|} + C\)
+    
+    \begin{proof}
+      Note the following:
+      \begin{align*}
+        \int\tan{(x)}dx &= \int\frac{\sin{x}}{\cos{x}}dx \\
+                        &= -\int\frac{1}{u}du \text{ for } u=\cos{x}\\
+                        &= -\ln{|u|} + C = -\ln{|\cos{x}|} + C \\
+                        &= \ln{(|\cos{x}|^{-1})} + C \\
+                        &= \ln{|\sec{x}|} + C
+      \end{align*}
+    \end{proof}
+    
+  \tbullet{7.2.4}
+    \(\int\sec{(x)}dx = \ln{|\sec{x}+\tan{x}|} + C\)
+    
+    \begin{proof}
+      Note the following:
+      \begin{align*}
+        \int\sec{(x)}dx &= \int\sec{x}\frac{\sec{x}+\tan{x}}{\sec{x}+\tan{x}}dx \\
+                        &= \int\frac{\sec^2x+\sec{x}\tan{x}}{\sec{x}+\tan{x}}dx
+      \end{align*}
+      If we substitute \(u=\sec{x}+\tan{x}\), then \(du=(\sec{x}\tan{x}+\sec^2{x})dx\), so the integral
+      becomes \(\int(1/u)du = \ln{|u|} + C\). Thus we have: \[ \int\sec{(x)}dx = \ln{|\sec{x}+\tan{x}|} + 
+      C\text{.} \]
+    \end{proof}
+    
+  \tbullet{7.3.1 (Trigonometic Substitutions)}
+    \begin{enumerate}[i.]
+      \item 
+        Given expression \(\sqrt{a^2-x^2}\), we use substitution \(x=a\sin{\theta}, -\frac{\pi}{2}
+        \leq\theta\leq\frac{\pi}{2}\).
+      \item
+        Given expression \(\sqrt{a^2+x^2}\), we use substitution \(x=a\tan{\theta}, -\frac{\pi}{2}
+        < \theta < \frac{\pi}{2}\).
+      \item 
+        Given expression \(\sqrt{x^2-a^2}\), we use substitution \(x=a\sec{\theta}, 0\leq\theta<\frac{\pi}{2}\)
+        or \(\pi\leq\theta<\frac{3\pi}{2}\).
+    \end{enumerate}
+    
+  \tbullet{7.4.1 (Partial Fractions)}
+    Consider a rational function \[f(x)=\frac{P(x)}{Q(x)}\] where \(P\) and \(Q\) are polynomials. If \(f\) is
+    improper, that is, \(\text{deg}(P)\geq\text{def}(Q)\), then we must take the preliminary step of dividing
+    \(Q\) into \(P\) until a remainder \(R(x)\) is obtained such that \(\text{deg}(R)<\text{deg}(Q)\). The division
+    statement is \[f(x)=\frac{P(x)}{Q(x)}=S(x)+\frac{R(x)}{Q(x)}\] where \(S\) and \(R\) are also polynomials.
+    
+    \begin{proofcases}
+      \item 
+        The denominator \(Q(x)\) is a product of distinct linear factors.
+        
+        If \(Q(x) = (a_1x+b_1)(a_2x+b_2)\cdots(a_kx+b_k)\) where no factor is repeated, then \[ \frac{R(x)}{Q(x)}
+        = \frac{A_1}{a_1x+b_1} + \frac{A_2}{a_2x+b_2} + \cdots + \frac{A_k}{a_kx+b_k}\text{.} \]
+      \item
+        \(Q(x)\) is a product of linear factors, some of which are repeated.
+        
+        If the first linear factor \((a_1x+b_1)\) is repeated \(r\) times, then \[ \frac{R(x)}{Q(x)} = 
+        \frac{A_1}{a_1x+b_1} + \frac{A_2}{(a_1x+b_1)^2} + \cdots + \frac{A_r}{(a_1x+b_1)^r}\text{.} \]
+      \item
+        \(Q(x)\) contains irreducible quadratic factors, none of which is repeated.
+        
+        If \(Q(x)\) has the factor \(ax^2+bx+c\), where \(b^2-rac < 0\), then, in addition to the partial fractions
+        in Cases (\romannumeral 1) and (\romannumeral 2), the expression for \(R(x)/Q(x)\) will have a term
+        of the form \[\frac{Ax+B}{ax^2+bx+c}\] where \(A\) and \(B\) are constants to be determined.
+      \item
+        \(Q(x)\) contains a repeated irreducible quadratic factor.
+        
+        If \(Q(x)\) has the factor \((ax^2+bx+c)^r\), where \(b^2-4ac < 0\), then instead of the single partial
+        fraction in Case (\romannumeral 3), the sum \[\frac{A_1x+b_1}{ax^2+bx+c}+\frac{A_2x+B_2}{(ax^2+bx+c)^2}+
+        \cdots+\frac{A_rx+B_r}{(ax^2+bx+c)^r}\] occurs in the partial fraction decomposition of \(R(x)/Q(x)\).
+      
+      
+    \end{proofcases}
 
 \end{outline}
 
