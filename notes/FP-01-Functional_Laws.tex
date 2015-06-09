@@ -1,0 +1,148 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+\usepackage{minted}
+
+% Header
+% ===========================
+
+\title{Functional Laws (Functors, Applicatives, Monoids, Monads)}
+\author{Learn You a Haskell for Great Good by Miran Lipovaca (Chapters 11, 12, 13)}
+\date{June 8\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{11.1 (Functor Laws)}
+    For functors
+    \begin{figure}[thp]
+      \centering 
+      \begin{minipage}{0.4\textwidth}
+        \begin{minted}{haskell}
+class Functor f where
+    fmap :: (a -> b) -> f a -> f b
+        \end{minted}
+      \end{minipage}
+    \end{figure}
+    
+    the following laws hold:
+    \begin{enumerate}[i.]
+      \item 
+        \begin{minted}{haskell}
+  fmap id = id
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  fmap (f . g) = fmap f . fmap g
+        \end{minted}
+    \end{enumerate}
+    
+  \tbullet{11.2 (Applicative Laws)} 
+    For applicative functors
+    \begin{figure}[thp]
+      \centering 
+      \begin{minipage}{0.4\textwidth}
+        \begin{minted}{haskell}
+class Functor f => Applicative f where
+    pure  :: a -> f a
+    (<*>) :: f (a -> b) -> f a -> f b
+    (*>)  :: f a -> f b -> f b
+    (<*)  :: f a -> f b -> f a
+        \end{minted}
+      \end{minipage}
+    \end{figure}
+    
+    the following laws hold:
+    \begin{enumerate}[i.]
+      \item
+        \begin{minted}{haskell}
+  pure id <*> v = v
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  pure (.) <*> u <*> v <*> w = u <*> (v <*> w)
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  pure f <*> pure x = pure (f x)
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  u <*> pure y = pure ($ y) <*> u
+        \end{minted}
+    \end{enumerate}
+  
+  \tbullet{12.1 (Monoid Laws)}
+    For monoids
+    \begin{figure}[thp]
+      \centering 
+      \begin{minipage}{0.4\textwidth}
+        \begin{minted}{haskell}
+class Monoid a where
+    mempty  :: a
+    mappend :: a -> a -> a
+    mconcat :: [a] -> a
+        \end{minted}
+      \end{minipage}
+    \end{figure}
+    
+    the following laws hold:
+    \begin{enumerate}[i.]
+      \item
+        \begin{minted}{haskell}
+  mempty `mappend` x = x
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  x `mappend` mempty = x
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  (x `mappend` y) `mappend` z = x `mappend` (y `mappend` z)
+        \end{minted}
+    \end{enumerate}
+    
+  \pagebreak
+  \tbullet{13.1 (Monad Laws)}
+    For monads
+    \begin{figure}[thp]
+      \centering 
+      \begin{minipage}{0.4\textwidth}
+        \begin{minted}{haskell}
+class Monad m where
+    (>>=)  :: m a -> (a -> m b) -> m b
+    (>>)   :: m a -> m b -> m b
+    return :: a -> m a
+    fail   :: String -> m a
+        \end{minted}
+      \end{minipage}
+    \end{figure}
+    
+    the following laws hold:
+    \begin{enumerate}[i.]
+      \item
+        \begin{minted}{haskell}
+  return x >>= f = f x
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  m >>= return = m
+        \end{minted}
+      \item
+        \begin{minted}{haskell}
+  (m >>= f) >>= g = m >>= (\x -> f x >>= g)
+        \end{minted}
+    \end{enumerate}
+    
+\end{outline}
+
+\end{document}
