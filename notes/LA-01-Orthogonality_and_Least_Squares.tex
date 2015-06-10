@@ -1,0 +1,83 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Orthogonality and Least Squares}
+\author{Linear Algebra With Applications by Otto Bretscher (Chapter 5)}
+\date{June 10\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{5.1.1 (Orthogonality, Length, Unit Vectors)}
+    \begin{enumerate}[i.]
+      \item
+        Two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^n\) are called "perpendicular" or "orthogonal" 
+        if \(\dotp{v}{w} = 0\). 
+      \item 
+        The "length" (or "magnitude" or "norm") of a vector \(\vec{v}\) in \(\bbr^n\) is 
+        \(\norm{\vec{v}} = \sqrt{\dotp{v}{v}}\). 
+      \item
+        A vector \(\vec{u}\) in \(\bbr^n\) is called a "unit vector" if its length is \(1\).
+    \end{enumerate}
+    
+  \dbullet{5.1.2 (Orthogonal to Subspaces)}
+    A vector \(\vec{x}\) in \(\bbr^n\) is said to be orthogonal to a subspace \(V\) of \(\bbr^n\) if 
+    \(\vec{x}\) is orthogonal to all the vectors \(\vec{v}\) in \(V\), meaning that \(\dotp{x}{v} = 0\) for 
+    all vectors \(\vec{v}\) in \(V\).
+    
+  \dbullet{5.1.3 (Orthonormal Vectors)}
+    The vectors \(\inflatedot{\vec{u}}{m}\) in \(\bbr^n\) are called "orthonormal" if they are all unit vectors and orthogonal to one another:
+    \[
+      \vec{u}_i \cdot \vec{u}_j = \begin{cases}
+        1\text{ if }i = j \\
+        0\text{ if }i \neq j
+      \end{cases}
+    \]
+    
+  \tbullet{5.1.4 (Properties of Orthonormal Vectors)}
+    \begin{enumerate}[i.]
+      \item Orthonormal vectors are linearly independent.
+      \item Orthonormal vectors \(\inflatedot{\vec{u}}{n}\) in \(\bbr^n\) form a basis of \(\bbr^n\).
+    \end{enumerate}
+    
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          Consider a relation \[ c_1\vec{u}_1 + c_2\vec{u}_2 + \cdots + c_i\vec{u}_i + \cdots + c_m\vec{u}_m = \vec{0} \] 
+          among the orthonormal vectors \(\inflatedot{\vec{u}}{m}\) in \(\bbr^n\). Let us form the dot product of each side 
+          of this equation with \(\vec{u}_i\): 
+          \[ 
+            (c_1\vec{u}_1+c_2\vec{u}_2+\cdots+c_i\vec{u}_i+\cdots+c_m\vec{u}_m)\cdot\vec{u}_i = \vec{0}\cdot\vec{u}_i = 0
+            \text{.} 
+          \] 
+          Because the dot product is distributive, 
+          \[
+            c_1(\vec{u}_1\cdot\vec{u}_i) + c_2(\vec{u}_2\cdot\vec{u}_i) + \cdots + c_i(\vec{u}_i\cdot\vec{u}_i) + 
+            \cdots+c_m(\vec{u}_m\cdot\vec{u}_i) = 0\text{.} 
+          \]
+          We know that \(\vec{u}_i\cdot\vec{u}_i = 1\), and all other dot products are zero. Therefore \(c_i = 0\). 
+          Since this holds for all \(i = 1, \ldots, m\), it follows that the vectors \(\inflatedot{\vec{u}}{m}\) are 
+          linearly independent.
+        \item
+          From (\romannumeral 1), we note that the vectors \(\inflatedot{\vec{u}}{n}\) are linearly independent. We
+          also note that any \(n\) linearly independent vectors in \(\bbr^n\) form a basis of \(\bbr^n\). 
+          The theorem follows.
+      \end{enumerate}
+    \end{proof}
+
+\end{outline}
+
+\end{document}
