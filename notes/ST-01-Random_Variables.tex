@@ -1,0 +1,55 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Random Variables}
+\author{A First Course in Probability by Sheldon Ross (Chapter 4)}
+\date{June 09\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{4.1.1 (Cumulative Distribution Function)}
+    For a random variable \(X\), the function \(F\) defined by \[F(x)=\bbp[X\leq x], -\infty < x < \infty\]
+    is called the "cumulative distributive function," or, more simply, the "distribution function," of \(X\). 
+    Thus, the distribution function specifies, for all real values \(x\), the probabiliity that the random 
+    variable is less than or equal to \(x\).
+    
+  \dbullet{4.2.1 (Discrete Random Variables)}
+    A random variable that can take on at most a countable number of possible values is said to be "discrete."
+    
+  \dbullet{4.2.2 (Probability Mass Function)}
+    For a discrete random variable \(X\), we define the "probability mass function" \(p(a)\) of \(X\) by 
+    \[p(a) = \bbp[X=a]\text{.}\] The probability mass function \(p(a)\) is positive for at most a countable 
+    number of values of \(a\). That is, if \(X\) must assume one of the values \(x_1, x_2, \ldots,\) then 
+    \begin{align*}
+      p(x_i) &\geq 0\text{ for }i = 1, 2, \ldots \\
+      p(x) &= 0\text{ for all other values of }x
+    \end{align*}
+    
+  \dbullet{4.3.1 (Expected Value)}
+    If \(X\) is a discrete random variable having a probability mass function \(p(x)\), then the "expectation," or the "expected value," of \(X\), denoted by \(E[X]\), is defined by \[E[X] = \sum_{x:p(x)>0}xp(x)\text{.}\]
+    
+  \dbullet{4.3.2 (Indicator Variables)}
+    We say that \(I\) is an "indicator variable" for the event \(A\) if 
+    \[ I = \begin{cases} 
+             1 \text{ if } A \text{ occurs} \\
+             0 \text{ if } A^c \text{ occurs}
+       \end{cases}
+    \]
+
+\end{outline}
+
+\end{document}

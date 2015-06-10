@@ -30,9 +30,16 @@
 
 \newcommand{\bbc} {\mathbb{C}}
 \newcommand{\bbn} {\mathbb{N}}
-\newcommand{\bbp} {\mathbb{P}}
 \newcommand{\bbq} {\mathbb{Q}}
 \newcommand{\bbr} {\mathbb{R}}
+
+\newcommand{\bbp}[1][] {%
+    \ifx&#1&%
+        \mathbb{P}%
+    \else%
+        \mathbb{P}\{#1\}%
+    \fi%
+}
 
 
 % Lists/Arguments
@@ -146,7 +153,7 @@
 
 % Takes in a given value and writes it in Beta-coordinates
 
-\newcommand{\bcoor}[1][\beta] {\left[#2\right]_{#1}}
+\newcommand{\bcoor}[2][\beta] {\left[#2\right]_{#1}}
 
 
 % Magnitude of vectors
