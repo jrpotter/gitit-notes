@@ -77,6 +77,128 @@
           The theorem follows.
       \end{enumerate}
     \end{proof}
+    
+  \tbullet{5.1.5 (Orthogonal Projection)}
+    Consider a vector \(\vec{x}\) in \(\bbr^n\) and a subspace \(V\) of \(\bbr^n\). Then we can write 
+    \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\), where \(\vec{x}^{\parallel}\) is in \(V\), 
+    \(\vec{x}^{\perp}\) is perpendicular to \(V\), and this representation is unique. The vector 
+    \(\vec{x}^{\parallel}\) is called the "orthogonal projection" of \(\vec{x}\) onto \(V\), denoted by 
+    \(\text{proj}_{V}(\vec{x})\). 
+    
+    \begin{proof}
+      Consider an "orthonormal" basis \(\inflatedot{\vec{u}}{m}\) of \(V\). If a decomposition 
+      \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) does exist, then we can write
+      \[ \vec{x}^{\parallel} = c_1\vec{u}_1 + \cdots + c_i\vec{u}_i + \cdots + c_m\vec{u}_m\text{,} \]
+      for some coefficients \(c_1, \ldots, c_i, \ldots, c_m\) yet to be determined (since \(\vec{x}^{\parallel}\) 
+      is in \(V\)). 
+      We know that
+      \[
+        \vec{x}^{\perp} = \vec{x}-\vec{x}^{\parallel} = \vec{x}-c_1\vec{u}_1 - \cdots - c_i\vec{u}_i - \cdots - c_m\vec{u}_m
+      \]
+      is orthogonal to \(V\), meaning that \(\vec{x}-c_1\vec{u}_1-\cdots c_i\vec{u}_i-\cdots-c_m\vec{u}_m\) is 
+      orthogonal to all the vectors \(\vec{u}_i\) in \(V\):
+      \begin{align*}
+        0 &= \vec{u}_i \cdot (\vec{x} - c_1\vec{u}_1 - \cdots - c_i\vec{u}_i - \cdots - c_m\vec{u}_m) \\
+          &= \vec{u}_i\cdot x - c_1(\vec{u}_i\cdot\vec{u}_1)-\cdots-c_i(\vec{u}_i\cdot\vec{u}_i)-
+             \cdots-c_m(\vec{u}_i\cdot\vec{u}_m) = \vec{u}_i\cdot\vec{x} - c_i\text{.}
+      \end{align*}
+      It follows that \(c_i = \vec{u}_i\cdot\vec{x}\), so that
+      \[
+        \vec{x}^{\parallel} = (\vec{u}_1\cdot\vec{x})\vec{u}_1 + \cdots
+                            + (\vec{u}_i\cdot\vec{x})\vec{u}_i + \cdots
+                            + (\vec{u}_m\cdot\vec{x})\vec{u}_m
+      \] and 
+      \[ 
+        \vec{x}^{\perp} = \vec{x} - \vec{x}^{\parallel} 
+                        = \vec{x} - (\vec{u}_1\cdot\vec{x})\vec{u}_1 - \cdots - (\vec{u}_i\cdot\vec{x})\vec{u}_i 
+                        - \cdots - (\vec{u}_m\cdot\vec{x})\vec{u}_m\text{.}
+      \]
+      Note that \(\vec{u}_i\cdot\vec{x}^{\perp} = 0\), by construction, so that \(\vec{x}^{\perp}\) is orthogonal 
+      to \(V\), as required.
+    \end{proof}
+    
+  \tbullet{5.1.6 (Orthogonal Linearity)}
+    The transformation \(T(\vec{x}) = \text{proj}_V(\vec{x}) = \vec{x}^{\parallel}\) from \(\bbr^n\) to \(\bbr^n\) 
+    is linear.
+    
+    \begin{proof}
+      Consider transformation \(T(\vec{x}) = \text{proj}_V(\vec{x}) = \vec{x}^{\parallel}\) from \(\bbr^n\) to \(\bbr^n\).
+      Let \(\vec{x}, \vec{y} \in \bbr^n\) and \(k\) be a scalar, and consider the following:
+      \begin{enumerate}[i.]
+        \item
+            \(T(\vec{x}+\vec{y}) = \text{proj}_V(\vec{x}+\vec{y}) = (\vec{x}+\vec{y})^{\parallel} 
+                               = (\vec{x}+\vec{y}) - (\vec{x}+\vec{y})^{\perp} 
+                               = \vec{x} - \vec{x}^{\perp} + \vec{y} - \vec{y}^{\perp} 
+                               = T(\vec{x}) + T(\vec{y})\)
+        \item
+          \(T(k\vec{x}) = \text{proj}_V(k\vec{x}) = (k\vec{x})^{\parallel} = k(\vec{x}-\vec{x}^{\perp}) 
+                        = k\vec{x}-k\vec{x}^{\perp} = k(\vec{x}-\vec{x}^{\perp}) = k\text{proj}_V(\vec{x})\).
+      \end{enumerate}
+      Therefore the transformation \(T(\vec{x})\) is linear.
+    \end{proof}
+    
+  \tbullet{5.1.7 (Formula for Orthogonal Projections)}
+    If \(V\) is a subspace of \(\bbr^n\) with an orthonormal basis \(\inflatedot{\vec{u}}{m}\), then 
+    \[ \text{proj}_V(\vec{x}) = \vec{x}^{\parallel} = (\vec{u}_1\cdot\vec{x})\vec{u}_1 + \cdots + 
+    (\vec{u}_m\cdot\vec{x})\vec{u}_m\text{,} \] for all \(\vec{x}\) in \(\bbr^n\).
+    
+  \tbullet{5.1.8}
+    Consider an orthonormal basis \(\inflatedot{\vec{u}}{n}\) of \(\bbr^n\). Then \[ \vec{x} = 
+    (\vec{u}_1\cdot\vec{x})\vec{u}_1+\cdot+(\vec{u}_n\cdot\vec{x})\vec{u}_n\text{,} \] for all 
+    \(\vec{x}\) in \(\bbr^n\).
+    
+    \begin{proof}
+      Apply Theorem 5.1.7 to the subspace \(V = \bbr^n\) of \(\bbr^n\) with orthonormal basis 
+      \(\inflatedot{\vec{u}}{n}\). Then \(\text{proj}_V\vec{x} = \vec{x}\), for all \(\vec{x}\) in \(V\). 
+      Therefore, by Theorem 5.1.5,
+      \[
+        \vec{x} = (\vec{u}_1\cdot\vec{x})\vec{u}_1+\cdots+(\vec{u}_n\cdot\vec{x})\vec{u}_n\text{,}
+      \]
+      for all \(\vec{x}\) in \(\bbr^n\).
+      
+      Alternatively, we can view Theorem 5.1.5 geometrically and note a projection of a subspace \(V\) of 
+      \(\bbr^n\) is the sum of projections of a given \(\vec{x}\) on each line spanned by the basis vectors 
+      \(\inflatedot{\vec{u}}{m}\) of \(V\). If we let \(V = \bbr^n\), this sum must be \(\vec{x}\).
+    \end{proof}
+    
+  \dbullet{5.1.9 (Orthogonal Complement)}
+    Consider a subspace \(V\) of \(\bbr^n\). The "orthogonal complement" \(V^{\perp}\) of \(V\) is the set of 
+    those vectors \(\vec{x}\) in \(\bbr^n\) that are orthogonal to all vectors in \(V\): \[ V^{\perp} = 
+    \{\vec{x}\text{ in }\bbr^n:\dotp{v}{x}=0\text{, for all }\vec{v}\text{ in }V\}\text{.} \]
+    Note that \(V^{\perp}\) is the kernel of the orthogonal projection onto \(V\).
+    
+  \tbullet{5.1.10 (Properties of the Orthogonal Complement)}
+    Consider a subspace \(V\) of \(\bbr^n\).
+    \begin{enumerate}[i.]
+      \item The orthogonal complement \(V^{\perp}\) of \(V\) is a subspace of \(\bbr^n\).
+      \item The intersection of \(V\) and \(V^{\perp}\) consists of the zero vector alone: 
+            \(V \cap V^{\perp} = \{\vec{0}\}\).
+      \item \(\text{dim}(V) + \text{dim}(V^{\perp}) = n\)
+      \item \((V^{\perp})^{\perp} = V\)
+    \end{enumerate}
+    
+    \begin{proof}
+      Let \(V\) be a subspace of \(\bbr^n\).
+      \begin{enumerate}[i.]
+        \item 
+          If \(T(\vec{x}) = \text{proj}_V(\vec{x})\), then \(V^{\perp} = \text{ker}(T)\), a subspace of \(\bbr^n\).
+        \item 
+          If a vector \(\vec{x}\) is in \(V\) as well as in \(V^{\perp}\), then \(\vec{x}\) is orthogonal to itself: 
+          \(\dotp{x}{x} = \norm{\vec{x}}^2 = 0\), so that \(\vec{x}\) must equal \(\vec{0}\), as claimed.
+        \item 
+          We can apply the Rank-Nullity Theorem  to the linear transformation \(T(\vec{x}) = \text{proj}_V(\vec{x})\): 
+          \[ n = \text{dim}(\text{im}(T)) + \text{dim}(\text{ker}(T)) = \text{dim}(V) + \text{dim}(V^{\perp})\text{.} \]
+        \item
+          If \(T(\vec{x}) = \text{proj}_{V^{\perp}}(\vec{x})\), then \(\text{ker}(T) = (V^{\perp})^{\perp}\). 
+          Now note that for all \(\vec{v}\) in \(V\) and \(\vec{x}\) in \(V^{\perp}\), \(\dotp{v}{x} = 0\) by
+          definition of an orthogonal complement. 
+          Then \(V \subseteq (V^{\perp})^{\perp}\) since \(\text{ker}(T) =
+          \{ \vec{x}\text{ in }\bbr^n:\dotp{v}{x}=0\text{, for all }\vec{v}\text{ in }V^{\perp} \}\). 
+          By (\romannumeral 3) we note \[\text{dim}(V) + \text{dim}(V^{\perp}) = n \text{ and } \text{dim}(V^{\perp}) 
+          + \text{dim}((V^{\perp})^{\perp}) = n\] implying \(\text{dim}(V) = \text{dim}((V^{\perp})^{\perp})\). 
+          Thus \(V = (V^{\perp})^{\perp}\).
+      \end{enumerate}
+    \end{proof}
 
 \end{outline}
 
