@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
+\usepackage{calc}
 
 % Header
 % ===========================
@@ -150,8 +151,153 @@
         fraction in Case (\romannumeral 3), the sum \[\frac{A_1x+b_1}{ax^2+bx+c}+\frac{A_2x+B_2}{(ax^2+bx+c)^2}+
         \cdots+\frac{A_rx+B_r}{(ax^2+bx+c)^r}\] occurs in the partial fraction decomposition of \(R(x)/Q(x)\).
       
-      
     \end{proofcases}
+    
+  \tbullet{7.7.1 (Midpoint Rule)}
+    An approximation of an integral can be performed as such:
+    \[
+      \int_a^bf(x)dx \approx M_n = \Delta{x}\left[f(\bar{x}_1) + f(\bar{x}_2) + \cdots + f(\bar{x}_n)\right]
+    \]
+    where
+    \[
+      \Delta{x}=\frac{b-a}{n}\text{ and }\bar{x}_i=\frac{1}{2}(x_{i-1}+x_i)=\text{ midpoint of }[x_{i-1}, x_i]\text{.}
+    \]
+    
+  \tbullet{7.7.2 (Trapezoidal Rule)}
+    An approximation of an integral can be performed as such:
+    \[
+      \int_a^bf(x)dx \approx \frac{\Delta{x}}{2}\left[f(x_0)+2f(x_1)+2f(x_2)+\cdots+2f(x_{n-1})+f(x_n)\right]
+    \]
+    where \(\Delta{x} = (b-a)/n\) and \(x_i = a + i\Delta{x}\).
+    
+    \begin{justification}
+      Consider the left and right endpoint approximations and take the average:
+      \begin{align*}
+        \int_a^bf(x)dx &\approx \frac{1}{2}\left[\sum_{i=1}^nf(x_{i-1})\Delta{x} + \sum_{i=1}^nf(x_i)\Delta{x}\right] \\
+                       &= \frac{\Delta{x}}{2}\left[\sum_{i=1}^n (f(x_{i-1})+f(x_i))\right] \\
+                       &= \frac{\Delta{x}}{2}\left[(f(x_0)+f(x_1)) + (f(x_1)+f(x_2)) + \cdots + (f(x_{n-1})+f(x_n))\right] \\
+                       &= \frac{\Delta{x}}{2}\left[f(x_0)+2f(x_1)+2f(x_2)+\cdots+2f(x_{n-1})+f(x_n)\right]
+      \end{align*}
+    \end{justification}
+    
+  \tbullet{7.7.3 (Error Bounds)}
+    Suppose \(\norm{f''(x)} \leq K\) for \(a \leq x \leq b\). If \(E_T\) and \(E_M\) are the errors in the 
+    Trapezoidal Rule and Midpoint Rule respectively, then \[ \norm{E_T} \leq \frac{K(b-a)^3}{12n^2}\text{ and }
+    \norm{E_M} \leq \frac{K(b-a)^3}{24n^2}\text{.} \]
+    
+  \tbullet{7.7.4 (Simpson's Rule)}
+    An approximation of an integral can be performed as such:
+    \[
+      \int_a^bf(x)dx \approx S_n = \frac{\Delta{x}}{3}\left[f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \cdots +
+                                   2f(x_{n-1}) + 4f(x_{n-1}) + f(x_n)\right]
+    \]
+    where \(n\) is even and \(\Delta{x} = (b-a)/n\).
+    
+    \begin{justification}
+      Divide \([a,b]\) into \(n\) subintervals of equal length \(h = \Delta{x} = (b-a)/n\), where \(n\) is an even number.
+      If \(y_i = f(x_i)\), set \(P_i = (x_i, y_i)\) as the point on the curve lying above \(x_i\). Then a typical 
+      parabola passes through three consective points \(P_i, P_{i+1}\), and \(P_{i+2}\). First consider the case
+      where \(x_0 = -h, x_1 = 0,\) and \(x_2 = h\). We know the equation of the parabola through \(P_0, P_1,\) and \(P_2\)
+      is of the form \(y = Ax^2 + Bx + C\) and so the area under this parabola if:
+      \begin{align*}
+        \int_{-h}^h (Ax^2+Bx+C)dx &= 2\int_0^h (Ax^2 + C) dx \\
+                                  &= 2\left[ A\frac{x^3}{3} + Cx\right]_0^h \\
+                                  &= 2\left( A\frac{h^3}{3} + Ch\right) = \frac{h}{3}(2Ah^3 + 6C)
+      \end{align*}
+      Since the parabola passes through \(P_0(-h, y_0), P_1(0, y_1),\) and \(P_2(h,y_2)\), we have
+      \begin{align*}
+        y_0 &= A(-h)^2 + B(-h) + C = Ah^2 - Bh + C \\
+        y_1 &= C \\
+        y_2 &= Ah^2 + Bh + C
+      \end{align*}
+      and therefore \(y_0 + 4y_1 + y_2 = 2Ah^2 + 6C\).
+      Thus we can rewrite the area under the parabola as \[ \frac{h}{3}(y_0 + 4y_1 + y_2) \] and, noting that the area
+      does not change if we shift it horizontally, this is the same value from \(x=x_0\) to \(x = x_2\).
+      Computing the areas under all parabolas in this manner yields:
+      \begin{align*}
+        \int_a^bf(x)dx &\approx \frac{h}{3}(y_0+4y_1+y_2) + \frac{h}{3}(y_2+4y_3+y_4) + \cdots + 
+                                \frac{h}{3}(y_{n-2}+4y_{n-1}+y_n) \\
+                       &= \frac{h}{3}(y_0 + 4y_1 + 2y_2 + 4y_3 + \cdots + 2y_{n-2} + 4y_{n-1} + y_n)\text{.}
+      \end{align*}
+    \end{justification}
+    
+  \tbullet{7.7.5 (Error Bound for Simpson's Rule)}
+    Suppose that \(\norm{f^{(4)}(x)} \leq K\) for \(a \leq x \leq b\). If \(E_S\) is the error involved in using
+    Simpson's Rule, then \[ \norm{E_S} \leq \frac{K(b-a)^5}{180n^4}\text{.} \]
+    
+  \pagebreak
+  \dbullet{7.8.1 (Improper Integrals of Type 1)}
+    \begin{enumerate}[i.]
+      \item 
+        If \(\int_a^tf(x)dx\) exists for every number \(t\geq a\), then \[\int_a^{\infty}f(x)dx = 
+        \xlimit{t}{\infty}\int_a^t f(x)dx\] provided this limit exists (as a finite number).
+      \item 
+        If \(\int_t^bf(x)dx\) exists for every number \(t \leq b\), then \[\int_{-\infty}^bf(x)dx = 
+        \xlimit{t}{-\infty}f(x)dx\] provided this limit exists (as a finite number).
+        
+        \fbox{\begin{minipage}{\textwidth-5em}
+          The proper intergrals \(\int_a^{\infty}f(x)dx\) and \(\int_{-\infty}^{b}f(x)dx\) are called "convergent"
+          if the corresponding limit exists and "divergent" if the limit does not exist.
+        \end{minipage}}
+      \item
+        If both \(\int_a^tf(x)dx\) and \(\int_t^af(x)dx\) are convergent, then we define \[\int_{-\infty}^{\infty}f(x)dx=
+        \int_a^tf(x)dx + \int_t^af(x)dx\text{,}\] where \(a\) is any real number.
+    \end{enumerate}
+    
+  \tbullet{7.8.2 (Convergence of Inverted Powers)}
+    \(\int_1^{\infty}\frac{dx}{x^p}\) is convergent if \(p > 1\) and divergent if \(p \leq 1\).
+    
+    \begin{proof}
+      For cases (1) and (2) (i.e. \(p \neq 1\)), note the following:
+      \begin{align*}
+        \int_1^{\infty}\frac{1}{x^p} dx &= \xlimit{t}{\infty}\int_1^tx^{-p} dx \\
+                                        &= \xlimit{t}{\infty}\frac{x^{-p+1}}{-p+1}\Big\vert_{x=1}^{x=t} \\
+                                        &= \xlimit{t}{\infty}\frac{1}{1-p}\left[\frac{1}{t^{p-1}}-1\right]
+      \end{align*}
+      \begin{proofcases}
+        \item \(p > 1\)\\
+          Then \(p-1 > 0\), so as \(t\rightarrow\infty, t^{p-1}\rightarrow\infty\), and \(1/t^{p-1}\rightarrow 0\).
+          Therefore \[ \int_1^{\infty}\frac{1}{x^p}dx = \frac{1}{p-1}\text{ if }p > 1 \] and so the integral converges.
+        \item \(p < 1\)\\
+          Then \(p-1<0\) and so \[\frac{1}{t^{p-1}} = t^{1-p}\rightarrow\infty\text{ as }t\rightarrow\infty\] and
+          the integral diverges.
+        \item \(p = 1\)
+          \[
+            \int_1^{\infty}\frac{1}{x}dx = \xlimit{t}{\infty}\int_1^t\frac{1}{x}dx 
+                                         = \xlimit{t}{\infty}\ln{\norm{x}}\Big\vert_1^t
+                                         = \xlimit{x}{\infty}(\ln{t}-\ln{1}) 
+                                         = \xlimit{t}\ln{t} = \infty\text{.}
+          \]
+          The limit does not exist as a finite number so the improper integral is divergent.
+      \end{proofcases}
+    \end{proof}
+    
+  \pagebreak
+  \dbullet{7.8.3 (Improper Integrals of Type 2)}
+    \begin{enumerate}[i.]
+      \item 
+        If \(f\) is continous on \([a, b)\) and is discontinous at \(b\), then
+        \[\int_a^{b}f(x)dx = \xlimit[-]{t}{b}\int_a^t f(x)dx\] if this limit exists (as a finite number).
+      \item
+        If \(f\) is continous on \((a, b]\) and is discontinuous at \(a\), then
+        \[ \int_a^bf(x)dx = \xlimit[+]{t}{a}\int_t^bf(x)dx \] if this limit exists (as a finite number).
+        
+        \fbox{\begin{minipage}{\textwidth-5em}
+          The improper integral \(\int_a^b f(x)dx\) is called "convergent" if the corresponding limit 
+          exists and "divergent" if the limit does not exist.
+        \end{minipage}}
+      \item
+        If \(f\) has a discontinuity at \(c\), where \(a < c < b\), and both \(\int_a^cf(x)dx\) and
+        \(\int_c^bf(x)dx\) are convergent, then we define \[\int_a^bf(x)dx = \int_a^cf(x)dx + \int_c^bf(x)dx\text{.}\]
+    \end{enumerate}
+    
+  \tbullet{7.8.4 (Comparison Theorem)}
+    Suppose that \(f\) and \(g\) are continuous functions with \(f(x) \geq g(x) \geq 0\) for \(x \geq a\).
+    \begin{enumerate}[i.]
+      \item If \(\int_a^{\infty}f(x)dx\) is convergent, then \(\int_a^{\infty}g(x)dx\) is convergent.
+      \item If \(\int_a^{\infty}g(x)dx\) is divergent, then \(\int_a^{\infty}f(x)dx\) is divergent.
+    \end{enumerate}
+    A similar argument holds for Type 2 improper integrals.
 
 \end{outline}
 
