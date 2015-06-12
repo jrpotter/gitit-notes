@@ -199,6 +199,165 @@
           Thus \(V = (V^{\perp})^{\perp}\).
       \end{enumerate}
     \end{proof}
+    
+  \tbullet{5.1.11 (Pythagorean Theorem)}
+    Consider two vectors \(\vec{x}\) and \(\vec{y}\) in \(\bbr^n\). The equation \[\norm{\vec{x}+\vec{y}}^2 = 
+    \norm{\vec{x}}^2 + \norm{\vec{y}}^2 \] holds if and only if \(\vec{x}\) and \(\vec{y}\) are orthogonal.
+    
+    \begin{proof}
+      For any two vectors \(\vec{x}, \vec{y} \in \bbr^n\):
+      \begin{align*}
+        \norm{\vec{x}+\vec{y}}^2 &= (\vec{x}+\vec{y})\cdot(\vec{x}+\vec{y}) \\
+                                 &= \dotp{x}{x} + 2(\dotp{x}{y}) + \dotp{y}{y} \\
+                                 &= \norm{\vec{x}}^2+2(\dotp{x}{y})+\norm{y} \\
+                                 &= \norm{\vec{x}}^2+\norm{\vec{y}}^2\text{ if and only if }\dotp{x}{y} = 0\text{.}
+      \end{align*}
+    \end{proof}
+    
+  \tbullet{5.1.12}
+    Consider a subspace \(V\) of \(\bbr^n\) and a vector \(\vec{x}\) in \(\bbr^n\). Then 
+    \[\norm{\text{proj}_V\vec{x}} \leq \norm{\vec{x}}\text{.}\] The statement is an equality if and only 
+    if \(\vec{x}\) is in \(V\).
+    
+    \begin{proof}
+      By the Pytagorean theorem, \(\norm{\vec{x}}^2 = \norm{\text{proj}_V\vec{x}}^2 + \norm{\vec{x}^{\perp}}^2\).
+      Thus \(\norm{\text{proj}_V\vec{x}} \leq \norm{\vec{x}}\), as claimed.
+    \end{proof}
+    
+  \tbullet{5.1.13 (Cauchy-Schwarz Inequality)}
+    If \(\vec{x}\) and \(\vec{y}\) are vectors in \(\bbr^n\), then \[|\dotp{x}{y}| \leq 
+    \norm{\vec{x}}\norm{\vec{y}}\text{.}\] This statement is an equality if and only if \(\vec{x}\) 
+    and \(\vec{y}\) are parallel.
+    
+    \begin{proof}
+      Let \(V\) be a one-dimensional subspace of \(\bbr^n\) spanned by a nonzero vector \(\vec{y}\). 
+      We introduce the unit vector \[\vec{u} = \frac{1}{\norm{\vec{y}}}\vec{y}\] in \(V\). We know that 
+      \(\text{proj}_V\vec{x} = (\dotp{x}{u})\vec{u}\) for any \(\vec{x}\) in \(\bbr^n\). Then Theorem 5.1.12 
+      tells us that 
+      \[ \norm{\vec{x}}\geq\norm{\text{proj}_V(\vec{x})} 
+         = \norm{(\dotp{x}{u})\vec{u}} 
+         = |\dotp{x}{u}|=\left|\vec{x}\cdot\left(\frac{1}{\norm{\vec{y}}}\vec{y}\right)\right| 
+         = \frac{1}{\norm{\vec{y}}}|\dotp{x}{y}|\text{.}
+      \]
+    \end{proof}
+    
+  \dbullet{5.1.14 (Angle Between Two Vectors)}
+    Consider two nonzero vectors \(x\) and \(y\) in \(\bbr^n\). The angle \(\theta\) between these vectors is 
+    defined as 
+    \[
+      \theta = \arccos{\frac{\dotp{x}{y}}{\norm{\vec{x}}\norm{\vec{y}}}}\text{.}
+    \]
+    
+    \begin{justification}
+      We know the dot product of two nonzero vectors \(\vec{x}, \vec{y} \in \bbr^n\) is \(\dotp{x}{y} = 
+      \norm{\vec{x}}\norm{\vec{y}}\cos{\theta}\). Thus we solve for \(\theta\) for the above definition. 
+      Note that \(\theta\) is between \(0\) and \(\pi\) by definition of the inverse cosine function, and 
+      that we have to make sure \[ \arccos{\frac{\dotp{x}{y}}{\norm{\vec{x}}\norm{\vec{y}}}} \]
+      is defined; that is, \[ \frac{\dotp{x}{y}}{\norm{\vec{x}}\norm{\vec{y}}} \] is between \(-1\) and \(1\). 
+      Fortunately 
+      \[
+        \left|\frac{\dotp{x}{y}}{\norm{\vec{x}}\norm{\vec{y}}}\right|
+        = \frac{|\dotp{x}{y}|}{\norm{\vec{x}}\norm{\vec{y}}} \leq 1
+      \]
+      by the Cauchy-Schwarz Inequality.
+    \end{justification}
+    
+  \dbullet{5.1.15 (Correlations)}
+    Consider two characteristics of a population, with deviation vectors \(\vec{x}\) and \(\vec{y}\). 
+    There is a "postive correlation" between the two characteristics if and only if \(\dotp{x}{y} > 0\). 
+    Similarly there is a "negative correlation" if and only if \(\dotp{x}{y} < 0\) and no correlation otherwise.
+    
+  \dbullet{5.1.16 (Correlation Coefficient)}
+    The "correlation coefficient \(r\)" between two characteristics of a population is the cosine of the 
+    angle \(\theta\) between the deviation vectors \(\vec{x}\) and \(\vec{y}\) for the two characteristics:
+    \[ r = \cos{\theta} = \frac{\dotp{x}{y}}{\norm{\vec{x}}\norm{\vec{y}}}\text{.} \]
+    
+  \tbullet{5.1.17 (Triangle Inequality)}
+    Given vectors \(\vec{v}, \vec{w} \in \bbr^n\), the following holds: \[\norm{\vec{v}+\vec{w}} 
+    \leq \norm{\vec{v}} + \norm{\vec{w}}\text{.}\]
+    
+    \pagebreak
+    \begin{proof}
+      Note the following:
+      \begin{align*}
+        \norm{\vec{v}+\vec{w}}^2 &= (\vec{v}+\vec{w})\cdot(\vec{v}+\vec{w}) \\
+                                 &= \dotp{v}{v} + \dotp{v}{w} + \dotp{w}{v} + \dotp{w}{w} \\
+                                 &\leq \norm{\vec{v}}^2 + 2|\dotp{v}{w}| + \norm{\vec{w}}^2 \\
+                                 &\leq \norm{\vec{v}}^2 + 2\norm{\vec{v}}\norm{\vec{w}} + \norm{\vec{w}}^2 
+                                  \text{ by Cauchy-Schwarz Inequality} \\
+                                 &= (\norm{\vec{v}} + \norm{\vec{w}})^2
+      \end{align*}
+      Square rooting both sides yields the desired inequality.
+    \end{proof}
+    
+  \tbullet{5.2.1 (Gram-Schmidt Process)}
+    Consider a basis \(\inflatedot{\vec{v}}{m}\) of a subspace \(V\) of \(\bbr^n\). For \(j = 2, \ldots, m\), 
+    we resolve the vector \(\vec{v}_j\) into its components parallel and perpendicular to the span of the preceding 
+    vectors, \(\inflatedot{\vec{v}}{j-1}\):
+    \[ 
+      \vec{v}_j = \vec{v}_j^{\parallel} + \vec{v}_j^{\perp}, \text{ with respect to span}(\inflatedot{\vec{v}}{j-1})\text{.} 
+    \]
+    Then 
+    \[ 
+      \vec{u}_1 = \frac{1}{\norm{\vec{v}_1}}\vec{v}_1, \vec{u_2} 
+                = \frac{1}{\norm{\vec{v}_2^{\perp}}}, \ldots, \vec{u}_j 
+                = \frac{1}{\norm{\vec{v}_j^{\perp}}}\vec{v}_j^{\perp}, \ldots, \vec{u}_m 
+                = \frac{1}{\norm{\vec{v}_m^{\perp}}}\vec{v}_m^{\perp} 
+    \]
+    is an orthonormal basis of \(V\). We also note 
+    \[
+      \vec{v}_j^{\parallel} = \vec{v}_j - \vec{v}_j^{\perp} 
+                            = \vec{v}_j - (\vec{u}_1\cdot\vec{v}_j)\vec{u}_1 - \cdots 
+                            - (\vec{u}_{j-1}\cdot\vec{v}_j)\vec{u}_{j-1}\text{.} 
+    \]
+    
+  \tbullet{5.2.2 (QR Factorization)}
+    Consider an \(n \times m\) matrix \(M\) with linearly independent columns \(\inflatedot{\vec{v}}{m}\). 
+    Then there exists an \(n \times m\) matrix \(Q\) whose columns \(\inflatedot{\vec{u}}{m}\) are orthonormal 
+    and an upper triangular matrix \(R\) with positive diagonal entries such that \(M = QR\). Then 
+    \(r_{11}=\norm{\vec{v}_1}, r_{jj} = \norm{\vec{v}_j^{\perp}}\) (for \(j = 2, \ldots, m\)), 
+    and \(r_{ij} = \vec{u}_i \cdot \vec{v}_j\) (for \(i < j\)).
+    
+    \begin{proof}
+      The Gram-Schmidt Process represents a change of basis from basis \(\beta = (\inflatedot{\vec{v}}{m})\) to 
+      an orthonormal basis \(\mu = (\inflatedot{\vec{u}}{m})\) of \(V\). Thus, by Theorem 4.3.5, 
+      \[ 
+        \begin{bmatrix} & & \\ \vec{v}_1 & \cdots & \vec{v}_m \\ & & \end{bmatrix} = 
+        \begin{bmatrix} & & \\ \vec{u}_1 & \cdots & \vec{u}_m \\ & & \end{bmatrix}R\text{,} 
+      \] 
+      where \(R\) is the change of basis matrix from \(\beta\) to \(\mu\) and the matrix before \(R\) is 
+      traditionally labelled \(Q\).
+      
+      By Theorem 4.3.4, the columns of \(R\) are the coordinates of \(\vec{v}_j\) with respect to basis \(\mu\). We note that 
+      \begin{align*}
+        \vec{v}_j &= \vec{v}_j^{\parallel} + \vec{v}_j^{\perp} \\
+                  &= (\vec{u}_1\cdot\vec{v}_j)\vec{u}_1 + \cdots + (\vec{u}_i\cdot\vec{v}_j)\vec{u}_i 
+                     + \cdots + (\vec{u}_{j-1}\cdot\vec{v}_j)\vec{u}_{j-1} 
+                     + \norm{\vec{v}_j^{\perp}}\vec{u}_j\text{.}
+      \end{align*}
+      It follows that \(r_{ij} = \vec{u}_i\cdot\vec{v}_j\) if \(i < j\), \(r_{jj} = \norm{\vec{v}_j^{\perp}}\), 
+      and \(r_{ij} = 0\) if \(i > j\). This in turn implies that \(R\) is upper triangle, with first diagonal 
+      entry \(r_{11} = \norm{\vec{v}_1},\) since \(\vec{v}_1 = \norm{\vec{v}_1}\vec{u}_1\).
+    \end{proof}
+    
+  \tbullet{5.2.3 (QR Factorization Uniqueness)}
+    Consider an \(n \times m\) matrix \(M\) with linearly independent columns \(\inflatedot{\vec{v}}{m}\). 
+    Then there exists an \(n \times m\) matrix \(Q\) whose columns \(\inflatedot{\vec{u}}{m}\) are orthonormal 
+    and an upper triangular matrix \(R\) with positive diagonal entries such that \(M = QR\). This representation 
+    is unique. 
+    
+    \begin{proof}
+      TODO
+    \end{proof}
+    
+  \abullet{5.2.4 (Process of QR Factorization)}
+    Consider an \(n \times m\) matrix \(M\) with linearly independent columns \(\inflatedot{\vec{v}}{m}\). Then the columns \(\inflatedot{\vec{u}}{m}\) of \(Q\) and the entries \(r_{ij}\) of \(R\) can be computed in the following order:
+    \begin{gather*}
+      r_{11} = \norm{\vec{v}_1}, \vec{u}_1 = \frac{1}{r_{11}}\vec{v_1} \\
+      r_{12} = \vec{u}_1\cdot\vec{v}_2,\quad \vec{v}_2^{\perp} = \vec{v}_2-r_{12}\vec{u}_1,\quad 
+               r_{22} = \norm{\vec{v}_2^{\perp}},\quad \vec{u}_2 = \frac{1}{r_{22}}\vec{v}_2^{\perp},
+    \end{gather*}
+    and so on.
 
 \end{outline}
 
