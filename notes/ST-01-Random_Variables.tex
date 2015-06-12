@@ -49,7 +49,88 @@
              0 \text{ if } A^c \text{ occurs}
        \end{cases}
     \]
-
+    
+  \pbullet{4.4.1 (Expectation of Function Compositions)}
+    If \(X\) is a discrete random variable that takes on one of the values \(x_i, i\ge 1\), with respective 
+    probabilities \(p(x_i)\), then, for any real-valued function \(g\), \[ E[g(X)] = \sum_i g(x_i)p(x_i)\text{.} \]
+    
+    \begin{proof}
+      We group together all terms in \(\sum_i g(x_i)p(x_i)\) with the same value of \(g(x_i)\). Specifically, 
+      suppose that \(y_j, j\geq 1\), represent the different values of \(g(x_i), i\geq 1\). Then, grouping 
+      all the \(g(x_i)\) having the same value gives
+      \begin{align*}
+        \sum_ig(x_i)p(x_i) &= \sum_j\sum_{i: g(x_i)=y_j} g(x_i)p(x_i) \\
+                           &= \sum_j\sum_{i:g(x_i)=y_j} y_jp(x_i) \\
+                           &= \sum_jy_j\sum_{i:g(x_i)=y_j}p(x_i) \\
+                           &= \sum_jy_j\bbp[g(X)=y_j]\\
+                           &= E[g(x)]
+      \end{align*}
+    \end{proof}
+    
+  \cbullet{4.4.2 (Expectation Factors)}
+    If \(a\) and \(b\) are constants, then \(E[aX + b] = aE[X] + b\).
+    
+    \begin{proof}
+      Letting \(X\) be a random variable, and \(a, b\) be constants:
+      \begin{align*}
+        E[aX + b] &= \sum_{x:p(x)>0}(ax + b)p(x) \\
+                  &= a\sum_{x:p(x)>0}xp(x) + \sum_{x:p(x)>0}bp(x) \\
+                  &= aE[X] + b
+      \end{align*}
+    \end{proof}
+    
+  \dbullet{4.4.3 (Moments of X)}
+    The expected value of a random variable \(X, E[X]\), is also referred to as the "mean" or the "first moment 
+    of \(X\)." The quantity \(E[X^n], n\geq 1\), is called the "\(\spscript{n}{th}\) moment of \(X\)."
+    
+  \cbullet{4.4.4 (Expectation of Moments)}
+    By Proposition 4.4.1, \[E[X^n] = \sum_{x:p(x)>0}x^np(x)\text{.}\]
+    
+  \dbullet{4.5.1 (Variance)}
+    If \(X\) is a random variable with mean \(\mu\), then the variance of \(X\), denoted by \(\text{Var}(X)\) 
+    is defined by \[\text{Var}(X) = E[(X-\mu)^2]\text{.} \]
+    
+    \begin{justification}
+      Because we expect \(X\) to take on values around \(E[X]\), a reasonable means of measuring variation would be 
+      \(E[|X-\mu]\), where \(\mu = E[X]\). This ends up being inconvenient to work with though, so the square of the
+      difference between \(X\) and its mean is used instead.
+    \end{justification}
+    
+  \tbullet{4.5.2 (Alternative Variance)}
+    If \(X\) is a random variable with mean \(\mu\), then the variance of \(X\), denoted by \(\text{Var}(X)\) 
+    is defined by \[\text{Var}(X) = E[X^2]-(E[X])^2\text{.} \]
+    
+    \pagebreak
+    \begin{proof}
+      \begin{align*}
+        \text{Var}(X) &= E[(X-\mu)^2] \\
+                      &= \sum_x(x-\mu)^2p(x) \\
+                      &= \sum_x(x^2-2\mu x+\mu^2)p(x) \\
+                      &= \sum_x x^2p(x) - 2\mu\sum_x xp(x) + \mu^2\sum_x p(x) \\
+                      &= E[X^2] - 2\mu^2 + \mu^2 \\
+                      &= E[X^2] - \mu^2
+      \end{align*}
+    \end{proof}
+    
+  \cbullet{4.5.3 (Variance Factors)}
+    For random variable \(X\) and constants \(a\) and \(b\),
+    \[ \text{Var}(aX+b) = a^2\text{Var}(X)\text{.} \]
+    
+    \begin{proof}
+      Let \(\mu = E[X]\) and note from Corollary 4.4.2 that \(E[aX+b] = a\mu+b\).
+      Therefore
+      \begin{align*}
+        \text{Var}(aX+b) &= E[(aX+b-a\mu-b)^2] \\
+                         &= E[a^2(X-\mu)^2] \\
+                         &= a^2E[(X-\mu)^2] \\
+                         &= a^2\text{Var}(X)
+      \end{align*}
+    \end{proof}
+    
+  \dbullet{4.5.4 (Standard Deviation)}
+    The square root of the \(\text{Var}(X)\) is called the "standard deviation of \(X\)," and is denoted by 
+    \(\text{SD}(X)\). That is, \[\text{SD}(X) = \sqrt{\text{Var}(X)}\text{.}\]
+    
 \end{outline}
 
 \end{document}

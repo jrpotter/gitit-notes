@@ -10,6 +10,7 @@
 \RequirePackage{amsmath}
 \RequirePackage{pgffor}
 \RequirePackage{xfrac}
+\RequirePackage{xifthen}
 
 \ProcessOptions\relax
 
@@ -32,13 +33,8 @@
 \newcommand{\bbn} {\mathbb{N}}
 \newcommand{\bbq} {\mathbb{Q}}
 \newcommand{\bbr} {\mathbb{R}}
-
 \newcommand{\bbp}[1][] {%
-    \ifx&#1&%
-        \mathbb{P}%
-    \else%
-        \mathbb{P}\{#1\}%
-    \fi%
+    \mathbb{P}\ifthenelse{\equal{#1}{}}{}{\left\{#1\right\}}%
 }
 
 
