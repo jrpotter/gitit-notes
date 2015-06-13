@@ -22,7 +22,7 @@
 \begin{outline}
 
   \tbullet{3.1.1}
-    Let \((f(x)=c\) for some constant \(c\). Then \(\leibniz{x}(c) = 0\).
+    Let \(f(x)=c\) for some constant \(c\). Then \(\leibniz{x}(c) = 0\).
     
     \begin{proof}
       Note the following:
@@ -59,7 +59,7 @@
       \end{align*}
     \end{proof}
     
-  \dbullet{3.1.4}
+  \dbullet{3.1.4 (Euler's Number)}
     \(e\) is the number such that \(\xlimit{h}{0}\frac{e^h-1}{h} = 1\).
     
   \tbullet{3.1.5}
@@ -76,7 +76,7 @@
       Therefore \(f'(e) = e^x\xlimit{h}{0}\frac{e^h-1}{h}\), which, by Definition 3.1.4, is just \(e^x\).
     \end{proof}
 
-  \tbullet{3.2.1}
+  \tbullet{3.2.1 (Product Rule)}
     If \(f\) and \(g\) are both differentiable, the \(\leibniz{x}[f(x)g(x)] = f(x)\leibniz{x}g(x) + g(x)\leibniz{x}f(x)\).
     
     \begin{proof}
@@ -95,7 +95,7 @@
       \end{align*}
     \end{proof}
     
-  \tbullet{3.2.2}
+  \tbullet{3.2.2 (Quotient Rule)}
     \(\leibniz{x}[f/g] = [f'g-fg']/(g^2)\).
     
     \begin{proof}
@@ -171,7 +171,7 @@
       Repeated applications of the Quotient Rule.
     \end{proof}
     
-  \tbullet{3.4.1}
+  \tbullet{3.4.1 (Chain Rule)}
     If \(g\) is differentiable at \(x\) and \(f\) is differentiable at \(g(x)\), then the composite
     function \(F=f\circ g\) defined by \(F(x)=f(g(x))\) is differentiable at \(x\) and \(F'\) is given
     by the product \(F'(x)=f'(g(x))\cdot g'(x)\).
@@ -276,14 +276,23 @@
       \frac{y'}{y} = \frac{n}{x} \Rightarrow \leibniz[y]{x} = \frac{yn}{x} = \frac{nx^n}{x} = nx^{n-1}\).
     \end{proof}
     
-  \tbullet{3.6.3}
+  \tbullet{3.6.4}
     \(e = \xlimit{x}{0}(1+x)^{\frac{1}{x}}\).
     
     \begin{proof}
-      If \(f(x) = \ln{x}\), then \(f'(x) = \frac{1}{x} \Rightarrow f'(1) = 1\). Now \(f'(1) = \xlimit{h}{0}
-      \frac{f(1+h)-f(1)}{h} = \xlimit{x}{0}\frac{\ln{(1+x)}-\ln{1}}{x} = \xlimit{x}{0}\frac{1}{x}\ln{(1+x)}
-      = \xlimit{x}{0} \ln{(1+x)}^{\frac{1}{x}}\). Then \(e = e^{1} = \exp{(\xlimit{x}{0}\ln{(1+x)}^{\frac{1}{x}})}
-      = \xlimit{x}{0} \exp(\ln({1+x})^{\frac{1}{x}}) = \xlimit{x}{0}(1+x)^{\frac{1}{x}}\).
+      If \(f(x) = \ln{x}\), then \(f'(x) = \frac{1}{x} \Rightarrow f'(1) = 1\). Now 
+      \begin{align*}
+        f'(1) &= \xlimit{h}{0}\frac{f(1+h)-f(1)}{h} \\
+              &= \xlimit{x}{0}\frac{\ln{(1+x)}-\ln{1}}{x} \\
+              &= \xlimit{x}{0}\frac{1}{x}\ln{(1+x)} \\
+              &= \xlimit{x}{0} \ln{(1+x)}^{\frac{1}{x}}
+      \end{align*}
+      Then 
+      \begin{align*}
+        e = e^{1} &= \exp{(\xlimit{x}{0}\ln{(1+x)}^{\frac{1}{x}})} \\
+                  &= \xlimit{x}{0} \exp(\ln({1+x})^{\frac{1}{x}}) \\
+                  &= \xlimit{x}{0}(1+x)^{\frac{1}{x}}\text{.}
+      \end{align*}
     \end{proof}
     
   \tbullet{3.8.1}
@@ -294,18 +303,18 @@
     The only solutions of the differential equation \(\leibniz[y]{t} = ky\) are the exponential functions
     \(y(t)=y(0)e^{kt}\).
     
-  \dbullet{3.10.1}
+  \dbullet{3.10.1 (Linear Approximation)}
     The "linear approximation" or "tangent line approximation" of \(f\) at \(a\) is \(f(x) \approx f(a) + f'(a)(x-a)\).
     
-  \dbullet{3.10.2}
+  \dbullet{3.10.2 (Linearization)}
     The linear function whose graph is the tangent line \(L(x)=f(a)+f'(a)(x-a)\) is called the "linearization"
     of \(f\) at \(a\).
     
-  \dbullet{3.10.3}
+  \dbullet{3.10.3 (Differential)}
     Let \(y = f(x)\), where \(f\) is a differentiable function. Then the "differential" \(dx\) is an independent
     variable and differential \(dy\) is deifned in terms of \(dx\) as \(dy = f'(x)dx\).
     
-  \dbullet{3.11.1}
+  \dbullet{3.11.1 (Hyperbolic Functions)}
     The hyperbolic functions are:
     \begin{enumerate}[i.]
       \item \(\sinh{x} = \frac{e^x - e^{-x}}{2}\)
