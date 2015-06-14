@@ -1,0 +1,45 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Parametric Equations and Polar Coordinates}
+\author{Calculus Early Transcendentals by James Stewart (Chapter 10)}
+\date{June 14\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{10.2.1 (Parametric to Cartesian)}
+    If \(f'\) is continuous and \(f'(t) \neq 0\) for \(a \leq t \leq b\), then the parametric curve \(x = f(t),
+    y = g(t), a \leq t \leq b\), can be put in the form \(y = F(x)\).
+    
+    \begin{proof}
+      
+    \end{proof}
+    
+  \tbullet{10.2.2 (Derivative of Parametric Curve)}
+    Let \(x = f(t)\) and \(y = g(t)\) such that the conditions in Theorem 10.2.1 are satisfied. Then \(y\) can
+    be written as \(y = F(x)\), for some function \(F\) obtained by eliminating the \(t\) parameter and 
+    \[ F'(x) = \frac{g'(t)}{f'(t)}\text{.} \]
+    
+    \begin{proof}
+      Note \(y = F(x)\) can be written as \[ g(t) = F(f(t)) \] and so, if \(f, F,\) and \(f\) are differentiable, 
+      the Chain Rules gives \[ g'(t) = F'(f(t))f'(t) = F'(x)f(t)\text{.} \] Thus, if \(f'(t) \neq 0\), we can 
+      solve for \(F'(x)\): \[ F'(x) = \frac{g'(t)}{f'(t)}\text{.} \]
+    \end{proof}
+
+\end{outline}
+
+\end{document}
