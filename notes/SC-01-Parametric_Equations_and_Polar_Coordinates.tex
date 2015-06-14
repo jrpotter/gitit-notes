@@ -26,13 +26,15 @@
     y = g(t), a \leq t \leq b\), can be put in the form \(y = F(x)\).
     
     \begin{proof}
-      
+      We note that if \(f'\) is continuous and \(f'(t) \neq 0\), then by the contrapositive of Fermat's Theorem, 
+      there are no local minimums or maximums. In other words, \(f\) must be monotonically increasing or decreasing
+      and as such, must be invertible. Thus \[f^{-1}(x) = t \Rightarrow y = g(t) = g(f^{-1}(x)) = F(x)\text{.}\]
     \end{proof}
     
   \tbullet{10.2.2 (Derivative of Parametric Curve)}
-    Let \(x = f(t)\) and \(y = g(t)\) such that the conditions in Theorem 10.2.1 are satisfied. Then \(y\) can
-    be written as \(y = F(x)\), for some function \(F\) obtained by eliminating the \(t\) parameter and 
-    \[ F'(x) = \frac{g'(t)}{f'(t)}\text{.} \]
+    Let \(x = f(t)\) and \(y = g(t)\) such that the conditions in Theorem 10.2.1 are satisfied (in a piecewise
+    manner if necessary). Then \(y\) can be written as \(y = F(x)\), for some function \(F\) obtained by eliminating 
+    the \(t\) parameter and \[ F'(x) = \frac{g'(t)}{f'(t)}\text{.} \]
     
     \begin{proof}
       Note \(y = F(x)\) can be written as \[ g(t) = F(f(t)) \] and so, if \(f, F,\) and \(f\) are differentiable, 
