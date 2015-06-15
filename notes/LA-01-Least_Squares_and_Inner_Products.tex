@@ -1,0 +1,63 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Least Squares and Inner Products}
+\author{Linear Algebra With Applications by Otto Bretscher (Chapter 5)}
+\date{June 15\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{5.4.1 (Orthogonal Complements)}
+    For any matrix \(A\), \((\text{im}(A))^{\perp} = \text{ker}(A^T)\).
+
+    \begin{proof}
+      Consider a subspace \(V = \text{im}(A)\) of \(\bbr^n\), where \(A = \left[\vec{v}_1\:\vec{v}_2\:\cdots\:\vec{v}_m\right]\). Then:
+      \begin{align*}
+        V^{\perp} &= \{ \vec{x}\text{ in }\bbr^n: \dotp{v}{x} = 0,\text{ for all } \vec{v} \text{ in } V \} \\
+                  &= \{ \vec{x}\text{ in }\bbr^n: \vec{v}_i\cdot x = 0,\text{ for } i = 1,\ldots,m \} \\
+                  &= \{ \vec{x}\text{ in }\bbr^n: \vec{v}_i^T\vec{x} = 0, \text{ for } i = 1, \ldots, m \}\text{.}
+      \end{align*}
+      Thus \(V^{\perp} = (\text{im}(A))^{\perp}\) is the kernel of the matrix
+      \[ A^T = \begin{bmatrix}- & \vec{v}_1^T & - \\ - & \vec{v}_2^T & - \\ & \vdots & \\ - & \vec{v}_m^T & - \end{bmatrix}\text{.} \]
+    \end{proof}
+
+  \tbullet{5.4.2}
+    \begin{enumerate}[i.]
+      \item If \(A\) is an \(n \times m\) matrix, then \(\text{ker}(A) = \text{ker}(A^TA)\).
+      \item If \(A\) is an \(n \times m\) matrix with \(\text{ker}(A) = \{\vec{0}\}\), then \(A^TA\) is invertible.
+    \end{enumerate}
+
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          First note that \(\text{ker}(A) \subseteq \text{ker}(A^TA)\) since for all \(\vec{x}\in\text{ker}(A)\), \(A^TA\vec{x} = A^T\vec{0} = \vec{0}\).
+          Now consider a vector \(\vec{x}\) in the kernel of \(A^TA\) such that \(A^TA\vec{x}=0\). Then \(A\vec{x}\) is in the image of \(A\) and in
+          the kernel of \(A^T\). Since by Theorem 5.4.1 \(\text{ker}(A^T)\) is the orthogonal complement of \(\text{im}(A)\), \(A\vec{x} = \vec{0}\) by
+          Theorem 5.1.10(ii). Therefore \(\vec{x}\) is in the kernel of \(A\).
+        \item
+          Note that \(A^TA\) is an \(m \times m\) matrix. By part (i), \(\text{ker}(A^TA) = \{\vec{0}\}\), and the square matrix \(A^TA\) is invertible.
+      \end{enumerate}
+    \end{proof}
+
+  \tbullet{5.4.3}
+    Consider a vector \(\vec{x}\) in \(\bbr^n\) and a subspace \(V\) of \(\bbr^n\). Then the orthogonal projection \(\text{proj}_V(\vec{x})\) is the
+    vector in \(V\) closest to \(\vec{x}\), in that
+    \[ \norm{\vec{x} - \text{proj}_V(\vec{x})} < \norm{\vec{x}-\vec{v}}\text{,} \]
+    for all \(\vec{v}\) in \(V\) different from \(\text{proj}_V(\vec{x})\).
+\end{outline}
+
+\end{document}
