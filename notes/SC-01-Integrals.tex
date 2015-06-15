@@ -25,7 +25,7 @@
     The "area" \(A\) of the region \(S\) that lies under the graph of the continous function \(f\) is the limit of
     the sum of the areas of the approximating rectangles \(A = \xlimit{n}{\infty} = \xlimit{x}{\infty}\sum_{i=1}^n
     f(x_i)\Delta x\).
-    
+
   \dbullet{5.2.1}
     If \(f\) is a function defined for \(a \leq x \leq b\), we divide the interval \([a, b]\) into \(n\) subintervals
     of equal width \(\Delta x = \frac{b-a}{n}\). We let \(x_0 (=a), \inflatedot{x}{n} (=b)\) be the endpoints of
@@ -33,15 +33,15 @@
     lies in the \(\spscript{i}{th}\) subinterval \([x_{i-1}, x_{i}]\). Then the "definite integral of \(f\) from \(a\)
     to \(b\)" is \(\int_a^bf(x)dx = \xlimit{n}{\infty}\sum_{i=1}^n f(x_i^{*})\Delta x\) provided that this limit
     exists. If it does exist, we say that \(f\) is "integrable" on \([a, b]\).
-    
+
   \tbullet{5.2.2}
     If \(f\) is continous on \([a, b]\), or if \(f\) has only a finite number of jump discontinuities, then \(f\) is
     integrable on \([a, b]\); that is, the definite integral \(\int_a^b f(x)dx\) exists.
-    
+
   \tbullet{5.2.3 (Midpoint Rule)}
     \(\int_a^bf(x)dx \approx \sum_{i=1}^nf(\bar{x_i})\Delta x\) where \(\Delta x = \frac{b-a}{n}\) and
     \(\bar{x_i} = \frac{1}{2}(x_{i-1}+x_i) = \) midpont of \([x_{i-1}, x_i]\).
-    
+
   \tbullet{5.3.1 (The Fundamental Theorem of Calculus)}
     \begin{enumerate}[i.]
       \item
@@ -51,34 +51,34 @@
         If \(f\) is continous on \([a, b]\), then \(\int_a^b f(x)dx = F(b)-F(a)\) where \(F\) is any antiderivative
         of \(f\); that is, a function such that \(F' = f\).
     \end{enumerate}
-    
+
     \begin{proof}
       \begin{enumerate}[i.]
-        \item 
-          If \(x\) and \(x+h\) are in \((a, b)\), then 
+        \item
+          If \(x\) and \(x+h\) are in \((a, b)\), then
           \begin{align*}
             g(x+h)-g(x)&=\int_a^{x+h}f(t)dt-\int_a^xf(t)dt\\
                        &=\left(\int_a^xf(t)dt + \int_x^{x+h}f(t)dt\right)-\int_a^{x}f(t)dt\\
                        &=\int_x^{x+h}f(t)dt
           \end{align*}
-          Therefore, for \(h \neq 0\), 
-          
-          \begin{equation} 
+          Therefore, for \(h \neq 0\),
+
+          \begin{equation}
             \label{eqn1}
             \frac{g(x+h)-g(x)}{h} = \frac{1}{h}\int_x^{x+h}f(t)dt
           \end{equation}
-          
+
           To begin, assume \(h > 0\). Since \(f\) is continous on \([x, x+h]\), the Extreme Value Theorem states
           numbers \(u, v\in [x, x+h]\) exist such that \(f(u)=m\) and \(f(v)=M\) where \(m\) and \(M\) are absolute
-          minimum and maximum values of \(f\) in \([x, x+h]\). Note \(mh \leq \int_x^{x+h}f(t)dt \leq Mh 
-          \Rightarrow f(u)h \leq\int_x^{x+h}f(t)dt \leq f(v)h\). Since \(h > 0\), we see \(f(u) \leq 
+          minimum and maximum values of \(f\) in \([x, x+h]\). Note \(mh \leq \int_x^{x+h}f(t)dt \leq Mh
+          \Rightarrow f(u)h \leq\int_x^{x+h}f(t)dt \leq f(v)h\). Since \(h > 0\), we see \(f(u) \leq
           \frac{1}{h}\int_x^{x+h}f(t)dt \leq f(v)\). By equation \eqref{eqn1} then,
-          
+
           \begin{equation}
             \label{eqn2}
             f(u) \leq \frac{g(x+h)-g(x)}{h} \leq f(v)\text{.}
           \end{equation}
-          
+
           A similar proof of equation \eqref{eqn2} holds for \(h < 0\). Now let \(h\rightarrow 0\) which means
           \(u\rightarrow x\) and \(v\rightarrow x\) since \(u, v\in [x, x+h]\). Therefore \(\xlimit{h}{0}f(u) =
           \xlimit{u}{x}f(u)=f(x)\) and \(\xlimit{h}{0}f(v)=\xlimit{v}{x}f(v)=f(x)\). Then by equation \eqref{eqn2}
@@ -87,13 +87,13 @@
           continous on \([a,b]\).
         \item
           Let \(g(x)=\int_a^xf(t)dt\), and note from (\romannumeral 1) that \(g'(x) = f(x)\). If \(F\) is any other
-          antiderivative of \(f\) on \([a, b]\), the Corollary 4.2.4 states \(F\) and \(g\) differ by a constant, 
+          antiderivative of \(f\) on \([a, b]\), the Corollary 4.2.4 states \(F\) and \(g\) differ by a constant,
           that is,
           \begin{equation}
             \label{eqn3}
             F(x) = g(x) + C\text{ for }a < x < b\text{.}
           \end{equation}
-          But both \(F\) and \(g\) are continuous on \([a, b]\) and so, by taking limits of both sides of 
+          But both \(F\) and \(g\) are continuous on \([a, b]\) and so, by taking limits of both sides of
           \eqref{eqn3} (as \(x\rightarrow a^{+}\) and \(x\rightarrow b^{-}\)), we see that it also holds when
           \(x = a\) and \(x = b\). Also note \(g(a) = \int_a^a f(t)dt = 0\). Therefore, via \eqref{eqn3}
           with \(x=b\) and \(x=a\), we have
@@ -105,42 +105,42 @@
           \end{align*}
       \end{enumerate}
     \end{proof}
-    
+
   \dbullet{5.4.1}
     An "indefinite integral" of a function \(f\) is the antiderivative of \(f\), denoted \(\int f(x)dx=F(x)\)
     and meaning \(F'(x)=f(x)\).
-    
+
   \tbullet{5.4.2}
     The integral of a rate of change is the net change, \(\int_a^bF'(x)dx = F(b)-F(a)\).
-    
+
   \tbullet{5.5.1 (The Substitution Rule)}
     If \(u=g(x)\) is a differentiable function whose range is an interval \(I\) and \(f\) is continous
     on \(I\), then \(\int f(g(x))g'(x)dx = \int f(u)du\).
-    
+
     \begin{proof}
       If \(F'=f\), then \(\int F'(g(x))g'(x)dx = F(g(x)) + C\), by the Chain Rule. Then setting
-      \[ u = g(x), F(g(x)) + C = F(u) + C = \int F'(u)du\text{.} \] Thus 
+      \[ u = g(x), F(g(x)) + C = F(u) + C = \int F'(u)du\text{.} \] Thus
       \[ \int f(g(x))g'(x)dx = \int f(u)du\text{.} \]
     \end{proof}
 
   \tbullet{5.5.2 (The Substitution Rule for Definite Integrals)}
-    If \(g'\) is continuous on \([a, b]\) and \(f\) is continous on the range \(u=g(x)\), then 
+    If \(g'\) is continuous on \([a, b]\) and \(f\) is continous on the range \(u=g(x)\), then
     \(\int_a^b f(g(x))g'(x)dx = \int_{g(a)}^{g(b)} f(u)du\).
-    
+
     \begin{proof}
       Let \(F\) be an antiderivative of \(f\). Then \(F(g(x))\) is an antiderivative of \(f(g(x))g'(x)\). So
-      by the Fundamental Theorem of Calculus, \(\int_a^b f(g(x))g'(x)dx = F(g(b)) - F(g(a))\). We also note 
+      by the Fundamental Theorem of Calculus, \(\int_a^b f(g(x))g'(x)dx = F(g(b)) - F(g(a))\). We also note
       \[ \int_{g(a)}^{g(b)} f(u)du = F(u)\vert_{g(a)}^{g(b)} = F(g(b))-F(g(a))\text{.} \]
     \end{proof}
-    
+
   \tbullet{5.5.3 (Interals of Symmetric Functions)}
     Suppose \(f\) is continuous on \([-a, a]\). If \(f\) is even, then \(\int_{-a}^{a}f(x)dx = 2\int_0^a f(x)dx\).
     If \(f\) is odd, then \(\int_{-a}^a f(x)dx = 0\).
-    
+
     \begin{proof}
-      First note 
+      First note
       \[
-        \int_{-a}^a f(x)dx 
+        \int_{-a}^a f(x)dx
           = \int_{-a}^0 f(x)dx + \int_0^a f(x)dx
           = -\int_0^{-a} f(x)dx + \int_0^a f(x)dx\text{.}
       \]
@@ -149,7 +149,7 @@
         -\int_0^a f(x)dx = -\int_0^a f(-u)(-du) = \int_0^a f(-u)du\text{.}
       \]
       Hence, \[\int_{-a}^a f(x)dx = \int_0^a f(-u)du + \int_0^a f(x)dx\text{.}\]
-      Now if \(f\) is even, \[f(-u)=f(u)\text{ and }\int_{-a}^a f(x)dx = 2\int_0^a f(x)dx\text{.}\] 
+      Now if \(f\) is even, \[f(-u)=f(u)\text{ and }\int_{-a}^a f(x)dx = 2\int_0^a f(x)dx\text{.}\]
       Likewise, if \(f\) is odd, \[f(-u) = -f(u)\text{ and }\int_{-a}^a f(x)dx = 0\text{.}\]
     \end{proof}
 
