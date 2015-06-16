@@ -40,11 +40,13 @@
     \end{align*}
 
   \dbullet{4.3.1 (Expected Value)}
-    If \(X\) is a discrete random variable having a probability mass function \(p(x)\), then the "expectation," or the "expected value," of \(X\), denoted by \(E[X]\), is defined by \[E[X] = \sum_{x:p(x)>0}xp(x)\text{.}\]
+    If \(X\) is a discrete random variable having a probability mass function \(p(x)\), then the "expectation," or the "expected value,"
+    of \(X\), denoted by \(E[X]\), is defined by \[E[X] = \sum_{x:p(x)>0}xp(x)\text{.}\]
 
   \dbullet{4.3.2 (Indicator Variables)}
     We say that \(I\) is an "indicator variable" for the event \(A\) if
-    \[ I = \begin{cases}
+    \[
+       I = \begin{cases}
              1 \text{ if } A \text{ occurs} \\
              0 \text{ if } A^c \text{ occurs}
        \end{cases}
@@ -100,7 +102,6 @@
     If \(X\) is a random variable with mean \(\mu\), then the variance of \(X\), denoted by \(\text{Var}(X)\)
     is defined by \[\text{Var}(X) = E[X^2]-(E[X])^2\text{.} \]
 
-    \pagebreak
     \begin{proof}
       \begin{align*}
         \text{Var}(X) &= E[(X-\mu)^2] \\
@@ -130,167 +131,6 @@
   \dbullet{4.5.4 (Standard Deviation)}
     The square root of the \(\text{Var}(X)\) is called the "standard deviation of \(X\)," and is denoted by
     \(\text{SD}(X)\). That is, \[\text{SD}(X) = \sqrt{\text{Var}(X)}\text{.}\]
-
-  \dbullet{4.6.1 (Binomial Random Variables)}
-    Let \(X\) be a random variable representin gthe number of successes occurring in \(n\) independent trials,
-    each of which results in a success with probability \(p\) and failure with probability \(1-p\). Then
-    \(X\) is said to be a "binomial random variable" with parameters \((n, p)\).
-
-  \dbullet{4.6.2 (Bernoulli Random Variable)}
-    A random variable \(X\) is said to be a "Bernoulli Random Variable" if its probability mass function is given by
-    \begin{align*}
-      p(0) &= \bbp[X=0] = 1 - p \\
-      p(1) &= \bbp[X=1] = p
-    \end{align*}
-    where \(p\), \(0 \leq p \leq 1\), is the probability that a given trial is a success. Note a Bernoulli random
-    variable can equivalently be identified as a binomial random variable with parameters \((1, p)\).
-
-  \tbullet{4.6.3 (PMF of Binomial Random Variables)}
-    The probability mass function of a binomial random variable having parameters \((n, p)\) is given by
-    \[ p(i) = \binom{n}{i}p^i(1-p)^{n-i}\quad i=0,1,\ldots,n\text{.} \]
-
-    \begin{proof}
-      The probability of any particular sequence of \(n\) independent outcomes containing \(i\) successes and
-      \(n-i\) failures is \(p^i(1-p)^{n-i}\). Since there are \(\binom{n}{i}\) different sequences of the \(n\)
-      outcomes leading to \(i\) successes and \(n-i\) failures, the theorem follows.
-    \end{proof}
-
-  \tbullet{4.6.4 (Expectation of Binomial Random Variable)}
-    The expectation of a binomial random variable \(X\) with parameters \(n\) and \(p\) is \(E[X] = np\).
-
-    \begin{proof}
-      Consider the expectation of the \(\spscript{k}{th}\) moment:
-      \begin{align*}
-        E[X^k] &= \sum_{i=0}^ni^k\binom{n}{i}p^i(1-p)^{n-i} \\
-               &= \sum_{i=1}^ni^k\binom{n}{i}p^i(1-p)^{n-i}
-      \end{align*}
-      Using the identity \[ i\binom{n}{i} = n\binom{n-1}{i-1}\] gives
-      \begin{align*}
-        E[X^k] &= np\sum_{i=1}^ni^{k-1}\binom{n-1}{i-1}p^{i-1}(1-p)^{n-i} \\
-               &= np\sum_{j=0}^{n-1}(j+1)^{k-1}\binom{n-1}{j}p^j(1-p)^{n-1-j}\quad j=i-1 \\
-               &= npE[(Y+1)^{k-1}]
-      \end{align*}
-      where \(Y\) is a binomial random variable with parameters \((n-1, p)\). Thus,
-      setting \(k=1\), we get \(E[X] = np\).
-    \end{proof}
-
-  \tbullet{4.6.5 (Variance of Binomial Random Variable)}
-    The variance of a binomial random variable \(X\) with parameters \(n\) and \(p\) is \(\text{Var}(X) = np(1-p)\).
-
-    \begin{proof}
-      Set \(k = 2\) in \(E[X^k]\) solved in Theorem 4.6.4, which shows
-      \begin{align*}
-        E[X^2] &= npE[Y+1] \\
-               &= np[(n-1)p + 1]
-      \end{align*}
-      Thus
-      \begin{align*}
-        \text{Var}(X) &= E[X^2] - (E[X])^2 \\
-                      &= np[(n-1)p+1] - (np)^2 \\
-                      &= np(1-p)
-      \end{align*}
-    \end{proof}
-
-  \pbullet{4.6.6}
-    If \(X\) is a binomial random variable with parameters \((n, p)\), where \(0 < p < 1\), then as \(k\) goes
-    from \(0\) to \(n\), \(\bbp[X=k]\) first increases monotonically and then decreases monotonically, reaching
-    its largest value when \(k\) is the largest integer less than or equal to \((n+1)p\).
-
-    \pagebreak
-    \begin{proof}
-      We prove the proposition by considering \(\bbp[X=k]/\bbp[X=k-1]\) and determining for what values of
-      \(k\) it is greater or less than \(1\). Now,
-      \begin{align}
-        \frac{\bbp[X=k]}{\bbp[X=k-1]} &= \frac{\binom{n}{k}p^k(1-p)^{n-k}}
-                                              {\binom{n}{k-1}p^{k-1}(1-p)^{n-k+1}}\nonumber \\
-                                      &= \frac{(n-k+1)p}{k(1-p)}
-      \end{align}
-      Hence, \(\bbp[X=k] \geq \bbp[X=k-1]\) if and only if \((n-k+1)p \geq k(1-p)\), or, equivalently, if and only
-      if \(k \leq (n+1)p\).
-    \end{proof}
-
-  \pbullet{4.6.7 (Computation of Binomial Distribution Function)}
-    Supposing \(X\) is a binomial random variable with parameters \((n,p)\),
-    \[ \bbp[X=k+1] = \frac{p}{1-p}\frac{n-k}{k+1}\bbp[X=k]\text{.} \]
-
-    \begin{proof}
-      From proof of Theorem 4.6.6 (1), we see the above follows.
-    \end{proof}
-
-  \dbullet{4.7.1 (Poisson Random Variable)}
-    A random variable \(X\) that takes on one of the values \(0, 1, 2, \ldots\) is said to be a
-    "Poisson" random variable with parameter \(\lambda\) if, for some \(\lambda > 0\), \[ p(i) = \bbp[X=i]
-    = e^{-\lambda}\frac{\lambda^i}{i!}\quad i=0,1,2,\ldots \]
-
-  \tbullet{4.7.2 (Poisson Usage)}
-      The Poisson random variable may be used as an approximation for a binomial random variable with
-      parameters \((n,p)\) when \(n\) is large and \(p\) is small enough so that \(np\) is of moderate size.
-
-      \begin{proof}
-        Suppose \(X\) is a binomial random variable with parameters \((n,p)\), and let \(\lambda = np\). Then
-        \begin{align*}
-          \bbp[X=i] &= \binom{n}{i}p^i(1-p)^{n-i} \\
-                    &= \binom{n}{i}\left(\frac{\lambda}{n}\right)^i\left(1-\frac{\lambda}{n}\right)^{n-i} \\
-                    &= \frac{n(n-1)\cdots(n-i+1)}{n^i}\frac{\lambda^i}{i!}\frac{(1-\lambda/n)^n}{(1-\lambda/n)^i}\text{.}
-        \end{align*}
-        Now for \(n\) large and \(\lambda\) moderate
-        \[
-          \left(1-\frac{\lambda}{n}\right)^n \approx e^{-\lambda},\quad
-          \frac{n(n-1)\cdots(n-i+1)}{n^i}\approx 1,\quad
-          \left(1-\frac{\lambda}{n}\right)^i \approx 1\text{.}
-        \]
-        Where the first approximation derives from the definition of Euler's Number (SC.01.T3.6.4). Hence,
-        \[\bbp[X=i] \approx e^{-\lambda}\frac{\lambda^i}{i!}\text{.} \]
-      \end{proof}
-
-    \tbullet{4.7.3 (Expectation of Poisson Variable)}
-      Let \(X\) be a Poisson variable. Then \(E[X] = \lambda\).
-
-      \pagebreak
-      \begin{proof}
-        For Poisson variable \(X\):
-        \begin{align*}
-          E[X] &= \sum_{i=1}^{\infty}i\left(e^{-\lambda}\frac{\lambda^i}{i!}\right)
-               = \lambda\sum_{i=1}^{\infty}\frac{e^{-\lambda}\lambda^{i-1}}{(i-1)!} \\
-               &= \lambda e^{-\lambda}\sum_{j=0}^{\infty}\frac{\lambda^j}{j!},\quad j=i-1 \\
-               &= \lambda
-        \end{align*}
-      \end{proof}
-
-    \tbullet{4.7.4 (Variance of Poisson Variable)}
-      Let \(X\) be a Poisson variable. Then \(\text{Var}(X) = \lambda\).
-
-      \begin{proof}
-        We first compute \(E[X^2]\) as follows:
-        \begin{align*}
-          E[X^2] &= \sum_{i=0}^{\infty}i^2\left(e^{-\lambda}\frac{\lambda^i}{i!}\right)
-                  = \lambda\sum_{i=1}^{\infty}\frac{ie^{-\lambda}\lambda^{i-1}}{(i-1)!} \\
-                 &= \lambda\sum_{j=0}^{\infty}\frac{(j+1)e^{-\lambda}\lambda^j}{j!},\quad j=i-1 \\
-                 &= \lambda\left[\sum_{j=0}^{\infty}\frac{je^{-\lambda}\lambda^j}{j!} +
-                    \sum_{j=0}^{\infty}\frac{e^{-\lambda}\lambda^j}{j!}\right] \\
-                 &= \lambda\left[E[Y] + 1\right]
-                  = \lambda(\lambda + 1)
-        \end{align*}
-        where \(Y\) is a poisson random variable with parameter \(\lambda\). Thus,
-        \[\text{Var}(X) = E[X^2] - (E[X])^2 = \lambda(\lambda+1) - \lambda^2 = \lambda\text{.}\]
-      \end{proof}
-
-    \pbullet{4.7.5 (Poisson Paradigm)}
-      Consider \(n\) events, with \(p_i\) equal to the probability that event \(i\) occurs, \(i=1,\ldots,n\).
-      If all the \(p_i\) are "small" and the trials are either independent or at most "weakly dependent,"
-      then the number of these events that occur approximately has a Poisson distribution with mean \(\sum_{i=1}^np_i\).
-
-    \pbullet{4.7.6 (Computation of Poisson Distribution Function)}
-      If \(X\) is a Poisson with parameter \(\lambda\), then \[ \bbp[X=i+1] = \frac{\lambda}{i+1}\bbp[X=i]\text{.} \]
-
-      \begin{proof}
-        Given Poisson \(X\) with parameter \(\lambda\), then
-        \[
-          \frac{\bbp[X=i+1]}{\bbp[X=i]}
-          = \frac{e^{-\lambda}\lambda^{i+1}/(i+1)!}{e^{-\lambda}\lambda^i/i!}
-          = \frac{\lambda}{i+1}\text{.}
-        \]
-      \end{proof}
 
 \end{outline}
 
