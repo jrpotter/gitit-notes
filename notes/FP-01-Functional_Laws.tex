@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -25,7 +25,7 @@
   \tbullet{11.1 (Functor Laws)}
     For functors
     \begin{figure}[thp]
-      \centering 
+      \centering
       \begin{minipage}{0.4\textwidth}
         \begin{minted}{haskell}
 class Functor f where
@@ -33,10 +33,10 @@ class Functor f where
         \end{minted}
       \end{minipage}
     \end{figure}
-    
+
     the following laws hold:
     \begin{enumerate}[i.]
-      \item 
+      \item
         \begin{minted}{haskell}
   fmap id = id
         \end{minted}
@@ -45,11 +45,11 @@ class Functor f where
   fmap (f . g) = fmap f . fmap g
         \end{minted}
     \end{enumerate}
-    
-  \tbullet{11.2 (Applicative Laws)} 
+
+  \tbullet{11.2 (Applicative Laws)}
     For applicative functors
     \begin{figure}[thp]
-      \centering 
+      \centering
       \begin{minipage}{0.4\textwidth}
         \begin{minted}{haskell}
 class Functor f => Applicative f where
@@ -60,7 +60,7 @@ class Functor f => Applicative f where
         \end{minted}
       \end{minipage}
     \end{figure}
-    
+
     the following laws hold:
     \begin{enumerate}[i.]
       \item
@@ -80,11 +80,11 @@ class Functor f => Applicative f where
   u <*> pure y = pure ($ y) <*> u
         \end{minted}
     \end{enumerate}
-  
+
   \tbullet{12.1 (Monoid Laws)}
     For monoids
     \begin{figure}[thp]
-      \centering 
+      \centering
       \begin{minipage}{0.4\textwidth}
         \begin{minted}{haskell}
 class Monoid a where
@@ -94,7 +94,7 @@ class Monoid a where
         \end{minted}
       \end{minipage}
     \end{figure}
-    
+
     the following laws hold:
     \begin{enumerate}[i.]
       \item
@@ -110,12 +110,12 @@ class Monoid a where
   (x `mappend` y) `mappend` z = x `mappend` (y `mappend` z)
         \end{minted}
     \end{enumerate}
-    
+
   \pagebreak
   \tbullet{13.1 (Monad Laws)}
     For monads
     \begin{figure}[thp]
-      \centering 
+      \centering
       \begin{minipage}{0.4\textwidth}
         \begin{minted}{haskell}
 class Monad m where
@@ -126,7 +126,7 @@ class Monad m where
         \end{minted}
       \end{minipage}
     \end{figure}
-    
+
     the following laws hold:
     \begin{enumerate}[i.]
       \item
@@ -142,7 +142,7 @@ class Monad m where
   (m >>= f) >>= g = m >>= (\x -> f x >>= g)
         \end{minted}
     \end{enumerate}
-    
+
 \end{outline}
 
 \end{document}

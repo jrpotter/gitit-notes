@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -22,54 +22,54 @@
 \begin{outline}
 
   \tbullet{14.1}
-    Let \(\phi: G \rightarrow G'\) be a group homomorphism with kernel \(H\). Then the cosets of \(H\) form a 
+    Let \(\phi: G \rightarrow G'\) be a group homomorphism with kernel \(H\). Then the cosets of \(H\) form a
     "factor group," \(\sfrac{G}{H}\), where \((aH)(bH) = (ab)H\). Also, the map \(\mu: \sfrac{G}{H} \rightarrow
-    \phi[G]\) defined by \(\mu(aH) = \phi(a)\) is an isomorphism. Both coset multiplication and \(\mu\) are 
+    \phi[G]\) defined by \(\mu(aH) = \phi(a)\) is an isomorphism. Both coset multiplication and \(\mu\) are
     well-defined, independent of the choices of \(a\) and \(b\) from the cosets.
-    
+
   \tbullet{14.2}
     Let \(H\) be a subgroup of a group \(G\). Then left coset multiplication is well defined by the
     equation \((aH)(bH) = (ab)H\) if and only if \(H\) is a normal subgroup.
-    
+
     \begin{proof}
       \forward
         Suppose \((aH)(bH) = (ab)H\) is well defined on left cosets. Let \(a \in G\). We want to show
-        \(aH = Ha\). Let \(x \in aH\). Choosing representatives \(x \in aH\) and \(a^{-1} \in a^{-1}H\), we 
-        have \((xH)(a^{-1}H) = (xa^{-1})H\). On the other hand, choosing \(a \in aH\) and \(a^{-1} \in 
-        a^{-1}H\) yields \((aH)(a^{-1}H) = H\). Since our operation is well defined, \(xa^{-1} = h \in H 
+        \(aH = Ha\). Let \(x \in aH\). Choosing representatives \(x \in aH\) and \(a^{-1} \in a^{-1}H\), we
+        have \((xH)(a^{-1}H) = (xa^{-1})H\). On the other hand, choosing \(a \in aH\) and \(a^{-1} \in
+        a^{-1}H\) yields \((aH)(a^{-1}H) = H\). Since our operation is well defined, \(xa^{-1} = h \in H
         \Rightarrow x = ha\), so \(x \in Ha\). Thus \(aH \subseteq Ha\). The symmetric proof is ommitted.
-        
+
       \backward
         Now suppose \(H\) is a normal subgroup. Suppose we wish to computer \((aH)(bH)\). Then choosing
-        \(a \in aH\) and \(b \in bH\), we obtain \((ab)H\). Next, choosing \(ah_{1} \in aH\) and \(bh_{2} 
-        \in bH\), we obtain \((ah_{1}bh_{2})H\). Now \(h_{1}b \in Hb = bH\) so \(h_{1}b = bh_{3}\) for 
-        some \(h_{3} \in H\). Thus, \((ah_{1})(bh_{2}) = a(h_{1}b)h_{2} = a(bh_{3})h_{2} = (ab)(h_{3}h_{2}) 
+        \(a \in aH\) and \(b \in bH\), we obtain \((ab)H\). Next, choosing \(ah_{1} \in aH\) and \(bh_{2}
+        \in bH\), we obtain \((ah_{1}bh_{2})H\). Now \(h_{1}b \in Hb = bH\) so \(h_{1}b = bh_{3}\) for
+        some \(h_{3} \in H\). Thus, \((ah_{1})(bh_{2}) = a(h_{1}b)h_{2} = a(bh_{3})h_{2} = (ab)(h_{3}h_{2})
         \in (ab)H\).
     \end{proof}
-    
+
   \cbullet{14.3}
     Let \(H\) be a normal subgroup of \(G\). Then the cosets of \(H\) form a group \(\sfrac{G}{H}\)
     under the binary operation \((aH)(bH) = (ab)H\).
-    
+
   \dbullet{14.4}
     The group \(\sfrac{G}{H}\) in Corollary 14.3 is the "factor group" of \(G\) by \(H\).
-    
+
   \tbullet{14.5}
     Let \(H\) be a normal subgroup of \(G\). Then \(\gamma: G \rightarrow \sfrac{G}{H}\) given by
     \(\gamma(x) = xH\) is a homomorphism with kernel \(H\).
-    
+
     \begin{proof}
-      Let \(x, y \in G\). Then \(\gamma(xy) = (xy)H = (xH)(yH) = \gamma(x)\gamma(y)\), so \(\gamma\) is indeed a 
-      homomorphism. Since \(xH= H\) if and only if \(x \in H\), we see the kernel of \(\gamma\) is 
+      Let \(x, y \in G\). Then \(\gamma(xy) = (xy)H = (xH)(yH) = \gamma(x)\gamma(y)\), so \(\gamma\) is indeed a
+      homomorphism. Since \(xH= H\) if and only if \(x \in H\), we see the kernel of \(\gamma\) is
       indeed \(H\).
     \end{proof}
-    
+
   \tbullet{14.6 (The Fundamental Homomorphism Theorem)}
-    Let \(\phi: G \rightarrow G'\) be a group homomorphism with kernel \(H\). Then \(\phi[G]\) is a group, 
-    and \(\mu: \sfrac{G}{H} \rightarrow \phi[G]\) given by \(\mu(gH) = \phi(g)\) is an isomorphism. If 
-    \(\gamma: G \rightarrow \sfrac{G}{H}\) is the homomorphism given by \(\gamma(g) = gH\), then 
+    Let \(\phi: G \rightarrow G'\) be a group homomorphism with kernel \(H\). Then \(\phi[G]\) is a group,
+    and \(\mu: \sfrac{G}{H} \rightarrow \phi[G]\) given by \(\mu(gH) = \phi(g)\) is an isomorphism. If
+    \(\gamma: G \rightarrow \sfrac{G}{H}\) is the homomorphism given by \(\gamma(g) = gH\), then
     \(\phi(g) = \mu\gamma(g)\) for each \(g \in G\).
-    
+
   \tbullet{14.7}
     The following are three equivalent conditions for a subgroup \(H\) of a group \(G\) to be a normal subgroup of \(G\):
     \begin{enumerate}[i.]
@@ -77,12 +77,12 @@
       \item \(gHg^{-1} = H\) for all \(g \in G\).
       \item \(gH = Hg\) for all \(g \in G\).
     \end{enumerate}
-    
+
   \dbullet{14.8}
     An isomorphism \(\phi: G \rightarrow G\) of a group \(G\) with itself is an "automorphism" of
     \(G\). The automorphism \(i_{g}: G \rightarrow G\) where \(i_{g}(x) = gxg^{-1}\) for all \(x \in G\), is the
     "inner automorphism of \(G\) by \(g\)." Performing \(i_{g}\) on \(x\) is called "conjugation of \(x\) by \(g\)."
-    
+
 \end{outline}
 
 \end{document}

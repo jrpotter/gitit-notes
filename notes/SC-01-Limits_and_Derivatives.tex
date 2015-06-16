@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -23,27 +23,27 @@
 
   \dbullet{2.2.1 (Limits)}
     We write \(\xlimit{x}{a} f(x)=L\) and say, "the limit of \(f(x)\), as \(x\) approaches
-    \(a\), equals \(L\)" if we can make the values of \(f(x)\) arbitrarily close to \(L\) by taking \(x\) 
+    \(a\), equals \(L\)" if we can make the values of \(f(x)\) arbitrarily close to \(L\) by taking \(x\)
     to be sufficiently close to, but not equal to, \(a\).
-    
+
   \dbullet{2.2.2 (Left-Hand Limits)}
     We write \(\xlimit[-]{x}{a} f(x)=L\) and say, "the left-hand limit of \(f(x)\) as \(x\)
     approaches \(a\) is equal to \(L\)" if we can make the values of \(f(x)\) arbitrarily close to \(L\) by
     taking \(x\) to be sufficiently close to \(a\) and \(x\) less than \(a\).
-    
+
   \tbullet{2.2.3}
     \(\xlimit{x}{a} f(x) = L\) if and only if \(\xlimit[-]{x}{a} f(x) = L\)
     and \(\xlimit[+]{x}{a} f(x) = L\).
-    
+
   \dbullet{2.2.4 (Limits to Infinity)}
     Let \(f\) be a function defined on both sides of \(a\), except possibly at \(a\) itself. Then
-    \(\xlimit{x}{a} f(x) = \infty\) means that the values of \(f(x)\) can be made arbitrarily large 
+    \(\xlimit{x}{a} f(x) = \infty\) means that the values of \(f(x)\) can be made arbitrarily large
     by taking \(x\) sufficiently close to, but not equal to, \(a\).
-    
+
   \tbullet{2.3.1 (Algebraic Limit Theorem)}
     Suppose \(c\) is a constant and limits \(\xlimit{x}{a} f(x)\) and \(\xlimit{x}{a} g(x)\) exist. Then:
     \begin{enumerate}[i.]
-      \item 
+      \item
         \(\xlimit{x}{a} [f(x) + g(x)] = \xlimit{x}{a} f(x) + \xlimit{x}{a} g(x)\)
       \item
         \(\xlimit{x}{a} [cf(x)] = c \xlimit{x}{a} f(x)\)
@@ -53,47 +53,47 @@
         \(\xlimit{x}{a} \frac{f(x)}{g(x)} = [\xlimit{x}{a}f(x)]/[\xlimit{x}{a}g(x)]\) if
         \(\xlimit{x}{a}g(x) \neq 0\).
     \end{enumerate}
-    
+
   \tbullet{2.3.2}
     If \(f\) is a polynomial or rational function and \(a\) is in the domain of \(f\), then
     \(\xlimit{x}{a} f(x) = f(a)\).
-    
+
   \tbullet{2.3.3}
     If \(f(x) = g(x)\) when \(x \neq a\), then \(\xlimit{x}{a}f(x) = \xlimit{x}{a}g(x)\), provided the
     limits exist.
-    
+
   \tbullet{2.3.4}
     If \(f(x) \leq g(x)\) when \(x\) is near \(a\) (except possibly at \(a\)) and the limits of
     \(f\) and \(g\) both exist as \(x\) approaches \(a\), then \(\xlimit{x}{a} f(x) \leq \xlimit{x}{a} g(x)\).
-    
+
   \tbullet{2.3.5 (Squeeze Theorem)}
     If \(f(x) \leq g(x) \leq h(x)\) when \(x\) is near \(a\) (except possibly at \(a\)) and \(\xlimit{x}{a}f(x) =
     \xlimit{x}{a}h(x) = L\), then \(\xlimit{x}{a} g(x) = L\).
-    
+
   \dbullet{2.4.2 (Limits)}
     Let \(f\) be a function defined on some open interval that contains the number \(a\), except possibly \(a\)
-    itself. Then we say that the "limit of \(f(x)\) as \(x\) approaches \(a\) is \(L\)," and we write 
+    itself. Then we say that the "limit of \(f(x)\) as \(x\) approaches \(a\) is \(L\)," and we write
     \(\xlimit{x}{a} f(x) = L\) if for every number \(\epsilon > 0\) there is a number \(\delta > 0\) such that
     if \(0 < |x - a| < \delta\) then \(|f(x)-L| < \epsilon\).
-    
+
   \dbullet{2.4.3 (Left-Hand Limit)}
     \(\xlimit[-]{x}{a} f(x) = L\) if for every number \(\epsilon > 0\) there is a number \(\delta > 0\)
     such that if \(a - \delta < x < a\) then \(|f(x)-L| < \epsilon\).
-    
+
   \dbullet{2.4.4 (Right-Hand Limit)}
     \(\xlimit[+]{x}{a} f(x) = L\) if for every number \(\epsilon > 0\) there is a number \(\delta > 0\) such
     that if \(a < x < a + \delta\) then \(|f(x)-L| < \epsilon\).
-    
+
   \dbullet{2.4.6 (Limits to Infinity)}
     Let \(f\) be a function defined on some open interval that contains the number \(a\), except possibly at
     \(a\) itself. Then \(\xlimit{x}{a} f(x) = \infty\) means that for every positive number \(M\) there is a
     positive number \(\delta\) such that if \(0 < |x-a| < \delta\) then \(f(x) > M\).
-    
+
   \dbullet{2.5.1 (Continuity)}
     A function \(f\) is "continuous at a number \(a\)" if \(\xlimit{x}{a} f(x) = f(a)\).
-    
+
   \tbullet{2.5.4 (Continuity Properties)}
-    If \(f\) and \(g\) are continuous at \(a\) and \(c\) is a constant, then the following are also 
+    If \(f\) and \(g\) are continuous at \(a\) and \(c\) is a constant, then the following are also
     continuous at \(a\):
     \begin{enumerate}[i.]
       \item \(f + g\)
@@ -104,7 +104,7 @@
 
   \tbullet{2.5.5}
     Any polynomial is continous everywhere and any rational function is continous wherever it is defined.
-    
+
   \tbullet{2.5.8}
     If \(f\) is continous at \(b\) and \(\xlimit{x}{a} g(x) = b\), then \(\xlimit{x}{a} f(g(x)) = f(b)\).
     In other words, \(\xlimit{x}{a} f(g(x)) = f(\xlimit{x}{a} g(x))\).
@@ -112,65 +112,65 @@
   \tbullet{2.5.9 (Compositional Continuity)}
     If \(g\) is continuous at \(a\) and \(f\) is continous at \(g(a)\), then \(f \circ g\) given by
     \((f \circ g)(x) = f(g(x))\) is continous at \(a\).
-    
+
   \tbullet{2.5.10 (Intermediate Value Theorem)}
     Suppose that \(f\) is continous on the closed interval \([a, b]\) and let \(N\) be any number between
     \(f(a)\) and \(f(b)\), where \(f(a) \neq f(b)\). Then there exists a number \(c \in (a, b)\) such that
     \(f(c) = N\).
-    
+
   \dbullet{2.6.1 (Horizontal Limits)}
     Let \(f\) be a function defined on some interval \((a, \infty)\). Then \(\xlimit{x}{\infty} f(x) = L\)
     means the values of \(f(x)\) can be made arbitrarily close to \(L\) by taking \(x\) sufficiently large.
-    
+
   \dbullet{2.6.3 (Horizontal Asymptote)}
     The line \(y = L\) is called a "horizontal asymptote" of the curve \(y = f(x)\) if either \(\xlimit{x}{\infty}
     f(x)=L\) or \(\xlimit{x}{-\infty} f(x) = L\).
-    
+
   \tbullet{2.6.5}
     If \(r > 0\) is a rational number, then \(\xlimit{x}{\infty} \frac{1}{x^r} = 0\). If \(r > 0\) is
     a rational number such that \(x^r\) is defined for all \(x\), then \(\xlimit{x}{-\infty} \frac{1}{x^r} = 0\).
-    
+
   \dbullet{2.6.7 (Convergence)}
     Let \(f\) be a function defined on some interval \((a, \infty)\). Then \(\xlimit{x}{\infty} f(x) = L\) means
-    that for every \(\epsilon > 0\) there is a corresponding number \(N\) such that if \(x > N\) then \(|f(x)-L| 
+    that for every \(\epsilon > 0\) there is a corresponding number \(N\) such that if \(x > N\) then \(|f(x)-L|
     < \epsilon\).
-    
+
   \dbullet{2.6.9 (Divergence)}
     Let \(f\) be a function defined on some interval \((a, \infty)\). Then \(\xlimit{x}{\infty}f(x)=\infty\) means
     that for every positive number \(M\) there is a corresonding positive number \(N\) such that is \(x > N\) then
     \(f(x) > M\).
-    
+
   \dbullet{2.7.1 (Tangent Lines)}
     The "tangent line" to the curve \(y = f(x)\) at the point \(P(a, f(a))\) is the line through \(P\) with slope
     \(m = \xlimit{x}{a} [f(x)-f(a)]/[x-a]\) provided that this limit exists.
-    
+
   \dbullet{2.7.2}
     The slope of a tangent line can be calculated via an offset \(h\); that is, \(m = \xlimit{h}{0}
     [f(a+h)-f(a)]/h\).
-    
+
   \dbullet{2.7.4 (Derivatives)}
     The "derivative of a function \(f\) at a number \(a\)," denoted by \(f'(a)\), is \(f'(a) = \xlimit{x}{0}
     [f(a+h)-f(a)]/h\), if this limit exists. Equivalently, \(f'(a) = \xlimit{x}{a} [f(x)-f(a)]/(x-a)\).
-    
+
   \dbullet{2.8.3 (Differentiability)}
     A function \(f\) is "differentiable at \(a\)" if \(f'(a)\) exists. It is "differentiable on an open
     interval \((a, b)\)" if it is differentiable at every number in the interval.
-    
+
   \tbullet{2.8.4}
     If \(f\) is differentiable at \(a\), then \(f\) is continuous at \(a\).
-    
+
     \begin{proof}
-      We must show \(\xlimit{x}{a} f(x) = f(a)\). We do this by showing \(f(x)-f(a)\rightarrow 0\) as 
+      We must show \(\xlimit{x}{a} f(x) = f(a)\). We do this by showing \(f(x)-f(a)\rightarrow 0\) as
       \(x \rightarrow a\). We note by hypothesis that \(f'(a) = \xlimit{x}{a} [f(x)-f(a)]/(x-a)\) exists.
       Note:
       \begin{align*}
-        \frac{f(x)-f(a)}{x-a}(x-a) = f(x)-f(a) 
+        \frac{f(x)-f(a)}{x-a}(x-a) = f(x)-f(a)
           &\Rightarrow \xlimit{x}{a} [f(x)-f(a)] = \xlimit{x}{a} [\frac{f(x)-f(a)}{x-a}(x-a)]\\
           &= \xlimit{x}{a}[\frac{f(x)-f(a)}{x-a}] \cdot \xlimit{x}{a} (x-a)\\
           &= f'(a) \cdot 0\\
           &= 0\text{.}
       \end{align*}
-      Thus 
+      Thus
       \begin{align*}
         \xlimit{x}{a} f(x) &= \xlimit{x}{a}[f(a) + (f(x)-f(a))]\\
                            &= \xlimit{x}{a}f(a) + \xlimit{x}{a}[f(x)-f(a)]\\

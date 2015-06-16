@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -26,50 +26,50 @@
       \item
         The sum of two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^n\) is defined "component-wise":
         \[
-          \vec{v} + \vec{w} = \columnvec{\(v_1\), \(v_2\), \vdots, \(v_n\)} + 
-                              \columnvec{\(w_1\), \(w_2\), \vdots, \(w_n\)} 
+          \vec{v} + \vec{w} = \columnvec{\(v_1\), \(v_2\), \vdots, \(v_n\)} +
+                              \columnvec{\(w_1\), \(w_2\), \vdots, \(w_n\)}
                             = \columnvec{\(v_1+w_1\), \(v_2+w_2\), \vdots, \(v_n+w_n\)}
         \]
-      \item 
+      \item
         The product of a scalar \(k\) and a vector \(\vec{v}\) is defined component-wise as:
         \[
           k\vec{v} = k\columnvec{\(v_1\), \(v_2\),\vdots, \(v_n\)} = \columnvec{\(kv_1\), \(kv_2\),\vdots, \(kv_n\)}
         \]
     \end{enumerate}
-    
+
   \tbullet{A.2 (Rules of Vector Algebra)}
     The following hold for all vectors \(\vec{u}, \vec{v}, \vec{w}\in\bbr^n\) and for scalars \(c\) and \(k\):
     \begin{enumerate}[i.]
       \item \((\vec{u}+\vec{v})+\vec{w} = \vec{u}+(\vec{v}+\vec{w})\)
       \item \(\vec{v}+\vec{w}=\vec{w}+\vec{v}\)
       \item \(\vec{v}+\vec{0}=\vec{v}\)
-      \item For each \(\vec{v}\) in \(\bbr^n\), there exists a unique \(\vec{x}\) in \(\bbr^n\) 
+      \item For each \(\vec{v}\) in \(\bbr^n\), there exists a unique \(\vec{x}\) in \(\bbr^n\)
             such that \(\vec{v}+\vec{x} = \vec{0}\), namely, \(\vec{x} = -\vec{v}\).
       \item \(k(\vec{v}+\vec{w})=k\vec{v}+k\vec{w}\)
       \item \((c+k)\vec{v}=c\vec{v}+k\vec{v}\)
       \item \(c(k\vec{v})=(ck)\vec{v}\)
       \item \(1\vec{v}=\vec{v}\)
     \end{enumerate}
-    
+
   \dbullet{A.3 (Parallel Vectors)}
     We say that two vectors \(\vec{v}\) and \(\vec{w}\) are "parallel" if one of them is a scalar multiple of the other.
-  
+
   \dbullet{A.4 (Dot Product)}
-    Consider two vectors \(\vec{v}\) and \(\vec{w}\) with components \(\inflatedot{v}{n}\) and \(\inflatedot{w}{n}\), 
-    respectively. Here \(\vec{v}\) and \(\vec{w}\) may be column or row vectors, and they need not be of the say type. 
-    The "dot product" of \(\vec{v}\) and \(\vec{w}\) is defined as 
+    Consider two vectors \(\vec{v}\) and \(\vec{w}\) with components \(\inflatedot{v}{n}\) and \(\inflatedot{w}{n}\),
+    respectively. Here \(\vec{v}\) and \(\vec{w}\) may be column or row vectors, and they need not be of the say type.
+    The "dot product" of \(\vec{v}\) and \(\vec{w}\) is defined as
     \[
       \dotp{v}{w} = v_1w_1 + v_2w_2 + \cdots + v_nw_n\text{.}
     \]
-    We can interpret the dot product geometrically: If \(\vec{v}\) and \(\vec{w}\) are two nonzero vectors 
-    in \(\bbr^n\), then 
+    We can interpret the dot product geometrically: If \(\vec{v}\) and \(\vec{w}\) are two nonzero vectors
+    in \(\bbr^n\), then
     \[
       \dotp{v}{w} = \norm{\vec{v}}\cos{\theta}\norm{\vec{w}}\text{,}
     \]
     where \(\theta\) is the angle enclosed by vectors \(\vec{v}\) and \(\vec{w}\).
-    
+
   \tbullet{A.5 (Properties of Dot Products)}
-    The following equations hold for all column or row vectors \(\vec{u}, \vec{v}, \vec{w}\) with \(n\) 
+    The following equations hold for all column or row vectors \(\vec{u}, \vec{v}, \vec{w}\) with \(n\)
     components, and for all scalars \(k\):
     \begin{enumerate}[i.]
       \item \(\dotp{v}{w}=\dotp{w}{v}\)
@@ -77,35 +77,35 @@
       \item \((k\vec{v})\cdot\vec{w} = k(\dotp{v}{w})\)
       \item \(\dotp{v}{v} > 0\) for all nonzero \(\vec{v}\)
     \end{enumerate}
-    
+
   \dbullet{A.6 (Norm of a Vector)}
     The "length" (or "norm") \(\norm{\vec{x}}\) of a vector \(\vec{x}\in\bbr^n\) is
     \[
       \norm{\vec{x}} = \sqrt{\dotp{x}{x}} = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\text{.}
     \]
-    
+
   \dbullet{A.7 (Unit Vector)}
     A vector \(\vec{u}\) in \(\bbr^n\) is called a "unit vector" if \(\norm{\vec{u}} = 1\); that is,
     its length is \(1\).
-    
+
   \dbullet{A.8 (Perpendicular Vectors)}
-    Two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^n\) are called "perpendicular" (or "orthogonal") 
+    Two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^n\) are called "perpendicular" (or "orthogonal")
     if \(\dotp{v}{w} = 0\).
-    
+
   \dbullet{A.9 (Cross Product in \(\bbr^3\))}
-    The cross product \(\crossp{v}{w}\) of two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^3\) is the vector 
+    The cross product \(\crossp{v}{w}\) of two vectors \(\vec{v}\) and \(\vec{w}\) in \(\bbr^3\) is the vector
     in \(\bbr^3\) with the following three properties:
     \begin{enumerate}[i.]
-      \item 
+      \item
         \(\crossp{v}{w}\) is orthogonal to both \(\vec{v}\) and \(\vec{w}\).
-      \item 
-        \(\norm{\crossp{v}{w}} = \norm{v}\sin{\theta}\norm{w}\), where \(\theta\) is the angle between 
-        \(\vec{v}\) and \(\vec{w}\), with \(0 \leq \theta \leq \pi\). This means that the magnitude of the 
+      \item
+        \(\norm{\crossp{v}{w}} = \norm{v}\sin{\theta}\norm{w}\), where \(\theta\) is the angle between
+        \(\vec{v}\) and \(\vec{w}\), with \(0 \leq \theta \leq \pi\). This means that the magnitude of the
         vector \(\crossp{v}{w}\) is the area of the parallelogram spanned by \(\vec{v}\) and \(\vec{w}\).
       \item
         The direction of \(\crossp{v}{w}\) follows the "right-hand rule."
     \end{enumerate}
-    
+
   \tbullet{A.10 (Properties of the Cross Product)}
     The following equations hold for all vectors \(\vec{u}, \vec{v}, \vec{w} \in \bbr^3\) and for all scalars \(k\):
     \begin{enumerate}[i.]

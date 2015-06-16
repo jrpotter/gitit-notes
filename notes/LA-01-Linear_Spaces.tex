@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -25,144 +25,144 @@
   % ----------------------------------------------------------------------------
 
   \dbullet{4.1.1 (Linear Spaces or Vector Spaces)}
-    A "linear space" \(V\) is a set endowed with a rule for addition (if \(f\) and \(g\) are in \(V\), then so is 
-    \(f + g\)) and a rule for scalar multiplication (if \(f\) is in \(V\) and \(k\) in \(\bbr\), then \(kf\) is in 
-    \(V\)) such that these operations satisfy the following eight rules (for all \(f, g, h\) in \(V\) and all 
+    A "linear space" \(V\) is a set endowed with a rule for addition (if \(f\) and \(g\) are in \(V\), then so is
+    \(f + g\)) and a rule for scalar multiplication (if \(f\) is in \(V\) and \(k\) in \(\bbr\), then \(kf\) is in
+    \(V\)) such that these operations satisfy the following eight rules (for all \(f, g, h\) in \(V\) and all
     \(c, k\) in \(\bbr\))
     \begin{enumerate}[i.]
       \item \((f + g) + h = f+ (g + h)\).
       \item \(f + g = g + f\).
-      \item There exists a "neutral element \(n\)" in \(V\) such that \(f + n = f\), for all 
+      \item There exists a "neutral element \(n\)" in \(V\) such that \(f + n = f\), for all
             \(f\) in \(V\). This \(n\) is unique and denoted by \(0\).
-      \item For each \(f\) in \(V\) there exists a \(g\) in \(V\) such that \(f + g = 0\). This 
+      \item For each \(f\) in \(V\) there exists a \(g\) in \(V\) such that \(f + g = 0\). This
             \(g\) is unique and denoted by \((-f)\).
       \item \(k(f + g) = kf + kg\).
       \item \((c + k)f = cf + kf\).
       \item \(c(kf) = (ck)f\).
       \item \(1f = f\).
     \end{enumerate}
-    
+
   \dbullet{4.1.2 (Subspaces)}
     A subset \(W\) of a linear space \(V\) is called a "subspace" of \(V\) if
     \begin{enumerate}[i.]
       \item \(W\) contains the neutral element \(0\) of \(V\).
       \item \(W\) is closed under linear combinations.
     \end{enumerate}
-    
+
   \dbullet{4.1.3 (Span, Linear Independence, Basis, Coordinates)}
     Consider the elements \(\inflatedot{f}{n}\) in a linear space \(V\).
     \begin{enumerate}[i.]
       \item
-        We say that \(\inflatedot{f}{n}\) "span" \(V\) if every \(f\) in \(V\) can be expressed as a 
+        We say that \(\inflatedot{f}{n}\) "span" \(V\) if every \(f\) in \(V\) can be expressed as a
         linear combination of \(\inflatedot{f}{n}\).
       \item
-        We say that \(f_i\) is "redundant" if it is a linear combination of \(\inflatedot{f}{i-1}\). 
-        The elements \(\inflatedot{f}{n}\) are called "linearly independent" if none of them is redundant. 
-        This is the case if the equation \[c_1f_1 + \cdots + c_nf_n = 0\] has only the trivial solution 
+        We say that \(f_i\) is "redundant" if it is a linear combination of \(\inflatedot{f}{i-1}\).
+        The elements \(\inflatedot{f}{n}\) are called "linearly independent" if none of them is redundant.
+        This is the case if the equation \[c_1f_1 + \cdots + c_nf_n = 0\] has only the trivial solution
         \[c_1 = \cdots = c_n = 0\text{.}\]
       \item
-        We say that elements \(\inflatedot{f}{n}\) are a "basis" of \(V\) if they span \(V\) and are linearly 
-        independent. This means that every \(f\) in \(V\) can be written uniquely as a linear combination 
-        \(f = c_1f_1 + \cdots + c_nf_n\). The coefficients \(\inflatedot{c}{n}\) are called the "coordinates" 
-        of \(f\) with respect to the basis \(\beta = (\inflatedot{f}{n})\). The vector \[\columnvec{\(c_1\), 
-        \vdots, \(c_n\)}\] in \(\bbr^n\) is called the "\(\beta\)-coordinate vector" of \(f\), denoted by 
-        \(\bcoor{f}\). 
-        The transformation 
+        We say that elements \(\inflatedot{f}{n}\) are a "basis" of \(V\) if they span \(V\) and are linearly
+        independent. This means that every \(f\) in \(V\) can be written uniquely as a linear combination
+        \(f = c_1f_1 + \cdots + c_nf_n\). The coefficients \(\inflatedot{c}{n}\) are called the "coordinates"
+        of \(f\) with respect to the basis \(\beta = (\inflatedot{f}{n})\). The vector \[\columnvec{\(c_1\),
+        \vdots, \(c_n\)}\] in \(\bbr^n\) is called the "\(\beta\)-coordinate vector" of \(f\), denoted by
+        \(\bcoor{f}\).
+        The transformation
           \[L(f) = \bcoor{f} = \columnvec{\(c_1\), \vdots, \(c_n\)}\text{ from \(V\) to \(\bbr^n\)}\]
         is called the "\(\beta\)-coordinate transformation," sometimes denoted by \(L_{\beta}\).
       \end{enumerate}
-      
+
     \tbullet{4.1.4 (Linearity of \(L_{\beta}\))}
       If \(\beta\) is a basis of a linear space \(V\), then
       \begin{enumerate}[i.]
         \item \(\bcoor{f+g} = \bcoor{f} + \bcoor{g}\), for all elements \(f,g\in V\)
         \item \(\bcoor{kf} = k\bcoor{f}\)
       \end{enumerate}
-      
+
     \dbullet{4.1.5 (Dimension)}
-      If a linear space \(V\) has a basis with \(n\) elements, then all other bases of \(V\) consist of \(n\) 
+      If a linear space \(V\) has a basis with \(n\) elements, then all other bases of \(V\) consist of \(n\)
       elements as well. We say that \(n\) is the "dimension" of \(V\), dnoted \(\text{dim}(V) = n\).
-      
+
       \begin{proof}
-        Consider two bases \(\alpha = (\inflatedot{f}{n})\) and \(\beta = (\inflatedot{g}{m})\) of \(V\); we must 
-        show that \(n = m\). We will first show that the \(m\) vectors \(\bcoor{g_1} \ldots \bcoor{g_m}\) in \(\bbr^n\) 
-        are linearly independent, which implies that \(m \leq n\) by Theorem 3.2.8. Consider a relation \[c_1\bcoor{g_1} 
-        + \cdots + c_m\bcoor{g_m} = \vec{0}\text{.}\] By Theorem 4.1.4, we have \[\bcoor{c_1g_1+\cdots+c_mg_m} = 
-        \vec{0},\text{ so that } c_1g_1 + \cdots + c_mg_m = 0\text{.}\] Since the elements \(\inflatedot{g}{m}\) are 
-        linearly independent, it follows that \(c_1 = \cdots = c_m = 0\), meaning that 
-        \(c_1\bcoor{g_1}+\cdots+c_m\bcoor{g_m}=\vec{0}\) is the trivial relation, as claimed. We can apply the 
+        Consider two bases \(\alpha = (\inflatedot{f}{n})\) and \(\beta = (\inflatedot{g}{m})\) of \(V\); we must
+        show that \(n = m\). We will first show that the \(m\) vectors \(\bcoor{g_1} \ldots \bcoor{g_m}\) in \(\bbr^n\)
+        are linearly independent, which implies that \(m \leq n\) by Theorem 3.2.8. Consider a relation \[c_1\bcoor{g_1}
+        + \cdots + c_m\bcoor{g_m} = \vec{0}\text{.}\] By Theorem 4.1.4, we have \[\bcoor{c_1g_1+\cdots+c_mg_m} =
+        \vec{0},\text{ so that } c_1g_1 + \cdots + c_mg_m = 0\text{.}\] Since the elements \(\inflatedot{g}{m}\) are
+        linearly independent, it follows that \(c_1 = \cdots = c_m = 0\), meaning that
+        \(c_1\bcoor{g_1}+\cdots+c_m\bcoor{g_m}=\vec{0}\) is the trivial relation, as claimed. We can apply the
         same for \(\alpha\) and see that \(n \leq m\) and \(m \leq n\) meaning \(n = m\).
       \end{proof}
 
   \tbullet{4.1.7 (Linear Differential Equations)}
-    The solutions of the differential equation \[f^{(n)}(x) + a_{n-1}f^{(n-1)}(x) + \cdots + a_1f'(x) + a_0f(x) = 0\] 
-    (where \(\inflatedot{a}{n-1}\) are constants) form an \(n\)-dimensional subspace of \(\bbc^{\infty}\). A 
-    differential equation of this form is called an "\(\spscript{n}{th}\) order linear differential equation with 
+    The solutions of the differential equation \[f^{(n)}(x) + a_{n-1}f^{(n-1)}(x) + \cdots + a_1f'(x) + a_0f(x) = 0\]
+    (where \(\inflatedot{a}{n-1}\) are constants) form an \(n\)-dimensional subspace of \(\bbc^{\infty}\). A
+    differential equation of this form is called an "\(\spscript{n}{th}\) order linear differential equation with
     constant coefficients."
 
   \dbullet{4.1.8 (Finite Dimensional Linear Spaces)}
-    A linear space \(V\) is called "finite dimensional" if it has a (finite) basis \(\inflatedot{f}{n}\), 
+    A linear space \(V\) is called "finite dimensional" if it has a (finite) basis \(\inflatedot{f}{n}\),
     so that we can define it dimension \(\text{dim}(V) = n\). Otherwise the space is called "infinite dimensional."
-    
+
   \dbullet{4.1.9 (Finite-Dimensional Subspaces)}
     If \(W\) is a subspace of an \(n\)-dimensional linear space \(V\), then \(W\) is
     finite-dimensional as well, and \(\text{dim}(W) \leq n\).
-    
+
     \begin{proof}
       Let \(W\) be an \(n\)-dimensional linear space and \(W \leq N\). Let \(m\) be the largest number of linearly
       independent vectors we can find in \(W\). Thus, choose linearly independent vectors \(\inflatedot{\vec{w}}{m}\)
       to be a basis of \(W\). Thus \(W\) is finite dimensional and \(\text{dim}(W) = m \leq n\).
     \end{proof}
-    
+
   \dbullet{4.1.10 (Finitely Generated Spaces)}
-    A linaer space \(V\) is "finitely generated" if it can be spanned by finitely many elements. A linear space \(V\) 
+    A linaer space \(V\) is "finitely generated" if it can be spanned by finitely many elements. A linear space \(V\)
     is finitely generated if and only if it is finite dimensional, and if elements \(\inflatedot{g}{n}\) span \(V\),
     then \(\text{dim}(V) \leq n\).
-    
+
     \begin{proof}
       Let \(V\) be a linear space.
-      
+
       \forward Suppose \(V\) is finitely generated. Let \(m\) be the minimum number of vectors required to span
       \(V\), \(\inflatedot{g}{m}\). Then by Theorem 3.3.4 (revised for linear spaces), \((\inflatedot{g}{m})\) forms
       a basis of \(V\).
-      
-      \backward If \(V\) is finite dimensional, then \(V\) has basis \((\inflatedot{g}{r})\) where 
+
+      \backward If \(V\) is finite dimensional, then \(V\) has basis \((\inflatedot{g}{r})\) where
       \(r = \text{dim}(V)\). Thus \(V\) is finitely generated.
-      
+
       We note if \(V\) has basis \((\inflatedot{g}{r})\), then \(r \leq m\) by Theorem 3.3.4.
     \end{proof}
-    
-    
+
+
   % Section 4.2
   % ----------------------------------------------------------------------------
-    
+
   \dbullet{4.2.1 (Linear Transformations, Image, Kernel, Rank, Nullity)}
-    Consider two linear  spaces \(V\) and \(W\). A function \(T\) from \(V\) to \(W\) is called a 
-    "linear transformation" if \[T(f+g) = T(f) + T(g)\text{ and }T(kf) = kT(f)\] for all elements \(f\) and 
+    Consider two linear  spaces \(V\) and \(W\). A function \(T\) from \(V\) to \(W\) is called a
+    "linear transformation" if \[T(f+g) = T(f) + T(g)\text{ and }T(kf) = kT(f)\] for all elements \(f\) and
     \(g\) of \(V\) and for all scalars \(k\).
-    
-    For a linear transformation \(T\) from \(V\) to \(W\), we let \[ \text{im}(T) = \{T(f): f\text{ in }V\}\] and 
-    \[ \text{ker}(t) = \{f\text{ in }V: T(f) = 0\}\text{.} \] Note that \(\text{im}(T)\) is a subspace of target 
+
+    For a linear transformation \(T\) from \(V\) to \(W\), we let \[ \text{im}(T) = \{T(f): f\text{ in }V\}\] and
+    \[ \text{ker}(t) = \{f\text{ in }V: T(f) = 0\}\text{.} \] Note that \(\text{im}(T)\) is a subspace of target
     space \(W\) and that \(\text{ker}(T)\) is a subspace of domain \(V\).
-    
-    If the image of \(T\) is finite dimensional, then \(\text{dim}(\text{im}(T))\) is called the "rank" of \(T\) 
+
+    If the image of \(T\) is finite dimensional, then \(\text{dim}(\text{im}(T))\) is called the "rank" of \(T\)
     and if the kernel of \(T\) is finite dimensional, then \(\text{dim}(\text{ker}(T))\) is the "nullity" of \(T\).
-    
+
   \tbullet{4.2.2 (Rank-Nullity Theorem)}
-    It \(T\) is a linear transformation from \(V\) to \(W\) and \(V\) is finite dimensional, then the rank-nullity 
-    theorem holds: \[ \text{dim}(V) = \text{rank}(T) + \text{nullity}(T) = \text{dim}(\text{im}(T)) + 
+    It \(T\) is a linear transformation from \(V\) to \(W\) and \(V\) is finite dimensional, then the rank-nullity
+    theorem holds: \[ \text{dim}(V) = \text{rank}(T) + \text{nullity}(T) = \text{dim}(\text{im}(T)) +
     \text{dim}(\text{ker}(T))\text{.} \]
-    
+
     \begin{proof}
-      First note that \(\text{ker}(T)\) must be finite dimensional since \(\text{ker}(T)\) is a subspace of 
-      \(V\) and Theorem 4.1.9 holds. Similarly, \(\text{im}(T)\) is finitely generated by the columns of finite 
+      First note that \(\text{ker}(T)\) must be finite dimensional since \(\text{ker}(T)\) is a subspace of
+      \(V\) and Theorem 4.1.9 holds. Similarly, \(\text{im}(T)\) is finitely generated by the columns of finite
       dimensional subspace \(V\). Thus, by Theorem 4.1.10, \(\text{im}(T)\) is also finite dimensional.
-      
-      Consider a basis \((\inflatedot{v}{n})\) of \(\text{ker}(T)\) where \(n = \text{nullity}(T)\), and basis 
-      \((\inflatedot{w}{r})\) of \(\text{im}(T)\), where \(r = \text{rank}(T)\). Consider elements 
+
+      Consider a basis \((\inflatedot{v}{n})\) of \(\text{ker}(T)\) where \(n = \text{nullity}(T)\), and basis
+      \((\inflatedot{w}{r})\) of \(\text{im}(T)\), where \(r = \text{rank}(T)\). Consider elements
       \(\inflatedot{u}{r}\) in \(V\) such that \(T(u_i) = w_i\) for \(i = \inflatedot{u}{r}\).
-      
-      To begin, we show that \(\inflatedot{u}{r}, \inflatedot{v}{n}\) are linearly independent. Consider relation \(c_1u_1 + \cdots + c_ru_r + d_1v_1 + \cdots + d_nv_n = 0\). Then 
+
+      To begin, we show that \(\inflatedot{u}{r}, \inflatedot{v}{n}\) are linearly independent. Consider relation \(c_1u_1 + \cdots + c_ru_r + d_1v_1 + \cdots + d_nv_n = 0\). Then
       \begin{align*}
         T(0) = 0 &= T(c_1u_1 + \cdots + c_ru_r + d_1v_1 + \cdots + d_nv_n) \\
                  &= T(c_1u_1) + \cdots + T(c_ru_r) + T(d_1v_1) + \cdots + T(d_nv_n) \\
@@ -171,7 +171,7 @@
                  &= c_1w_1 + \cdots + c_rw_r
       \end{align*}
       Since \(\inflatedot{w}{r}\) is linearly independent, only the trivial relation holds.
-      
+
       Next we show that \(\inflatedot{u}{r}, \inflatedot{v}{n}\) span \(V\). Let \(v\)
       be any element in \(V\), and note \[T(v) = d_1w_1 + \cdots + d_rw_r\text{.}\]
       We also note that
@@ -186,122 +186,122 @@
         &\qquad v-d_1u_1-\cdots-d_ru_r = c_1v_1 + \cdots + c_nv_n\\
         &\Rightarrow v = c_1v_1 + \cdots + c_nv_n + d_1u_1 + \cdots + d_ru_r
       \end{align*}
-      
-      Therefore, since \(\inflatedot{u}{r}, \inflatedot{v}{n}\) are linearly independent and span \(V\), these 
+
+      Therefore, since \(\inflatedot{u}{r}, \inflatedot{v}{n}\) are linearly independent and span \(V\), these
       \(r + n\) elements form a basis of \(V\). Thus \[\text{dim}(V) = \text{rank}(T) + \text{nullity}(T)\text{.}\]
-      
+
     \end{proof}
 
   \dbullet{4.2.3 (Isomorphisms and Isomorphic Spaces)}
-    An invertible linear transformation \(T\) is called an "isomorphism." We say that the linear space \(V\) 
+    An invertible linear transformation \(T\) is called an "isomorphism." We say that the linear space \(V\)
     is isomorphic to the linear space \(W\) if there exists an isomorphism \(T\) from \(V\) to \(W\).
-    
+
   \tbullet{4.2.4 (Coordinate Transformation Isomorphisms)}
-    If \(\beta = (\inflatedot{f}{n})\) is a basis of a linear space \(V\), then the "coordinate transformation" 
-    \(L_{\beta}(f) = \bcoor{f}\) from \(V\) to \(\bbr^n\) is an isomorphism. Thus \(V\) is isomorphic to 
+    If \(\beta = (\inflatedot{f}{n})\) is a basis of a linear space \(V\), then the "coordinate transformation"
+    \(L_{\beta}(f) = \bcoor{f}\) from \(V\) to \(\bbr^n\) is an isomorphism. Thus \(V\) is isomorphic to
     \(\bbr^n\); the linear spaces \(V\) and \(\bbr^n\) have the same structure.
-    
+
   \tbullet{4.2.5 (Properties of Isomorphisms)}
     For parts (\romannumeral 2 -\romannumeral 4), assume \(V\) and \(W\) are finite dimensional.
     \begin{enumerate}[i.]
-      \item 
-        A linear transformation \(T\) from \(V\) to \(W\) is an isomorphism if and only if 
+      \item
+        A linear transformation \(T\) from \(V\) to \(W\) is an isomorphism if and only if
        \(\text{ker}(T) = \{0\}\) and \(\text{im}(T) = W\).
-      \item 
+      \item
         If \(V\) is isomorphic to \(W\), then \(\text{dim}(V) = \text{dim}(W)\).
-      \item 
-        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{ker}(T) = \{0\}\). If 
+      \item
+        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{ker}(T) = \{0\}\). If
         \(\text{dim}(V) = \text{dim}(W)\), then \(T\) is an isomorphism.
-      \item 
-        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{im}(T) = W\). 
+      \item
+        Suppose \(T\) is a linear transformation from \(V\) to \(W\) with \(\text{im}(T) = W\).
         If \(\text{dim}(V) = \text{dim}(W)\), then \(T\) is an isomorphism.
     \end{enumerate}
-    
+
     \begin{proof}
       \begin{enumerate}[i.]
         \item
-          \forward 
-            Suppose that \(T\) is an isomorphism. To find the kernel of \(T\), we have to solve the equation 
-            \(T(f)=0\). Applying \(T^{-1}\) on both sides, we find that \(f = T^{-1}(0) = 0\), so that 
-            \(\text{ker(T)} = \{0\}\), as claimed. To see that \(\text{im}(T) = W\), note that any \(g\) in \(V\) 
+          \forward
+            Suppose that \(T\) is an isomorphism. To find the kernel of \(T\), we have to solve the equation
+            \(T(f)=0\). Applying \(T^{-1}\) on both sides, we find that \(f = T^{-1}(0) = 0\), so that
+            \(\text{ker(T)} = \{0\}\), as claimed. To see that \(\text{im}(T) = W\), note that any \(g\) in \(V\)
             can be written as \(g=T(T^{-1}(g))\).
-            
-          \backward 
-            Suppose that \(\text{ker}(T) = \{0\}\) and \(\text{im}(T)=W\). We have to show that \(T\) is 
-            invertible; that is, the equation \(T(f) = g\) has a unique solution \(f\) for every \(g\) in \(W\). 
-            There is at least one solution \(f\) since \(\text{im}(T) = W\). Consider two solutions \(f_1\) and 
-            \(f_2\), so that \(T(f_1) = T(f_2) = g\). Then \[0 = T(f_1) - T(f_2) = T(f_1-f_2),\] so that 
-            \(f_1-f_2\) is in the kernel of \(T\). Since the kernel of \(T\) is \(\{0\}\), we must have 
+
+          \backward
+            Suppose that \(\text{ker}(T) = \{0\}\) and \(\text{im}(T)=W\). We have to show that \(T\) is
+            invertible; that is, the equation \(T(f) = g\) has a unique solution \(f\) for every \(g\) in \(W\).
+            There is at least one solution \(f\) since \(\text{im}(T) = W\). Consider two solutions \(f_1\) and
+            \(f_2\), so that \(T(f_1) = T(f_2) = g\). Then \[0 = T(f_1) - T(f_2) = T(f_1-f_2),\] so that
+            \(f_1-f_2\) is in the kernel of \(T\). Since the kernel of \(T\) is \(\{0\}\), we must have
             \(f_1 - f_2 = 0\) and \(f_1=f_2\), as claimed.
-          \item  
-            By part (\romannumeral 1), \(\text{ker}(T) = \{0\}\) and \(\text{im}(T) = W\). Thus, by the 
+          \item
+            By part (\romannumeral 1), \(\text{ker}(T) = \{0\}\) and \(\text{im}(T) = W\). Thus, by the
             Rank-Nullity Theorem, \[\text{dim}(V) = \text{dim}(\text{ker}(T)) + \text{dim}(\text{im}(T)) =
             0 + \text{dim}(W) = \text{dim}(W)\text{.}\]
           \item
-            By part (\romannumeral 1), it suffices to show that \(\text{im}(T)=W\), or, equivalently, that 
-            \(\text{dim}(\text{im}(T)) = \text{dim}(W)\). By the Rank-Nullity Theorem, \[\text{dim}(W) = 
+            By part (\romannumeral 1), it suffices to show that \(\text{im}(T)=W\), or, equivalently, that
+            \(\text{dim}(\text{im}(T)) = \text{dim}(W)\). By the Rank-Nullity Theorem, \[\text{dim}(W) =
             \text{dim}(V) = \text{dim}(\text{ker}(T)) + \text{dim}(\text{im}(T)) = \text{dim}(\text{im}(T))\text{.}\]
           \item
-            By part (\romannumeral 1), it suffices to show that \(\text{ker}(T) = \{0\}\), or, equivalently, 
-            that \(\text{dim}(\text{ker}(T)) = 0\). By the Rank-Nullity Theorem, \[\text{dim}(W) = \text{dim}(V) 
-            = \text{dim}(\text{ker}(T)) + \text{dim}(\text{im}(T)) = \text{dim}(\text{ker}(T)) + 
+            By part (\romannumeral 1), it suffices to show that \(\text{ker}(T) = \{0\}\), or, equivalently,
+            that \(\text{dim}(\text{ker}(T)) = 0\). By the Rank-Nullity Theorem, \[\text{dim}(W) = \text{dim}(V)
+            = \text{dim}(\text{ker}(T)) + \text{dim}(\text{im}(T)) = \text{dim}(\text{ker}(T)) +
             \text{dim}(W)\text{.}\]
       \end{enumerate}
     \end{proof}
-    
-    
+
+
     % Section 4.3
     % ----------------------------------------------------------------------------
-    
+
     \dbullet{4.3.1 (The \(\beta\)-Matrix of a Linear Transformation)}
-      Consider a linear transformation \(T\) from \(V\) to \(V\), where \(V\) is an \(n\)-dimensional linear space. 
+      Consider a linear transformation \(T\) from \(V\) to \(V\), where \(V\) is an \(n\)-dimensional linear space.
       Let \(\beta\) be a basis of \(V\). Consider the linear trasnformation \(L_{\beta}\circ T\circ L_{\beta}^{-1}\)
-     from \(\bbr^n\) to \(\bbr^n\), with standard matrix \(B\), meaning that \(B\vec{x} = 
-     L_{\beta}(T(L_{\beta}^{-1}(\vec{x})))\) for all \(\vec{x}\) in \(\bbr^n\). This matrix \(B\) is called the 
+     from \(\bbr^n\) to \(\bbr^n\), with standard matrix \(B\), meaning that \(B\vec{x} =
+     L_{\beta}(T(L_{\beta}^{-1}(\vec{x})))\) for all \(\vec{x}\) in \(\bbr^n\). This matrix \(B\) is called the
      "\(\beta\)-matrix" of transformation \(T\).
-    
+
     \tbullet{4.3.2 (\(\beta\)-Matrix Columns)}
-      Consider a linear transformation \(T\) from \(V\) to \(V\), and let \(B\) be the matrix of \(T\) with respect 
+      Consider a linear transformation \(T\) from \(V\) to \(V\), and let \(B\) be the matrix of \(T\) with respect
       to a basis \(\beta = (\inflatedot{f}{n})\) of \(V\). Then:
-      \[B = \begin{bmatrix} & & \\ \bcoor{T(f_1)} & \cdots & \bcoor{T(f_n)} \\ & & \end{bmatrix}\text{.} \] 
-      The columns of \(B\) are the \(\beta\)-coordinate vectors of the transforms of the basis elements 
+      \[B = \begin{bmatrix} & & \\ \bcoor{T(f_1)} & \cdots & \bcoor{T(f_n)} \\ & & \end{bmatrix}\text{.} \]
+      The columns of \(B\) are the \(\beta\)-coordinate vectors of the transforms of the basis elements
       \(\inflatedot{f}{n}\) of \(V\).
-      
+
     \dbullet{4.3.3 (Change of Basis Matrix)}
-      Consider two bases \(\mu\) and \(\beta\) of an \(n\)-dimensional linear space \(V\). Consider the 
-      linear transformation \(L_{\mu} \circ L_{\beta}^{-1}\) from \(\bbr^n\) to \(\bbr^n\), with standard 
-      matrix \(S\), meaning that \(S\vec{x} = L_{\mu}(L_{\beta}^{-1}(\vec{x}))\) for all \(\vec{x}\) in 
-      \(\bbr^n\). This invertible matrix \(S\) is called the "change of basis matrix" from \(\beta\) to \(\mu\), 
+      Consider two bases \(\mu\) and \(\beta\) of an \(n\)-dimensional linear space \(V\). Consider the
+      linear transformation \(L_{\mu} \circ L_{\beta}^{-1}\) from \(\bbr^n\) to \(\bbr^n\), with standard
+      matrix \(S\), meaning that \(S\vec{x} = L_{\mu}(L_{\beta}^{-1}(\vec{x}))\) for all \(\vec{x}\) in
+      \(\bbr^n\). This invertible matrix \(S\) is called the "change of basis matrix" from \(\beta\) to \(\mu\),
       sometimes denoted by \(S_{\beta\rightarrow\mu}\).
-      
+
     \tbullet{4.3.4 (Change of Basis Matrix Columns)}
-      For two bases \(\mu\) and \(\beta\) of an \(n\)-dimensional linear space \(V\), 
+      For two bases \(\mu\) and \(\beta\) of an \(n\)-dimensional linear space \(V\),
       \[S_{\beta\rightarrow\mu} = \begin{bmatrix} & & \\ \bcoor[\mu]{b_1} & \cdots & \bcoor[\mu]{b_x} \\ & & \end{bmatrix}\]
       where \(\beta = (\inflatedot{b}{n})\).
-      
+
       \begin{proof}
-        Letting \(f = L_{\beta}^{-1}(\vec{x})\) and \(\vec{x} = \bcoor{f}\), we find that 
-        \(\bcoor[\mu]{f} = S\bcoor{f}\), for all \(f\) in \(V\). If \(\beta = (\inflatedot{b}{n})\), then 
-        \(\bcoor[\mu]{b_1} = S\bcoor{b_i} = S\vec{e}_i = (\spscript{i}{th} \text{ column of }S)\), so that 
+        Letting \(f = L_{\beta}^{-1}(\vec{x})\) and \(\vec{x} = \bcoor{f}\), we find that
+        \(\bcoor[\mu]{f} = S\bcoor{f}\), for all \(f\) in \(V\). If \(\beta = (\inflatedot{b}{n})\), then
+        \(\bcoor[\mu]{b_1} = S\bcoor{b_i} = S\vec{e}_i = (\spscript{i}{th} \text{ column of }S)\), so that
         \[
-          S_{\beta\rightarrow\mu} = 
-            \begin{bmatrix}                  &        &                  \\ 
-                            \bcoor[\mu]{b_1} & \cdots & \bcoor[\mu]{b_x} \\ 
-                                             &        & 
+          S_{\beta\rightarrow\mu} =
+            \begin{bmatrix}                  &        &                  \\
+                            \bcoor[\mu]{b_1} & \cdots & \bcoor[\mu]{b_x} \\
+                                             &        &
             \end{bmatrix}\]
       \end{proof}
-      
+
     \tbullet{4.3.5 (Change of Basis in a Subspace of \(\bbr^n\))}
       Consider a subspace \(V\) of \(\bbr^n\) with two bases \(\mu = (\inflatedot{\vec{a}}{m})\) and \(\beta = (\inflatedot{\vec{b}}{m})\). Let \(S\) be the change of basis matrix from \(\beta\) to \(\mu\). The the following equation holds:
       \[
-        \begin{bmatrix}&&\\\vec{b}_1&\cdots&\vec{b}_m\\&&\end{bmatrix} = 
+        \begin{bmatrix}&&\\\vec{b}_1&\cdots&\vec{b}_m\\&&\end{bmatrix} =
         \begin{bmatrix}&&\\\vec{a}_1&\cdots&\vec{a}_m\\&&\end{bmatrix}S\text{.}
       \]
 
     \tbullet{4.3.6 (Change of Bases for the Matrix of a Linear Transformation)}
-      Let \(V\) be a linear space with two given bases \(\mu\) and \(\beta\). Consider a linear transformation 
-      \(T\) from \(V\) to \(V\), and let \(A\) and \(B\) be the \(\mu\)- and the \(\beta\)-matrix of \(T\), 
-      respectively. Let \(S\) be the change of basis matrix from \(\beta\) to \(\mu\). Then \(A\) is similar to 
+      Let \(V\) be a linear space with two given bases \(\mu\) and \(\beta\). Consider a linear transformation
+      \(T\) from \(V\) to \(V\), and let \(A\) and \(B\) be the \(\mu\)- and the \(\beta\)-matrix of \(T\),
+      respectively. Let \(S\) be the change of basis matrix from \(\beta\) to \(\mu\). Then \(A\) is similar to
       \(B\), and \[AS = SB\text{ or }A=SBS^{-1}\text{ or }B=S^{-1}AS\text{.}\]
 
 \end{outline}

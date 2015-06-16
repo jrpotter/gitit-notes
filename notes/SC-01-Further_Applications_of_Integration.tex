@@ -1,5 +1,5 @@
-\documentclass[a4paper,11pt]{article}
-\usepackage[a4paper, margin=20mm]{geometry}
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{mathfunc}
@@ -24,11 +24,11 @@
   \dbullet{8.1.1 (Length of a Curve)}
     We define the "length" \(L\) of the curve \(C\) with equation \(y=f(x)\), \(a\leq x\leq b\), as the limit of
     the lengths of inscribed polygons (if the limit exists): \[ L = \xlimit{n}{\infty}\sum_{i=1}^n|P_{i-1}P_i|\text{.} \]
-    
+
   \tbullet{8.1.2 (Arc Length Formula)}
     If \(f'\) is continuous on \([a, b]\), then the length of the curve \(y=f(x), a\leq x \leq b\), is
     \[ L = \int_a^b\sqrt{1 + [f'(x)]^2}dx\text{.} \]
-    
+
     \begin{proof}
       Letting \(\Delta{y_i} = y_i - y_{i-1}\), then
       \[ |P_{i-1}P_i| = \sqrt{(x_i-x_{i-1}^2 + (y_i-y_{i-1})^2} = \sqrt{(\Delta{x})^2+(\Delta{y_i})^2}\text{.} \]
@@ -38,43 +38,43 @@
         f(x_i) - f(x_{i-1}) &= f'(x_i^*)(x_i - x_{i-1}) \\
         \Delta{y_i} &= f'(x_i^*)\Delta{x}\text{.}
       \end{align*}
-      Thus 
+      Thus
       \begin{align*}
         |P_{i-1}P_i| &= \sqrt{(\Delta{x})^2+(\Delta{y_i})^2} = \sqrt{(\Delta{x})^2+[f'(x_i^*)\Delta{x}])^2} \\
                      &= \sqrt{1 + [f'(x_i^*)]^2}\sqrt{(\Delta{x})^2} = \sqrt{1+[f'(x_i^*)]^2}\Delta{x}\text{.}
       \end{align*}
-      Thus, by Def'n 8.1.1, 
-      \[ 
-        L = \xlimit{x}{\infty}\sum_{i=1}^n|P_{i-1}P_i| 
+      Thus, by Def'n 8.1.1,
+      \[
+        L = \xlimit{x}{\infty}\sum_{i=1}^n|P_{i-1}P_i|
           = \xlimit{n}{\infty}\sum_{i=1}^n\sqrt{1+[f'(x_i^*)]^2}\Delta{x}\text{.}
       \]
       By the definition of a definite integral, and because \(g(x) = \sqrt{1+[f'(x)]^2}\) is continuous,
       \[ \int_a^b\sqrt{1+[f'(x)]^2}dx\text{.} \]
     \end{proof}
-    
+
   \dbullet{8.2.1 (Area of a Surface of Revolution)}
-    Given a positive \(f\) with a continuous derivative, the "surface area" of the surface obtained by rotating 
-    the curve \(y = f(x), a \leq x \leq b\), about the \(x\)-axis is defined as \[ S = \int_a^b2\pi 
+    Given a positive \(f\) with a continuous derivative, the "surface area" of the surface obtained by rotating
+    the curve \(y = f(x), a \leq x \leq b\), about the \(x\)-axis is defined as \[ S = \int_a^b2\pi
     f(x)\sqrt{1+[f'(x)]^2}dx\text{.} \]
-    
+
     \pagebreak
     \begin{justification}
       We note the lateral surface area of a cone is \(A = \pi rl\) and thus the surface area of a \textit{band}, which
       we consider to be a lower segment of a cone, is \(A = \pi l(r_1+r_2)\), where \(r_i\) is the base radius of the
       smaller and larger cone respectively (the band's area can be found by similar triangles between the slant heights
       and radii of both cones).
-      
-      So given a surface obtained by rotating a curve \(y=f(x), a\leq x \leq b\), about the \(x\)-axis, where 
-      \(f\) is positive and has a continuous derivative, we can approximate the curve itself in the same manner 
-      as the arc length, and rotating this approximation yields a series of bands, as defined above, with slant 
+
+      So given a surface obtained by rotating a curve \(y=f(x), a\leq x \leq b\), about the \(x\)-axis, where
+      \(f\) is positive and has a continuous derivative, we can approximate the curve itself in the same manner
+      as the arc length, and rotating this approximation yields a series of bands, as defined above, with slant
       height \(|P_{i-1}P_i|\).
-      
+
       Thus the area of any given band is \[2\pi\frac{y_{i-1}+y_i}{2}|P_{i-1}P_i|\text{.}\] By the proof of Theorem 8.1.2,
       \[ |P_{i-1}P_i| = \sqrt{1+[f'(x_i^*)]^2}\Delta{x} \] where \(x_i^*\) is some number in \([x_{i-1},x_i]\). When
       \(\Delta{x}\) is small, both \(y_i\) and \(y_{i-1}\) are approximately \(f(x_i^*)\), since \(f\) is continuous.
       Therefore \[2\pi\frac{y_{i-1}+y_i}{2}|P_{i-1}P_i| \approx 2\pi f(x_i^*)\sqrt{1+[f'(x_i^*)]^2}\Delta{x}\]
       and so an approximation to the area is \[ \sum_{i=1}^n2\pi f(x_i^*)\sqrt{1+[f'(x_i^*)]^2}\Delta{x}\text{.} \]
-      
+
       This approximation becomes better as \(n\rightarrow\infty\), which we recognize as a Riemann sum for the
       function \(g(x) = 2\pi f(x)\sqrt{1+[f'(x)]^2}\), completing the justification. As a note, we can consider
       the formula to represent the summation of circumferences of circles with radius \(f(x)\) along the curve.
