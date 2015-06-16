@@ -1,0 +1,99 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper, margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Finite Automata}
+\author{Elements of the Theory of Computation by H.R. Lewis and C.H. Papadimitrious (Chapter 2)}
+\date{June 15\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \dbullet{2.1.1 (Deterministic Finite Automaton)}
+    A "deterministic finite automaton" is a quintuple \(M=(K,\Sigma,\delta,s,F)\) where
+
+    \quad\(K\) is a finite set of "states,"
+
+    \quad\(\Sigma\) is an alphabet,
+
+    \quad\(s \in K\) is the "initial state,"
+
+    \quad\(F \subseteq K\) is the set of "final states," and
+
+    \quad\(\delta\), the "transition function," is a function from \(K \times \Sigma\) to \(K\).
+
+  \dbullet{2.2.1 (Nondeterministic Finite Automaton)}
+    A "nondeterministic finite automaton" is a quintuple \(M = (K, \Sigma, \Delta, s, F)\), where
+
+    \quad\(K\) is a finite set of "states,"
+
+    \quad\(\Sigma\) is an alphabet,
+
+    \quad\(s \in K\) is the "initial state,"
+
+    \quad\(F \subseteq K\) is the set of "final states," and
+
+    \quad\(\Delta\), the "transition relation," is a subset of \(K\times(\Sigma\cup\{e\})\times K\).
+
+  \tbullet{2.2.3 (Automaton Equivalence)}
+    For each nondeterministic finite automaton, there is an equivalent deterministic finite automaton.
+
+    \begin{proof}
+      Let \(M=(K,\Sigma,\Delta,s,F)\) be a nondeterministic finite automaton. We shall construct a deterministic
+      finite automaton \(M'=(K',\Sigma,\delta,s',F')\) equivalent to \(M\). First we define the "epsilon closure" as follows:
+
+      For any state \(q \in K\), let \(E(q)\) be the set of all states of \(M\) that are reachable from state \(q\) without
+      reading any input. That is, \[ E(q) = \{p\in K: (q,e) \vdash_M^* (p, e)\}\text{.} \]
+
+      Define deterministic automaton \(M'=(K',\Sigma,\delta,s',F')\) such that \(K'=2^K, s'=E(s),F=\{Q \subseteq K: Q \cap F \neq \emptyset\}\),
+      and for each \(Q \subseteq K\) and each symbol \(a \in \Sigma\), define
+      \[ \delta'(Q, a) = \bigcup\{E(p): p \in K \text{ and } (q,a,p) \in \Delta \text{ for some } q \in Q\}\text{.} \]
+      We note this formalization shows \(M'\) is deterministic, since \(\delta'\) is single-valued and well defined on all \(Q \in K'\)
+      and \(a \in \Sigma\), by construction.
+
+      We now \textit{claim} that for any string \(w \in \Sigma^*\) and any states \(p, q \in K'\),
+      \[ (q,w) \vdash_M^* (p, e) \text{ if and only if } (E(q), w) \vdash_{M'}^* (P, e) \] for some set \(P\) containing \(p\). Given this,
+      for any string \(w \in \Sigma^*\), \(w \in L(M)\) if and only if \((s, w)\vdash_M^*(f, e)\) for some \(f \in F\) if and only if
+      \((E(s), w) \vdash_{M'}^* (Q, e)\) for some \(Q\) containing \(f\) meaning \(w \in L(M')\), proving the theorem.
+
+      We now prove the claim by induction on \(|w|\).
+
+      \textit{Basis Step}: For \(|w| = 0\), we must show \((q, e) \vdash_M^* (p, e)\) if and only if \((E(q), e) \vdash_{M'}^* (P, e)\) for
+      some set \(P\) containing \(p\). But note this states that if \(q = p\), then \(p \in P\) since \(E(q) = P\). This is true by hypothesis,
+      so the basis step holds.
+
+      \textit{Induction Hypothesis}: The claim is true for all strings \(w\) of length \(k\) or less for some \(k \geq 0\).
+
+      \textit{Induction Step}:
+
+      \forward Suppose \((q,w)\vdash_M^*(p,e)\). Then there are states \(r_1\) and \(r_2\) such that
+      \[ (q,w) \vdash_M^* (r_1, a) \vdash_M (r_2, e) \vdash_M^* (p, e)\text{.} \]
+      where \(w = va\) for some input \(v\) and \(a\). Now \((q, va) \vdash_M^* (r_1, a)\) is tantamount to \((q, v)\vdash_M^*(r_1, e)\), and
+      since \(|v| = k\), the induction hyposthesis states \((E(q), v) \vdash_{M'}^* (R_1, e)\) for some set \(R_1\) containing \(r_1\). Since
+      \((r_1, a) \vdash_M (r_2, e)\), there is a triple \((r_1, a, r_2) \in \Delta\), and hence \(E(r_2) \subseteq \delta'(R_1, a)\), by
+      construction of \(M'\). Since \((r_2, e) \vdash_M^* (p, e)\), it follows that \(p \in E(r_2)\), and therefore \(p \in \delta'(r_1, a)\).
+      Therefore \((R_1, a) \vdash_{M'} (P, e)\) for some \(P\) containing \(p\), and thus \((E(q), va) \vdash_{M'}^* (R_1, a) \vdash_{M'} (P, e)\).
+
+      \backward Suppose that \((E(q), va) \vdash_{M'}^* (R_1, a) \vdash_{M'} (P, e)\) for some \(P\) containing \(p\) and some \(R_1\) such that
+      \(\delta'(R_1, a) = P\). Since \(p \in P = \delta'(R_1, a)\), there is some \(r_2\) such that \(p \in E(r_2)\), and, for some \(r_1 \in R_1\),
+      \((r_1, a, r_2)\) is a transition of \(M\). Thus, by the induction hypothesis, \((q, v) \vdash_M^* (r_1, a) \vdash_M (r_2, e) \vdash_M^* (p, e)\),
+      where the last relation holds by the epsilon closure of \(r_2\).
+
+
+    \end{proof}
+
+\end{outline}
+
+\end{document}
