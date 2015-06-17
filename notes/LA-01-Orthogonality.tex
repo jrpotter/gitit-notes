@@ -7,7 +7,7 @@
 % Header
 % ===========================
 
-\title{Orthogonality and Least Squares}
+\title{Orthogonality}
 \author{Linear Algebra With Applications by Otto Bretscher (Chapter 5)}
 \date{June 10\textsuperscript{th}, 2015}
 
@@ -78,7 +78,7 @@
       \end{enumerate}
     \end{proof}
 
-  \tbullet{5.1.5 (Orthogonal Projection)}
+  \tbullet{5.1.5 (Orthogonal Decomposition)}
     Consider a vector \(\vec{x}\) in \(\bbr^n\) and a subspace \(V\) of \(\bbr^n\). Then we can write
     \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\), where \(\vec{x}^{\parallel}\) is in \(V\),
     \(\vec{x}^{\perp}\) is perpendicular to \(V\), and this representation is unique. The vector
@@ -86,35 +86,35 @@
     \(\text{proj}_{V}(\vec{x})\).
 
     \begin{proof}
-      Consider an "orthonormal" basis \(\inflatedot{\vec{u}}{m}\) of \(V\). If a decomposition
+      \textit{Existence:} Consider an orthonormal basis \(\inflatedot{\vec{u}}{m}\) of \(V\). If a decomposition
       \(\vec{x} = \vec{x}^{\parallel} + \vec{x}^{\perp}\) does exist, then we can write
-      \[ \vec{x}^{\parallel} = c_1\vec{u}_1 + \cdots + c_i\vec{u}_i + \cdots + c_m\vec{u}_m\text{,} \]
-      for some coefficients \(c_1, \ldots, c_i, \ldots, c_m\) yet to be determined (since \(\vec{x}^{\parallel}\)
+      \[ \vec{x}^{\parallel} = \sum_{i=1}^m c_i\vec{u}_i \text{,} \]
+      for some coefficients \(\inflatedot{c}{m}\) yet to be determined (since \(\vec{x}^{\parallel}\)
       is in \(V\)).
       We know that
-      \[
-        \vec{x}^{\perp} = \vec{x}-\vec{x}^{\parallel} = \vec{x}-c_1\vec{u}_1 - \cdots - c_i\vec{u}_i - \cdots - c_m\vec{u}_m
-      \]
-      is orthogonal to \(V\), meaning that \(\vec{x}-c_1\vec{u}_1-\cdots c_i\vec{u}_i-\cdots-c_m\vec{u}_m\) is
-      orthogonal to all the vectors \(\vec{u}_i\) in \(V\):
+      \[ \vec{x}^{\perp} = \vec{x}-\vec{x}^{\parallel} = \vec{x}-\sum_{i=1}c_i\vec{u}_i \]
+      is orthogonal to \(V\), meaning that \(\vec{x}-\sum_{i=1}c_i\vec{u}_i\) is
+      orthogonal to all the vectors \(\vec{u}_j\) in \(V\):
       \begin{align*}
-        0 &= \vec{u}_i \cdot (\vec{x} - c_1\vec{u}_1 - \cdots - c_i\vec{u}_i - \cdots - c_m\vec{u}_m) \\
-          &= \vec{u}_i\cdot x - c_1(\vec{u}_i\cdot\vec{u}_1)-\cdots-c_i(\vec{u}_i\cdot\vec{u}_i)-
-             \cdots-c_m(\vec{u}_i\cdot\vec{u}_m) = \vec{u}_i\cdot\vec{x} - c_i\text{.}
+        0 &= \vec{u}_j \cdot \left(\vec{x} - \sum_{i=1}^{m}c_i\vec{u}_i\right) \\
+          &= \vec{u}_i\cdot x - \sum_{i=1}^m c_i(\vec{u}_j \cdot \vec{u}_i) = \vec{u}_i\cdot\vec{x} - c_i\text{.}
       \end{align*}
       It follows that \(c_i = \vec{u}_i\cdot\vec{x}\), so that
       \[
         \vec{x}^{\parallel} = (\vec{u}_1\cdot\vec{x})\vec{u}_1 + \cdots
                             + (\vec{u}_i\cdot\vec{x})\vec{u}_i + \cdots
-                            + (\vec{u}_m\cdot\vec{x})\vec{u}_m
-      \] and
-      \[
-        \vec{x}^{\perp} = \vec{x} - \vec{x}^{\parallel}
-                        = \vec{x} - (\vec{u}_1\cdot\vec{x})\vec{u}_1 - \cdots - (\vec{u}_i\cdot\vec{x})\vec{u}_i
-                        - \cdots - (\vec{u}_m\cdot\vec{x})\vec{u}_m\text{.}
+                            + (\vec{u}_m\cdot\vec{x})\vec{u}_m\text{.}
       \]
-      Note that \(\vec{u}_i\cdot\vec{x}^{\perp} = 0\), by construction, so that \(\vec{x}^{\perp}\) is orthogonal
+      Note that \(\vec{u}_j\cdot\vec{x}^{\perp} = 0\), by construction, so that \(\vec{x}^{\perp}\) is orthogonal
       to \(V\), as required.
+
+      \textit{Uniqueness:} Suppose that \(\vec{w}\) and \(\vec{w}'\) are vectors in \(V\) such that \(\vec{x} - \vec{w}\) and
+      \(\vec{x} - \vec{w}'\) are in \(V^{\perp}\). We show \(\vec{w} = \vec{w}'\) by showing \((\vec{w}-\vec{w}')\cdot(\vec{w}-\vec{w}') = 0\).
+      Since \((\vec{w}-\vec{w}')\cdot(\vec{w}-\vec{w}') = \vec{w}\cdot(\vec{w}-\vec{w}')-\vec{w}'\cdot(\vec{w}-\vec{w}')\), we show that
+      \(\vec{w}\cdot(\vec{w}-\vec{w}') = 0\) and note that the same reasoning applies to \(\vec{w}'\cdot(\vec{w}-\vec{w}')\). We see that
+      \[ \vec{w} - \vec{w}' = (\vec{w} - \vec{x}) + (\vec{x} - \vec{w}')\text{.} \] Since \(\vec{w}-\vec{v} = -(\vec{v}-\vec{w})\) is in
+      \(V^{\perp}\), and \(\vec{x}-\vec{w}'\) is also in \(V^{\perp}\) by hypothesis, it must be that \(\vec{w}-\vec{w}'\) in \(V^{\perp}\).
+      Since \(w \in V\), it must be the case that \(\vec{w} \cdot (\vec{w} - \vec{w}') = 0\).
     \end{proof}
 
   \tbullet{5.1.6 (Orthogonal Linearity)}
@@ -276,7 +276,6 @@
     Given vectors \(\vec{v}, \vec{w} \in \bbr^n\), the following holds: \[\norm{\vec{v}+\vec{w}}
     \leq \norm{\vec{v}} + \norm{\vec{w}}\text{.}\]
 
-    \pagebreak
     \begin{proof}
       Note the following:
       \begin{align*}

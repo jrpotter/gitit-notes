@@ -58,6 +58,42 @@
     vector in \(V\) closest to \(\vec{x}\), in that
     \[ \norm{\vec{x} - \text{proj}_V(\vec{x})} < \norm{\vec{x}-\vec{v}}\text{,} \]
     for all \(\vec{v}\) in \(V\) different from \(\text{proj}_V(\vec{x})\).
+
+  \dbullet{5.4.4 (Least-Squares Solution)}
+    Consider a linear system \(A\vec{x} = \vec{b}\), where \(A\) is an \(n \times m\) matrix. A vector \(\vec{x}^*\) in \(\bbr^m\) is called a
+    "least-squares solution" of this system if \(\norm{\vec{b} - A\vec{x}^*} \leq \norm{\vec{b}-A\vec{x}}\) for all \(\vec{x}\) in \(\bbr^m\).
+
+  \tbullet{5.4.5 (The Normal Equation)}
+    The least-squares solutions of the system \(A\vec{x} = \vec{b}\) are the exact solutions of the (consistent) system
+    \[ A^TA\vec{x} = A^T\vec{b}\text{.} \] This system is called the "normal equation" of \(A\vec{x} = \vec{b}\).
+
+    \begin{proof}
+      Suppose vector \(\vec{x}^*\) in a subspace \(V\) is a least-squares solution of the system \(A\vec{x} = \vec{b}\). Then by definition 5.4.4,
+      \(\norm{\vec{b}-A\vec{x}^*} \leq \norm{\vec{b} - A\vec{x}}\) for all \(\vec{x}\) in \(\bbr^m\). By Theorem 5.4.3, \(\text{proj}_V\vec{b}\)
+      satisfies this condition and so \(A\vec{x}^* = \text{proj}_V\vec{b}\). Thus the perpendicular component of \(A\vec{x}^*\), namely
+      \(\vec{b}-A\vec{x}^*\), is in \(V^{\perp} = (\text{im}(A))^{\perp} = \text{ker}(A^T)\) by Theorem 5.4.1. Therefore
+      \(A^T(\vec{b}-A\vec{x}^*) = \vec{0}\) and \(A^TA\vec{x}^* = A^T\vec{b}\).
+    \end{proof}
+
+  \tbullet{5.4.6 (Unique Least-Squares)}
+    If \(\text{ker}(A) = \{\vec{0}\}\), then the linear system \(A\vec{x} = \vec{b}\) has the unique least-squares solution
+    \[\vec{x}^* = (A^TA)^{-1}A^T\vec{b}\text{.}\]
+
+    \begin{proof}
+      If \(\text{ker}(A) = \{\vec{0}\}\), then by Theorem 5.4.2, \(A^TA\) is invertible. Solve for the normal equation accordingly.
+    \end{proof}
+
+  \tbullet{5.4.7 (Matrix of an Orthogonal Projection)}
+    Consider a subspace \(V\) of \(\bbr^n\) with basis \(\inflatedot{\vec{v}}{m}\). Let
+    \[ A = \begin{bmatrix} & & & \\ \vec{v}_1 & \vec{v}_2 & \quad & \vec{v}_m \\ & & & \end{bmatrix} \text{.} \]
+    Then the matrix of the orthogonal projection onto \(V\) is \(A(A^TA)^{-1}A^T\).
+
+    \begin{proof}
+      Note that if \(\vec{x}^*\) is a least squares solution of the system \(A\vec{x} = \vec{b}\), then \(A\vec{x}^*\) is the orthogonal projection
+      of \(\vec{b}\) onto \(\text{im}(A)\). Considering the columns of \(A\) are linearly independent, \(\text{ker}(A) = \{\vec{0}\}\) and so
+      \(A^TA\) is invertible. Therefore \(\text{proj}_V\vec{b} = A\vec{x}^* = A(A^TA)^{-1}A^T\vec{b}\).
+    \end{proof}
+
 \end{outline}
 
 \end{document}
