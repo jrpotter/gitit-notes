@@ -132,6 +132,35 @@
     The square root of the \(\text{Var}(X)\) is called the "standard deviation of \(X\)," and is denoted by
     \(\text{SD}(X)\). That is, \[\text{SD}(X) = \sqrt{\text{Var}(X)}\text{.}\]
 
+  \pbullet{4.9.1 (Expectation via Outcomes)}
+    For random variable \(X\), let \(X(s)\) denote the value of \(X\) when \(s \in S\) is the outcome of an experiment.
+    Additionally, let \(p(s) = \bbp(\{s\})\) be the probability that \(s\) is the outcome of the experiment. Then
+    \[ E[X] = \sum_{s\in S} X(s)p(s)\text{.} \]
+
+    \begin{proof}
+      Suppose that the distinct values of \(X\) are \(x_i, i \geq 1\). For each \(i\), let \(S_i\) be the event that
+      \(X\) is equal to \(x_i\). That is, \(S_i = \{s: X(s) = x_i\}\). Then
+      \begin{align*}
+        E[X] &= \sum_i x_i\bbp[X=x_i] = \sum_i x_i\bbp[S_i] = \sum_i x_i \sum_{s \in S_i} p(s) \\
+             &= \sum_i\sum_{s\in S_i} x_i p(s) = \sum_i\sum_{s\in S_i} X(s)p(s) \\
+             &= \sum_{s\in S} X(s)p(s)
+      \end{align*}
+      where the final equality follows because \(S_1, S_2, \ldots\) are mutually exclusive events whose union is \(S\).
+    \end{proof}
+
+  \cbullet{4.9.2 (Linearity of Expectation)}
+    For random variables \(\inflatedot{x}{n}\), \[ E\left[\sum_{i=1}^nX_i\right] = \sum_{i=1}^n E[X_i]\text{.} \]
+
+    \begin{proof}
+      Let \(Z = \sum_{i=1}^n X_i\). Then, by Proposition 4.9.1,
+      \begin{align*}
+        E[Z] &= \sum_{s\in S} Z(s)p(s) \\
+             &= \sum_{s\in S} (X_1(s) + X_2(S) + \cdots + X_n(S))p(s) \\
+             &= \sum_{s\in S} X_1(s)p(s) + \sum_{s\in S} X_2(s)p(s) + \cdots + \sum_{s\in S} X_n(s)p(s) \\
+             &= E[X_1] + E[X_2] + \cdots + E[X_n]\text{.}
+      \end{align*}
+    \end{proof}
+
 \end{outline}
 
 \end{document}
