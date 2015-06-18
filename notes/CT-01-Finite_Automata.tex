@@ -90,8 +90,40 @@
       \(\delta'(R_1, a) = P\). Since \(p \in P = \delta'(R_1, a)\), there is some \(r_2\) such that \(p \in E(r_2)\), and, for some \(r_1 \in R_1\),
       \((r_1, a, r_2)\) is a transition of \(M\). Thus, by the induction hypothesis, \((q, v) \vdash_M^* (r_1, a) \vdash_M (r_2, e) \vdash_M^* (p, e)\),
       where the last relation holds by the epsilon closure of \(r_2\).
+    \end{proof}
 
+  \tbullet{2.3.1 (Thompson's Construction Algorithm)}
+    The class of languages accepted by finite automata is closed under:
+    \begin{enumerate}[i.]
+      \item union
+      \item concatenation
+      \item Kleene star
+      \item complementation
+      \item intersection
+    \end{enumerate}
 
+  \tbullet{2.3.2 (Regular Language and Finite Automata)}
+    A language is regular if and only if it is accepted by a finite automaton.
+
+    \begin{proof}
+      \forward Note the class of regular languages is the closure of the empty set \(\emptyset\) and singletons \(a\) under union,
+      concatenation, and Kleene star. By Thompson's Construction Algorithm (a constructive proof), we note this must hold.
+
+      \backward Let \(M = (K, \Sigma, \Delta, s, F)\) be a finite automaton, not necessarily deterministic. We shall construct a regular
+      expression \(R\) such that \(L(R) = L(M)\). Let \(K = \{\inflatedot{q}{n}\}\) and \(s = q_1\). For \(i, j = 1, 2, \ldots, n\) and
+      \(k = 0, 1, \ldots, n\), we define \(R(i, j, k)\) as the set of all strings in \(\Sigma^*\) that may drive \(M\) from state
+      \(q_i\) to \(q_j\) without passing through any intermediate state numbered \(k+1\) or greater. Therefore, when \(k=n\),
+      \[ R(i,j,n) = \{ w \in \Sigma^*: (q_i, x) \vdash_M^* (q_j, e) \}\text{.} \] Therefore \[ L(M) = \bigcup\{R(1,j,n): q_j \in F\}\text{.} \]
+      We note that each of these sets \(R(i,j,k)\) are regular by the following inductive argument on \(k\):
+
+      \textit{Basis:} For \(k=0\), \(R(i,j,0)\) is either \(\{a \in \Sigma \;\cup\: \{e\}: (q_i, a, q_j) \in \Delta\}\) if \(i \neq j\), or it is
+      \(\{e\} \:\cup\: \{a \in \Sigma \cup \{e\}: (q_i, a, q_j) \in \Delta\}\) if \(i = j\). Each of these sets if finite and therefore regular.
+
+      \textit{Induction Hypothesis:} For all \(k \geq 0\), \(R(i, j, k)\) is regular for all \(i, j\).
+
+      \textit{Induction Step:} Consider set \(R(i,j,k+1)\). Note it can be defined as follows
+      \[ R(i,j,k+1) = R(i,j,k) \cup R(i,k+1,k)R(k+1,k+1,k)^*R(k+1,j,k)\text{.} \]
+      Since each \(R(i,j,k)\) is regular, so must \(L(M)\), since it is the union of a finite number of regular languages.
     \end{proof}
 
 \end{outline}
