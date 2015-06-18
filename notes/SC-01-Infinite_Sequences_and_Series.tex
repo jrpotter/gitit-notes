@@ -156,6 +156,161 @@
       Contrapositive of Theorem 11.2.3.
     \end{proof}
 
+  \tbullet{11.3.1 (The Integral Test)}
+    Suppose \(f\) is a continuous, positive, decreasing function on \([1, \infty)\) and let \(a_n = f(n)\). Then the series \(\sum_{n=1}^{\infty} a_n\)
+    is convergent if and only if the improper integral \(\int_1^{\infty}f(x)dx\) is convergent. In other words:
+    \begin{enumerate}[i.]
+      \item If \(\int_1^{\infty}f(x)dx\) is convergent, then \(\sum_{n=1}^{\infty} a_n\) is convergent.
+      \item If \(\int_1^{\infty}f(x)dx\) is divergent, then \(\sum_{n=1}^{\infty} a_n\) is divergent.
+    \end{enumerate}
+
+  \tbullet{11.3.2 (Remainder Estimate for Integral Test)}
+    Suppose \(f(k) = a_k\), where \(f\) is a continuous, positive, decreasing function for \(x \geq n\) and \(\sum a_n\) is convergent.If
+    \(R_n = s - s_n\), then \[ \sum_{n+1}^{\infty} f(x)dx \leq R_n \leq \sum_n^{\infty} f(x)dx\text{.} \]
+
+    \begin{proof}
+      Consider any partial sum \(s_n\) and note it is an approximation to \(s\) since \(\xlimit{n}{\infty}s_n = s\). Consider the remainder:
+      \[ R_n = s - s_n = a_{n+1} + a_{n+2} + \cdots \]
+      Assuming that \(f\) is a continuous decreasing function on \([n, \infty)\), we can take the left and right Riemann sums under \(y = f(x)\)
+      respectively:
+      \begin{align*}
+        R_n &= a_{n+1} + a_{n+2} + \cdots \leq \int_n^{\infty} f(x)dx \\
+        R_n &= a_{n+1} + a_{n+2} + \cdots \geq \int_{n+1}^{\infty} f(x)dx
+      \end{align*}
+    \end{proof}
+
+  \cbullet{11.3.3 (Summation Approximation)}
+    Suppose \(f(k) = a_k\), where \(f\) is a continuous, positive, decreasing function for \(x \geq n\) and \(\sum a_n\) is convergent.If \(s_n\)
+    is the partial sum up to \(n\) elements, then:
+    \[ s_n + \int_{n+1}^{\infty} f(x)dx \leq s \leq s_n + \int_n^{\infty} f(x)dx\text{.} \]
+
+    \begin{proof}
+      This follows from Theorem 11.3.2 and the fact \(R_n = s - s_n\) for some partial sum \(s_n\).
+    \end{proof}
+
+  \tbullet{11.4.1 (Comparison Test)}
+    Suppose that \(\sum a_n\) and \(\sum b_n\) are series with positive terms. Then
+    \begin{enumerate}[i.]
+      \item If \(\sum b_n\) is convergent and \(a_n \leq b_n\) for all \(n\). then \(\sum a_n\) is also convergent.
+      \item If \(\sum b_n\) is divergent and \(a_n \geq b_n\) for all \(n\), then \(\sum a_n\) is also divergent.
+    \end{enumerate}
+
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          Let \(s_n = \sum_{i=1}^n a_i\), \(t_n = \sum_{i=1}^n b_i\), and \(t = \sum_{n=1}^{\infty} b_n\).
+          Since both series have positive terms, the sequences \(\{s_n\}\) and \(\{t_n\}\) are increasing. Also \(t_n \rightarrow t\),
+          so \(t_n \leq t\) for all \(n\). Since \(a_i \leq b_i\), we have \(s_n \leq t_n\). Thus \(s_n \leq t\) for all \(n\). This
+          means that \(\{s_n\}\) is increasing and bounded above and therefore converges by the Monotonic Sequence Theorem. Thus
+          \(\sum a_n\) converges.
+        \item
+          If \(\sum b_n\) is divergent, then \(t_n \rightarrow \infty\). But \(a_i \geq b_i\) so \(s_n \geq t_n\). Thus
+          \(s_n \rightarrow \infty\). Therefore \(\sum a_n\) diverges.
+      \end{enumerate}
+    \end{proof}
+
+  \tbullet{11.4.2 (Limit Comparison Test)}
+    Suppose that \(\sum a_n\) and \(\sum b_n\) are series with positive terms. If
+    \[ \xlimit{n}{\infty} \frac{a_n}{b_n} = c \] where \(c\) is a finite number and \(c > 0\), then either both
+    series converge or both diverge.
+
+    \begin{proof}
+      Let \(m\) and \(M\) be positive numbers such that \(m < c < M\). Because \(a_n/b_n\) is close to \(c\) for large \(n\),
+      there is an integer \(N\) such that \[ m < \frac{a_n}{b_n} < M,\quad \text{when }n > N \] and so
+      \[ mb_n < a_n < Mb_n,\quad \text{when }n > N\text{.} \] If \(\sum b_n\) converges, so does \(\sum Mb_n\). Thus \(\sum a_n\)
+      converges by part (i) of the Comparison Test. If \(\sum b_n\) diverges, so does \(\sum mb_n\) and part (ii) of the Comparison
+      Test shows that \(\sum a_n\) diverges.
+    \end{proof}
+
+  \tbullet{11.5.1 (The Alternating Series Test)}
+    If the alternating series \[ \sum_{n=1}^{\infty} (-1)^{n-1} b_n = b_1 - b_2 + b_3 - b_4 + \cdots, b_n > 0 \] satisfies
+    \(b_{n+1} \leq b_n\) for all \(n\) and \(\xlimit{n}{\infty}b_n = 0\), then the series is convergent.
+
+    \begin{proof}
+      We first consider the even partial sums, noting that \(s_2 = b_1 - b_2 \geq 0\), \(s_4 = s_2 + (b_3 - b_4) \geq s_2\), and, in general,
+      \[ s_{2n} = s_{2n-2} + (b_{2n-1} - b_{2n}) \geq s_{2n-2}\text{.} \] Thus \( 0 \leq s_2 \leq s_4 \leq \cdots \leq s_{2n} \leq \cdots\)
+      But we also note \(s_{2n} = b_1 - (b_2 - b_3) - (b_4 - b_5) - \cdots - (b_{2n-2} - b_{2n-1}) - b_{2n}\).
+      Every term in parenthesis is positive so \(s_{2n} \leq b_1\) for all \(n\). Thus the sequence \(\{s_{2n}\}\) of even partial sums
+      is increasing, bounded above, and by the Monotonic Sequence Theorem, convergent to a limit \(s\).
+
+      Considering the limit of the odd partial sums:
+      \begin{align*}
+        \xlimit{n}{\infty} s_{2n+1} &= \xlimit{n}{\infty} (s_{2n} + b_{2n+1}) \\
+                                    &= \xlimit{n}{\infty} s_{2n} + \xlimit{n}{\infty} b_{2n+1} \\
+                                    &= s + 0 = s\text{.}
+      \end{align*}
+      Since both even and odd partial sums convege to \(s\), we have \(\xlimit{n}{\infty} s_n = s\), and so the series is convergent.
+    \end{proof}
+
+  \tbullet{11.5.2 (Alternating Series Estimation Theorem)}
+    If \(s = \sum (-1)^{n-1}b_n\) is the sum of an alternating series that satisfies \(0 \leq b_{n+1} \leq b_n\) and \(\xlimit{n}{\infty} b_n = 0\),
+    then \[ |R_n| = |s - s_n| \leq b_{n+1}\text{.} \]
+
+    \begin{proof}
+      We know from the proof of the Alternating Series Test that \(s\) lies between any two consecutive partial sums \(s_n\) and \(s_{n+1}\). It follows
+      that \[ |s - s_n| \leq |s_{n+1} - s_n| = b_{n+1}\text{.} \]
+    \end{proof}
+
+  \dbullet{11.6.1 (Absolute Convergence)}
+    A series \(\sum a_n\) is called "absolutely convergent" if the series of absolute values \(\sum |a_n|\) is convergent.
+
+  \dbullet{11.6.2 (Conditional Convergence)}
+    A series \(\sum a_n\) is called "conditionally convergent" if it is convergent but not absolutely convergent.
+
+  \tbullet{11.6.3 (Absolute Convergence Implication)}
+    If a series \(\sum a_n\) is absolutely convergent, then it is convergent.
+
+    \begin{proof}
+      Note that \(0 \leq a_n + |a_n| \leq 2|a_n|\). If \(\sum a_n\) is absolutely convergent, then \(\sum |a_n|\) is convergent, so \(\sum 2|a_n|\)
+      is convergent. Therefore , by the Comparison Test, \(\sum (a_n + |a_n|)\) is convergent. Then
+      \[ \sum a_n = \sum (a_n + |a_n|) - \sum |a_n|\text{.} \] is the difference of two convergent series and is therefore convergent.
+    \end{proof}
+
+  \tbullet{11.6.4 (Ratio Test)}
+    \begin{enumerate}[i.]
+      \item
+        If \(\xlimit{n}{\infty}\left|\frac{a_{n+1}}{a_n}\right| = L < 1\), then the series \(\sum_{n=1}^{\infty}\) is absolutely convergent.
+      \item
+        If \(\xlimit{n}{\infty}\left|\frac{a_{n+1}}{a_n}\right| = L > 1\) or \(\xlimit{n}{\infty}\left|\frac{a_{n+1}}{a_n}\right| = \infty\),
+        then the series \(\sum_{n=1}^{\infty} a_n\) is divergent.
+      \item
+        If \(\xlimit{n}{\infty}\left|\frac{a_{n+1}}{a_n}\right| = 1\), the Ratio test is inconclusive.
+    \end{enumerate}
+
+    \begin{proof}
+      \begin{enumerate}[i.]
+        \item
+          Since \(L < 1\), we can choose a number \(r\) such that \(L < r < 1\). Since \[\xlimit{n}{\infty}\left|\frac{a_{n+1}}{a_n}\right| = L \text{ and }
+          L < r, \] the ratio \(|a_{n+1}/a_n|\) will eventually be less than \(r\); that is, there exists and integer \(N\) such that
+          \[ \left|\frac{a_{n+1}}{a_n}\right| < r, \text{ whenever } n \geq N\text{.} \]
+          Putting \(n\) successively equal to \(N, N+1, N+2, \ldots\), we find
+          \begin{align*}
+            |a_{N+1}| &< |a_N|r \\
+            |a_{N+2}| &< |a_{N+1}|r < |a_N|r^2 \\
+                      &\cdots \\
+            |a_{N+k}| &< |a_N|r^k, \text{ for all } k \geq 1\text{.}
+          \end{align*}
+          Now the series \( \sum_{k=1}^{\infty}|a_N|r^k \) is a geometric series with \(0 < r < 1\) and must be convergent. Thus the Comparison Test
+          tells us that \[ \sum_{n=N+1}^{\infty} |a_n| = \sum_{k=1}^{\infty} |a_{N+k}| \] is also convergent so \(\sum a_n\) is absolutely convergent.
+        \item
+          If \(|a_{n+1}/a_n| \rightarrow L > 1\) or \(|a_{n+1}/a_n| \rightarrow \infty\), then the ratio \(|a_{n+1}/a_n|\) will eventually be greater
+          than \(1\); that is, there exists an integer \(N\) such that \[ \left|\frac{a_{n+1}}{a_n}\right| > 1,\text{ whenever } n \geq N\text{.} \]
+          This means that \(|a_{n+1}| > |a_n|\) whenever \(n \geq N\) and so \(\xlimit{n}{\infty} a_n \neq 0\). Therefore \(\sum a_n\) diverges by
+          the Test for Divergence.
+      \end{enumerate}
+    \end{proof}
+
+  \tbullet{11.6.5 (Root Test)}
+    \begin{enumerate}[i.]
+      \item
+        If \(\xlimit{n}{\infty} \sqrt[n]{|a_n|} = L < 1\), then the series \(\sum_{n=1}^{\infty}\) is absolutely convergent.
+      \item
+        If \(\xlimit{n}{\infty} \sqrt[n]{|a_n|} = L > 1\) or \(\xlimit{n}{\infty} \sqrt[n]{|a_n|} = \infty\), then the series \(\sum_{n=1}^{\infty} a_n\)
+        is divergent.
+      \item
+        If \(\xlimit{n}{\infty} \sqrt[n]{|a_n|} = 1\), the Root Test is inconclusive.
+    \end{enumerate}
+
 \end{outline}
 
 \end{document}
