@@ -311,6 +311,68 @@
         If \(\xlimit{n}{\infty} \sqrt[n]{|a_n|} = 1\), the Root Test is inconclusive.
     \end{enumerate}
 
+  \dbullet{11.8.1 (Power Series)}
+    A "power series about \(a\)" is a series of the form \[ \sum_{n=0}^{\infty} c_n(x-a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots \]
+    where \(x\) is a variable and the \(c_n\)'s are constants called the "coefficients" of the series.
+
+  \tbullet{11.8.2 (Convergence of Power Series)}
+    For a given power series \(\sum_{n=0}^{\infty} c_n(x-a)^n\), there are only three possibilities:
+    \begin{enumerate}[i.]
+      \item The series converges only when \(x = a\).
+      \item The series converges for all \(x\).
+      \item There is a postive number \(R\) such that the series converges if \(|x-a| < R\) and diverges if \(|x-a| > R\).
+    \end{enumerate}
+    \(R\) in item (iii) is called the "radius of convergence," which is \(0\) in case (i) and \(\infty\) in case (ii) by convention.
+
+  \tbullet{11.9.1 (Term-by-Term Differentiation and Integration)}
+    If the power series \(\sum c_n(x-a)^n\) has radius of convergence \(R > 0\), then the function \(f\) defined by
+    \[ f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots = \sum_{n=0}^{\infty} c_n(x-a)^n \] is differentiable (and therefore continuous)
+    on the interval \((a-R, a+R)\) and
+    \begin{enumerate}[i.]
+      \item \(f'(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots = \sum_{n=1}^{\infty} nc_n(x-a)^{n-1}\).
+      \item \(\int f(x)dx = C + c_0(x-a) + c_1\frac{(x-a)^2}{2} + c_2\frac{(x-a)^3}{3} + \cdots = C + \sum_{n=0}^{\infty}c_n\frac{(x-a)^{n+1}}{n+1}\).
+    \end{enumerate}
+    The radii of convergence (though not necessarily the interval of convergence) of the power series in (i) and (ii) are both \(R\).
+
+  \tbullet{11.10.1 (Taylor Series)}
+    If \(f\) has a power series representation (expansion) at \(a\), that is, if
+    \[ f(x) = \sum_{n=0}^{\infty} c_n(x-a)^n,\quad |x-a| < R \]
+    then its coefficients are given by the formula \[ c_n = \frac{f^{(n)}(a)}{n!}\text{.} \]
+    This is called the "Taylor series of the function about \(a\)." If \(a = 0\), we call the series
+    the "Maclaurin series."
+
+    \begin{proof}
+      Suppose \(f\) has a power series representation, then
+      \[ f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + \cdots,\quad |x-a| < R \]
+      for radius of convergence \(R\) and coefficients \(c_n\) to be determined.
+      We note though that all coefficients can be found by differentiating via Theorem 11.9.1 as follows:
+      \begin{align*}
+        f'(x) &= c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + \cdots,\quad |x-a| < R \\
+        f''(x) &= 2c_2 + (2\cdot 3)c_3(x-a) + (3\cdot 4)c_4(x-a)^2 + \cdots,\quad |x-a| < R \\
+              &\cdots
+      \end{align*}
+      and evaluating the \(\spscript{n}{th}\) derivative at \(a\) to get the \(\spscript{n}{th}\) coefficient.
+    \end{proof}
+
+  \dbullet{11.10.2 (\(\spscript{n}{th}\)-Degree Taylor Polynomials)}
+    The partial sum \[T_n(x) = \sum_{i=0}^{n}\frac{f^{(i)}(a)}{i!}(x-a)^i\] is the "\(\spscript{n}{th}\)-degree Taylor polynomial of \(f\) at \(a\)."
+
+  \tbullet{11.10.3}
+    If \(f(x) = T_n(x) + R_n(x)\), where \(T_n\) is the \(\spscript{n}{th}\) Taylor polynomial of \(f\) at \(a\) and \(R_n\) is the "remainder"
+    of the Taylor series such that \[\xlimit{n}{\infty}R_n(x) = 0\] for \(|x-a| < R\), then \(f\) is equal to the sum of its Taylor series on the
+    interval \(|x-a| < R\).
+
+    \begin{proof}
+      In general, \(f(x)\) is the sum of its Taylor series if \(f(x) = \xlimit{n}{\infty}T_n(x)\). If we let
+      \[ R_n(x) = f(x) - T_n(x)\text{ so that }f(x) = T_n(x) + R_n(x)\text{,} \] and we can show \(\xlimit{n}{\infty} R_n(x) = 0\),
+      then it follows that \[ \xlimit{n}{\infty}T_n(x) = \xlimit{n}{\infty}[f(x) - R_n(x)] = f(x) - \xlimit{n}{\infty}R_n(x) = f(x)\text{.} \]
+    \end{proof}
+
+  \pagebreak
+  \tbullet{11.10.4 (Taylor's Inequality)}
+    If \(|f^{(n+1)}(x)| \leq M\) for \(|x-a| \leq d\), then the remainder \(R_n(x)\) of the Taylor series satisfies the inequality
+    \[ |R_n(x)| \leq \frac{M}{(n+1)!}|x-a|^{n+1}\text{ for } |x-a| \leq d\text{.} \]
+
 \end{outline}
 
 \end{document}
