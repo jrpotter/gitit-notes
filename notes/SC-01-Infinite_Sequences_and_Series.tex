@@ -373,6 +373,23 @@
     If \(|f^{(n+1)}(x)| \leq M\) for \(|x-a| \leq d\), then the remainder \(R_n(x)\) of the Taylor series satisfies the inequality
     \[ |R_n(x)| \leq \frac{M}{(n+1)!}|x-a|^{n+1}\text{ for } |x-a| \leq d\text{.} \]
 
+    \begin{proof}
+      Let \(n = k\) for some \(k \in \bbz^{+}\). By assumption, we have \(|f^{(k+1)}(x)| \leq M\) for \(|x-a| \leq d\). In particular,
+      we have \(f^{(k+1)}(x) \leq M\), so for \(a \leq x \leq a + d\) we have \[ \int_a^x f^{(k+1)}dt \leq \int_a^x M dt\text{.} \]
+      By part (ii) of the Fundamental Theorem of Calculus:
+      \begin{align*}
+        f^{(k)}(x) - f^{(k)}(a) &\leq M(x-a) \\
+        f^{(k)}(x) &\leq M(x-a) + f^{(k)}(a) \\
+        \int_a^x f^{(k)} dt &\leq \int_a^x [M(x-a) + f^{(k)}(a)] dt \\
+        f^{(k-1)}(x) - f^{(k-1)}(a) &\leq \frac{M}{2}(x-a)^2 + f^{(k)}(a)(x-a) \\
+        f^{(k-1)}(x) &\leq \frac{M}{2}(x-a)^2 + f^{(k)}(a)(x-a) + f^{(k-1)}(a) \\
+                     &\cdots
+      \end{align*}
+      This process completes when we have \(f(x)\) on the left hand side. At this point, we'll have
+      \[ f(x) \leq \frac{M}{(n+1)!}|x-a|^{n+1} + T_n(x)\text{.} \] Therefore,
+      \[ f(x) - T_n(x) = R_n(x) \leq \frac{M}{(n+1)!}|x-a|^{n+1}\text{.} \]
+    \end{proof}
+
 \end{outline}
 
 \end{document}

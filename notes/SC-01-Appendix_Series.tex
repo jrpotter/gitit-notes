@@ -1,0 +1,36 @@
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Appendix: Series}
+\author{Calculus Early Transcendentals by James Stewart (Chapter 11)}
+\date{June 19\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{11.1.1 (Common Maclaurin Series and Radii of Convergence)}
+    \begin{enumerate}
+      \item \(\frac{1}{1-x} = \sum_{n=0}^{\infty}x^n = 1 + x + x^2 + x^3 + \cdots \hfill R = 1\)
+      \item \(e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots \hfill R = \infty\)
+      \item \(\sin{x} = \sum_{n=0}^{\infty} (-1)^n\frac{x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots \hfill R = \infty\)
+      \item \(\cos{x} = \sum_{n=0}^{\infty} (-1)^n\frac{x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \hfill R = \infty\)
+      \item \(\tan^{-1}x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots \hfill R = 1\)
+      \item \((1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} = 1 + kx + \frac{k(k-1)}{2!}x^2 + \frac{k(k-1)(k-2)}{3!}x^3 + \cdots \hfill R = 1\)
+    \end{enumerate}
+
+\end{outline}
+
+\end{document}
