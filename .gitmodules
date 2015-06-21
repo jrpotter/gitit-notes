@@ -1,0 +1,3 @@
+[submodule "wikidata"]
+	path = wikidata
+	url = /home/jrpotter/Documents/gitit-notes/wikidata
