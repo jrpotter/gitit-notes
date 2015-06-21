@@ -76,11 +76,10 @@
       \end{proofcases}
     \end{proof}
 
-  \pagebreak
   \tbullet{4.2.2 (Mean Value Theorem)}
     Let \(f\) be a function that satisfies:
     \begin{enumerate}[i.]
-      \item \(f\) is continous on the closed interval \([a, b]\).
+      \item \(f\) is continuous on the closed interval \([a, b]\).
       \item \(f\) is differentiable on the open interval \((a, b)\).
     \end{enumerate}
     Then there is a number \(c \in (a, b)\) such that \(f'(c) = \frac{f(b)-f(a)}{b-a}\), or, equivalently,
@@ -120,19 +119,19 @@
       \(F\) is constant; that is, \(f-g\) is constant.
     \end{proof}
 
-  \tbullet{4.3.1}
+  \tbullet{4.3.1 (Increasing/Decreasing Test)}
     If \(f'(x) > 0\) on an interval, then \(f\) is increasing on that interval. If \(f'(x) < 0\) on an interval,
     then \(f\) is decreasing on that interval.
 
     \begin{proof}
       Let \(x_1, x_2\) be any two numbers in the interval with \(x_1 < x_2\). We must show that if \(f'(x) > 0,
       f(x_2) > f(x_1)\). Suppose \(f'(x) > 0\), noting \(f'\) is defined and thus differentiable on \([x_1, x_2]\).
-      By the Mena Value Theorem, \(\exists c \in (x_1, x_2)\) such that \(f(x_2)-f(x_1)=f'(c)(x_2-x_1)\). Since
+      By the Mean Value Theorem, \(\exists c \in (x_1, x_2)\) such that \(f(x_2)-f(x_1)=f'(c)(x_2-x_1)\). Since
       \(f'(c) > 0\) and \(x_2-x_1 > 0\), \(f(x_2)-f(x_1) = f'(c)(x_2-x_1) > 0\). Therefore \(f(x_2) > f(x_1)\)
       and \(f\) is increasing. A decreasing \(f\) is proved similarly.
     \end{proof}
 
-  \tbullet{4.3.2}
+  \tbullet{4.3.2 (First Derivative Test)}
     Suppose \(c\) is a critical number of continous function \(f\):
     \begin{enumerate}[i.]
       \item If \(f'\) changes from positive to negative at \(c\), \(f\) has a local maximum at \(c\).
@@ -140,7 +139,7 @@
       \item If \(f'\) does not change signs at \(c\), \(f\) has no local maximum or minimum at \(c\).
     \end{enumerate}
 
-  \dbullet{4.3.3}
+  \dbullet{4.3.3 (Concavity)}
     If the graph of \(f\) lives above all of its tangents on an interval \(I\), then it is "concave upward"
     on \(I\). If it lies below all its tangents, it is "concave downward" on \(I\).
 
@@ -148,12 +147,12 @@
     If \(f''(x) > 0\) for all \(x \in I\), the graph is concave upward on \(I\). If \(f''(x) < 0\) for all
     \(x \in I\), the graph is concave downward on \(I\).
 
-  \dbullet{4.3.5}
+  \dbullet{4.3.5 (Inflection Point)}
     A point \(P\) on a curve \(y = f(x)\) is called an "inflection point" if \(f\) is continous there
     and the curve changes from concave upward to concave downward or from concave downward to concave upward at
     \(P\).
 
-  \tbullet{4.3.6}
+    \tbullet{4.3.6 (Second Derivative Test)}
     Suppose \(f''\) is continuous near \(c\). If \(f'(c) = 0\) and \(f''(c) > 0\), then \(f\) has a local minimum at
     \(c\). If \(f'(c) = 0\) and \(f''(c) < 0\), then \(f\) has a local maximum at \(c\).
 
@@ -226,10 +225,10 @@
       \(r\) as \(\xlimit{n}{\infty}x_n\).
     \end{justification}
 
-  \dbullet{4.9.1}
-    A function \(F\) is called an antiderivative" of \(f\) on an interval \(I\) if \(F'(x) = f(x)\) for all \(x \in I\).
+  \dbullet{4.9.1 (Antiderivative)}
+    A function \(F\) is called an "antiderivative" of \(f\) on an interval \(I\) if \(F'(x) = f(x)\) for all \(x \in I\).
 
-  \tbullet{4.9.2}
+  \tbullet{4.9.2 (General Antiderivatives)}
     If \(F\) is an antiderivative of \(f\) on an interval \(I\), then the most general antiderivative of \(f\) on \(I\)
     is \(F(x) + C\) where \(C\) is an arbitrary constant.
 

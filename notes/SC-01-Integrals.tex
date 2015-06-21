@@ -21,12 +21,12 @@
 
 \begin{outline}
 
-  \dbullet{5.1.1}
+  \dbullet{5.1.1 (Area)}
     The "area" \(A\) of the region \(S\) that lies under the graph of the continous function \(f\) is the limit of
     the sum of the areas of the approximating rectangles \(A = \xlimit{n}{\infty} = \xlimit{x}{\infty}\sum_{i=1}^n
     f(x_i)\Delta x\).
 
-  \dbullet{5.2.1}
+    \dbullet{5.2.1 (Definite Integral)}
     If \(f\) is a function defined for \(a \leq x \leq b\), we divide the interval \([a, b]\) into \(n\) subintervals
     of equal width \(\Delta x = \frac{b-a}{n}\). We let \(x_0 (=a), \inflatedot{x}{n} (=b)\) be the endpoints of
     these subintervals and we let \(\inflatedot{x^{*}}{n}\) be any "sample points" in these subintervals, so \(x_i^{*}\)
@@ -58,8 +58,8 @@
           If \(x\) and \(x+h\) are in \((a, b)\), then
           \begin{align*}
             g(x+h)-g(x)&=\int_a^{x+h}f(t)dt-\int_a^xf(t)dt\\
-                       &=\left(\int_a^xf(t)dt + \int_x^{x+h}f(t)dt\right)-\int_a^{x}f(t)dt\\
-                       &=\int_x^{x+h}f(t)dt
+                       &=\left(\int_a^xf(t)dt + \int_x^{x+h}f(t)dt\right)-\int_a^{x}f(t)dt
+                        =\int_x^{x+h}f(t)dt
           \end{align*}
           Therefore, for \(h \neq 0\),
 
@@ -86,7 +86,7 @@
           we consider \(g'(x)\) as a one sided-limit. Regardless, because \(g\) is differentiable, then \(g\) is
           continous on \([a,b]\).
         \item
-          Let \(g(x)=\int_a^xf(t)dt\), and note from (\romannumeral 1) that \(g'(x) = f(x)\). If \(F\) is any other
+          Let \(g(x)=\int_a^xf(t)dt\), and note from (i) that \(g'(x) = f(x)\). If \(F\) is any other
           antiderivative of \(f\) on \([a, b]\), the Corollary 4.2.4 states \(F\) and \(g\) differ by a constant,
           that is,
           \begin{equation}
@@ -98,15 +98,13 @@
           \(x = a\) and \(x = b\). Also note \(g(a) = \int_a^a f(t)dt = 0\). Therefore, via \eqref{eqn3}
           with \(x=b\) and \(x=a\), we have
           \begin{align*}
-            F(b)-F(a) &= [g(b) + C] - [g(a) + C]\\
-                      &= g(b)-g(a)\\
-                      &= g(b)\\
+            F(b)-F(a) &= [g(b) + C] - [g(a) + C] = g(b)-g(a) = g(b)\\
                       &= \int_a^bf(t)dt\text{.}
           \end{align*}
       \end{enumerate}
     \end{proof}
 
-  \dbullet{5.4.1}
+    \dbullet{5.4.1 (Indefinite Integral)}
     An "indefinite integral" of a function \(f\) is the antiderivative of \(f\), denoted \(\int f(x)dx=F(x)\)
     and meaning \(F'(x)=f(x)\).
 

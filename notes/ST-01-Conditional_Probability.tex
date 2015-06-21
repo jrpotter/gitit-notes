@@ -21,13 +21,13 @@
 
 \begin{outline}
 
-  \dbullet{3.2.1}
+  \dbullet{3.2.1 (Conditional Probability)}
     If \(\bbp[F] > 0\), then \(\bbp[E|F] = \frac{\bbp[EF]}{\bbp[F]}\).
 
-  \tbullet{3.2.2}
+  \tbullet{3.2.2 (Conditional Intersection)}
     \(\bbp\{\inflatedot[]{E}{n}\} = \bbp[E_1]\bbp[E_2|E_1]\ldots \bbp\{E_n|\inflatedot[]{E}{n-1}\}\).
 
-  \tbullet{3.3.1}
+  \tbullet{3.3.1 (Weighted Conditions)}
     \(\bbp[E] = \bbp[E|F]\bbp[F] + \bbp[E|F^c]\bbp[F^c]\)
 
     \begin{proof}
@@ -40,7 +40,7 @@
       \end{align*}
     \end{proof}
 
-  \tbullet{3.3.2}
+  \dbullet{3.3.2 (Odds)}
     The "odds" of an event \(A\) are defined by \(\frac{\bbp[A]}{\bbp[A^c]}\). That is,
     how much more likely it is event \(A\) occurs than it is that it doesn't.
 
@@ -73,7 +73,7 @@
                            \text{.}
     \end{align*}
 
-  \dbullet{3.4.1}
+  \dbullet{3.4.1 (Independent Events)}
     Two events \(E\) and \(F\) are said to be "independent" if \(\bbp[EF] = \bbp[E]\bbp[F]\).
     Two events that are not independent are said to be dependent.
 
@@ -95,8 +95,8 @@
       \end{align*}
     \end{proof}
 
-  \dbullet{3.4.3}
-    Three events \(E, F,\) and \(G\) are said to be independent if
+  \dbullet{3.4.3 (Ternary Independence)}
+    Three events \(E, F,\) and \(G\) are said to be "independent" if
     \begin{align*}
       \bbp[EFG] &= \bbp[E]\bbp[F]\bbp[G],       \\
       \bbp[EF]  &= \bbp[E]\bbp[F],              \\
@@ -104,13 +104,13 @@
       \bbp[FG]  &= \bbp[F]\bbp[G]
     \end{align*}
 
-  \dbullet{3.4.4}
-    The events \(\inflatedot{E}{n}\) are said to be independent if for every subset \(E_{1'}, E_{2'}, \ldots,
+  \dbullet{3.4.4 (n-ary Independence)}
+    The events \(\inflatedot{E}{n}\) are said to be "independent" if for every subset \(E_{1'}, E_{2'}, \ldots,
     E_{r'}\), \(r \leq n\), of these events, \(\bbp[E_{1'}E_{2'}\ldots E_{r'}] = \bbp[E_{1'}]\bbp[E_{2'}]
     \ldots\bbp[E_{r'}]\). An infinite set of events are independent if every finite subset of those events
     is independent.
 
-  \pbullet{3.5.1}
+  \pbullet{3.5.1 (Axiomatic Satisfiability)}
     Conditional probabilities satisfy the axioms of probability:
     \begin{enumerate}[i.]
       \item \(0 \leq \bbp[E|F] \leq 1\)

@@ -38,3 +38,5 @@ Prefixes are defined as follows:
 * ST: Statistics & Probability
   * 01: A First Course in Probability by Sheldon Ross (8th Edition)
         978-0136033134
+
+Additionally, a concept map written via yEd is provided for viewing of concept relationships.

@@ -1,0 +1,38 @@
+\documentclass[a4paper,8pt]{article}
+\usepackage[a4paper, margin=15mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathfunc}
+
+% Header
+% ===========================
+
+\title{Appendix: Rules of Inference}
+\author{Discrete Math and Its Applications by Kenneth H. Rosen (Chapter 1)}
+\date{June 18\textsuperscript{th}, 2015}
+
+
+% Document
+% ===========================
+
+\begin{document}
+\maketitle
+\pagenumbering{gobble}
+
+\begin{outline}
+
+  \tbullet{1.6.1 (Rules of Inference)}
+    \begin{enumerate}
+      \item \((p \wedge (p \rightarrow q)) \rightarrow q\) \hfill Modus ponens
+      \item \((\neg q \wedge (p \rightarrow q)) \rightarrow \neg p\) \hfill Modus tollens
+      \item \(((p \rightarrow q) \wedge (q \rightarrow r)) \rightarrow (p \rightarrow r)\) \hfill Hypothetical syllogism
+      \item \(((p \vee q) \wedge \neg p) \rightarrow q\) \hfill Disjunctive syllogism
+      \item \(p \rightarrow (p \vee q)\) \hfill Addition
+      \item \((p \wedge q) \rightarrow p\) \hfill Simplification
+      \item \(((p) \wedge (q)) \rightarrow (p \wedge q)\) \hfill Conjunction
+      \item \(((p \vee q) \wedge (\neg p \vee r)) \rightarrow (q \vee r)\) \hfill Resolution
+    \end{enumerate}
+
+\end{outline}
+
+\end{document}
