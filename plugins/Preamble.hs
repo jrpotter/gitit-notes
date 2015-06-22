@@ -11,7 +11,7 @@ prepend :: Pandoc -> PluginM Pandoc
 prepend doc@(Pandoc m blks) = do
     meta <- askMeta
     case lookup "preamble" meta of
-      Just s | map toLower s == "true" ->
+      Just s | map toLower s == "all" ->
         return $ Pandoc m (preamble <> blks)
       _      -> return doc
 
@@ -41,5 +41,5 @@ preamble = toList $ divWith ("", [], [("style", "display:none;")]) $
     -- Limits/Differentiation
     plain (math "\\newcommand{\\xlimit}[3][] {\\lim\\limits_{#2\\rightarrow #3^{#1}}}") <>
     plain (math "\\newcommand{\\leibniz}[2][] {\\frac{d#1}{d#2}}")
-    
+
 
