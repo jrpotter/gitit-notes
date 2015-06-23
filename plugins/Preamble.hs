@@ -33,6 +33,7 @@ preamble = toList $ divWith ("", [], [("style", "display:none;")]) $
     -- Proofs
     plain (math "\\newcommand{\\forward}{(\\Rightarrow)\\;}") <>
     plain (math "\\newcommand{\\backward}{(\\Leftarrow)\\;}") <>
+    plain (displayMath "\\newenvironment{proof}{Proof}{\\blacksquare}") <>
     -- Vectors
     plain (math "\\newcommand{\\norm}[1]{\\|#1\\|}") <>
     plain (math "\\newcommand{\\dotp}[2]{\\vec{#1}\\cdot\\vec{#2}}") <>

@@ -1,7 +1,37 @@
 @import url("screen.css"); /* default gitit screen styles */
 @import url("hk-pyg.css"); /* for syntax highlighting */
 
-/* Put your custom style modifications here: */
+/**
+ * The Preamble contains math environments and commands that are defined before
+ * all other math content is displayed on the screen. By setting the preamble
+ * flag on in the meta contents of a Gitit page, we can incorporate different
+ * instructions to use.
+*/
 #preamble {
     display: none;
 }
+
+/**
+ * Force the page header and optional image to stay above the rest
+ * of the page.
+*/
+.page-block:after {
+    height: 0;
+    clear: both;
+    content: " ";
+    display: block;
+}
+
+.page-block img {
+    float: right;
+}
+
+/**
+ * A separator for sequential definitions in markdown, which generally do not leave
+ * much space in between the elements.
+*/
+.def-div {
+    width: 10%;
+    margin: 30px auto;
+}
+
