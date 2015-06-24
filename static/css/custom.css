@@ -12,6 +12,14 @@
 }
 
 /**
+ * Allow nested headers to show this visualization.
+*/
+#content h2 {
+    padding-left: 10px;
+    border-left: 5px solid #aaa;
+}
+
+/**
  * Force the page header and optional image to stay above the rest
  * of the page.
 */
@@ -27,9 +35,13 @@
 }
 
 /**
- * Allow nested headers to show this visualization.
+ * End of proof.
 */
-#content h2 {
-    padding-left: 10px;
-    border-left: 5px solid #aaa;
+.qed {
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: black;
 }
