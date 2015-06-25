@@ -12,11 +12,21 @@
 }
 
 /**
- * Allow nested headers to show this visualization.
+ * Distinguish nested headers.
 */
+#content h1:not(.pageTitle) {
+    padding-left: 8px;
+    border-left: 5px solid #dc322f;
+}
+
 #content h2 {
-    padding-left: 10px;
-    border-left: 5px solid #aaa;
+    padding-left: 8px;
+    border-left: 5px solid #b58900;
+}
+
+#content h3 {
+    padding-left:8px;
+    border-left: 5px solid #859900;
 }
 
 /**
