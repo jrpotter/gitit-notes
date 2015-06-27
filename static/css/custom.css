@@ -11,9 +11,8 @@
     display: none;
 }
 
-/**
- * Distinguish nested headers.
-*/
+/* Distinguish nested headers. */
+
 #content h1:not(.pageTitle) {
     padding-left: 8px;
     border-left: 5px solid #dc322f;
@@ -29,10 +28,71 @@
     border-left: 5px solid #859900;
 }
 
-/**
- * Force the page header and optional image to stay above the rest
- * of the page.
-*/
+/* Proof Toggles */
+
+.proof .proof-icon {
+    cursor: pointer;
+}
+
+.proof .proof-icon.plus {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.proof .proof-icon.minus {
+    background-color: #c9302c;
+    border-color: #ac2925;
+    padding-top: 1px;
+}
+
+.proof .proof-icon {
+    color: #fff;
+    display: inline-block;
+    padding: 2px 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.proof .header {
+    width: 95%;
+    display: inline-block;
+    padding: 5px 0px 5px 5px;
+}
+
+.proof .header.plus {
+    border-bottom: 1px solid #4cae4c;
+}
+
+.proof .header.minus {
+    border-bottom: 1px solid #ac2925;
+}
+
+.proof .pane {
+    padding: 10px;
+}
+
+.proof .hidden {
+    display: none;
+}
+
+/* Force page section to encompass floated images. */
+
 .page-block:after {
     height: 0;
     clear: both;
@@ -44,9 +104,8 @@
     float: right;
 }
 
-/**
- * End of proof.
-*/
+/* End of Proofs */
+
 .qed {
     width: 10px;
     height: 10px;
@@ -55,3 +114,24 @@
     margin-right: 10px;
     background-color: black;
 }
+
+/* Format footnotes to be clearer and spaced. */
+
+.footnotes {
+    opacity: 0.4;
+    border-top: 1px solid #aaa;
+}
+
+.footnotes hr {
+    display: none;
+}
+
+#footnotediv a,
+.footnotes ol a {
+    padding-left: 4px;
+}
+
+#footnotediv p {
+    margin-bottom: 2px;
+}
+

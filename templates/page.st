@@ -21,7 +21,7 @@
         <div id="yui-main">
           <div id="maincol" class="yui-b">
             $userbox()$
-            $tabs$ 
+            $tabs$
             $content()$
             $footer()$
           </div>
@@ -40,6 +40,7 @@
         </div>
     </div>
     $javascripts$
+    <script src="/js/custom.js"></script>
     $expire()$
     $getuser()$
   </body>
