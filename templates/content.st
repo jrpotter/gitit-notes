@@ -9,6 +9,7 @@
     <span class="math">\\(\\newcommand{\\bbz}{\\mathbb{Z}}\\)</span>
     <span class="math">\\(\\newcommand{\\bbp}{\\mathbb{P}}\\)</span>
     <span class="math">\\(\\newcommand{\\bbps}[1]{\\bbp\\left\\{#1\\right\\}}\\)</span>
+    <span class="math">\\(\\newcommand{\\bbpc}[2]{\\bbp\\left\\{#1\\;|\\;#2\\right\\}}\\)</span>
     <span class="math">\\(\\newcommand{\\inflate}[3][,]{#2_{1}#1#2_{2}#1\\ldots#1#2_{#3}}\\)</span>
     <span class="math">\\(\\newcommand{\\inflatec}[3][,]{#2_{1}#1#2_{2}#1\\cdots#1#2_{#3}}\\)</span>
     <span class="math">\\(\\newcommand{\\forward}{(\\Rightarrow)\\;}\\)</span>
