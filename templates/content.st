@@ -20,7 +20,9 @@
     <span class="math">\\(\\newcommand{\\bcoor}[2][\\beta]{\\left[#2\\right]_{#1}}\\)</span>
     <span class="math">\\(\\newcommand{\\xlimit}[3][]{\\lim\\limits_{#2\\rightarrow #3^{#1}}}\\)</span>
     <span class="math">\\(\\newcommand{\\leibniz}[2][]{\\frac{d#1}{d#2}}\\)</span>
+    <span class="math">\\(\\newcommand{\\pleibniz}[2][]{\\frac{\\partial#1}{\\partial#2}}\\)</span>
     <span class="math">\\(\\newcommand{\\iprod}[2]{\\langle#1,#2\\rangle}\\)</span>
+    <span class="math">\\(\\newcommand{\\lrangle}[1]{\\langle#1\\rangle}\\)</span>
   </div>
   $if(revision)$
     <h2 class="revision">Revision $revision$</h2>
