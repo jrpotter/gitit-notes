@@ -20,24 +20,24 @@ section.tertiary {
     border-left: 1px solid;
 }
 
-#content h1:not(.pageTitle),
-#content h2,
-#content h3 {
+section h1:not(.pageTitle),
+section h2,
+section h3 {
     border-bottom: 1px solid;
 }
 
 section.primary,
-#content h1:not(.pageTitle) {
+section h1:not(.pageTitle) {
     border-color: #2aa198;
 }
 
 section.secondary,
-#content h2 {
+section h2 {
     border-color: #b58900;
 }
 
 section.tertiary,
-#content h3 {
+section h3 {
     border-color: #6c71c4;
 }
 
