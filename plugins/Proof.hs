@@ -1,3 +1,6 @@
+-- The following module finds any div elements with the "proof" class and creates a toggleable
+-- viewer surrounding the proof. Useful for avoiding too much noise on the page in a consistent
+-- manner across all pages
 module Proof (plugin) where
 
 import Text.Pandoc.Builder

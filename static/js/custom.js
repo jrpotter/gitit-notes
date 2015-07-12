@@ -1,9 +1,6 @@
 $(function() {
 
-    /**
-     * Allow toggling displays of blocks of text.
-     * View the HideShow plugin for usage.
-    */
+    // Allow toggling displays of blocks of text.
     $('div.proof').each(function() {
         var that = $(this);
         that.find('.proof-icon').click(function() {
@@ -13,5 +10,10 @@ $(function() {
             that.find('.header').toggleClass('plus').toggleClass('minus');
         });
     });
+
+    // Moves icon to table of contents
+    // Plugins do not allow manipulating outside of content
+    $('#TOC').prepend($('<div id="toc-icon-wrapper">')
+             .append($('#toc-icon').remove()));
 
 });

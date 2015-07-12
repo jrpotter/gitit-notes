@@ -11,12 +11,36 @@
     display: none;
 }
 
+/* Table of Contents */
+
+#wikipage #TOC {
+    padding: 0.6em;
+    margin-left: -8px;
+    min-height: 100px;
+}
+
+#wikipage #TOC ul {
+    margin-left: -5px;
+}
+
+#toc-icon-wrapper {
+    float: right;
+}
+
+#toc-icon {
+    top: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    border-radius: 90px;
+    border: 10px solid rgba(133, 153, 0, 0.2);
+}
+
 /* Distinguish nested headers. */
 
-section.primary,
-section.secondary,
-section.tertiary {
-    padding-left: 8px;
+section {
+    padding: 0 10px;
     border-left: 1px solid;
 }
 
@@ -112,25 +136,6 @@ section h3 {
     display: none;
 }
 
-/* Force page section to encompass floated images. */
-
-.page-block:after {
-    height: 0;
-    clear: both;
-    content: " ";
-    display: block;
-}
-
-.page-block .figure {
-    float: right;
-}
-
-.page-block .figure .caption {
-    text-align: center;
-}
-
-/* End of Proofs */
-
 .qed {
     width: 10px;
     height: 10px;
@@ -138,6 +143,44 @@ section h3 {
     margin-top: 10px;
     margin-right: 10px;
     background-color: black;
+}
+
+/* Force page section to encompass floated images. Same in extractions. */
+
+.block:after,
+.extracted:after {
+    height: 0;
+    clear: both;
+    content: " ";
+    display: block;
+}
+
+.block .figure,
+.extracted .figure {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+
+.block .figure img,
+.extracted .figure img {
+    max-width: 250px;
+    max-height: 300px;
+}
+
+.block .figure .caption,
+.extracted .figure .caption {
+    text-align: center;
+}
+
+.extracted {
+    padding: 10px;
+    background-color: rgba(237, 50, 47, 0.03);
+}
+
+.extracted .header {
+    font-size: 10px;
+    font-style: italic;
+    margin-bottom: 8px;
 }
 
 /* Format footnotes to be clearer and spaced. */
