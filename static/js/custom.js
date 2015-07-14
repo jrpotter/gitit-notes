@@ -1,5 +1,7 @@
 $(function() {
 
+    // Proof Plugin
+    // ==================================================
     // Allow toggling displays of blocks of text.
     $('div.proof').each(function() {
         var that = $(this);
@@ -11,8 +13,14 @@ $(function() {
         });
     });
 
-    // Moves icon to top right
+    // Excerpt Plugin
+    // ================================================k
+    // ...
+
+    // Icon Plugin
+    // ==================================================
     // Plugins do not allow manipulating outside of content
+    // so the plugin appends the icon and the js replaces the logo
     +function() {
         var icon = $('#toc-icon').remove();
         if(icon.length > 0) {
