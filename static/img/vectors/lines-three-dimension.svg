@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg3793"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="New document 3">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="204.79487"
+     inkscape:cy="529.48228"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="702"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs3795">
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mstart">
+      <path
+         transform="scale(0.6) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round"
+         id="path4361" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path4364" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lend">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path4358" />
+    </marker>
+    <linearGradient
+       osb:paint="solid"
+       id="linearGradient4321">
+      <stop
+         id="stop4323"
+         offset="0"
+         style="stop-color:#f20000;stop-opacity:1;" />
+    </linearGradient>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2MendU"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2MendU">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke-linejoin:round;stroke:#0000f1;stroke-width:0.62500000;fill:#0000f1;fill-rule:evenodd"
+         id="path8130" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2MendZ"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2MendZ">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke-linejoin:round;stroke:#e9f000;stroke-width:0.62500000;fill:#e9f000;fill-rule:evenodd"
+         id="path8176" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2MendZ5"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2MendZ5">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke-linejoin:round;stroke:#f20000;stroke-width:0.62500000;fill:#f20000;fill-rule:evenodd"
+         id="path8225" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata3798">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       inkscape:connector-curvature="0"
+       id="path3801"
+       d="M 62.857143,546.6479 691.42857,392.36218"
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4311"
+       d="m 342.85714,252.36218 2.85715,480"
+       style="fill:none;stroke:#000000;stroke-width:2.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:none;marker-start:url(#Arrow2Mstart)"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4313"
+       d="M 102.85714,920.93361 345.71429,735.21933"
+       style="fill:none;stroke:#000000;stroke-width:2.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow2Mstart);marker-end:none;marker-mid:none"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4315"
+       d="M 680,895.21933 345.71429,732.36218"
+       style="fill:none;stroke:#000000;stroke-width:2.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-end:none;marker-start:url(#Arrow2Mstart)"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4319"
+       d="m 345.71429,729.50504 80,-268.57143"
+       style="stroke-linejoin:miter;marker-end:url(#Arrow2MendZ5);stroke-opacity:1;stroke:#f20000;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:5.20000000000000018;fill:none"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4329"
+       d="m 345.71429,732.36218 240,-311.42857"
+       style="stroke-linejoin:miter;marker-end:url(#Arrow2MendU);stroke-opacity:1;stroke:#0000f1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:4;fill:none"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4331"
+       d="m 345.71429,735.21933 200,-57.14286"
+       style="stroke-linejoin:miter;marker-end:url(#Arrow2MendZ);stroke-opacity:1;stroke:#e9f000;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-width:5;fill:none"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <text
+       xml:space="preserve"
+       style="font-size:56px;font-style:normal;font-weight:500;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium;font-stretch:normal;font-variant:normal;text-anchor:start;text-align:start;writing-mode:lr"
+       x="551.42859"
+       y="720.93359"
+       id="text8260"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8262"
+         x="551.42859"
+         y="720.93359"
+         style="font-style:normal;-inkscape-font-specification:TeX Gyre Chorus Medium;font-weight:500;font-family:TeX Gyre Chorus;font-stretch:normal;font-variant:normal;font-size:56px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">v</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium"
+       x="588.57141"
+       y="466.64789"
+       id="text8264"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8266"
+         x="588.57141"
+         y="466.64789">P(x, y, z)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="511.42856"
+       y="588.07648"
+       id="text8272"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274"
+         x="511.42856"
+         y="588.07648"
+         style="-inkscape-font-specification:TeX Gyre Chorus Medium;font-family:TeX Gyre Chorus;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal;font-size:56px;text-anchor:start;text-align:start;writing-mode:lr;line-height:125%">r</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:#040404;fill-opacity:1;stroke:#020500;stroke-width:5;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path8284"
+       sodipodi:cx="429.28571"
+       sodipodi:cy="336.64789"
+       sodipodi:rx="35"
+       sodipodi:ry="32.857143"
+       d="m 464.28571,336.64789 a 35,32.857143 0 1 1 -70,0 35,32.857143 0 1 1 70,0 z"
+       transform="matrix(0.14676624,0,0,0.17137154,525.7871,358.24174)"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#040404;fill-opacity:1;stroke:#020500;stroke-width:5;stroke-linecap:butt;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path8284-0"
+       sodipodi:cx="429.28571"
+       sodipodi:cy="336.64789"
+       sodipodi:rx="35"
+       sodipodi:ry="32.857143"
+       d="m 464.28571,336.64789 a 35,32.857143 0 1 1 -70,0 35,32.857143 0 1 1 70,0 z"
+       transform="matrix(0.14676624,0,0,0.17137154,364.35854,397.52746)"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium"
+       x="354.78595"
+       y="414.26456"
+       id="text8264-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8266-1"
+         x="354.78595"
+         y="414.26456">P<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8350">0</tspan>(x<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8352">0</tspan>, y<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8354">0</tspan>, z<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8356">0</tspan>)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="400.44254"
+       y="576.69666"
+       id="text8272-4"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274-9"
+         x="400.44254"
+         y="576.69666"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium">r<tspan
+   style="font-size:65.00091553%;baseline-shift:sub"
+   id="tspan8381">0</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="85.274948"
+       y="499.92508"
+       id="text8272-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274-8"
+         x="85.274948"
+         y="499.92508"
+         style="font-size:56px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium">L</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="89.315559"
+       y="883.78302"
+       id="text8272-83"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274-6"
+         x="89.315559"
+         y="883.78302"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium">x</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot8452"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:40px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion8454"><rect
+           id="rect8456"
+           width="195.96959"
+           height="54.548237"
+           x="226.27417"
+           y="949.3266" /></flowRegion><flowPara
+         id="flowPara8458"></flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="364.73706"
+       y="255.32104"
+       id="text8272-83-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274-6-8"
+         x="364.73706"
+         y="255.32104"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="659.7016"
+       y="857.37201"
+       id="text8272-83-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/jrpotter/Documents/gitit-notes/static/img/diagrams/lines-three-dimension.png"
+       inkscape:export-xdpi="37.072838"
+       inkscape:export-ydpi="37.072838"><tspan
+         sodipodi:role="line"
+         id="tspan8274-6-4"
+         x="659.7016"
+         y="857.37201"
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:TeX Gyre Chorus;-inkscape-font-specification:TeX Gyre Chorus Medium">y</tspan></text>
+  </g>
+</svg>

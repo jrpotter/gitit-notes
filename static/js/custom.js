@@ -11,9 +11,15 @@ $(function() {
         });
     });
 
-    // Moves icon to table of contents
+    // Moves icon to top right
     // Plugins do not allow manipulating outside of content
-    $('#TOC').prepend($('<div id="toc-icon-wrapper">')
-             .append($('#toc-icon').remove()));
+    +function() {
+        var icon = $('#toc-icon').remove();
+        if(icon.length > 0) {
+            $('#logo').find('img')
+                      .attr('src', icon.attr('src'))
+                      .addClass('toc-icon');
+        }
+    }();
 
 });

@@ -16,28 +16,21 @@
 #wikipage #TOC {
     padding: 0.6em;
     margin-left: -8px;
-    min-height: 100px;
 }
 
-#wikipage #TOC ul {
-    margin-left: -5px;
-}
-
-#toc-icon-wrapper {
-    float: right;
-}
-
-#toc-icon {
-    top: 20px;
-    right: 20px;
-    width: 90px;
-    height: 90px;
-    margin-right: 10px;
+.toc-icon {
+    margin-left: 12px;
     border-radius: 90px;
-    border: 10px solid rgba(133, 153, 0, 0.2);
+    border: 5px solid rgba(133, 153, 0, 0.2);
 }
 
 /* Distinguish nested headers. */
+
+hr {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
 
 section {
     padding: 0 10px;
@@ -55,14 +48,26 @@ section h1:not(.pageTitle) {
     border-color: #2aa198;
 }
 
+section.primary hr {
+    background-color: #2aa198;
+}
+
 section.secondary,
 section h2 {
     border-color: #b58900;
 }
 
+section.secondary hr {
+    background-color: #b58900;
+}
+
 section.tertiary,
 section h3 {
     border-color: #6c71c4;
+}
+
+section.tertiary hr {
+    background-color: #6c71c4;
 }
 
 /* Proof Toggles */
@@ -159,12 +164,6 @@ section h3 {
 .extracted .figure {
     float: right;
     margin: 0 0 10px 10px;
-}
-
-.block .figure img,
-.extracted .figure img {
-    max-width: 250px;
-    max-height: 300px;
 }
 
 .block .figure .caption,
