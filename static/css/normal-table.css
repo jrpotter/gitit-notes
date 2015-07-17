@@ -1,0 +1,104 @@
+.normal-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show
+}
+
+.normal-table td,
+.normal-table th {
+    vertical-align: top;
+    font-size: 10pt;
+}
+
+.normal-table h1,
+.normal-table h2,
+.normal-table h3,
+.normal-table h4,
+.normal-table h5,
+.normal-table h6 {
+    clear: both
+}
+
+.normal-table ol,
+.normal-table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.normal-table li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.normal-table li span. {
+    clear: both;
+    line-height: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.normal-table span.footnodeNumber {
+    padding-right: 1em;
+}
+
+.normal-table span.annotation_style_by_filter {
+    font-size: 95%;
+    font-family: Arial;
+    background-color: #fff000;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.normal-table * {
+    margin: 0;
+}
+
+.normal-table .ta1 {
+    writing-mode: lr-tb;
+}
+
+.normal-table .ce1 {
+    font-family: Liberation Serif;
+    background-color: #003366;
+    text-align: center ! important;
+    color: #ffffff;
+    font-size: 10pt;
+    font-style: normal;
+    text-shadow: none;
+    text-decoration: none ! important;
+    font-weight: bold;
+}
+
+.normal-table .ce2 {
+    font-family: Liberation Serif;
+    background-color: #ff99ff;
+    text-align: center ! important;
+    font-size: 10pt;
+    font-style: normal;
+    text-shadow: none;
+    text-decoration: none ! important;
+    font-weight: bold;
+}
+
+.normal-table .ce3 {
+    font-family: Liberation Serif;
+    background-color: #ffccff;
+    font-size: 10pt;
+    font-style: normal;
+    text-shadow: none;
+    text-decoration: none ! important;
+    font-weight: normal;
+}
+
+.normal-table .co1 {
+    width: 0.889in;
+}
+
+.normal-table .ro1 {
+    height: 0.178in;
+}
+
