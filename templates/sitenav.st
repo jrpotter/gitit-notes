@@ -24,4 +24,18 @@
       <input type="submit" name="go" id="go" value="Go"/>
     </form>
   </fieldset>
+  <fieldset>
+    <legend>Bookmarks</legend>
+    <ul>
+      <li><a href="$base$/abstract_algebra">Abstract Algebra</a></li>
+      <li><a href="$base$/combinatorics">Combinatorics</a></li>
+      <li><a href="$base$/computation_theory">Computation Theory</a></li>
+      <li><a href="$base$/differential_equations">Differential Equations</a></li>
+      <li><a href="$base$/functional_programming">Functional Programming</a></li>
+      <li><a href="$base$/linear_algebra">Linear Algebra</a></li>
+      <li><a href="$base$/multi_calculus">Multi-Variable Calculus</a></li>
+      <li><a href="$base$/single_calculus">Single-Variable Calculus</a></li>
+      <li><a href="$base$/statistics">Statistics</a></li>
+    </ul>
+  </fieldset>
 </div>

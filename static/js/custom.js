@@ -30,4 +30,21 @@ $(function() {
         }
     }();
 
+    // Sidebar Follow
+    // ==================================================
+    // The following ensures that the site navigation follows
+    // the scroll view for quick access
+    +function() {
+        var sitenav = $('.sitenav');
+        var position = sitenav.position().top;
+        $(window).scroll(function() {
+            var scrollTop = $(window).scrollTop();
+            if(scrollTop <= position) {
+                sitenav.css('margin-top', 0);
+            } else {
+                sitenav.css('margin-top', scrollTop - position);
+            }
+        });
+    }();
+
 });
