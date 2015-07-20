@@ -24,7 +24,7 @@
       <input type="submit" name="go" id="go" value="Go"/>
     </form>
   </fieldset>
-  <fieldset>
+  <fieldset id="bookmarks">
     <legend>Bookmarks</legend>
     <ul>
       <li><a href="$base$/abstract_algebra">Abstract Algebra</a></li>
