@@ -24,6 +24,21 @@
     border: 5px solid rgba(133, 153, 0, 0.2);
 }
 
+/* Tables */
+
+tr.odd td,
+tr.even td {
+    border: 1px solid black;
+}
+
+tr.even {
+    background-color: #eee;
+}
+
+tr.odd {
+    background-color: #fff;
+}
+
 /* Distinguish nested headers. */
 
 hr {

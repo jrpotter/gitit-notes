@@ -28,7 +28,9 @@
     <legend>Bookmarks</legend>
     <ul>
       <li><a href="$base$/abstract_algebra">Abstract Algebra</a></li>
+      <li><a href="$base$/algorithms">Algorithms</a></li>
       <li><a href="$base$/combinatorics">Combinatorics</a></li>
+      <li><a href="$base$/complex_variables">Complex Variables</a></li>
       <li><a href="$base$/computation_theory">Computation Theory</a></li>
       <li><a href="$base$/differential_equations">Differential Equations</a></li>
       <li><a href="$base$/functional_programming">Functional Programming</a></li>
