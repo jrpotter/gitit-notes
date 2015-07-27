@@ -15,6 +15,7 @@
     <span class="math">\\(\\newcommand{\\forward}{(\\Rightarrow)\\;}\\)</span>
     <span class="math">\\(\\newcommand{\\backward}{(\\Leftarrow)\\;}\\)</span>
     <span class="math">\\(\\newcommand{\\norm}[1]{\\|#1\\|}\\)</span>
+    <span class="math">\\(\\newcommand{\\abs}[1]{\\left|#1\\right|}\\)</span>
     <span class="math">\\(\\newcommand{\\dotp}[2]{\\vec{#1}\\cdot\\vec{#2}}\\)</span>
     <span class="math">\\(\\newcommand{\\crossp}[2]{\\vec{#1}\\times\\vec{#2}}\\)</span>
     <span class="math">\\(\\newcommand{\\bcoor}[2][\\beta]{\\left[#2\\right]_{#1}}\\)</span>
