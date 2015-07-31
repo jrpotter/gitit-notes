@@ -220,6 +220,9 @@ section.tertiary hr {
 /* Bookmarks */
 
 #sidebar #bookmarks {
+    height: 150px;
+    overflow: auto;
     padding-right: 8px;
     padding-bottom: 2px;
 }
+
