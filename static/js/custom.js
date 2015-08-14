@@ -23,10 +23,9 @@ $(function() {
     // so the plugin appends the icon and the js replaces the logo
     +function() {
         var icon = $('#toc-icon').remove();
+        var img = $('#logo').find('img').addClass('toc-icon');
         if(icon.length > 0) {
-            $('#logo').find('img')
-                      .attr('src', icon.attr('src'))
-                      .addClass('toc-icon');
+            img.attr('src', icon.attr('src'));
         }
     }();
 
