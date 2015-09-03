@@ -24,6 +24,7 @@
     <span class="math">\\(\\newcommand{\\pleibniz}[2][]{\\frac{\\partial#1}{\\partial#2}}\\)</span>
     <span class="math">\\(\\newcommand{\\iprod}[2]{\\langle#1,#2\\rangle}\\)</span>
     <span class="math">\\(\\newcommand{\\lrangle}[1]{\\langle#1\\rangle}\\)</span>
+    <span class="math">\\(\\newcommand{\\xtilde}{\\;\\text{~}\\;}\\)</span>
   </div>
   $if(revision)$
     <h2 class="revision">Revision $revision$</h2>
