@@ -1,4 +1,3 @@
 [submodule "wikidata"]
     path = wikidata
-    url = /Users/mjhowell/gitit-notes/wikidata
-        #url = /home/jrpotter/Documents/gitit-notes/wikidata
+    url = https://github.com/jrpotter/gitit-notes-wikidata
