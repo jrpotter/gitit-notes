@@ -51,5 +51,6 @@ git clone --recursive git://github.com/jrpotter/gitit-notes.git
 Afterwards, run the following (which loads in custom plugins in the /Plugins directory):
 
 ```
+cd gitit-notes
 gitit -f conf/my.conf
 ```
