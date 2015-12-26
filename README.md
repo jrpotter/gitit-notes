@@ -1,7 +1,18 @@
 Gitit-Notes
 ===========
 
-[Version 1.0.0 - 12/14/2015]
+[PAUSED DEVELOPMENT - 12/14/2015]
+
+Status
+------
+
+While the use of [gitit](https://github.com/jgm/gitit) was instructive on using Haskell for something besides a trivial
+program, the library itself has proved difficult for customizing leading me to hackish solutions (e.g. plugins/Icon.hs)
+to create a view like I wanted. As a result, I've decided to migrate completely towards MediaWiki. Progress can be found
+[online](http://josh-potter.com/wiki/).
+
+Resources
+---------
 
 These are the LaTeX transcriptions of various notes I maintain. I eventually plan on hosting a readonly
 version on a site.
