@@ -9,7 +9,7 @@ Status
 While the use of [gitit](https://github.com/jgm/gitit) was instructive on using Haskell for something besides a trivial
 program, the library itself has proved difficult for customizing leading me to hackish solutions (e.g. plugins/Icon.hs)
 to create a view like I wanted. As a result, I've decided to migrate completely towards MediaWiki. Progress can be found
-[online](http://josh-potter.com/wiki/).
+[online](http://joshuapotter.me/wiki/).
 
 Resources
 ---------
